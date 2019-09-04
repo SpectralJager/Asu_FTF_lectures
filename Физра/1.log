@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.23)  4 SEP 2019 12:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.23)  4 SEP 2019 20:22
 entering extended mode
-**C:/Users/Sjager/Desktop/1/1.tex
-(C:/Users/Sjager/Desktop/1/1.tex
+**E:/Asu_FTF_lectures/Физра/1.tex
+(E:/Asu_FTF_lectures/Физра/1.tex
 LaTeX2e <2018-12-01>
 ("C:\Program Files\MiKTeX 2.9\tex/latex/base\article.cls"
 Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
@@ -318,7 +318,7 @@ File: switch.def 2019/07/19 3.33 Babel switching mechanism
 *************************************
 * Local config file bblopts.cfg used
 *
-(C:\Users\Sjager\AppData\Roaming\MiKTeX\2.9\tex/latex/arabi\bblopts.cfg
+(C:\Users\Unkn\AppData\Roaming\MiKTeX\2.9\tex/latex/arabi\bblopts.cfg
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
@@ -337,8 +337,7 @@ File: babel.def 2019/07/19 3.33 Babel common definitions
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
 )
-(C:\Users\Sjager\AppData\Roaming\MiKTeX\2.9\tex/latex/babel-russian\russianb.ld
-f
+(C:\Users\Unkn\AppData\Roaming\MiKTeX\2.9\tex/latex/babel-russian\russianb.ldf
 Language: russian 2017/08/12 1.3j Russian support for the Babel system
 Package babel Info: Making " an active character on input line 120.
 Package babel Info: Default for \cyrdash is provided on input line 157.
@@ -379,23 +378,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--33
 
 [1
 
-{C:/Users/Sjager/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (1.aux) ) 
+{C:/Users/Unkn/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (1.aux) ) 
 Here is how much of TeX's memory you used:
  2501 strings out of 492895
- 28687 string characters out of 3133476
+ 28710 string characters out of 3133482
  100124 words of memory out of 3000000
  6413 multiletter control sequences out of 15000+200000
  11396 words of font info for 32 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 27i,6n,27p,343b,194s stack positions out of 5000i,500n,10000p,200000b,50000s
- 
-<C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx
-1440.pk> <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dp
-i600\larm1200.pk> <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/
-lh-t2a/dpi600\labx1728.pk> <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/l
-jfour/lh/lh-t2a/dpi600\larm1440.pk> <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\f
-onts/pk/ljfour/lh/lh-t2a/dpi600\larm2074.pk>
-Output written on 1.pdf (1 page, 39948 bytes).
+ 27i,6n,27p,346b,194s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C
+:\Users\Unkn\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1440
+.pk> <C:\Users\Unkn\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\l
+arm1200.pk> <C:\Users\Unkn\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/d
+pi600\labx1728.pk> <C:\Users\Unkn\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/l
+h-t2a/dpi600\larm1440.pk> <C:\Users\Unkn\AppData\Local\MiKTeX\2.9\fonts/pk/ljfo
+ur/lh/lh-t2a/dpi600\larm2074.pk>
+Output written on 1.pdf (1 page, 39943 bytes).
 PDF statistics:
  124 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
