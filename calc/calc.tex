@@ -1,11 +1,16 @@
 \documentclass[a4paper, 12pt]{article}
 
+
+\usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{mdframed}
 \usepackage { amsmath , amssymb , amsthm }
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english,russian]{babel}
+
+\graphicspath{{img/}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
 
 
 \title{Математический анализ}
@@ -16,7 +21,8 @@
 \maketitle
 \section*{Лекция 1}
 
-\section{Глава 1. Введение. Параграф 1: Множества операции над множествами}
+\section{Глава 1. Введение. }
+\subsection{Параграф 1: Множества операции над множествами}
 Кванторы:
 \[
 	\forall \quad \exists
@@ -42,7 +48,7 @@
 	CA = \bar{A} - S\setminus A	
 \]
 
-\\
+
 Виды множеств:\\
 $ N \subset Z \subset Q \subset R \subset C $\\
 
@@ -50,13 +56,13 @@ $ N \subset Z \subset Q \subset R \subset C $\\
 \[
 	|x| = \{x \quad x \geq \quad0 or \quad -x \quad x\leq 0\}	
 \]
-\subsubsection*{Свойства:}\\
+\subsubsection*{Свойства:}
 1. Неравенство треугольника \[
  |x+y| = |x| + |y|	
 \]
 \begin{mdframed}[backgroundcolor=blue!20] 
        Док-во: пусть $  x+y \geq 0\Rightarrow |x+y| = x+y=|x|+|y|$\\
-       Док-во: пусть $  x+y < 0\Rightarrow |x+y| = x+(-y)\leq|x|+|y|$
+       Док-во: пусть $  x+y < 0\Rightarrow |x+y| = x+(-y)<|x|+|y|$
     \end{mdframed}
 
 2. $  |x - y|= |x| - |y|$ если $ |x| > |y| $
@@ -64,7 +70,7 @@ $ N \subset Z \subset Q \subset R \subset C $\\
 4. $ \left| \frac{x}{y}\right| =  \frac{|x|}{|y|}$
 sgn x = $ \{ 1 \quad x>0 \quad 0 \quad x=0\} $\\
 
-\subsubsection*{Бином Ньютона:}\\
+\subsubsection*{Бином Ньютона:}
 \[
 	\left( a + b\right)^n = a^n + C_n^1 a^{n-1}b +...+b^n	
 \]
@@ -79,10 +85,10 @@ sgn x = $ \{ 1 \quad x>0 \quad 0 \quad x=0\} $\\
 	0! = 1	
 \]
 
-\\
+
 \subsubsection*{Треугольник Паскаля:}
-%Вставить рисунок трекгольника паскаля
-\\
+\includegraphics{Pascal_triangle}
+
 \subsubsection{Упражнения}
 1. $ A=\{1,2,3\} \quad B=\{2,3,4,5\} \quad A\cup B ? $\\
 2. $ A = \{x \in N: \quad 2 < x < 4\} \quad B = \{x \in N: \quad 2 < x < 4\} \quad C = \{x \in N: \quad 2 < x < 4\} \quad B\cup C ?, A\cap B\cap C,A\cup B\cup C \quad ?$\\
