@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.23)  4 SEP 2019 20:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.23)  10 SEP 2019 14:34
 entering extended mode
 **E:/Asu_FTF_lectures/Физра/1.tex
 (E:/Asu_FTF_lectures/Физра/1.tex
@@ -318,7 +318,7 @@ File: switch.def 2019/07/19 3.33 Babel switching mechanism
 *************************************
 * Local config file bblopts.cfg used
 *
-(C:\Users\Unkn\AppData\Roaming\MiKTeX\2.9\tex/latex/arabi\bblopts.cfg
+(C:\Users\Sjager\AppData\Roaming\MiKTeX\2.9\tex/latex/arabi\bblopts.cfg
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
@@ -337,7 +337,8 @@ File: babel.def 2019/07/19 3.33 Babel common definitions
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
 )
-(C:\Users\Unkn\AppData\Roaming\MiKTeX\2.9\tex/latex/babel-russian\russianb.ldf
+(C:\Users\Sjager\AppData\Roaming\MiKTeX\2.9\tex/latex/babel-russian\russianb.ld
+f
 Language: russian 2017/08/12 1.3j Russian support for the Babel system
 Package babel Info: Making " an active character on input line 120.
 Package babel Info: Default for \cyrdash is provided on input line 157.
@@ -371,32 +372,67 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--25
 
  []
 
+[1
 
-Underfull \hbox (badness 10000) in paragraph at lines 31--33
+{C:/Users/Sjager/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 29--30
 
  []
 
-[1
 
-{C:/Users/Unkn/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (1.aux) ) 
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--34
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--36
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--46
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 48--51
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--55
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 62--64
+
+ []
+
+[4] (1.aux) ) 
 Here is how much of TeX's memory you used:
- 2501 strings out of 492895
- 28710 string characters out of 3133482
- 100124 words of memory out of 3000000
- 6413 multiletter control sequences out of 15000+200000
- 11396 words of font info for 32 fonts, out of 3000000 for 9000
+ 2503 strings out of 492895
+ 28745 string characters out of 3133476
+ 102124 words of memory out of 3000000
+ 6414 multiletter control sequences out of 15000+200000
+ 12215 words of font info for 33 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 27i,6n,27p,346b,194s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C
-:\Users\Unkn\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1440
-.pk> <C:\Users\Unkn\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\l
-arm1200.pk> <C:\Users\Unkn\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/d
-pi600\labx1728.pk> <C:\Users\Unkn\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/l
-h-t2a/dpi600\larm1440.pk> <C:\Users\Unkn\AppData\Local\MiKTeX\2.9\fonts/pk/ljfo
-ur/lh/lh-t2a/dpi600\larm2074.pk>
-Output written on 1.pdf (1 page, 39943 bytes).
+ 27i,6n,27p,1480b,194s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t
+2a/dpi600\labx1440.pk> <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfou
+r/lh/lh-t2a/dpi600\labx1200.pk> <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts
+/pk/ljfour/lh/lh-t2a/dpi600\larm1200.pk> <C:\Users\Sjager\AppData\Local\MiKTeX\
+2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1728.pk> <C:\Users\Sjager\AppData\Loca
+l\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1440.pk> <C:\Users\Sjager\App
+Data\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm2074.pk>
+Output written on 1.pdf (4 pages, 59645 bytes).
 PDF statistics:
- 124 PDF objects out of 1000 (max. 8388607)
+ 182 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
