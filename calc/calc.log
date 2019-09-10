@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.23)  10 SEP 2019 10:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.23)  10 SEP 2019 16:22
 entering extended mode
 **E:/Asu_FTF_lectures/calc/calc.tex
 (E:/Asu_FTF_lectures/calc/calc.tex
@@ -748,17 +748,23 @@ Package grfext Info: Graphics extension search list:
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 \AtBeginShipoutBox=\box54
-LaTeX Font Info:    Try loading font information for U+msa on input line 21.
+LaTeX Font Info:    Try loading font information for T2A+cmss on input line 21.
+
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/cyrillic\t2acmss.fd"
+File: t2acmss.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 22.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 21.
+LaTeX Font Info:    Try loading font information for U+msb on input line 22.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 52--54
+Underfull \hbox (badness 10000) in paragraph at lines 53--55
 
  []
 
@@ -767,80 +773,81 @@ Underfull \hbox (badness 10000) in paragraph at lines 52--54
 {C:/Users/Sjager/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 63.
+(mdframed)              on input line 64.
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--72
+Underfull \hbox (badness 10000) in paragraph at lines 69--73
 
  []
 
-<img/Pascal_triangle.png, id=13, 384.43625pt x 209.78375pt>
+<img/Pascal_triangle.png, id=14, 384.43625pt x 209.78375pt>
 File: img/Pascal_triangle.png Graphic file (type png)
 <use img/Pascal_triangle.png>
-Package pdftex.def Info: img/Pascal_triangle.png  used on input line 90.
+Package pdftex.def Info: img/Pascal_triangle.png  used on input line 91.
 (pdftex.def)             Requested size: 384.4353pt x 209.78322pt.
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 93--99
+Underfull \hbox (badness 10000) in paragraph at lines 94--100
 
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 100.
+(mdframed)              on input line 101.
 
-Underfull \hbox (badness 10000) in paragraph at lines 105--108
+Underfull \hbox (badness 10000) in paragraph at lines 106--109
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 105--108
+Underfull \hbox (badness 10000) in paragraph at lines 106--109
 
  []
 
 [3 <./img/Pascal_triangle.png>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 115.
+(mdframed)              on input line 116.
 
-Underfull \hbox (badness 10000) in paragraph at lines 120--121
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 125--126
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--138
+Underfull \hbox (badness 10000) in paragraph at lines 126--127
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 136--139
 
  []
 
 [4] (calc.aux) ) 
 Here is how much of TeX's memory you used:
- 15360 strings out of 492895
- 272450 string characters out of 3133476
+ 15384 strings out of 492895
+ 273154 string characters out of 3133476
  331646 words of memory out of 3000000
- 19145 multiletter control sequences out of 15000+200000
- 545260 words of font info for 60 fonts, out of 3000000 for 9000
+ 19163 multiletter control sequences out of 15000+200000
+ 547228 words of font info for 63 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  47i,7n,65p,874b,317s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/l
 h-t2a/dpi600\labx1200.pk> <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/lj
 four/lh/lh-t2a/dpi600\larm1200.pk> <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fo
-nts/pk/ljfour/lh/lh-t2a/dpi600\labx1440.pk> <C:\Users\Sjager\AppData\Local\MiKT
-eX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1728.pk> <C:\Users\Sjager\AppData\L
-ocal\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1440.pk> <C:\Users\Sjager\
-AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm2074.pk><C:/Progr
-am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-msy8.pfb>
-Output written on calc.pdf (4 pages, 169035 bytes).
+nts/pk/ljfour/lh/lh-t2a/dpi600\lass1200.pk> <C:\Users\Sjager\AppData\Local\MiKT
+eX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1440.pk> <C:\Users\Sjager\AppData\L
+ocal\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1728.pk> <C:\Users\Sjager\
+AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1440.pk> <C:\User
+s\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass2074.pk>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmsy8.pfb>
+Output written on calc.pdf (4 pages, 169010 bytes).
 PDF statistics:
- 263 PDF objects out of 1000 (max. 8388607)
+ 271 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

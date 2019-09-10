@@ -1,10 +1,15 @@
 \documentclass[a4paper, 12pt]{article}
 
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{mdframed}
 \usepackage { amsmath , amssymb , amsthm }
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english,russian]{babel}
-\usepackage{framed}
+
+\graphicspath{{img/}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
 
 
 \title{Алгебра и аналит геометрия }
@@ -12,6 +17,7 @@
 \date{\today}
 
 \begin{document}
+\sffamily
 \maketitle
 \section{Лекция 1}
 \subsection{Векторы}
@@ -46,9 +52,9 @@
 3. $  1 \vec{a} = \vec{a} $\\
 4. $  \forall \vec{a} \quad\forall \alpha p \in R  \quad(\alpha p)\vec{a}= \alpha p\vec{a}$\\
 5. $  -\vec{a} = -1\vec{a} $\\
-\begin{framed}
-Теорема: Ненулевые $ \vec{a} $ и $ \vec{b} $ коллинеарны когда и только тогда когда существует дествительное число $ \alpha $ такое что $ \vec{a} = \alpha\vec{b} $ ($\vec{a}|\vec{b} \Leftrightarrow \exists \alpha \vec{a} = \alpha\vec{b}$).
-\end{framed}
+\begin{mdframed}[backgroundcolor=blue!20] 
+       Теорема: Ненулевые $ \vec{a} $ и $ \vec{b} $ коллинеарны когда и только тогда когда существует дествительное число $ \alpha $ такое что $ \vec{a} = \alpha\vec{b} $ ($\vec{a}|\vec{b} \Leftrightarrow \exists \alpha \vec{a} = \alpha\vec{b}$).
+    \end{mdframed}
 
 
 \subsection*{Литература}

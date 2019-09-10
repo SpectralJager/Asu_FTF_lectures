@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.23)  10 SEP 2019 11:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.23)  10 SEP 2019 16:21
 entering extended mode
 **E:/Asu_FTF_lectures/eng_graph/eng_graph.tex
 (E:/Asu_FTF_lectures/eng_graph/eng_graph.tex
@@ -44,7 +44,7 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
-(C:\Users\Unkn\AppData\Roaming\MiKTeX\2.9\tex/latex/xcolor\xcolor.sty
+(C:\Users\Sjager\AppData\Roaming\MiKTeX\2.9\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\color.cfg"
@@ -61,7 +61,7 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-(C:\Users\Unkn\AppData\Roaming\MiKTeX\2.9\tex/latex/mdframed\mdframed.sty
+(C:\Users\Sjager\AppData\Roaming\MiKTeX\2.9\tex/latex/mdframed\mdframed.sty
 Package: mdframed 2013/07/01 1.9b: mdframed
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\kvoptions.sty"
@@ -83,12 +83,12 @@ Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 ))))
-(C:\Users\Unkn\AppData\Roaming\MiKTeX\2.9\tex/latex/l3packages/xparse\xparse.st
-y (C:\Users\Unkn\AppData\Roaming\MiKTeX\2.9\tex/latex/l3kernel\expl3.sty
-Package: expl3 2019-09-05 L3 programming layer (loader) 
+(C:\Users\Sjager\AppData\Roaming\MiKTeX\2.9\tex/latex/l3packages/xparse\xparse.
+sty (C:\Users\Sjager\AppData\Roaming\MiKTeX\2.9\tex/latex/l3kernel\expl3.sty
+Package: expl3 2019-08-25 L3 programming layer (loader) 
 
-(C:\Users\Unkn\AppData\Roaming\MiKTeX\2.9\tex/latex/l3kernel\expl3-code.tex
-Package: expl3 2019-09-05 L3 programming layer (code)
+(C:\Users\Sjager\AppData\Roaming\MiKTeX\2.9\tex/latex/l3kernel\expl3-code.tex
+Package: expl3 2019-08-25 L3 programming layer (code)
 \c_max_int=\count88
 \l_tmpa_int=\count89
 \l_tmpb_int=\count90
@@ -236,13 +236,14 @@ Package: expl3 2019-09-05 L3 programming layer (code)
 \l__coffin_display_offset_dim=\dimen134
 \l__coffin_display_x_dim=\dimen135
 \l__coffin_display_y_dim=\dimen136
-\g__char_data_ior=\read1
+\g__file_internal_ior=\read1
 \l__seq_internal_a_int=\count173
 \l__seq_internal_b_int=\count174
 )
-(C:\Users\Unkn\AppData\Roaming\MiKTeX\2.9\tex/latex/l3backend\l3backend-pdfmode
-.def
-File: l3backend-pdfmode.def 2019-04-06 v L3 backend support: PDF mode
+(C:\Users\Sjager\AppData\Roaming\MiKTeX\2.9\tex/latex/l3backend\l3backend-pdfmo
+de.def
+File: l3backend-pdfmode.def 2019-04-06 v L3 Experimental backend support: PDF m
+ode
 \l__kernel_color_stack_int=\count175
 \l__pdf_internal_box=\box45
 ))
@@ -252,7 +253,7 @@ Package: xparse 2019-05-28 L3 Experimental document command parser
 \l__xparse_m_args_int=\count178
 \l__xparse_v_nesting_int=\count179
 )
-(C:\Users\Unkn\AppData\Roaming\MiKTeX\2.9\tex/latex/etoolbox\etoolbox.sty
+(C:\Users\Sjager\AppData\Roaming\MiKTeX\2.9\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count180
 )
@@ -290,7 +291,7 @@ Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
 \c@abspage=\count181
 Package zref Info: New property: abspage on input line 62.
 )
-(C:\Users\Unkn\AppData\Roaming\MiKTeX\2.9\tex/latex/needspace\needspace.sty
+(C:\Users\Sjager\AppData\Roaming\MiKTeX\2.9\tex/latex/needspace\needspace.sty
 Package: needspace 2010/09/12 v1.3d reserve vertical space
 )
 \mdf@templength=\skip49
@@ -335,7 +336,7 @@ Package: needspace 2010/09/12 v1.3d reserve vertical space
 \mdf@subsubtitleinneraboveskip@length=\skip87
 \mdf@subsubtitleinnerbelowskip@length=\skip88
 
-(C:\Users\Unkn\AppData\Roaming\MiKTeX\2.9\tex/latex/mdframed\md-frame-0.mdf
+(C:\Users\Sjager\AppData\Roaming\MiKTeX\2.9\tex/latex/mdframed\md-frame-0.mdf
 File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 )
 \mdf@frametitlebox=\box46
@@ -381,8 +382,7 @@ File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 \c@mdf@env@ii=\count186
 \c@mdf@zref@counter=\count187
 Package zref Info: New property: mdf@pagevalue on input line 895.
-)
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsmath.sty"
+) ("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsmath.sty"
 Package: amsmath 2018/12/01 v2.17b AMS math features
 \@mathmargin=\skip116
 
@@ -680,7 +680,7 @@ File: switch.def 2019/07/19 3.33 Babel switching mechanism
 *************************************
 * Local config file bblopts.cfg used
 *
-(C:\Users\Unkn\AppData\Roaming\MiKTeX\2.9\tex/latex/arabi\bblopts.cfg
+(C:\Users\Sjager\AppData\Roaming\MiKTeX\2.9\tex/latex/arabi\bblopts.cfg
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
@@ -699,7 +699,8 @@ File: babel.def 2019/07/19 3.33 Babel common definitions
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
 )
-(C:\Users\Unkn\AppData\Roaming\MiKTeX\2.9\tex/latex/babel-russian\russianb.ldf
+(C:\Users\Sjager\AppData\Roaming\MiKTeX\2.9\tex/latex/babel-russian\russianb.ld
+f
 Language: russian 2017/08/12 1.3j Russian support for the Babel system
 Package babel Info: Making " an active character on input line 120.
 Package babel Info: Default for \cyrdash is provided on input line 157.
@@ -721,7 +722,7 @@ LaTeX Font Info:    ... okay on input line 19.
 LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 19.
 LaTeX Font Info:    ... okay on input line 19.
 
-(C:\Users\Unkn\AppData\Roaming\MiKTeX\2.9\tex/context/base/mkii\supp-pdf.mkii
+(C:\Users\Sjager\AppData\Roaming\MiKTeX\2.9\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count268
 \scratchdimen=\dimen147
@@ -747,72 +748,79 @@ Package grfext Info: Graphics extension search list:
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 \AtBeginShipoutBox=\box54
-LaTeX Font Info:    Try loading font information for U+msa on input line 20.
+LaTeX Font Info:    Try loading font information for T2A+cmss on input line 20.
+
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/cyrillic\t2acmss.fd"
+File: t2acmss.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 21.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 20.
+LaTeX Font Info:    Try loading font information for U+msb on input line 21.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (12.18182pt too wide) in paragraph at lines 24--31
-\T2A/cmr/m/n/12 1. Воз-мож-ность вза-и-мо-об-ме-на кон-струк-тор-ской до-ку-мен
--та-ции меж-ду пред-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 24--31
+Underfull \hbox (badness 10000) in paragraph at lines 25--32
 
  []
 
 [1
 
-{C:/Users/Unkn/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-<img/eng1.png, id=9, 389.95688pt x 173.89969pt>
+{C:/Users/Sjager/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+<img/eng1.png, id=10, 389.95688pt x 173.89969pt>
 File: img/eng1.png Graphic file (type png)
 <use img/eng1.png>
-Package pdftex.def Info: img/eng1.png  used on input line 36.
+Package pdftex.def Info: img/eng1.png  used on input line 37.
 (pdftex.def)             Requested size: 389.95592pt x 173.89925pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 35--38
+Overfull \hbox (1.07803pt too wide) in paragraph at lines 36--39
+\T2A/cmss/m/n/12 Для по-лу-че-ния цен-траль-ных про-ек-ций необ-хо-ди-мо за-дат
+ь-ся плос-ко-стью про-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--39
 
  []
 
 [2 <./img/eng1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 48--49
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--56
+Underfull \hbox (badness 10000) in paragraph at lines 51--57
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 57--59
+Underfull \hbox (badness 10000) in paragraph at lines 58--60
 
  []
 
 [3] (eng_graph.aux) ) 
 Here is how much of TeX's memory you used:
- 15375 strings out of 492895
- 273038 string characters out of 3133482
- 330945 words of memory out of 3000000
- 19170 multiletter control sequences out of 15000+200000
- 540094 words of font info for 42 fonts, out of 3000000 for 9000
+ 15363 strings out of 492895
+ 272963 string characters out of 3133476
+ 330619 words of memory out of 3000000
+ 19150 multiletter control sequences out of 15000+200000
+ 542062 words of font info for 45 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  47i,6n,65p,1044b,317s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Unkn\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/l
-h/lh-t2a/dpi600\labx1440.pk> <C:\Users\Unkn\AppData\Local\MiKTeX\2.9\fonts/pk/l
-jfour/lh/lh-t2a/dpi600\larm1200.pk> <C:\Users\Unkn\AppData\Local\MiKTeX\2.9\fon
-ts/pk/ljfour/lh/lh-t2a/dpi600\labx1728.pk> <C:\Users\Unkn\AppData\Local\MiKTeX\
-2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1440.pk> <C:\Users\Unkn\AppData\Local\
-MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm2074.pk>
-Output written on eng_graph.pdf (3 pages, 96924 bytes).
+ <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour
+/lh/lh-t2a/dpi600\labx1440.pk> <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/
+pk/ljfour/lh/lh-t2a/dpi600\larm1200.pk> <C:\Users\Sjager\AppData\Local\MiKTeX\2
+.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1200.pk> <C:\Users\Sjager\AppData\Local
+\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1728.pk> <C:\Users\Sjager\AppD
+ata\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1440.pk> <C:\Users\Sj
+ager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass2074.pk>
+Output written on eng_graph.pdf (3 pages, 96605 bytes).
 PDF statistics:
- 166 PDF objects out of 1000 (max. 8388607)
+ 173 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

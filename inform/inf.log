@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.23)  10 SEP 2019 10:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.23)  10 SEP 2019 16:22
 entering extended mode
 **E:/Asu_FTF_lectures/inform/inf.tex
 (E:/Asu_FTF_lectures/inform/inf.tex
@@ -748,12 +748,18 @@ Package grfext Info: Graphics extension search list:
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 \AtBeginShipoutBox=\box54
-LaTeX Font Info:    Try loading font information for U+msa on input line 20.
+LaTeX Font Info:    Try loading font information for T2A+cmss on input line 20.
+
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/cyrillic\t2acmss.fd"
+File: t2acmss.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 21.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 20.
+LaTeX Font Info:    Try loading font information for U+msb on input line 21.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -762,21 +768,22 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {C:/Users/Sjager/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (inf.aux) 
 ) 
 Here is how much of TeX's memory you used:
- 15322 strings out of 492895
- 271974 string characters out of 3133476
+ 15344 strings out of 492895
+ 272654 string characters out of 3133476
  329586 words of memory out of 3000000
- 19120 multiletter control sequences out of 15000+200000
- 539276 words of font info for 41 fonts, out of 3000000 for 9000
+ 19137 multiletter control sequences out of 15000+200000
+ 540438 words of font info for 43 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  47i,6n,65p,875b,317s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\la
 rm1200.pk> <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/
-dpi600\labx1728.pk> <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/l
-h/lh-t2a/dpi600\larm1440.pk> <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk
-/ljfour/lh/lh-t2a/dpi600\larm2074.pk>
-Output written on inf.pdf (1 page, 36498 bytes).
+dpi600\lass1200.pk> <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/l
+h/lh-t2a/dpi600\labx1728.pk> <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk
+/ljfour/lh/lh-t2a/dpi600\lass1440.pk> <C:\Users\Sjager\AppData\Local\MiKTeX\2.9
+\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass2074.pk>
+Output written on inf.pdf (1 page, 35718 bytes).
 PDF statistics:
- 113 PDF objects out of 1000 (max. 8388607)
+ 118 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
