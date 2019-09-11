@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.23)  10 SEP 2019 16:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.23)  11 SEP 2019 16:01
 entering extended mode
 **E:/Asu_FTF_lectures/Lin_alg/Lin_alg.tex
 (E:/Asu_FTF_lectures/Lin_alg/Lin_alg.tex
@@ -786,15 +786,25 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 55.
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--73
+Underfull \hbox (badness 10000) in paragraph at lines 73--78
 
  []
 
-[2] (Lin_alg.aux) ) 
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 81.
+[2]
+Package mdframed Info: Not enough space on this page on input line 85.
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--120
+
+ []
+
+[3] (Lin_alg.aux) ) 
 Here is how much of TeX's memory you used:
  15375 strings out of 492895
  273044 string characters out of 3133476
- 333662 words of memory out of 3000000
+ 334662 words of memory out of 3000000
  19158 multiletter control sequences out of 15000+200000
  546409 words of font info for 62 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -807,11 +817,13 @@ iKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1728.pk> <C:\Users\Sjager\AppDat
 a\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1440.pk> <C:\Users\Sjag
 er\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass2074.pk><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Lin_alg.pdf (2 pages, 83301 bytes).
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb>
+Output written on Lin_alg.pdf (3 pages, 104251 bytes).
 PDF statistics:
- 182 PDF objects out of 1000 (max. 8388607)
+ 199 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
