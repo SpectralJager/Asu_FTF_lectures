@@ -131,7 +131,100 @@ sgn x = $ \{ 1 \quad x>0 \quad 0 \quad x=0\} $\\
 если для любого эпсилон больше нуля найдется число $ n_0 $ такое что все точки $ x_n $ с индексами $  n > n_0$ попадут в $ \epsilon $окресность точки а. Вне любой окресности точки а имеется конечная или пустое множество точек $ x_n $.
 
 
+\section*{Лекция 2}
+%дописать T1.
 
+\begin{mdframed}[backgroundcolor=blue!20] 
+       Теорема 1: Если последовательность $  {x_n}$имеет конечный предел, то он единственный.\\
+       Док-во: ${x_n}$ имеет два различных предела а и b.\\ расмотрим окресность cd, тк  $  x_n \to a$ , то ляляля, тогда в интервале не может содержаться бесконечное число элементов, те последовательность $  {x_n}$ не может стремится к b.\\ \\
+       Теорема 2: Если последовательность сходится(имеет прредел), то она ограничена.
+       Опр: если $ |x_n| \leq M, \quad  M = const$ ,то $  {x_n}$ наз ограниченной\\ \\ 
+          Теорема 3(придельный переход в неравенствах):\\
+         а) Если $  x_n \to a, \quad y_n \to b, \quad a < b$, то $  \exists n_0^\forall n>n_0 \quad x_n < y_n$\\
+         б) Если $  x_n \to a, \quad y_n \to b,\quad x_n \leq y_n \quad \forall n, $ то $ a \leq b $ \\ \\ 
+       Теорема 4(принцiп "двух милиционеров"):\\
+       Если $  x_n \to a, \quad y_n \to a \quad and \quad x_n \leq z_n \leq y_n \quad \forall n \in N \quad then \quad z_n \to a$ \\ \\
+       Теорема 5(Арифметические свойства приделов):\\
+       1) $ \lim_{n\to inf} c = c, \quad c = const  $\\
+       2) $  if \quad \exists \quad ending \quad \lim_{n\to inf} x_n = a, \quad \lim_{n\to inf} y_n = b \quad then \quad  $ существуют приделы их суммы, разности , произведения, частного($  b \neq 0$):\\
+       	\[a)   \lim_{n\to inf} (x_n \pm y_n) = a + b\] 
+       	\[b)   \lim_{n\to inf} (x_n y_n) = ab \]
+       \[	c)   \lim_{n\to inf} \left(\frac{x_n}{y_n}\right) = \frac{a}{b},\quad where \quad b\neq 0 \]
+
+       Определение: $ {x_n} $ называется бесконечно малой если предел последовательности равен 0\\
+       
+       Определение: $ {y_n} $ называется бесконечно большой если предел последовательности равен бесконечности \[
+       	\forall \epsilon > 0 \quad \exists n_0 : \quad \forall n > n_0 \quad |y_n| > \epsilon
+       \]
+       Свойства:\\
+       1) произведение бесконечно малой на ограниченное является бесконечно малой\\
+    \end{mdframed}
+
+\subsection{Параграф 2. Предел функции}
+-- Функцией называется закон по которому каждому x из некоторово множества D соответствует единственное значение y из множества E\\
+\[
+ y = f(x)	
+\]
+\[
+ f: D \to E	
+\]
+где x -- независсимая переменная, аргумент\\
+y -- зависимая переменная\\
+D -- область определения\\
+E -- область значения\\
+
+
+       Определение предела функции\\
+       1. по Коши\' (с помощью окресности):
+       \[
+        \lim_{x\to 0} f(x)  = A \quad \Leftrightarrow \quad \forall \cup_\epsilon (A) \quad \exists \cup_\epsilon (x_0)  \quad \forall x \in \cup_\epsilon (x_0) \quad \Rightarrow \quad f(x) \in \cup_\epsilon (A)	
+        \] 
+
+        с помощью неравенства:\\$
+        a) x_0, A - ending \quad \lim_{x\to x_0} f(x) = (A) \Leftrightarrow \quad \forall \epsilon > 0 \quad \exists b > 0: \quad 0 < |x-x_0| < b \Rightarrow \quad |f(x) - A| < \epsilon 	
+        $\\
+        $
+        b)x_0 - ending, A = +inf \quad \lim_{x\to x_0} f(x) = +inf \Leftrightarrow \quad \forall \epsilon > 0 \quad \exists \delta > 0 : \quad |x-x_0|< \delta \Rightarrow \quad f(x) > \epsilon 	
+        $\\
+        $
+        c)x_0 - ending, A = -inf \quad \lim_{x\to x_0} f(x) = -inf \Leftrightarrow \quad \forall \epsilon > 0 \quad \exists \delta > 0 : \quad |x-x_0|< \delta \Rightarrow \quad f(x) < - \epsilon	
+        $\\
+        $
+        d)x_0 - ending, A = inf \quad \lim_{x\to x_0} f(x) = inf \Leftrightarrow \quad \forall \epsilon > 0 \quad \exists \delta > 0 :\\ |x|> \delta \Rightarrow \quad |f(x)-A| <  \epsilon	
+        $
+
+        2) по Гейне(с помощью предела последовательности):\\
+        $
+        A = \lim_{x\to x_0} f(x) \Leftrightarrow \quad \forall {x_n} \to x_0 \quad n \to inf, \quad {x_n} \neq x_0	
+        $\\
+        Соответсвующая последовательность значений функции\\ ${f(x_n)} \to A \quad n \to inf$
+
+\begin{mdframed}[backgroundcolor=blue!20] 
+       Теорема 1(Арифметические свойства пределов функции): \\
+       Пусть существует конечные пределы функции \[
+       	\lim_{x\to x_0} f(x) = A, \quad \lim_{x\to x_0} g(x) = B
+       \]
+
+       тогда предел суммы(разности) равен пределу суммы(разности)\\
+       произведения = произведению\\
+       частного = частному\\
+       ограниченна в некоторых окресностях точки $ x_0 $\\ \\ 
+
+       Теорема 2 (предельный переход в неравенство):\\
+       \[
+       		\lim_{x\to x_0} f(x) = A, \quad \lim_{x\to x_0} g(x) = B, \quad \exists \cup(x_0),f(x)<g(x) \quad f(x) \in \cup(x_0)
+       \]
+
+       
+
+
+    \end{mdframed}
+
+
+
+
+
+\newpage
 \subsection*{Литература}
 Кудрявцев А.Д Курс математического анализа\\
 Фихтенгольц Г.М Основы математического анализа\\

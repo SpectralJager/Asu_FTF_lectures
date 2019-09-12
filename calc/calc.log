@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.23)  11 SEP 2019 23:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.23)  12 SEP 2019 23:59
 entering extended mode
 **E:/Asu_FTF_lectures/calc/calc.tex
 (E:/Asu_FTF_lectures/calc/calc.tex
@@ -816,17 +816,84 @@ Underfull \hbox (badness 10000) in paragraph at lines 126--127
 
  []
 
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 137.
 
-Underfull \hbox (badness 10000) in paragraph at lines 136--139
+Underfull \hbox (badness 10000) in paragraph at lines 138--150
 
  []
 
-[4] (calc.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 138--150
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 138--150
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 138--150
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 138--150
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--161
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--175
+
+ []
+
+[5]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 202.
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--212
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--212
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 213--214
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 229--232
+
+ []
+
+[7] (calc.aux) ) 
 Here is how much of TeX's memory you used:
- 15384 strings out of 492895
- 273154 string characters out of 3133476
- 331646 words of memory out of 3000000
- 19163 multiletter control sequences out of 15000+200000
+ 15391 strings out of 492895
+ 273247 string characters out of 3133476
+ 339646 words of memory out of 3000000
+ 19170 multiletter control sequences out of 15000+200000
  547228 words of font info for 63 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  47i,7n,65p,874b,317s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -842,12 +909,13 @@ s\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass2074.pk>
 ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program File
 s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmsy8.pfb>
-Output written on calc.pdf (4 pages, 169018 bytes).
+/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+sy8.pfb>
+Output written on calc.pdf (7 pages, 191657 bytes).
 PDF statistics:
- 271 PDF objects out of 1000 (max. 8388607)
+ 302 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
