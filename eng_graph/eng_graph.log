@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.23)  11 SEP 2019 23:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.23)  16 SEP 2019 19:48
 entering extended mode
 **E:/Asu_FTF_lectures/eng_graph/eng_graph.tex
 (E:/Asu_FTF_lectures/eng_graph/eng_graph.tex
@@ -802,25 +802,122 @@ Underfull \hbox (badness 10000) in paragraph at lines 58--60
 
  []
 
-[3] (eng_graph.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--69
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 71--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--78
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
+
+ []
+
+
+Overfull \hbox (3.99113pt too wide) in paragraph at lines 81--82
+[]\T2A/cmss/m/n/12 Горизонтальные про-ек-ции точ-ки на-зы-ва-ют пря-мо-уголь-ну
+ю про-ек-цию точ-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--88
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--92
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--103
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--111
+
+ []
+
+
+Overfull \hbox (2.20358pt too wide) in paragraph at lines 113--116
+\T2A/cmss/m/n/12 3. па-рал-лель-на двум плос-ко-стям про-ек-ции и пер-пен-ди-ку
+-ляр-на тре-тей(прямая
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--116
+
+ []
+
+
+Overfull \hbox (15.2481pt too wide) in paragraph at lines 117--120
+\T2A/cmss/m/n/12 ет-ся про-еци-ру-ю-щей для этой плос-ко-сти(горизонтально,фрон
+тально,профильно
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--120
+
+ []
+
+[5] [6] (eng_graph.aux) ) 
 Here is how much of TeX's memory you used:
- 15363 strings out of 492895
- 272963 string characters out of 3133476
- 330619 words of memory out of 3000000
- 19150 multiletter control sequences out of 15000+200000
- 542062 words of font info for 45 fonts, out of 3000000 for 9000
+ 15389 strings out of 492895
+ 273243 string characters out of 3133476
+ 331619 words of memory out of 3000000
+ 19168 multiletter control sequences out of 15000+200000
+ 547234 words of font info for 63 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 47i,6n,65p,1044b,317s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour
-/lh/lh-t2a/dpi600\labx1440.pk> <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/
-pk/ljfour/lh/lh-t2a/dpi600\larm1200.pk> <C:\Users\Sjager\AppData\Local\MiKTeX\2
-.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1200.pk> <C:\Users\Sjager\AppData\Local
-\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1728.pk> <C:\Users\Sjager\AppD
-ata\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1440.pk> <C:\Users\Sj
-ager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass2074.pk>
-Output written on eng_graph.pdf (3 pages, 96606 bytes).
+ 47i,6n,65p,1165b,317s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/lj
+four/lh/lh-t2a/dpi600\lasx1200.pk> <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fo
+nts/pk/ljfour/lh/lh-t2a/dpi600\labx1440.pk> <C:\Users\Sjager\AppData\Local\MiKT
+eX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1200.pk> <C:\Users\Sjager\AppData\L
+ocal\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1200.pk> <C:\Users\Sjager\
+AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1728.pk> <C:\User
+s\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1440.pk>
+ <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\las
+s2074.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on eng_graph.pdf (6 pages, 151238 bytes).
 PDF statistics:
- 173 PDF objects out of 1000 (max. 8388607)
+ 274 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
