@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.23)  16 SEP 2019 19:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.23)  23 SEP 2019 19:40
 entering extended mode
 **E:/Asu_FTF_lectures/eng_graph/eng_graph.tex
 (E:/Asu_FTF_lectures/eng_graph/eng_graph.tex
@@ -895,7 +895,69 @@ Underfull \hbox (badness 10000) in paragraph at lines 117--120
 
  []
 
-[5] [6] (eng_graph.aux) ) 
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 125--126
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--134
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--146
+
+ []
+
+[6]
+Overfull \hbox (16.59494pt too wide) in paragraph at lines 147--151
+\T2A/cmss/m/n/12 2)плоскость мо-жет быть пер-пен-ди-ку-ляр-на од-ной плос-ко-ст
+и про-ек-ции(плоскости
+ []
+
+
+Overfull \hbox (18.94159pt too wide) in paragraph at lines 147--151
+\T2A/cmss/m/n/12 3)плоскость мо-жет быть пер-пен-ди-ку-ляр-на двум плос-ко-стям
+ про-ек-ции(плоскости
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--151
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--158
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--165
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
+
+ []
+
+[8] (eng_graph.aux) ) 
 Here is how much of TeX's memory you used:
  15389 strings out of 492895
  273243 string characters out of 3133476
@@ -903,21 +965,22 @@ Here is how much of TeX's memory you used:
  19168 multiletter control sequences out of 15000+200000
  547234 words of font info for 63 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 47i,6n,65p,1165b,317s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/lj
-four/lh/lh-t2a/dpi600\lasx1200.pk> <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fo
-nts/pk/ljfour/lh/lh-t2a/dpi600\labx1440.pk> <C:\Users\Sjager\AppData\Local\MiKT
-eX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1200.pk> <C:\Users\Sjager\AppData\L
-ocal\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1200.pk> <C:\Users\Sjager\
-AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1728.pk> <C:\User
-s\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1440.pk>
- <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\las
-s2074.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on eng_graph.pdf (6 pages, 151238 bytes).
+ 47i,6n,65p,1311b,317s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour
+/lh/lh-t2a/dpi600\lasx1200.pk> <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/
+pk/ljfour/lh/lh-t2a/dpi600\labx1440.pk> <C:\Users\Sjager\AppData\Local\MiKTeX\2
+.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1200.pk> <C:\Users\Sjager\AppData\Local
+\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1200.pk> <C:\Users\Sjager\AppD
+ata\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1728.pk> <C:\Users\Sj
+ager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1440.pk> <C:
+\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass207
+4.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on eng_graph.pdf (8 pages, 167081 bytes).
 PDF statistics:
- 274 PDF objects out of 1000 (max. 8388607)
+ 297 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

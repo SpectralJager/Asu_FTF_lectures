@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.23)  16 SEP 2019 18:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.23)  23 SEP 2019 18:08
 entering extended mode
 **E:/Asu_FTF_lectures/inform/inf.tex
 (E:/Asu_FTF_lectures/inform/inf.tex
@@ -826,12 +826,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
  []
 
-[3] (inf.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--106
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 110--114
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
+
+ []
+
+[4] (inf.aux) ) 
 Here is how much of TeX's memory you used:
- 15372 strings out of 492895
- 272969 string characters out of 3133476
+ 15379 strings out of 492895
+ 273062 string characters out of 3133476
  331586 words of memory out of 3000000
- 19157 multiletter control sequences out of 15000+200000
+ 19164 multiletter control sequences out of 15000+200000
  545610 words of font info for 61 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  47i,6n,65p,875b,317s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -848,9 +878,9 @@ MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2
 type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
 lic/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
 ts/cm/cmsy10.pfb>
-Output written on inf.pdf (3 pages, 117744 bytes).
+Output written on inf.pdf (4 pages, 124497 bytes).
 PDF statistics:
- 225 PDF objects out of 1000 (max. 8388607)
+ 243 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
