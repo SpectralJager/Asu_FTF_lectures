@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.23)  17 SEP 2019 14:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.23)  24 SEP 2019 14:38
 entering extended mode
 **E:/Asu_FTF_lectures/Р¤РёР·СЂР°/1.tex
 (E:/Asu_FTF_lectures/Р¤РёР·СЂР°/1.tex
@@ -811,12 +811,59 @@ Underfull \hbox (badness 10000) in paragraph at lines 61--64
 
  []
 
-[3] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 77--79
+[3]
+Overfull \hbox (0.22495pt too wide) in paragraph at lines 74--74
+[]\T2A/cmr/bx/n/14.4 Комплексное воз-дей-ствие фак-то-ров сре-ды на фи-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--82
 
  []
 
-[5] (1.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--84
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--86
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--88
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 89--90
+
+ []
+
+
+Overfull \hbox (19.33757pt too wide) in paragraph at lines 91--92
+\T2A/cmss/m/n/12 ние жиз-не-ных си-стем в от-вет на лю-бые из-ме-не-ния окру-жа
+-ю-щей сре-ды(перепады
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--92
+
+ []
+
+
+Overfull \hbox (71.84642pt too wide) in paragraph at lines 93--95
+\T2A/cmss/m/n/12 ских по-ня-тий(организм, клет-ка,хромосомы,цитоплазма,рибосомы
+,цитолема,метахондрии,
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 107--109
+
+ []
+
+[6] (1.aux) ) 
 Here is how much of TeX's memory you used:
  15362 strings out of 492895
  272884 string characters out of 3133476
@@ -824,7 +871,7 @@ Here is how much of TeX's memory you used:
  19150 multiletter control sequences out of 15000+200000
  543706 words of font info for 47 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 47i,6n,65p,1480b,317s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 47i,6n,65p,1685b,317s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t
 2a/dpi600\labx1440.pk> <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfou
 r/lh/lh-t2a/dpi600\labx1200.pk> <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts
@@ -835,9 +882,9 @@ Data\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1728.pk> <C:\Users\S
 jager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1440.pk> <C
 :\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass20
 74.pk>
-Output written on 1.pdf (5 pages, 67833 bytes).
+Output written on 1.pdf (6 pages, 86246 bytes).
 PDF statistics:
- 216 PDF objects out of 1000 (max. 8388607)
+ 263 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
