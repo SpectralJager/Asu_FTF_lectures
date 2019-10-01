@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.23)  24 SEP 2019 14:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.23)  1 OCT 2019 14:32
 entering extended mode
 **E:/Asu_FTF_lectures/Р¤РёР·СЂР°/1.tex
 (E:/Asu_FTF_lectures/Р¤РёР·СЂР°/1.tex
@@ -853,13 +853,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 91--92
  []
 
 
-Overfull \hbox (71.84642pt too wide) in paragraph at lines 93--95
-\T2A/cmss/m/n/12 ских по-ня-тий(организм, клет-ка,хромосомы,цитоплазма,рибосомы
-,цитолема,метахондрии,
+Overfull \hbox (46.67899pt too wide) in paragraph at lines 93--95
+\T2A/cmss/m/n/12 по-ня-тий(организм, клет-ка,хромосомы,цитоплазма,рибосомы,цито
+лема,метахондрии,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--95
+
+ []
+
+
+Overfull \hbox (27.68803pt too wide) in paragraph at lines 98--101
+\T2A/cmss/m/n/12 С точ-ки зре-ния медико-биологических по-зи-ций вли-я-ние соци
+ально-экологических
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--101
+
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 107--109
+Underfull \hbox (badness 10000) in paragraph at lines 118--120
 
  []
 
@@ -882,9 +898,9 @@ Data\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1728.pk> <C:\Users\S
 jager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1440.pk> <C
 :\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass20
 74.pk>
-Output written on 1.pdf (6 pages, 86246 bytes).
+Output written on 1.pdf (6 pages, 87689 bytes).
 PDF statistics:
- 263 PDF objects out of 1000 (max. 8388607)
+ 265 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
