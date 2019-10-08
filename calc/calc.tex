@@ -406,14 +406,80 @@ $ \alpha (x)\quad \beta (x) $ назыв эквивалентными б.м ог
 \end{align*}
 
 \subsubsection{интерпретации производной}
-Геометрическая:\\
+1)Геометрическая:\\
 
+\includegraphics{img/dif.png}\\
+$ AB  $ -- секущая(при $ \Delta x  \to 0$ называется касательной) \\
+$ \Delta x \to 0 \Rightarrow \beta  \to \alpha  \Rightarrow \quad  \tg \beta  \to \tg \alpha  $\\
+$ \tg \beta  =  \frac{\Delta y}{\Delta x}; \quad  \tg \alpha  = f'(x) $\\
+$ y_k = f(x_0) + f'(x_0)(x - x_0) $ -- уравнение касательной\\
+$ y_n = f(x_0) - \frac{1}{f'(x_0)} - (x - x_0) $ -- уравнение нормали \\
 
-Физическая(мгновенная и средняя скорости):\\
+опр. Функция называется дифференцируемой в точку $ x_0 $  если приращение можно представить в виде $ y = A \cdot \Delta x +\alpha (\Delta x) \cdot \Delta x $,  где A незавитсамая переменная($ \Delta x \to 0 $) . 
 \[
-  s = f(t) \quad v_m = \frac{f(t + \Delta t) - f(t)}{\Delta t}
+     \Delta y = A \Delta x + o(\Delta x)
+   \]   
+   \begin{mdframed}[backgroundcolor=blue!20] 
+          Теорема 1(связь между дифференциироваемостью и существованием производной)\\
+          Для того чтобу функция $ f(x) $ была дифференциируема в точке $ x_0 $ необходимо чтобы она имела производную в точке $ x_0 $ \\
+
+          Теорема 2(связь между диф и непрерывностью)\\
+          Если f(x) диф в точке  $ x_0 $  то она непрерывна в этой точке(обратное не работает)\\
+       \end{mdframed}
+
+
+
+       
+2)Физическая(мгновенная и средняя скорости):\\
+\[
+  s = f(t) \quad v_m = \frac{f(t + \Delta t) - f(t)}{\Delta t} = \frac{\Delta f}{\Delta x}
 \]
 -- это скорость изменения функции.
+
+\subsection{Основные правила дифференциирования}
+
+\begin{align}
+  \frac{d}{dx} (c) = 0, c = const\\
+  \frac{d}{dx} (u \pm v) = u' \pm v'\\
+  \frac{d}{dx} (uv) = u'v+u v'\\
+  \frac{d}{dx} cu = c u',c=const\\
+  \frac{d}{dx} \left(\frac{u}{v}\right) = \frac{u' v - uv'}{v^2}
+\end{align}
+
+\textbf{Гиперболические функции:}\\
+% написать
+
+\subsubsection*{Понятие о частных производных}
+\[
+  f(x,y)
+\]
+\[
+  f_x' = \frac{\partial f}{\partial x} \quad y=const 
+\]
+\[
+  f_y' = \frac{\partial f}{\partial y} \quad x=const
+\]
+
+\subsection{Производная сложной функции}
+
+\begin{align}
+  \frac{d}{dx} f(u(x)) = u'(x) \cdot f'(u(x)) 
+\end{align}
+
+\subsubsection*{Производная обратной функции}
+
+\begin{align}
+  y = f(x),f'(x)\neq 0,\exists x=f^{-1}(y),\Rightarrow x_y' = \frac{1}{y_x'}
+\end{align}
+
+\subsubsection{Производная функции заданной в параметрическом виде}
+
+
+
+
+
+
+
 
 
 \newpage
