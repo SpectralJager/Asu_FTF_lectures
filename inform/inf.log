@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.23)  7 OCT 2019 19:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.23)  10 OCT 2019 13:20
 entering extended mode
 **E:/Asu_FTF_lectures/inform/inf.tex
 (E:/Asu_FTF_lectures/inform/inf.tex
@@ -916,39 +916,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 157--160
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 161--162
+Overfull \hbox (73.8771pt too wide) in paragraph at lines 161--166
+\T2A/cmss/m/n/12 <<<<<<< HEAD <<<<<<< HEAD ======= >>>>>>> f6ed9b58a2e8f1e128b1
+c1198220a0e1759fe4c9 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 163--164
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 165--168
+Underfull \hbox (badness 10000) in paragraph at lines 169--172
 
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 169.
+(mdframed)              on input line 173.
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--176
+Underfull \hbox (badness 10000) in paragraph at lines 177--180
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 184--185
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 186--187
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 188--189
 
  []
@@ -959,24 +950,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 190--191
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 192--197
+Underfull \hbox (badness 10000) in paragraph at lines 192--193
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--199
+Underfull \hbox (badness 10000) in paragraph at lines 194--195
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--201
+Underfull \hbox (badness 10000) in paragraph at lines 196--201
 
- []
-
-
-Overfull \hbox (3.87311pt too wide) in paragraph at lines 202--203
-[]\T2A/cmss/m/n/12 Стандарт раз-ло-же-ния -- опре-де-ля-ю-щая кол-во строк изоб
--ра-же-ния,частоту
  []
 
 
@@ -985,97 +970,251 @@ Underfull \hbox (badness 10000) in paragraph at lines 202--203
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--207
+Underfull \hbox (badness 10000) in paragraph at lines 204--205
+
+ []
+
+
+Overfull \hbox (3.87311pt too wide) in paragraph at lines 206--207
+[]\T2A/cmss/m/n/12 Стандарт раз-ло-же-ния -- опре-де-ля-ю-щая кол-во строк изоб
+-ра-же-ния,частоту
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--207
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--211
 
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 208.
+(mdframed)              on input line 212.
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 223--224
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--226
+Underfull \hbox (badness 10000) in paragraph at lines 229--230
 
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 227.
+(mdframed)              on input line 231.
 
-Underfull \hbox (badness 10000) in paragraph at lines 235--236
+Underfull \hbox (badness 10000) in paragraph at lines 239--240
 
  []
 
 <img/51.png, id=32, 305.26848pt x 187.902pt>
 File: img/51.png Graphic file (type png)
 <use img/51.png>
-Package pdftex.def Info: img/51.png  used on input line 237.
+Package pdftex.def Info: img/51.png  used on input line 241.
 (pdftex.def)             Requested size: 305.26773pt x 187.90154pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 237--238
+Underfull \hbox (badness 10000) in paragraph at lines 241--242
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 239--243
+Underfull \hbox (badness 10000) in paragraph at lines 243--247
 
  []
 
 [7 <./img/51.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 249--255
+Underfull \hbox (badness 10000) in paragraph at lines 253--259
 
  []
 
 <img/52.PNG, id=40, 312.78456pt x 186.74568pt>
 File: img/52.PNG Graphic file (type png)
 <use img/52.PNG>
-Package pdftex.def Info: img/52.PNG  used on input line 257.
+Package pdftex.def Info: img/52.PNG  used on input line 261.
 (pdftex.def)             Requested size: 312.78378pt x 186.74522pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 256--258
+Underfull \hbox (badness 10000) in paragraph at lines 260--262
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
+Underfull \hbox (badness 10000) in paragraph at lines 263--264
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 261--264
+Underfull \hbox (badness 10000) in paragraph at lines 265--268
 
  []
 
 [8 <./img/52.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 265--266
+Underfull \hbox (badness 10000) in paragraph at lines 269--270
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--273
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--277
+Underfull \hbox (badness 10000) in paragraph at lines 284--285
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 295--296
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 279--280
+Underfull \hbox (badness 10000) in paragraph at lines 297--300
+
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 301.
+
+Underfull \hbox (badness 10000) in paragraph at lines 305--308
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 281--287
+Underfull \hbox (badness 10000) in paragraph at lines 316--317
 
  []
 
-[9] [10] (inf.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--319
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--321
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 322--323
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 324--329
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 330--331
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 332--333
+
+ []
+
+
+Overfull \hbox (3.87311pt too wide) in paragraph at lines 334--335
+[]\T2A/cmss/m/n/12 Стандарт раз-ло-же-ния -- опре-де-ля-ю-щая кол-во строк изоб
+-ра-же-ния,частоту
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 334--335
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 336--339
+
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 340.
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 355--356
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
+
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 359.
+
+Underfull \hbox (badness 10000) in paragraph at lines 367--368
+
+ []
+
+File: img/51.png Graphic file (type png)
+<use img/51.png>
+Package pdftex.def Info: img/51.png  used on input line 369.
+(pdftex.def)             Requested size: 305.26773pt x 187.90154pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 369--370
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 371--375
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 381--387
+
+ []
+
+File: img/52.PNG Graphic file (type png)
+<use img/52.PNG>
+Package pdftex.def Info: img/52.PNG  used on input line 389.
+(pdftex.def)             Requested size: 312.78378pt x 186.74522pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--390
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--392
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 393--396
+
+ []
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 397--398
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 410--411
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--414
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 415--421
+
+ []
+
+[14] [15] (inf.aux) ) 
 Here is how much of TeX's memory you used:
  15396 strings out of 492895
  273253 string characters out of 3133476
@@ -1084,23 +1223,23 @@ Here is how much of TeX's memory you used:
  547234 words of font info for 63 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  47i,6n,65p,875b,317s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/
-lh/lh-t2a/dpi600\labx1440.pk> <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/p
-k/ljfour/lh/lh-t2a/dpi600\larm1200.pk> <C:\Users\Sjager\AppData\Local\MiKTeX\2.
-9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1200.pk> <C:\Users\Sjager\AppData\Local\
-MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lasx1200.pk> <C:\Users\Sjager\AppDa
-ta\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1728.pk> <C:\Users\Sja
-ger\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1440.pk> <C:\
-Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass2074
-.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/
-Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program 
-Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmsy10.pfb>
-Output written on inf.pdf (10 pages, 219191 bytes).
+ <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour
+/lh/lh-t2a/dpi600\labx1440.pk> <C:\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/
+pk/ljfour/lh/lh-t2a/dpi600\larm1200.pk> <C:\Users\Sjager\AppData\Local\MiKTeX\2
+.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1200.pk> <C:\Users\Sjager\AppData\Local
+\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lasx1200.pk> <C:\Users\Sjager\AppD
+ata\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1728.pk> <C:\Users\Sj
+ager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1440.pk> <C:
+\Users\Sjager\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass207
+4.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program
+ Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmsy10.pfb>
+Output written on inf.pdf (15 pages, 229324 bytes).
 PDF statistics:
- 351 PDF objects out of 1000 (max. 8388607)
+ 370 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
