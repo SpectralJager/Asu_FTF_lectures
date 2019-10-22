@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.10.14)  14 OCT 2019 19:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.10.14)  21 OCT 2019 19:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1318,12 +1318,84 @@ Underfull \hbox (badness 10000) in paragraph at lines 303--305
 
  []
 
-[28 <./img/532.png>] (./eng_graph.aux) ) 
+<img/611.png, id=160, 421.575pt x 429.605pt>
+File: img/611.png Graphic file (type png)
+<use img/611.png>
+Package pdftex.def Info: img/611.png  used on input line 308.
+(pdftex.def)             Requested size: 421.57396pt x 429.60394pt.
+
+Overfull \hbox (31.57396pt too wide) in paragraph at lines 308--309
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 308--309
+
+ []
+
+[28 <./img/532.png>]
+Overfull \hbox (1.55013pt too wide) in paragraph at lines 310--311
+\T2A/cmss/m/n/12 по-стро-е-ние чер-те-жей приз-мы пи-ра-мид-сво-дит-ся к по-стр
+о-е-нию то-чек(вершин)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--311
+
+ []
+
+[29 <./img/611.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 312--313
+
+ []
+
+<img/621.png, id=169, 313.17pt x 176.66pt>
+File: img/621.png Graphic file (type png)
+<use img/621.png>
+Package pdftex.def Info: img/621.png  used on input line 314.
+(pdftex.def)             Requested size: 313.16922pt x 176.65956pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 314--315
+
+ []
+
+<img/622.png, id=170, 395.4775pt x 401.5pt>
+File: img/622.png Graphic file (type png)
+<use img/622.png>
+Package pdftex.def Info: img/622.png  used on input line 320.
+(pdftex.def)             Requested size: 395.47653pt x 401.49901pt.
+
+Overfull \hbox (5.47653pt too wide) in paragraph at lines 320--321
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--321
+
+ []
+
+[30 <./img/621.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 324--330
+
+ []
+
+[31 <./img/622.png>]
+<img/641.png, id=180, 181.67876pt x 129.48375pt>
+File: img/641.png Graphic file (type png)
+<use img/641.png>
+Package pdftex.def Info: img/641.png  used on input line 334.
+(pdftex.def)             Requested size: 181.6783pt x 129.48341pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 333--335
+
+ []
+
+[32 <./img/641.png>] (./eng_graph.aux) ) 
 Here is how much of TeX's memory you used:
- 15558 strings out of 494027
- 275005 string characters out of 6168922
+ 15578 strings out of 494027
+ 275285 string characters out of 6168922
  337176 words of memory out of 5000000
- 19076 multiletter control sequences out of 15000+600000
+ 19092 multiletter control sequences out of 15000+600000
  548053 words of font info for 64 fonts, out of 8000000 for 9000
  430 hyphenation exceptions out of 8191
  48i,6n,63p,1277b,317s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1340,10 +1412,10 @@ pe1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmsy8.pfb>
-Output written on eng_graph.pdf (28 pages, 627496 bytes).
+Output written on eng_graph.pdf (32 pages, 705306 bytes).
 PDF statistics:
- 469 PDF objects out of 1000 (max. 8388607)
- 108 compressed objects within 2 object streams
+ 498 PDF objects out of 1000 (max. 8388607)
+ 117 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 151 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 171 words of extra memory for PDF output out of 10000 (max. 10000000)
 
