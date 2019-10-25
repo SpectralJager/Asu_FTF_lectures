@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.10.14)  15 OCT 2019 14:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.10.14)  24 OCT 2019 13:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -876,12 +876,62 @@ Underfull \hbox (badness 10000) in paragraph at lines 99--102
 
  []
 
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 112--114
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--106
 
  []
 
-[6] (./1.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 144--146
+
+ []
+
+[7] (./1.aux) ) 
 Here is how much of TeX's memory you used:
  15384 strings out of 494027
  272579 string characters out of 6168922
@@ -899,10 +949,10 @@ lass1200.600pk> </home/sjager/.texlive2019/texmf-var/fonts/pk/ljfour/lh/lh-t2a/
 labx1728.600pk> </home/sjager/.texlive2019/texmf-var/fonts/pk/ljfour/lh/lh-t2a/
 lass1440.600pk> </home/sjager/.texlive2019/texmf-var/fonts/pk/ljfour/lh/lh-t2a/
 lass2074.600pk>
-Output written on 1.pdf (6 pages, 73953 bytes).
+Output written on 1.pdf (7 pages, 78717 bytes).
 PDF statistics:
- 268 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
+ 282 PDF objects out of 1000 (max. 8388607)
+ 50 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
