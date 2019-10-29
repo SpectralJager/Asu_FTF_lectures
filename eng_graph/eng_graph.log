@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.10.14)  21 OCT 2019 19:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.10.14)  28 OCT 2019 19:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1390,32 +1390,92 @@ Underfull \hbox (badness 10000) in paragraph at lines 333--335
 
  []
 
-[32 <./img/641.png>] (./eng_graph.aux) ) 
+<img/642.png, id=181, 419.5675pt x 683.55376pt>
+File: img/642.png Graphic file (type png)
+<use img/642.png>
+Package pdftex.def Info: img/642.png  used on input line 337.
+(pdftex.def)             Requested size: 419.56647pt x 683.5521pt.
+
+Overfull \hbox (29.56647pt too wide) in paragraph at lines 336--338
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 336--338
+
+ []
+
+[32 <./img/641.png>]
+Overfull \vbox (91.5521pt too high) has occurred while \output is active []
+
+
+[33 <./img/642.png>]
+<img/643.png, id=190, 156.585pt x 214.8025pt>
+File: img/643.png Graphic file (type png)
+<use img/643.png>
+Package pdftex.def Info: img/643.png  used on input line 342.
+(pdftex.def)             Requested size: 156.58461pt x 214.80197pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 341--343
+
+ []
+
+<img/661.png, id=191, 156.585pt x 142.5325pt>
+File: img/661.png Graphic file (type png)
+<use img/661.png>
+Package pdftex.def Info: img/661.png  used on input line 345.
+(pdftex.def)             Requested size: 156.58461pt x 142.53214pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 345--347
+
+ []
+
+[34 <./img/643.png> <./img/661.png>]
+Overfull \hbox (1.98454pt too wide) in paragraph at lines 350--350
+[]\T2A/cmr/bx/n/14.4 Аксонометрические по-верх-но-сти как спо-соб пред-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--352
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 353--354
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 355--356
+
+ []
+
+[35] (./eng_graph.aux) ) 
 Here is how much of TeX's memory you used:
- 15578 strings out of 494027
- 275285 string characters out of 6168922
+ 15593 strings out of 494027
+ 275495 string characters out of 6168922
  337176 words of memory out of 5000000
- 19092 multiletter control sequences out of 15000+600000
+ 19104 multiletter control sequences out of 15000+600000
  548053 words of font info for 64 fonts, out of 8000000 for 9000
  430 hyphenation exceptions out of 8191
  48i,6n,63p,1277b,317s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/sjager/.texlive2019/texmf-var/f
-onts/pk/ljfour/lh/lh-t2a/labx1200.600pk> </home/sjager/.texlive2019/texmf-var/f
-onts/pk/ljfour/lh/lh-t2a/lasx1200.600pk> </home/sjager/.texlive2019/texmf-var/f
-onts/pk/ljfour/lh/lh-t2a/labx1440.600pk> </home/sjager/.texlive2019/texmf-var/f
-onts/pk/ljfour/lh/lh-t2a/larm1200.600pk> </home/sjager/.texlive2019/texmf-var/f
-onts/pk/ljfour/lh/lh-t2a/lass1200.600pk> </home/sjager/.texlive2019/texmf-var/f
-onts/pk/ljfour/lh/lh-t2a/labx1728.600pk> </home/sjager/.texlive2019/texmf-var/f
-onts/pk/ljfour/lh/lh-t2a/lass1440.600pk> </home/sjager/.texlive2019/texmf-var/f
-onts/pk/ljfour/lh/lh-t2a/lass2074.600pk></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy8.pfb>
-Output written on eng_graph.pdf (32 pages, 705306 bytes).
+ </home/sjager/.texlive2019/texmf-var/fonts/pk/ljfour/l
+h/lh-t2a/labx1200.600pk> </home/sjager/.texlive2019/texmf-var/fonts/pk/ljfour/l
+h/lh-t2a/lasx1200.600pk> </home/sjager/.texlive2019/texmf-var/fonts/pk/ljfour/l
+h/lh-t2a/labx1440.600pk> </home/sjager/.texlive2019/texmf-var/fonts/pk/ljfour/l
+h/lh-t2a/larm1200.600pk> </home/sjager/.texlive2019/texmf-var/fonts/pk/ljfour/l
+h/lh-t2a/lass1200.600pk> </home/sjager/.texlive2019/texmf-var/fonts/pk/ljfour/l
+h/lh-t2a/labx1728.600pk> </home/sjager/.texlive2019/texmf-var/fonts/pk/ljfour/l
+h/lh-t2a/lass1440.600pk> </home/sjager/.texlive2019/texmf-var/fonts/pk/ljfour/l
+h/lh-t2a/lass2074.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on eng_graph.pdf (35 pages, 785812 bytes).
 PDF statistics:
- 498 PDF objects out of 1000 (max. 8388607)
- 117 compressed objects within 2 object streams
+ 533 PDF objects out of 1000 (max. 8388607)
+ 126 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 171 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 186 words of extra memory for PDF output out of 10000 (max. 10000000)
 
