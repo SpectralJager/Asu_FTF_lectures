@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.10.14)  28 OCT 2019 17:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.10.14)  11 NOV 2019 18:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1151,7 +1151,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 346--347
 
  []
 
-[11] (./inf.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 348--355
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 358--359
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 360--361
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 362--369
+
+ []
+
+[12] (./inf.aux) ) 
 Here is how much of TeX's memory you used:
  15424 strings out of 494027
  273041 string characters out of 6168922
@@ -1174,10 +1194,10 @@ Here is how much of TeX's memory you used:
 /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on inf.pdf (11 pages, 209773 bytes).
+Output written on inf.pdf (12 pages, 211306 bytes).
 PDF statistics:
- 381 PDF objects out of 1000 (max. 8388607)
- 77 compressed objects within 1 object stream
+ 386 PDF objects out of 1000 (max. 8388607)
+ 79 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -781,7 +781,148 @@ $ P_n(x) $ - многочлен степени n\\
   \end{Bmatrix} \quad  
 \]
 
-    
+\subsection{Какое-то кол-во пропущенных параграфов}
+
+.................................
+
+
+\subsection{Параграф. Интегрирования параметрических функций}
+
+\[
+   1)\int_{}^{}\left(R(\sin x,\cos x)\right)dx
+\]
+Данный интеграл сводится к интегралу от рациональной дроби с помощью универсальной подстановки
+\begin{align*}
+  \tg \frac{x}{2} = t\\
+  \frac{x}{2} = \arctg t \quad x = 2\arctg t\\
+  dx = \frac{1}{1 + x^2} dt\\
+  \sin x = \frac{2t}{1 + t^2} \quad  \cos x = \frac{1-t^2}{1+t^2}\\
+  \int_{}^{}\left(R(\sin x,\cos x)\right)dx = \int_{}^{}\left(R\left(\frac{2t}{1 + t^2},\frac{1-t^2}{1+t^2}\right)\right)\frac{2}{1+t^2}dt 
+\end{align*}
+
+Частные случаи:\\
+a) Если $ R(-\sin x,\cos x) = -R(\sin x, \cos x), \quad R(,) $ является нечетной относительно синуса x
+\[
+   \Rightarrow t = \cos x
+ \] 
+b)Если $ R(\sin x,-\cos x) = -R(\sin x, \cos x), \quad R(,) $ является нечетной относительно косинуса x
+\[
+  \Rightarrow t = \sin x 
+\]
+c)Если $ R(-\sin x,-\cos x) = R(\sin x, \cos x), \quad R(,) $ является четной
+\[
+  \Rightarrow t = \tg x
+\]
+
+\[
+  2) \int_{}^{}\left(\sin^{2n}x \cos^{2m}x\right)dx 
+\]
+Применять формулу понижения степени
+\begin{align*}
+  \sin x \cos x = \frac{1}{2} \sin^2 x,\\
+  \cos^2 x = \frac{1+ \cos 2x}{2} \quad \sin^2 x = \frac{1 - \cos 2x}{2}
+\end{align*}
+
+\[
+  3) \int_{}^{}\left(\sin \alpha \cos \beta \right)dx 
+\]
+При разных углах 
+\begin{align*}
+  \sin \alpha x \cos \beta x = \frac{1}{2}\left[\sin(\alpha + \beta )x + \sin(\alpha -\beta )x\right]\\
+  \cos \alpha x \cos \beta x = \frac{1}{2}\left[\cos(\alpha + \beta )x + \cos(\alpha -\beta )x\right]\\
+  \sin \alpha x \sin \beta x = \frac{1}{2}\left[\cos(\alpha - \beta )x - \cos(\alpha +\beta )x\right]
+\end{align*}
+
+
+\subsection{Параграф. Интегрирования иррациональных функций}
+
+\[
+  1) \int_{}^{}R\left(x,\sqrt[n]{\frac{ax+b}{cx+b}},\sqrt[m]{\frac{ax+b}{cx+b}}\right)dx 
+\]
+Вычисляем наименьшее общее кратное(s) чисел n-m
+\begin{align*}
+  t = \sqrt[S]{\frac{ax+b}{cx+b}}
+\end{align*}
+Такая замена приводит к интегралу от рациональной дроби
+\\\\\\
+\[
+  2)a)\int_{}^{}R\left(x,\sqrt[]{a^2-x^2}\right)dx 
+\]
+Делается замена
+\begin{align*}
+  x = a\sin t\\
+  \sqrt[]{a^2 - x^2} = \sqrt[]{a^2 - a^2\sin^2 t}= \\=a \sqrt[]{1-\sin^2 t} = a \sqrt[]{\cos^2 t}
+\end{align*}
+\[
+  b)\int_{}^{}R\left(x, \sqrt[]{a^2 + x^2}\right)dx 
+\]
+Замена
+\begin{align*}
+  x = a\tg t\\
+  1 + \tg^2 t = \frac{1}{\cos^2 t}
+\end{align*}
+\[
+  c) \int_{}^{}R\left(x,\sqrt[]{x^2 - a^2}\right)dx 
+\]
+Замена
+\begin{align*}
+  x = \frac{a}{\sin t}\\
+\end{align*}
+\newpage
+
+\subsection{Параграф. Определенный интеграл}
+\includegraphics{img/471.jpeg}\\
+Опр.
+\[
+  \lim_{max \Delta x\to 0}\sum_{i=1}^{n}f(\xi_i)\Delta x =\int_{a}^{b}f\left(x\right)dx   
+\]
+$ f(x) $ называется интегрируемой функцией на данном отрезке
+
+\begin{mdframed}[backgroundcolor=blue!20] 
+        Теорема 1:\\
+        всякое  интегрируемая на отрезке функция ограниченна на этом отрезке(необходимое но недостаточное)\\
+
+        Теорема 2(Рассы интегрируемых функций)\\
+        Всякая непрерывная на отрезке функция интегрируема на этом отрезке\\
+        Кусочно-непрерывные функции(функции имеющие на отрезке конечное число точек разрыва первого рода) также являются интегрируемы\\
+
+     \end{mdframed}
+
+Основные свойства определенного интеграла:\\
+1)$ \int_{a}^{b}dx = b - a  $ \\
+2)$ \int_{a}^{a}f\left(x\right)dx = 0 $ \\
+3) $ \int_{a}^{b}f\left(x\right)dx = - \int_{b}^{a}f\left(x\right)dx   $ \\
+4)линейнойсть: $ \int_{a}^{b}\left(f(x) + \lambda g(x)\right)dx= \int_{a}^{b}\left(f(x)\right)dx + \lambda \int_{a}^{b}\left(g(x)\right)dx    $ \\
+5)аддитивность: $ \int_{a}^{c}f\left(x\right)dx + \int_{c}^{b}f\left(x\right)dx = \int_{a}^{b}f\left(x\right)dx  $ \\ 
+6)монотонность: $ f(x),g(x) \quad [a,b] \quad f(x) \leq g(x) $\\
+$ \int_{a}^{b}f\left(x\right)dx \leq \int_{a}^{b}g\left(x\right)dx $  \\
+7)оценка модуля: $ \left| \int_{a}^{b}f\left(x\right)dx\right| \leq \int_{a}^{b}f\left(x\right)dx   $\\
+\begin{mdframed}[backgroundcolor=blue!20] 
+        Теорема о среднем(для непрерывных функций):\\
+        $ f(x) $ непрерывна на AB:$ \exists \xi \in [a,b] $:
+        \[
+            \int_{a}^{b}f\left(x\right)dx= f(\xi)(b\cdot a) 
+          \]  
+     \end{mdframed}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

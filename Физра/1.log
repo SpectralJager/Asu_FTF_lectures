@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.10.14)  29 OCT 2019 14:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.11.16)  19 NOV 2019 14:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -966,12 +966,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 157--158
 
  []
 
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 171--173
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
 
  []
 
-[9] (./1.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 165--173
+
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--189
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 205--207
+
+ []
+
+[10] (./1.aux) ) 
 Here is how much of TeX's memory you used:
  15384 strings out of 494027
  272579 string characters out of 6168922
@@ -980,19 +1000,19 @@ Here is how much of TeX's memory you used:
  543706 words of font info for 47 fonts, out of 8000000 for 9000
  430 hyphenation exceptions out of 8191
  48i,6n,63p,1650b,317s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/sjager/.texlive2019/texmf-var/fonts/pk/ljfour/lh/lh-t2a/
-labx1440.600pk> </home/sjager/.texlive2019/texmf-var/fonts/pk/ljfour/lh/lh-t2a/
-labx1200.600pk> </home/sjager/.texlive2019/texmf-var/fonts/pk/ljfour/lh/lh-t2a/
-lasx1200.600pk> </home/sjager/.texlive2019/texmf-var/fonts/pk/ljfour/lh/lh-t2a/
-larm1200.600pk> </home/sjager/.texlive2019/texmf-var/fonts/pk/ljfour/lh/lh-t2a/
-lass1200.600pk> </home/sjager/.texlive2019/texmf-var/fonts/pk/ljfour/lh/lh-t2a/
-labx1728.600pk> </home/sjager/.texlive2019/texmf-var/fonts/pk/ljfour/lh/lh-t2a/
-lass1440.600pk> </home/sjager/.texlive2019/texmf-var/fonts/pk/ljfour/lh/lh-t2a/
-lass2074.600pk>
-Output written on 1.pdf (9 pages, 83075 bytes).
+ </home/sjager/.texlive2019/texmf-var/fonts/pk/ljfour/lh/lh-t2a
+/labx1440.600pk> </home/sjager/.texlive2019/texmf-var/fonts/pk/ljfour/lh/lh-t2a
+/labx1200.600pk> </home/sjager/.texlive2019/texmf-var/fonts/pk/ljfour/lh/lh-t2a
+/lasx1200.600pk> </home/sjager/.texlive2019/texmf-var/fonts/pk/ljfour/lh/lh-t2a
+/larm1200.600pk> </home/sjager/.texlive2019/texmf-var/fonts/pk/ljfour/lh/lh-t2a
+/lass1200.600pk> </home/sjager/.texlive2019/texmf-var/fonts/pk/ljfour/lh/lh-t2a
+/labx1728.600pk> </home/sjager/.texlive2019/texmf-var/fonts/pk/ljfour/lh/lh-t2a
+/lass1440.600pk> </home/sjager/.texlive2019/texmf-var/fonts/pk/ljfour/lh/lh-t2a
+/lass2074.600pk>
+Output written on 1.pdf (10 pages, 86506 bytes).
 PDF statistics:
- 291 PDF objects out of 1000 (max. 8388607)
- 54 compressed objects within 1 object stream
+ 300 PDF objects out of 1000 (max. 8388607)
+ 56 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
