@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.11.16)  19 NOV 2019 14:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.11.16)  26 NOV 2019 14:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -986,12 +986,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 186--189
 
  []
 
-[9]
-Underfull \hbox (badness 10000) in paragraph at lines 205--207
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--195
 
  []
 
-[10] (./1.aux) ) 
+
+Overfull \hbox (0.73767pt too wide) in paragraph at lines 196--197
+\T2A/cmss/m/n/12 щий ско-рост-ные ха-рак-те-ри-сти-ки дви-же-ний.Средствами яв-
+ля-ют-ся скоростно-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 196--197
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 198--201
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 202--203
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 217--219
+
+ []
+
+[11] (./1.aux) ) 
 Here is how much of TeX's memory you used:
  15384 strings out of 494027
  272579 string characters out of 6168922
@@ -1009,10 +1035,10 @@ Here is how much of TeX's memory you used:
 /labx1728.600pk> </home/sjager/.texlive2019/texmf-var/fonts/pk/ljfour/lh/lh-t2a
 /lass1440.600pk> </home/sjager/.texlive2019/texmf-var/fonts/pk/ljfour/lh/lh-t2a
 /lass2074.600pk>
-Output written on 1.pdf (10 pages, 86506 bytes).
+Output written on 1.pdf (11 pages, 88198 bytes).
 PDF statistics:
- 300 PDF objects out of 1000 (max. 8388607)
- 56 compressed objects within 1 object stream
+ 304 PDF objects out of 1000 (max. 8388607)
+ 58 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
