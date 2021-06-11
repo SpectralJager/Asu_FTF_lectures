@@ -1,0 +1,103 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage { amsmath , amssymb , amsthm }
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+\graphicspath{{img/}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+
+\title{Дз №2}
+\author{Осипенко Д. 595гр.}
+\date{\today}
+
+\begin{document}
+\sffamily
+\maketitle
+\section*{3624}
+\[
+	z = x^2 - xy + y^2 - 2x + y
+\]
+\[
+	\frac{\partial z}{\partial x} = 2x - y -2 \quad \frac{\partial z}{\partial y} = -x+2y+1
+\]
+\[
+	2x - y -2 =0 \quad \land  \quad -x +2y + 1 = 0
+\]
+\[
+	x =1 \quad y = 0
+\]
+\[
+	z_{xy}''=-1 \quad z_{xx}'' = 2 \quad z_{yy}''=2
+\]
+\[
+	A = z_{xx}''(1;0) = 2 \quad C = z_{yy}''(1;0) = 2 \quad B = z_{xy}''(1;0) = -1
+\]
+\[
+	AC - B^2 = 3 > 0 \quad A > 0 \quad 
+\]
+имеется минимум:$ \underline{z(1;0)=-1} $ 
+\section*{3626}
+\[
+	z = x^3 + y^3 - 3xy
+\]
+\[
+	z_x' = 3x^2 - 3y \quad z_y' = 3y^2 - 3x
+\]
+\[
+	M_1(0;0),M_2(1;1)
+\]
+\[
+	z_{xy}''=-3 \quad z_{xx}''=6x\quad z_{yy}''=6y
+\]
+\[
+	M_1(0;0):A=0,C=0,B=-3\Rightarrow AC-B^2 = -9 < 0
+\]
+\[
+	M_2(1;1):A=6,C=6,B=-3\Rightarrow AC-B^2 = 27 > 0 \land A>0 \Rightarrow
+\]
+имеется минимум в точке $ M_2(1;1): \underline{z(1;1)=-1} $ 
+\section*{3628}
+\[
+	z = xy + \frac{50}{x}+ \frac{20}{y} \quad (x>0,y>0)
+\]
+\[
+	z_x' = y - \frac{50}{x^2} \quad z_y'=x - \frac{20}{y^2}
+\]
+\[
+	M(5;2) \quad z_{xy}'' = 1\quad z_{xx}'' = \frac{100}{x^3}\quad z_{yy}'' = \frac{40}{y^3}
+\]
+\[
+	A = 0.8\quad C = 5 \quad B=1
+\]
+\[
+	AC-B^2 = 3 > 0 \land A>0 \Rightarrow
+\]
+имеется минимум $ \underline{z(5;2)=30} $ 
+\section*{3642}
+\[
+	u = x^2 + y^2 + z^2 +2x + 4y - 6z
+\]
+\[
+	u_x' = 2x + 2 \quad u_y'=2y + 4 \quad u_z'=2z -6
+\]
+\[
+	x = -1,y=-2,z=3
+\]
+\[
+	H = \begin{bmatrix}
+	u_xx'' && u_xy'' && u_xz''\\
+	u_yx'' && u_yy'' && u_yz''\\
+	u_zx'' && u_zy'' && u_zz''
+\end{bmatrix}	
+\]
+\[
+	\delta_1 = 2 > 0 \quad \delta_2 = 4 > 0\quad \delta_3 = 8 > 0 \Rightarrow min
+\]
+имеет минимум $ u(-1;-2;3)=-14 $ 
+\end{document}

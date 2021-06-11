@@ -1,0 +1,27 @@
+digraph {
+	graph [fontname=Arial, nodesep=0.125, ranksep=0.25];
+	node [fontcolor=white, fontname=Arial, height=0, shape=box, style=filled, width=0];
+	edge [fontname=Arial];
+	127 [color="#ff0000", fontcolor="#ffffff", fontsize="10.00", label="Lordofthesea:1:<module>\n100.00%\n(0.00%)\n1×", tooltip=".\\Lordofthesea.py"];
+	127 -> 433 [arrowsize="1.00", color="#fe0500", fontcolor="#fe0500", fontsize="10.00", label="99.50%\n1×", labeldistance="3.98", penwidth="3.98"];
+	433 [color="#fe0500", fontcolor="#ffffff", fontsize="10.00", label="Lordofthesea:25:menuLoop\n99.50%\n(0.00%)\n1×", tooltip=".\\Lordofthesea.py"];
+	433 -> 434 [arrowsize="0.97", color="#f73601", fontcolor="#f73601", fontsize="10.00", label="94.61%\n97×", labeldistance="3.78", penwidth="3.78"];
+	433 -> 1616 [arrowsize="0.35", color="#0d2079", fontcolor="#0d2079", fontsize="10.00", label="4.53%\n96×", labeldistance="0.50", penwidth="0.50"];
+	434 [color="#f73601", fontcolor="#ffffff", fontsize="10.00", label="Lordofthesea:35:chackEvents\n94.61%\n(0.00%)\n97×", tooltip=".\\Lordofthesea.py"];
+	434 -> 440 [arrowsize="0.97", color="#f73601", fontcolor="#f73601", fontsize="10.00", label="94.59%\n1×", labeldistance="3.78", penwidth="3.78"];
+	440 [color="#f73601", fontcolor="#ffffff", fontsize="10.00", label="Lordofthesea:92:gameLoop\n94.59%\n(0.04%)\n1×", tooltip=".\\Lordofthesea.py"];
+	440 -> 442 [arrowsize="0.35", color="#0d1876", fontcolor="#0d1876", fontsize="10.00", label="2.78%\n1624×", labeldistance="0.50", penwidth="0.50"];
+	440 -> 443 [arrowsize="0.35", color="#0d0f74", fontcolor="#0d0f74", fontsize="10.00", label="0.67%\n1906×", labeldistance="0.50", penwidth="0.50"];
+	440 -> 1616 [arrowsize="0.95", color="#f06102", fontcolor="#f06102", fontsize="10.00", label="90.09%\n1906×", labeldistance="3.60", penwidth="3.60"];
+	442 [color="#0d1876", fontcolor="#ffffff", fontsize="10.00", label="Lordofthesea:111:game\n2.78%\n(0.30%)\n1624×", tooltip=".\\Lordofthesea.py"];
+	442 -> 450 [arrowsize="0.35", color="#0d1575", fontcolor="#0d1575", fontsize="10.00", label="2.07%\n3248×", labeldistance="0.50", penwidth="0.50"];
+	443 [color="#0d0f74", fontcolor="#ffffff", fontsize="10.00", label="Lordofthesea:128:checkEvents\n0.67%\n(0.02%)\n1906×", tooltip=".\\Lordofthesea.py"];
+	443 -> 1619 [arrowsize="0.35", color="#0d0f74", fontcolor="#0d0f74", fontsize="10.00", label="0.63%\n1906×", labeldistance="0.50", penwidth="0.50"];
+	450 [color="#0d1676", fontcolor="#ffffff", fontsize="10.00", label="Lordofthesea:241:drawBoard\n2.19%\n(0.93%)\n3432×", tooltip=".\\Lordofthesea.py"];
+	450 -> 1620 [arrowsize="0.35", color="#0d1274", fontcolor="#0d1274", fontsize="10.00", label="1.21%\n343200×", labeldistance="0.50", penwidth="0.50"];
+	457 [color="#ff0000", fontcolor="#ffffff", fontsize="10.00", label="~:0:<built-in method builtins.exec>\n100.00%\n(0.00%)\n510×", tooltip="~"];
+	457 -> 127 [arrowsize="1.00", color="#ff0000", fontcolor="#ff0000", fontsize="10.00", label="100.00%\n1×", labeldistance="4.00", penwidth="4.00"];
+	1616 [color="#f73601", fontcolor="#ffffff", fontsize="10.00", label="~:0:<method 'tick' of 'Clock' objects>\n94.63%\n(94.63%)\n2002×", tooltip="~"];
+	1619 [color="#0d0f74", fontcolor="#ffffff", fontsize="10.00", label="~:0:<built-in method pygame.event.get>\n0.65%\n(0.65%)\n2003×", tooltip="~"];
+	1620 [color="#0d1274", fontcolor="#ffffff", fontsize="10.00", label="~:0:<built-in method pygame.draw.rect>\n1.21%\n(1.21%)\n343298×", tooltip="~"];
+}

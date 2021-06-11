@@ -1,0 +1,72 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage { amsmath , amssymb , amsthm }
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+\graphicspath{{img/}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+
+\title{HOmework 2}
+\author{Osipenko D. 595gr}
+\date{\today}
+
+\begin{document}
+\sffamily
+\maketitle
+\section{}
+\subsection{}
+A - Маша в кино\\
+B - в кино комедия\\
+
+\[
+	A \to B
+\]
+
+\subsection{}
+A - Спартак выиграет\\
+B - Динамо проиграет\\
+\[
+	(A \to B) \land \lnot(A \oplus B)
+\]
+
+\section{}
+1) да\\
+2) да\\
+3) да\\
+\section{}
+\[
+	\overline{S} \lor(\exists x A(x))
+\]
+\section{}
+\begin{align*}
+	( \exists  x \forall y A( x, y) ) \lor ( \exists  x \forall y B( x, y) ) =  \exists  x  \exists z(\forall y A( x, y) ) \lor ( \forall y B( z, y) )) =\\ \exists  x  \exists z \forall y(A( x, y)  \lor  B( z, y) )
+\end{align*}
+
+
+\section{}
+\[
+	\forall x(\lnot A(x) \to \exists y(\lnot B(y))) \to (B(z) \to A(z)) =
+\]
+\begin{align*}
+	\exists  x \forall y(\lnot A(x) \lor \lnot B(y) \lor A(z))\land (B(y) \lor \lnot B(z) \lor  A(z))
+\end{align*}
+
+\section{}
+\begin{align*}
+	\forall x (P(x) \to Q(x)) \to (\forall x P(x) \to \forall x Q(x)) = \exists x P(x) \lor \forall x Q(x) \lor (\forall x (Q(x))) =
+\end{align*}
+\[
+	\exists x P(x) \lor 1 \equiv 1
+\]
+
+
+
+
+
+\end{document}

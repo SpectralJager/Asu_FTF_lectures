@@ -1,0 +1,103 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage { amsmath , amssymb , amsthm }
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+\graphicspath{{img/}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+
+\title{Задание 1.1}
+\author{Осипенко Д. 595гр.}
+
+
+\begin{document}
+\sffamily
+\maketitle
+\section*{3540}
+\[
+	x^2 + y^2 + z^2 - 169 = 0, \quad M_0 (3,4,12)
+\]
+
+\[
+	F_x' = (x^2 + y^2 + z^2 - 169 )_x'= 2x \quad F(M_0)_x' = 6
+\]
+\[
+	F_y' = (x^2 + y^2 + z^2 - 169)_y' = 2y \quad F(M_0)_y' = 8	
+\]
+\[
+	F_z' = (x^2 + y^2 + z^2 - 169)_z' = 2z \quad F(M_0)_z' = 24
+\]
+
+\[
+	F(M_0)_x'(x-x_0)+F(M_0)_y'(y-y_0)+F(M_0)_z'(z-z_0) = 0
+\]
+
+\[
+	6(x - 3) + 8(y - 4) + 24(z - 12) = 0; \quad \underline{3x + 4y + 12z - 169 = 0}
+\]
+\[
+	\underline{\frac{x - 3}{6} = \frac{y - 4}{8} = \frac{z - 12}{24}}
+\]
+\section*{3621}
+\[
+	z = x^2 + (y - 1)^2
+\]
+
+\[
+	F_x' = 2x \quad F_y' = 2(y-1)
+\]
+\[
+	x = 0 \quad y = 1
+\]
+$ M_0(0;1) $ - стационарная точка\\
+\[
+ 	A = F_{xx}'' = 2 \quad B = F_{xy}''= 0 \quad C = F_{yy}'' = 2
+ \]
+
+\[
+	AC - B^2 = 4 > 0; \quad A > 0
+\]
+
+Есть экстремум, и это минимум
+
+\[
+	\underline{F(M_0) = 0 = z_{min}}
+\]
+
+\section*{3385}
+\[
+	x + y + z = e^z
+\]
+\[
+	dx + dy + dz = e^z dz \quad dz = \frac{(dx+dy)}{e^z - 1} = \frac{(dx+dy)}{x + y + z - 1}
+\]
+\[
+	z_x' = z_y' = \frac{1}{x + y + z - 1} 
+\]
+
+\[
+	d^z = e^z dz^2 + e^zdz^2 \quad d^2 z = -\frac{e^z}{e^z-1}(dx^2 + 2dxdy + dy^2)
+\]
+
+\[
+	\underline{z_{xx}'' = z_{xy}''=z_{yy}'' = -\frac{x+y+z}{(x+y+z-1)^3}}
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

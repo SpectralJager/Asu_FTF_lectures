@@ -1,0 +1,62 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage { amsmath , amssymb , amsthm }
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+\graphicspath{{img/}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+
+\title{ДЗ 4}
+\author{Осипенко 595}
+\date{\today}
+
+\begin{document}
+\sffamily
+\maketitle
+\section*{101}
+\[
+	\iiint_T(x^2+y^2+z^2)dxdydz \quad 0<x<a,0<y<b,0<z<c
+\]
+\[
+	\int_0^a (x^2+y^2+z^2)dx = \frac{x^3}{3}+x(y^2+z^2)\big|_0^a = \frac{a^3}{3} + a(y^2+z^2)
+\]
+\[
+	\int_0^b (\frac{a^3}{3} + a(y^2+z^2)) dy = \frac{ay^3}{3} + y\left(\frac{a^3}{3} + az^2\right)\big|_0^b =\frac{ab^3}{3} + b(\frac{a^3}{3} + az^2)	 
+\]
+\[
+	\int_0^c (\frac{ab^3}{3} + b(\frac{a^3}{3} + az^2))dz = \underline{\frac{abc^3}{3} + \frac{ab^3c}{3}+\frac{a^3bc}{3}}
+\]
+\section*{102}
+\[
+	\iiint_{T}{xyz dx dy dz} \quad x^2+y^2+z^2=1 ,x=0,y=0,z=0
+\]
+\[
+	\int_0^{\sqrt{1-y^2-x^2}}xyz dz = \frac{yx(1-y^2-x^2)}{2}
+\]
+\[
+	\int_0^{\sqrt{1-x^2-z^2}}\frac{yx(1-y^2-x^2)}{2}dy = -\frac{x(1-2z^2)^2}{8} + (1-2z^2)(-\frac{x^3}{4}+\frac{x}{4})
+\]
+\[
+	\int_0^{\sqrt{1-y^2-z^2}}\left(-\frac{x(1-2z^2)^2}{8} + (1-2z^2)(-\frac{x^3}{4}+\frac{x}{4})\right) dx = 
+\]
+\[
+	\underline{(\frac{1}{16}-\frac{z^4}{4})(-y^2-z^2+1)+(\frac{z^2}{8} -\frac{1}{16})(-y^2-z^2+1)}
+\]
+*надеюсь правильно*
+\section*{106}
+\[
+	\iiint_{T}{x dx dy dz} \quad x=0,y=0,z=0,y=3,x+z=2
+\]
+\[
+	\int_0^{2-z}dx\int_0^3dy\int_0^{2-x}xdz = \int_0^{2-z}dx\int_0^3 (2x-x^2)dy = 
+\]
+\[
+	\int_0^{2-z}(6x-3x^2)dx = \underline{3(2-z)^2-(2-z)^3 = (2-z)^2(1+z)}
+\]
+\end{document}

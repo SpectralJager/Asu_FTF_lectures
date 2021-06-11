@@ -1,0 +1,70 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage { amsmath , amssymb , amsthm }
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+\graphicspath{{img/}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+
+\title{Дз №6}
+\author{Осипенко Д. 595гр.}
+\date{\today}
+
+\begin{document}
+\sffamily
+\maketitle
+\section*{1013}
+\[
+	f(z)=x^2+y^2i  \quad z = \{1+2i,2-3i,0,-i\}
+\]
+\[
+	f(1+2i) = (1)^2 + (2)^2i = \underline{1 + 4i}	
+\]
+\[
+	f(2-3i) = 4 + 9i \quad f(0) = 0 \quad f(-i) = (-1)^2i = i
+\]
+\section*{1030}
+\[
+	f(z) = (e^x\cos y)_u + i(e^x \sin y)_v
+\]
+\[
+	\frac{\partial u}{\partial x} = e^x\cos y = \frac{\partial v}{\partial y} \quad \frac{\partial u}{\partial y} = -e^x\sin y = -\frac{\partial v}{\partial x} \Rightarrow
+\]
+- функция дифференцируема
+
+\section*{1035}
+\[
+	f(z) = \sin x \cosh y + i\cos x \sinh y
+\]
+\[
+	\frac{\partial u}{\partial x} = \cos x \cosh y = \frac{\partial v}{\partial y} \quad \frac{\partial u}{\partial y} = \sin x \sinh y = -\frac{\partial v}{\partial x} \Rightarrow
+\]
+- функция дифференцируема
+\[
+	f'(z) = \frac{\partial u}{\partial x} + \frac{\partial v}{\partial x}i = \frac{\partial v}{\partial y} - \frac{\partial u}{\partial y}i = \underline{\cos x\cosh y - \sin x\sinh y}
+\]
+\section*{1037}
+\[
+	f(z) = (y)_u + i(\lambda x)_v
+\]
+\[
+	\frac{\partial u}{\partial x} = 0 = \frac{\partial v}{\partial y} \quad \frac{\partial u}{\partial y} = 1 = -\frac{\partial v}{\partial x} \Rightarrow \underline{\lambda = -1}
+\]
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

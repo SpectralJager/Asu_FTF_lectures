@@ -1,0 +1,50 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage { amsmath , amssymb , amsthm }
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+\graphicspath{{img/}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+
+\title{Дз №5}
+\author{Осипенко Д. 595гр.}
+\date{\today}
+
+\begin{document}
+\sffamily
+\maketitle
+\section*{187}
+\[
+	\int_K(x-y)^2 dx + (x+y)^2dy \quad K=OAB,O(0;0),A(2;0),B(4;2)
+\]
+\[
+	\int_{OA}(x-y)^2 dx + (x+y)^2dy + \int_{AB}(x-y)^2 dx + (x+y)^2dy = 
+\]
+
+\[
+	(OA) \quad y = 0 \quad dy=d(0) = 0'dx =0\quad\int_{0}^2(x-y)^2dx = 
+\]
+\[
+	\int_{0}^2(x)^2 dx = \frac{2^3}{3}- 0 = \frac{8}{3}
+\]
+\[
+	(AB) \quad y = x-2 \quad dy=d(x-2) = (x-2)'dx = dx 
+\]
+\[
+	\int_{2}^2(4)^2 dx + (2x-2)^2dx = \int_{2}^4(8 + 4x^2 - 8x)dx = 
+\]
+
+\[
+	(16 + \frac{32}{3} - \frac{32}{3})-(32 + \frac{256}{3} - \frac{128}{3}) = -16 - \frac{128}{3} = -\frac{48+128}{3}=-\frac{176}{3}
+\]
+\[
+	\underline{-\frac{168}{3}}
+\]
+\includegraphics{yotx.png}
+\end{document}

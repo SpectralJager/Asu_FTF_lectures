@@ -1,0 +1,125 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage { amsmath , amssymb , amsthm }
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+\graphicspath{{img/}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+
+\title{Инд. задания, Вар.№9}
+\author{Осипенко Д. 595гр.}
+\date{\today}
+
+\begin{document}
+\sffamily
+\maketitle
+\section*{2}
+\[
+	u = xy + 2xz^2 - zy \quad \vec{l}=\{-3,4,-1\} \quad M(2,1,5) \quad |l| = \sqrt{26}
+\]
+\[
+	\frac{\partial u}{\partial l} = \frac{\partial u}{\partial x}\cos \alpha  + \frac{\partial u}{\partial y} \cos \beta + \frac{\partial u}{\partial z} \cos \gamma
+\]
+\[
+	\frac{\partial u}{\partial x} = y+2z^2 \quad \cos \alpha = \frac{l_x}{|l|} = -\frac{3}{\sqrt{26}}	
+\]
+\[
+	\frac{\partial u}{\partial y} = x-z \quad \cos \beta  = \frac{l_y}{|l|} = \frac{4}{\sqrt{26}}	
+\]
+\[
+	\frac{\partial u}{\partial z} = 4xz-y \quad \cos \gamma = \frac{l_z}{|l|} = -\frac{1}{\sqrt{26}}	
+\]
+\[
+	\underline{\frac{\partial u}{\partial l} = (y+2z^2)(-\frac{3}{\sqrt{26}})  + (x-z)(\frac{4}{\sqrt{26}})  + (4xz-y)(-\frac{1}{\sqrt{26}})}
+\]
+\[
+	\underline{\frac{\partial u}{\partial l}(M) = -\frac{204}{\sqrt{26}}}
+\]
+
+\[
+	\overline{grad}(u) =\left(\frac{\partial u}{\partial x};\frac{\partial u}{\partial y};\frac{\partial u}{\partial z}\right)
+\]
+\[
+	\underline{\overline{grad}(u)(M) = (51;-3;39)}
+\]
+
+\section*{3}
+\[
+	3x^2 + 2 y^2 - z^2 = 4 \quad M(-1,1,1)
+\]
+\[
+	F(M_0)_x'(x-x_0)+F(M_0)_y'(y-y_0)+F(M_0)_z'(z-z_0) = 0
+\]
+\[
+	F_x' = (3x^2 + 2 y^2 - z^2 - 4)_x'= 6x \quad F(M)_x' = -6
+\]
+\[
+	F_y' = (3x^2 + 2 y^2 - z^2 - 4)_y'= 4y \quad F(M)_y' = 4
+\]
+\[
+	F_z' = (3x^2 + 2 y^2 - z^2 - 4)_z'= 2z \quad F(M)_z' = 2
+\]
+\[
+	-6(x+1) + 4(y-1)+2(z-1) = 0
+\]
+$\underline{-6x +4y +2z -12 = 0}$ - уравнение касательной плоскости,\\ $\underline{\frac{x + 1}{-6} = \frac{y - 1}{4} = \frac{z - 1}{2}}$ - уравнение  нормали.
+
+\section*{4}
+\[
+	z = x^2y + 2x^2 - 3y^2 +4 y
+\]
+\[
+	z_x' = 2xy + 4x \quad z_y' = x^2 -6y +4
+\]
+\begin{equation*}
+ \begin{cases}
+   x(2y+4) = 0
+   \\
+   x^2 -6y + 4 = 0
+ \end{cases}
+ \Rightarrow
+ \begin{cases}
+ 	x = 0 \lor y = -2
+ 	\\
+ 	x^2 -6y = -4
+ \end{cases}
+ \Rightarrow
+ \begin{cases}
+ 	x = 0
+ 	\\
+ 	y = \frac{4}{6}
+ \end{cases}
+ \end{equation*}
+ \includegraphics{img/1.jpg}\\
+\[
+	x = 0 \quad y = \frac{4}{6}
+\]
+$ M_0(0;\frac{4}{6}) $ - стационарная точка\\
+\[
+ 	A = z_{xx}'' = 2y+4 \quad B = z_{xy}''= 2x \quad C = z_{yy}'' = -6
+ \]
+
+\[
+	AC - B^2 = -32 < 0;
+\]
+
+\underline{экстремума нет.}
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
