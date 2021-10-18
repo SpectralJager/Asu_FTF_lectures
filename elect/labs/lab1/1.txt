@@ -1,9 +1,0 @@
-#lab 1
-#schem 1.1
-J = 0.8 A, R1 = 8 Ohm, R2 = 1 Ohm, U1 = 6.4 V, U2 = 0.8 V.
-
-#schem 1.2
-E = 15 V, r = 3 Ohm, R = 9 Ohm, I = 1.25 A, UR = 11.25 V, Ur = -3.75 V
-
-#schem 1.3
-
