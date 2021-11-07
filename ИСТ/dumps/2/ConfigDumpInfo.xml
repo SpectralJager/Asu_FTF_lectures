@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ConfigDumpInfo xmlns="http://v8.1c.ru/8.3/xcf/dumpinfo" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" format="Hierarchical" version="2.12">
+	<ConfigVersions>
+		<Metadata name="Configuration.ПособиеДляНачинающих" id="66db4c8c-4918-441a-abd6-6ab12227135f" configVersion="22cc2f6b5a85a74894bc6f834953695b00000000"/>
+		<Metadata name="Configuration.ПособиеДляНачинающих.CommandInterface" id="f602402b-cfb8-4aef-ad5d-97d78edbbd54.a" configVersion="d9405cd598daac4ea6831765e07a106f00000000"/>
+		<Metadata name="Language.Русский" id="76659a8e-4d3c-443d-83b9-d5f0171d94d9" configVersion="71263c1ca0c1274482946b2cdb73ce6200000000"/>
+		<Metadata name="Subsystem.Бухгалтерия" id="31202b4e-819e-4e0b-b101-f4822ba6833b" configVersion="e2ff87a8332a694e8c111fbaf1cb095600000000"/>
+		<Metadata name="Subsystem.ОказаниеУслуг" id="c778adbc-13ea-41e9-a69d-f57079eed5c3" configVersion="378954b6c48ea84ea4ef2ebad8ddfb5900000000"/>
+		<Metadata name="Subsystem.Предприятие" id="1a53cced-d32f-4cd3-8c0b-38d7c4d58b2a" configVersion="5b7f3c5664538946ab887de3eafbd6db00000000"/>
+		<Metadata name="Subsystem.РасчетЗарплат" id="c28b6b3e-c366-4755-ace6-37223167b6c8" configVersion="26e5106c3a77134c86a8cccaf849b55300000000"/>
+		<Metadata name="Subsystem.УчетМатериалов" id="be3f8431-d822-414b-8ae9-8a42d5ae75da" configVersion="aee6f16f51f5ae49b1bc3ac1bcf5f6f400000000"/>
+	</ConfigVersions>
+</ConfigDumpInfo>
