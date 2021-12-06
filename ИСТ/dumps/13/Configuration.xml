@@ -228,6 +228,9 @@
 			<Report>РеестрДокументовОказанияУслуги</Report>
 			<Report>РейтингУслуг</Report>
 			<Report>ВыручкаМастеров</Report>
+			<Report>ПереченьУслуг</Report>
+			<Report>РейтингКлиентов</Report>
+			<Report>Универсальный</Report>
 			<InformationRegister>Цены</InformationRegister>
 			<AccumulationRegister>ОситаткиМатериалов</AccumulationRegister>
 			<AccumulationRegister>СтоимостьМатериалов</AccumulationRegister>
