@@ -1,0 +1,34 @@
+\babel@toc {russian}{}
+\contentsline {section}{\numberline {1}Формирование структуры таблицы}{2}{}%
+\contentsline {subsection}{\numberline {1.1}Задание}{2}{}%
+\contentsline {subsection}{\numberline {1.2}Решение}{2}{}%
+\contentsline {section}{\numberline {2}Ввод и редактирование данных в режиме таблицы }{3}{}%
+\contentsline {subsection}{\numberline {2.1}Задание}{3}{}%
+\contentsline {subsection}{\numberline {2.2}Решение}{3}{}%
+\contentsline {section}{\numberline {3}Разработка однотабличных пользовательских форм }{3}{}%
+\contentsline {subsection}{\numberline {3.1}Задание}{3}{}%
+\contentsline {subsection}{\numberline {3.2}Решение}{4}{}%
+\contentsline {section}{\numberline {4}Разработка детального отчета}{4}{}%
+\contentsline {subsection}{\numberline {4.1}Задание}{4}{}%
+\contentsline {subsection}{\numberline {4.2}Решение}{5}{}%
+\contentsline {section}{\numberline {5}Команды поиска, фильтрации и сортировки}{5}{}%
+\contentsline {subsection}{\numberline {5.1}Задание}{5}{}%
+\contentsline {subsection}{\numberline {5.2}Решение}{6}{}%
+\contentsline {section}{\numberline {6}Формирование запросов}{6}{}%
+\contentsline {subsection}{\numberline {6.1}Задание}{6}{}%
+\contentsline {subsection}{\numberline {6.2}Решение}{7}{}%
+\contentsline {section}{\numberline {7}Разработка информационно-логической модели и создание многотабличной базы данных }{7}{}%
+\contentsline {subsection}{\numberline {7.1}Задание}{7}{}%
+\contentsline {subsection}{\numberline {7.2}Решение}{8}{}%
+\contentsline {section}{\numberline {8}Установление связей между таблицами}{8}{}%
+\contentsline {subsection}{\numberline {8.1}Задание}{8}{}%
+\contentsline {subsection}{\numberline {8.2}Решение}{9}{}%
+\contentsline {section}{\numberline {9}Разработка многотабличной пользовательской формы для ввода данных}{10}{}%
+\contentsline {subsection}{\numberline {9.1}Задание}{10}{}%
+\contentsline {subsection}{\numberline {9.2}Решение}{10}{}%
+\contentsline {section}{\numberline {10}Формирование запросов для многотабличной базы данных }{10}{}%
+\contentsline {subsection}{\numberline {10.1}Задание}{10}{}%
+\contentsline {subsection}{\numberline {10.2}Решение}{11}{}%
+\contentsline {section}{\numberline {11}Разработка многотабличной формы отчета вывода данных }{12}{}%
+\contentsline {subsection}{\numberline {11.1}Задание}{12}{}%
+\contentsline {subsection}{\numberline {11.2}Решение}{13}{}%

@@ -1,0 +1,28 @@
+\babel@toc {russian}{}
+\contentsline {section}{\numberline {1}Информация о создании БД}{2}{}%
+\contentsline {section}{\numberline {2}Информация о создании таблиц}{2}{}%
+\contentsline {subsection}{\numberline {2.1}AcDegree}{2}{}%
+\contentsline {subsection}{\numberline {2.2}AckBook}{3}{}%
+\contentsline {subsection}{\numberline {2.3}Dolznost}{4}{}%
+\contentsline {subsection}{\numberline {2.4}Ekzamen}{4}{}%
+\contentsline {subsection}{\numberline {2.5}Faculty}{5}{}%
+\contentsline {subsection}{\numberline {2.6}Gruppa}{6}{}%
+\contentsline {subsection}{\numberline {2.7}Kafedra}{7}{}%
+\contentsline {subsection}{\numberline {2.8}kurs}{7}{}%
+\contentsline {subsection}{\numberline {2.9}oblast}{8}{}%
+\contentsline {subsection}{\numberline {2.10}pol}{8}{}%
+\contentsline {subsection}{\numberline {2.11}Prepod}{9}{}%
+\contentsline {subsection}{\numberline {2.12}Semestr}{10}{}%
+\contentsline {subsection}{\numberline {2.13}Specialnost}{10}{}%
+\contentsline {subsection}{\numberline {2.14}Stud}{11}{}%
+\contentsline {subsection}{\numberline {2.15}Subject}{12}{}%
+\contentsline {subsection}{\numberline {2.16}TypeOch}{12}{}%
+\contentsline {subsection}{\numberline {2.17}uroven}{13}{}%
+\contentsline {section}{\numberline {3}Информация о создании ER-диаграммы}{14}{}%
+\contentsline {section}{\numberline {4}Информация о заполнении таблиц данными}{14}{}%
+\contentsline {section}{\numberline {5}Информация о результаты выполнения запросов}{15}{}%
+\contentsline {subsection}{\numberline {5.1}Вывести фамилии, имена и даты рождения всех девушек, родившихся в понедельник в январе.}{15}{}%
+\contentsline {subsection}{\numberline {5.2}Вывести фамилии и даты рождения всех юношей, родившихся в мае, сентябре и августе, у которых либо фамилии начинаются на А, либо содержат букву ж.}{16}{}%
+\contentsline {subsection}{\numberline {5.3}Вывести ФИО, номер зачетки и дату рождения студентов (в формате «ФИО, № зачетки, дата рождения». Пример: Иванов Иван Иванович, № 3256897855, 21.10.1991), которые родились осенью и младше 34 лет.}{17}{}%
+\contentsline {subsection}{\numberline {5.4}Вывести все сведения о студентах, родившихся с 10 по 31 июля 1989 года}{17}{}%
+\contentsline {section}{\numberline {6}Вывод о проделанной работе}{19}{}%
