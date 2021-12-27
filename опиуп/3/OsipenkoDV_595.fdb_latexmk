@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1640533679 "d:/temp/university/Asu_FTF_lectures/опиуп/3/OsipenkoDV_595.tex" "d:/temp/university/Asu_FTF_lectures/опиуп/3/OsipenkoDV_595.pdf" "OsipenkoDV_595" 1640533681
+["pdflatex"] 1640596600 "d:/temp/university/Asu_FTF_lectures/опиуп/3/OsipenkoDV_595.tex" "d:/temp/university/Asu_FTF_lectures/опиуп/3/OsipenkoDV_595.pdf" "OsipenkoDV_595" 1640596602
   "c:/Users/Unkn/.texlive2020/texmf-var/fonts/tfm/lh/lh-t2a/lacc1200.tfm" 1640524221 3164 a3c854a704528ade5328a1ee68af6394 ""
   "c:/Users/Unkn/.texlive2020/texmf-var/fonts/tfm/lh/lh-t2a/larm1200.tfm" 1640524217 3240 c2435f2b5cd66d4930bc29b8df87967e ""
   "c:/Users/Unkn/.texlive2020/texmf-var/fonts/tfm/lh/lh-t2a/lass1200.tfm" 1640527602 3328 2be4722f1b98ee4842bc3d7c90c43abf ""
@@ -66,7 +66,6 @@
   "c:/texlive/2020/texmf-dist/tex/latex/enumitem/enumitem.sty" 1606721363 51697 f8f08183cd2080d9d18a41432d651dfb ""
   "c:/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1606721376 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "c:/texlive/2020/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1606721407 46845 3b58f70c6e861a13d927bff09d35ecbc ""
-  "c:/texlive/2020/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty" 1606721445 11128 a53805799bebfed6358fc1658a18e41f ""
   "c:/texlive/2020/texmf-dist/tex/latex/geometry/geometry.sty" 1606721630 41601 9cf6c5257b1bc7af01a58859749dd37a ""
   "c:/texlive/2020/texmf-dist/tex/latex/graphics-cfg/color.cfg" 1606721705 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
   "c:/texlive/2020/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1606721705 1224 978390e9c2234eab29404bc21b268d1e ""
@@ -75,6 +74,7 @@
   "c:/texlive/2020/texmf-dist/tex/latex/graphics/graphicx.sty" 1606721703 7919 20fdfdd783821971c55bc8ee918cbe63 ""
   "c:/texlive/2020/texmf-dist/tex/latex/graphics/keyval.sty" 1606721703 2590 e3b24ff953e5b58d924f163d25380312 ""
   "c:/texlive/2020/texmf-dist/tex/latex/graphics/trig.sty" 1606721703 3976 d7fa7d81d2870d509d25b17d0245e735 ""
+  "c:/texlive/2020/texmf-dist/tex/latex/grfext/grfext.sty" 1606721721 7133 b94bbacbee6e4fdccdc7f810b2aec370 ""
   "c:/texlive/2020/texmf-dist/tex/latex/kvoptions/kvoptions.sty" 1606722012 22521 d2fceb764a442a2001d257ef11db7618 ""
   "c:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def" 1606722017 23704 02c466ff883953a445c97e55638005fc ""
   "c:/texlive/2020/texmf-dist/tex/latex/l3kernel/expl3.sty" 1606722022 6209 16344733d3ce8b5205716e733dd69420 ""
@@ -98,8 +98,8 @@
   "c:/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1606724031 5056571 5f68b1e74b17b0a65794222e699d079c ""
   "c:/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1606724165 2549568 be34c75f5bcaf1d6995f3a8cb93724d7 ""
   "c:/texlive/2020/texmf.cnf" 1606724006 713 e69b156964470283e0530f5060668171 ""
-  "d:/temp/university/Asu_FTF_lectures/опиуп/3/OsipenkoDV_595.aux" 1640533681 749 645b7b31804499e340d2ea440765358d ""
-  "d:/temp/university/Asu_FTF_lectures/опиуп/3/OsipenkoDV_595.tex" 1640533678 9031 5510844b9efbd85ee223ea710d1412ed ""
+  "d:/temp/university/Asu_FTF_lectures/опиуп/3/OsipenkoDV_595.aux" 1640596602 749 bc2b3ce54e8eab6b703a296b2c18c40f ""
+  "d:/temp/university/Asu_FTF_lectures/опиуп/3/OsipenkoDV_595.tex" 1640596599 14543 6b287d30bb6b04144a0e188f100ef849 ""
   (generated)
-  "d:/temp/university/Asu_FTF_lectures/опиуп/3/OsipenkoDV_595.pdf"
   "d:/temp/university/Asu_FTF_lectures/опиуп/3/OsipenkoDV_595.log"
+  "d:/temp/university/Asu_FTF_lectures/опиуп/3/OsipenkoDV_595.pdf"
