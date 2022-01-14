@@ -1,0 +1,91 @@
+PWD f:\projects\Asu_FTF_lectures\ислед
+INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
+INPUT f:\projects\Asu_FTF_lectures\ислед\main-report-csae.tex
+OUTPUT main-report-csae.log
+INPUT .\altsu-report.cls
+INPUT .\altsu-report.cls
+INPUT altsu-report.cls
+INPUT .\altsu-report.cls
+INPUT .\altsu-report.cls
+INPUT .\altsu-report.cls
+INPUT .\altsu-report.cls
+INPUT .\altsu-report.cls
+INPUT altsu-report.cls
+INPUT .\altsu-report.cls
+INPUT altsu-report.cls
+INPUT D:\Program Files\miktex\tex\latex\extsizes\extreport.cls
+INPUT D:\Program Files\miktex\tex\latex\extsizes\extreport.cls
+INPUT D:\Program Files\miktex\tex\latex\extsizes\extreport.cls
+INPUT D:\Program Files\miktex\tex\latex\extsizes\extreport.cls
+INPUT D:\Program Files\miktex\tex\latex\extsizes\extreport.cls
+INPUT D:\Program Files\miktex\tex\latex\extsizes\extreport.cls
+INPUT D:\Program Files\miktex\tex\latex\extsizes\extreport.cls
+INPUT D:\Program Files\miktex\tex\latex\extsizes\extreport.cls
+INPUT D:\Program Files\miktex\tex\latex\extsizes\extreport.cls
+INPUT D:\Program Files\miktex\tex\latex\extsizes\extreport.cls
+INPUT D:\Program Files\miktex\tex\latex\extsizes\extreport.cls
+INPUT D:\Program Files\miktex\tex\latex\extsizes\extreport.cls
+INPUT D:\Program Files\miktex\tex\latex\extsizes\extreport.cls
+INPUT D:\Program Files\miktex\tex\latex\extsizes\extreport.cls
+INPUT D:\Program Files\miktex\tex\latex\extsizes\extreport.cls
+INPUT D:\Program Files\miktex\tex\latex\extsizes\size14.clo
+INPUT D:\Program Files\miktex\tex\latex\extsizes\size14.clo
+INPUT D:\Program Files\miktex\tex\latex\extsizes\size14.clo
+INPUT D:\Program Files\miktex\tex\latex\extsizes\size14.clo
+INPUT D:\Program Files\miktex\fonts\tfm\public\cm\cmr12.tfm
+INPUT D:\Program Files\miktex\tex\latex\base\exscale.sty
+INPUT D:\Program Files\miktex\tex\latex\base\exscale.sty
+INPUT D:\Program Files\miktex\tex\latex\base\exscale.sty
+INPUT D:\Program Files\miktex\tex\latex\base\exscale.sty
+INPUT D:\Program Files\miktex\tex\latex\base\exscale.sty
+INPUT D:\Program Files\miktex\tex\latex\base\exscale.sty
+INPUT D:\Program Files\miktex\tex\latex\base\exscale.sty
+INPUT D:\Program Files\miktex\tex\latex\base\exscale.sty
+INPUT D:\Program Files\miktex\tex\latex\base\exscale.sty
+INPUT D:\Program Files\miktex\tex\latex\base\exscale.sty
+INPUT D:\Program Files\miktex\tex\latex\base\exscale.sty
+INPUT D:\Program Files\miktex\tex\latex\xltxtra\xltxtra.sty
+INPUT D:\Program Files\miktex\tex\latex\xltxtra\xltxtra.sty
+INPUT D:\Program Files\miktex\tex\latex\xltxtra\xltxtra.sty
+INPUT D:\Program Files\miktex\tex\latex\xltxtra\xltxtra.sty
+INPUT D:\Program Files\miktex\tex\latex\xltxtra\xltxtra.sty
+INPUT D:\Program Files\miktex\tex\latex\xltxtra\xltxtra.sty
+INPUT D:\Program Files\miktex\tex\latex\xltxtra\xltxtra.sty
+INPUT D:\Program Files\miktex\tex\latex\xltxtra\xltxtra.sty
+INPUT D:\Program Files\miktex\tex\latex\xltxtra\xltxtra.sty
+INPUT D:\Program Files\miktex\tex\latex\xltxtra\xltxtra.sty
+INPUT D:\Program Files\miktex\tex\latex\xltxtra\xltxtra.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\ifluatex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\ifluatex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\ifluatex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\ifluatex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\ifluatex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\ifluatex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\ifluatex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\ifluatex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\ifluatex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\ifluatex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\ifluatex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\iftex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\iftex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\iftex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\iftex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\iftex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\iftex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\iftex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\iftex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\iftex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\iftex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\iftex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\ifxetex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\ifxetex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\ifxetex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\ifxetex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\ifxetex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\ifxetex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\ifxetex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\ifxetex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\ifxetex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\ifxetex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\ifxetex.sty
+INPUT D:\Program Files\miktex\tex\generic\iftex\iftex.sty
