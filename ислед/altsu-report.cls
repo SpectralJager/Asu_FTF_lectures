@@ -375,24 +375,24 @@
   
   \@abstractRU
   
-  Ключевые слова: \@keysRU.
+  Ключевые слова: \MakeUppercase\@keysRU.
   
-  Отчёт оформлена с помощью системы компьютерной вёрстки \TeX{} и его расширения \XeTeX{} 
-  из дистрибутива \textit{TeX Live}.
+  % Отчёт оформлена с помощью системы компьютерной вёрстки \TeX{} и его расширения \XeTeX{} 
+  % из дистрибутива \textit{TeX Live}.
   
-  \begin{center}
-    ABSTRACT
-  \end{center}
+  % \begin{center}
+  %   ABSTRACT
+  % \end{center}
   
-  The total amount of work is \formbytotal{TotPages}{page}{}{}{'s}, include
-  \formbytotal{totalcount@figure}{image}{}{}{'s} and \formbytotal{totalcount@table}{table}{}{}{'s}.
+  % The total amount of work is \formbytotal{TotPages}{page}{}{}{'s}, include
+  % \formbytotal{totalcount@figure}{image}{}{}{'s} and \formbytotal{totalcount@table}{table}{}{}{'s}.
   
-  \@abstractEN
+  % \@abstractEN
   
-  Keyword: \@keysEN.
+  % Keyword: \@keysEN.
   
-  Report is framed using the computer layout system \TeX{} and its extension \XeTeX{}
-  from the distribution \textit{TeX Live}.
+  % Report is framed using the computer layout system \TeX{} and its extension \XeTeX{}
+  % from the distribution \textit{TeX Live}.
 }
 
 \endinput
