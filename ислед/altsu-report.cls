@@ -345,7 +345,7 @@
   \bigskip
   
   \hfill\begin{minipage}{0.45\textwidth}
-  Проверил: \@supervisordegree\\
+  Проверил: \@supervisordegree~каф.~ВТиЭ:\\
   \underline{\hspace{\ML}} \@supervisor\\
   «\underline{\hspace{0.7cm}}» \underline{\hspace{2cm}} \the\year~г.
   \end{minipage}%
