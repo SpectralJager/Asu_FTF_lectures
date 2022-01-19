@@ -326,7 +326,7 @@
     \@department~(\@shortdepartment)
     \vspace{2cm}
     
-    \textsc{Отчёт по:}
+    \textsc{Отчёт по научно-исследовательской работе:}
     \vspace{0.5cm}
     
     {\MakeUppercase{\@title}}
