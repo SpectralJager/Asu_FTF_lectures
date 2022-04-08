@@ -509,10 +509,23 @@ INPUT D:\Program Files\miktex\tex\latex\setspace\setspace.sty
 INPUT D:\Program Files\miktex\tex\latex\setspace\setspace.sty
 INPUT D:\Program Files\miktex\tex\latex\setspace\setspace.sty
 INPUT D:\Program Files\miktex\tex\latex\setspace\setspace.sty
-INPUT D:\Program Files\miktex\tex\latex\listings\lstlang1.sty
-INPUT D:\Program Files\miktex\tex\latex\listings\lstlang1.sty
-INPUT D:\Program Files\miktex\tex\latex\listings\lstlang1.sty
-INPUT D:\Program Files\miktex\tex\latex\listings\lstlang1.sty
+INPUT D:\Program Files\miktex\tex\latex\amsmath\amsmath.sty
+INPUT D:\Program Files\miktex\tex\latex\float\float.sty
+INPUT D:\Program Files\miktex\tex\latex\float\float.sty
+INPUT D:\Program Files\miktex\tex\latex\float\float.sty
+INPUT D:\Program Files\miktex\tex\latex\float\float.sty
+INPUT D:\Program Files\miktex\tex\latex\float\float.sty
+INPUT D:\Program Files\miktex\tex\latex\float\float.sty
+INPUT D:\Program Files\miktex\tex\latex\float\float.sty
+INPUT D:\Program Files\miktex\tex\latex\float\float.sty
+INPUT D:\Program Files\miktex\tex\latex\float\float.sty
+INPUT D:\Program Files\miktex\tex\latex\float\float.sty
+INPUT D:\Program Files\miktex\tex\latex\float\float.sty
+INPUT D:\Program Files\miktex\tex\latex\cyrillic\t2acmss.fd
+INPUT D:\Program Files\miktex\tex\latex\cyrillic\t2acmss.fd
+INPUT D:\Program Files\miktex\tex\latex\cyrillic\t2acmss.fd
+INPUT D:\Program Files\miktex\tex\latex\cyrillic\t2acmss.fd
+INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\lass1200.tfm
 INPUT .\labs.aux
 INPUT labs.aux
 INPUT labs.aux
@@ -536,7 +549,7 @@ INPUT D:\Program Files\miktex\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT D:\Program Files\miktex\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT D:\Program Files\miktex\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT D:\Program Files\miktex\tex\latex\00miktex\epstopdf-sys.cfg
-INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\larm2074.tfm
+INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\lass2074.tfm
 INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\lacc1200.tfm
 INPUT D:\Program Files\miktex\fonts\tfm\public\cm\cmr8.tfm
 INPUT D:\Program Files\miktex\fonts\tfm\public\cm\cmr6.tfm
@@ -565,15 +578,16 @@ INPUT D:\Program Files\miktex\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT D:\Program Files\miktex\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 OUTPUT labs.pdf
 INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
-INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\larm1728.tfm
-INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\labx1728.tfm
+INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\lass1728.tfm
+INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\lasx1728.tfm
 INPUT .\labs.toc
 INPUT labs.toc
 INPUT labs.toc
-INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\labx1200.tfm
+INPUT D:\Program Files\miktex\fonts\tfm\public\cm\cmss12.tfm
+INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\lasx1200.tfm
 OUTPUT labs.toc
-INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\larm0800.tfm
-INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\larm0600.tfm
+INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\lass0800.tfm
+INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\lass0600.tfm
 INPUT .\img\\1-1.png
 INPUT .\img\\1-1.png
 INPUT img\\1-1.png
@@ -581,21 +595,71 @@ INPUT .\img\\1-1.png
 INPUT .\img\\1-1.png
 INPUT .\img\\1-1.png
 INPUT .\img\\1-1.png
+INPUT .\img\\2-1.png
+INPUT .\img\\2-1.png
+INPUT img\\2-1.png
+INPUT .\img\\2-1.png
+INPUT .\img\\2-1.png
+INPUT .\img\\2-1.png
+INPUT .\img\\2-1.png
+INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\lass1440.tfm
+INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\lasx1440.tfm
+INPUT .\img\\2-2.png
+INPUT .\img\\2-2.png
+INPUT img\\2-2.png
+INPUT .\img\\2-2.png
+INPUT .\img\\2-2.png
+INPUT .\img\\2-2.png
+INPUT .\img\\2-2.png
+INPUT D:\Program Files\miktex\tex\latex\cyrillic\t2acmtt.fd
+INPUT D:\Program Files\miktex\tex\latex\cyrillic\t2acmtt.fd
+INPUT D:\Program Files\miktex\tex\latex\cyrillic\t2acmtt.fd
+INPUT D:\Program Files\miktex\tex\latex\cyrillic\t2acmtt.fd
+INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\latt1200.tfm
+INPUT .\img\\2-3.png
+INPUT .\img\\2-3.png
+INPUT img\\2-3.png
+INPUT .\img\\2-3.png
+INPUT .\img\\2-3.png
+INPUT .\img\\2-3.png
+INPUT .\img\\2-3.png
+INPUT .\img\\2-4.png
+INPUT .\img\\2-4.png
+INPUT img\\2-4.png
+INPUT .\img\\2-4.png
+INPUT .\img\\2-4.png
+INPUT .\img\\2-4.png
+INPUT .\img\\2-4.png
+INPUT .\img\\2-5.png
+INPUT .\img\\2-5.png
+INPUT img\\2-5.png
+INPUT .\img\\2-5.png
+INPUT .\img\\2-5.png
+INPUT .\img\\2-5.png
+INPUT .\img\\2-5.png
+INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\lacc0800.tfm
+INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\lacc0600.tfm
 INPUT labs.aux
-INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1200.pk
-INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1200.pk
-INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1728.pk
-INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1728.pk
+INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\latt1200.pk
+INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\latt1200.pk
+INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\lasx1440.pk
+INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\lasx1440.pk
+INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\lasx1200.pk
+INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\lasx1200.pk
+INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\lasx1728.pk
+INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\lasx1728.pk
 INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\lacc1200.pk
 INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\lacc1200.pk
-INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm2074.pk
-INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm2074.pk
-INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1200.pk
-INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1200.pk
+INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\lass2074.pk
+INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\lass2074.pk
+INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\lass1200.pk
+INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\lass1200.pk
 INPUT D:\Program Files\miktex\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT D:\Program Files\miktex\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT D:\Program Files\miktex\fonts\type1\public\amsfonts\cm\cmmi12.pfb
 INPUT D:\Program Files\miktex\fonts\type1\public\amsfonts\cm\cmmi12.pfb
+INPUT D:\Program Files\miktex\fonts\type1\public\amsfonts\cm\cmmi8.pfb
+INPUT D:\Program Files\miktex\fonts\type1\public\amsfonts\cm\cmmi8.pfb
 INPUT D:\Program Files\miktex\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT D:\Program Files\miktex\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT D:\Program Files\miktex\fonts\type1\public\amsfonts\cm\cmr8.pfb

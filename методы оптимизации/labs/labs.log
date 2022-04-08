@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12.10) (preloaded format=pdflatex 2022.1.14)  6 APR 2022 12:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12.10) (preloaded format=pdflatex 2022.1.14)  8 APR 2022 13:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -547,27 +547,36 @@ File: listings.cfg 2020/03/24 1.8d listings configuration
 Package: listings 2020/03/24 1.8d (Carsten Heinz)
  (D:\Program Files\miktex\tex/latex/setspace\setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
-) (D:\Program Files\miktex\tex/latex/listings\lstlang1.sty
-File: lstlang1.sty 2020/03/24 1.8d listings language file
+) (D:\Program Files\miktex\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count291
+\float@exts=\toks32
+\float@box=\box60
+\@float@everytoks=\toks33
+\@floatcapt=\box61
+)
+LaTeX Font Info:    Trying to load font information for T2A+cmss on input line 23.
+ (D:\Program Files\miktex\tex/latex/cyrillic\t2acmss.fd
+File: t2acmss.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 ) (labs.aux)
 \openout1 = `labs.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -605,31 +614,36 @@ LaTeX Font Info:    ... okay on input line 39.
 
 (D:\Program Files\miktex\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count291
+\scratchcounter=\count292
 \scratchdimen=\dimen163
-\scratchbox=\box60
-\nofMPsegments=\count292
-\nofMParguments=\count293
-\everyMPshowfont=\toks32
-\MPscratchCnt=\count294
+\scratchbox=\box62
+\nofMPsegments=\count293
+\nofMParguments=\count294
+\everyMPshowfont=\toks34
+\MPscratchCnt=\count295
 \MPscratchDim=\dimen164
-\MPnumerator=\count295
-\makeMPintoPDFobject=\count296
-\everyMPtoPDFconversion=\toks33
+\MPnumerator=\count296
+\makeMPintoPDFobject=\count297
+\everyMPtoPDFconversion=\toks35
 ) (D:\Program Files\miktex\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (D:\Program Files\miktex\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Info: Redefining \th on input line 39.
-\c@lstlisting=\count297
+LaTeX Info: Redefining \th on input line 23.
+\c@lstlisting=\count298
+
+
+LaTeX Font Warning: Font shape `T2A/cmss/m/sc' in size <12> not available
+(Font)              Font shape `T2A/cmr/m/sc' tried instead on input line 36.
+
 \ML=\skip122
-LaTeX Font Info:    Trying to load font information for U+msa on input line 59.
- (D:\Program Files\miktex\tex/latex/amsfonts\umsa.fd
+LaTeX Font Info:    Trying to load font information for U+msa on input line 43.
+(D:\Program Files\miktex\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 59.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 43.
  (D:\Program Files\miktex\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -639,38 +653,64 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout3 = `labs.toc'.
 
  [1]
-Underfull \hbox (badness 10000) in paragraph at lines 78--79
+Overfull \hbox (1.68288pt too wide) in paragraph at lines 61--61
+[]\T2A/cmss/bx/n/17.28 Графический ме-тод ре-ше-ния за-дач ли-ней-но-го про-грам-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--90
+Underfull \hbox (badness 10000) in paragraph at lines 64--74
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 91--92
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--102
+Underfull \hbox (badness 10000) in paragraph at lines 77--86
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--102
+Underfull \hbox (badness 10000) in paragraph at lines 77--86
 
  []
 
 <img//1-1.png, id=13, 652.68843pt x 436.63126pt>
 File: img//1-1.png Graphic file (type png)
 <use img//1-1.png>
-Package pdftex.def Info: img//1-1.png  used on input line 103.
+Package pdftex.def Info: img//1-1.png  used on input line 87.
 (pdftex.def)             Requested size: 512.14963pt x 342.64302pt.
 
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 103--104
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 87--88
 [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--93
+
+ []
+
+[2 <./img//1-1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 94--100
+
+ []
+
+[3]
+<img//2-1.png, id=27, 345.54094pt x 173.89969pt>
+File: img//2-1.png Graphic file (type png)
+<use img//2-1.png>
+Package pdftex.def Info: img//2-1.png  used on input line 105.
+(pdftex.def)             Requested size: 345.54008pt x 173.89925pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--106
+
  []
 
 
@@ -678,24 +718,158 @@ Underfull \hbox (badness 10000) in paragraph at lines 108--109
 
  []
 
+<img//2-2.png, id=28, 714.41907pt x 407.27156pt>
+File: img//2-2.png Graphic file (type png)
+<use img//2-2.png>
+Package pdftex.def Info: img//2-2.png  used on input line 110.
+(pdftex.def)             Requested size: 512.14963pt x 291.97997pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--116
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 110--111
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 110--111
 
  []
 
-[2 <./img//1-1.png>] [3] (labs.aux) ) 
+LaTeX Font Info:    Trying to load font information for T2A+cmtt on input line 113.
+(D:\Program Files\miktex\tex/latex/cyrillic\t2acmtt.fd
+File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
+) [4 <./img//2-1.png> <./img//2-2.png>]
+<img//2-3.png, id=34, 726.46407pt x 352.31625pt>
+File: img//2-3.png Graphic file (type png)
+<use img//2-3.png>
+Package pdftex.def Info: img//2-3.png  used on input line 126.
+(pdftex.def)             Requested size: 512.14963pt x 248.38298pt.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 126--127
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--127
+
+ []
+
+[5 <./img//2-3.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 129--130
+
+ []
+
+<img//2-4.png, id=38, 429.10312pt x 447.92343pt>
+File: img//2-4.png Graphic file (type png)
+<use img//2-4.png>
+Package pdftex.def Info: img//2-4.png  used on input line 131.
+(pdftex.def)             Requested size: 429.10207pt x 447.92233pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--132
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--134
+
+ []
+
+<img//2-5.png, id=39, 623.32875pt x 196.48407pt>
+File: img//2-5.png Graphic file (type png)
+<use img//2-5.png>
+Package pdftex.def Info: img//2-5.png  used on input line 135.
+(pdftex.def)             Requested size: 512.14963pt x 161.44176pt.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 135--136
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
+
+ []
+
+[6 <./img//2-4.png> <./img//2-5.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 177--181
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 182--187
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 189--190
+
+ []
+
+
+Overfull \hbox (10.44434pt too wide) detected at line 211
+\OT1/cmr/m/n/12 1)[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--246
+
+ []
+
+
+Overfull \hbox (10.44434pt too wide) detected at line 267
+\OT1/cmr/m/n/12 1)[]
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
+
+ []
+
+
+Overfull \hbox (10.44434pt too wide) detected at line 318
+\OT1/cmr/m/n/12 1)[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 352--353
+
+ []
+
+[9]
+Overfull \hbox (10.44434pt too wide) detected at line 369
+\OT1/cmr/m/n/12 1)[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 403--404
+
+ []
+
+
+Overfull \hbox (10.44434pt too wide) detected at line 419
+\OT1/cmr/m/n/12 1)[]
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 453--454
+
+ []
+
+
+Overfull \hbox (10.44434pt too wide) detected at line 475
+\OT1/cmr/m/n/12 1)[]
+ []
+
+[11] (labs.aux) ) 
 Here is how much of TeX's memory you used:
- 8620 strings out of 478659
- 133946 string characters out of 2855762
- 648431 words of memory out of 3000000
- 26570 multiletter control sequences out of 15000+600000
- 414518 words of font info for 53 fonts, out of 8000000 for 9000
+ 8760 strings out of 478659
+ 136722 string characters out of 2855762
+ 486075 words of memory out of 3000000
+ 26692 multiletter control sequences out of 15000+600000
+ 419229 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 73i,8n,77p,563b,261s stack positions out of 5000i,500n,10000p,200000b,80000s
- <C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1200.pk> <C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\labx1728.pk> <C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lacc1200.pk> <C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm2074.pk> <C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\larm1200.pk><D:/Program Files/miktex/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/Program Files/miktex/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/Program Files/miktex/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/Program Files/miktex/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/Program Files/miktex/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on labs.pdf (4 pages, 141214 bytes).
+ 73i,14n,77p,563b,266s stack positions out of 5000i,500n,10000p,200000b,80000s
+ <C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\latt1200.pk> <C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lasx1440.pk> <C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lasx1200.pk> <C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lasx1728.pk> <C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lacc1200.pk> <C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass2074.pk> <C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1200.pk><D:/Program Files/miktex/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/Program Files/miktex/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/Program Files/miktex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/Program Files/miktex/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/Program Files/miktex/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/Program Files/miktex/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on labs.pdf (12 pages, 289985 bytes).
 PDF statistics:
- 228 PDF objects out of 1000 (max. 8388607)
+ 357 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
