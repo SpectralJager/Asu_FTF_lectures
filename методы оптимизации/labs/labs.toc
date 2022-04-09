@@ -1,0 +1,5 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Графический метод решения задач линейного программирования}{2}{}%
+\contentsline {section}{\numberline {2}Транспортная задача}{4}{}%
+\contentsline {subsection}{\numberline {2.1}Exel}{4}{}%
+\contentsline {subsection}{\numberline {2.2}Метод потенциалов(опорный план с помощью северо-западного угла)}{7}{}%
