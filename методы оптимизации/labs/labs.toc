@@ -1,5 +1,18 @@
 \babel@toc {russian}{}\relax 
 \contentsline {section}{\numberline {1}Графический метод решения задач линейного программирования}{2}{}%
-\contentsline {section}{\numberline {2}Транспортная задача}{4}{}%
-\contentsline {subsection}{\numberline {2.1}Exel}{4}{}%
-\contentsline {subsection}{\numberline {2.2}Метод потенциалов(опорный план с помощью северо-западного угла)}{7}{}%
+\contentsline {subsection}{\numberline {1.1}Краткие теоретические сведения по теме лабораторной работы}{2}{}%
+\contentsline {subsection}{\numberline {1.2}Решение индивидуального задания}{3}{}%
+\contentsline {section}{\numberline {2}Транспортная задача}{5}{}%
+\contentsline {subsection}{\numberline {2.1}Краткие теоретические сведения по теме лабораторной работы}{5}{}%
+\contentsline {subsection}{\numberline {2.2}Решение индивидуального задания}{6}{}%
+\contentsline {subsubsection}{\numberline {2.2.1}exel}{6}{}%
+\contentsline {subsubsection}{\numberline {2.2.2}Метод потенциалов(опорный план с помощью северо-западного угла)}{9}{}%
+\contentsline {section}{\numberline {3}Задача коммивояжера}{14}{}%
+\contentsline {subsection}{\numberline {3.1}Краткие теоретические сведения по теме лабораторной работы}{14}{}%
+\contentsline {subsection}{\numberline {3.2}Решение индивидуального задания}{14}{}%
+\contentsline {subsection}{\numberline {3.3}MS Exel}{15}{}%
+\contentsline {subsection}{\numberline {3.4}Вывод}{17}{}%
+\contentsline {section}{\numberline {4}Теория двойственности}{18}{}%
+\contentsline {subsection}{\numberline {4.1}Краткие теоретические сведения}{18}{}%
+\contentsline {subsection}{\numberline {4.2}Постановка задачи. 13 вариант}{18}{}%
+\contentsline {subsection}{\numberline {4.3}Вывод}{19}{}%

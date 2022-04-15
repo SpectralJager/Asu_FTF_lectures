@@ -18,6 +18,48 @@ INPUT D:\Program Files\miktex\tex\latex\base\size12.clo
 INPUT D:\Program Files\miktex\tex\latex\base\size12.clo
 INPUT D:\Program Files\miktex\tex\latex\base\size12.clo
 INPUT D:\Program Files\miktex\fonts\tfm\public\cm\cmr12.tfm
+INPUT D:\Program Files\miktex\tex\latex\xcolor\xcolor.sty
+INPUT D:\Program Files\miktex\tex\latex\xcolor\xcolor.sty
+INPUT D:\Program Files\miktex\tex\latex\xcolor\xcolor.sty
+INPUT D:\Program Files\miktex\tex\latex\xcolor\xcolor.sty
+INPUT D:\Program Files\miktex\tex\latex\xcolor\xcolor.sty
+INPUT D:\Program Files\miktex\tex\latex\xcolor\xcolor.sty
+INPUT D:\Program Files\miktex\tex\latex\xcolor\xcolor.sty
+INPUT D:\Program Files\miktex\tex\latex\xcolor\xcolor.sty
+INPUT D:\Program Files\miktex\tex\latex\xcolor\xcolor.sty
+INPUT D:\Program Files\miktex\tex\latex\xcolor\xcolor.sty
+INPUT D:\Program Files\miktex\tex\latex\xcolor\xcolor.sty
+INPUT D:\Program Files\miktex\tex\latex\graphics-cfg\color.cfg
+INPUT D:\Program Files\miktex\tex\latex\graphics-cfg\color.cfg
+INPUT D:\Program Files\miktex\tex\latex\graphics-cfg\color.cfg
+INPUT D:\Program Files\miktex\tex\latex\graphics-cfg\color.cfg
+INPUT D:\Program Files\miktex\tex\latex\graphics-def\pdftex.def
+INPUT D:\Program Files\miktex\tex\latex\graphics-def\pdftex.def
+INPUT D:\Program Files\miktex\tex\latex\graphics-def\pdftex.def
+INPUT D:\Program Files\miktex\tex\latex\graphics-def\pdftex.def
+INPUT D:\Program Files\miktex\tex\latex\colortbl\colortbl.sty
+INPUT D:\Program Files\miktex\tex\latex\colortbl\colortbl.sty
+INPUT D:\Program Files\miktex\tex\latex\colortbl\colortbl.sty
+INPUT D:\Program Files\miktex\tex\latex\colortbl\colortbl.sty
+INPUT D:\Program Files\miktex\tex\latex\colortbl\colortbl.sty
+INPUT D:\Program Files\miktex\tex\latex\colortbl\colortbl.sty
+INPUT D:\Program Files\miktex\tex\latex\colortbl\colortbl.sty
+INPUT D:\Program Files\miktex\tex\latex\colortbl\colortbl.sty
+INPUT D:\Program Files\miktex\tex\latex\colortbl\colortbl.sty
+INPUT D:\Program Files\miktex\tex\latex\colortbl\colortbl.sty
+INPUT D:\Program Files\miktex\tex\latex\colortbl\colortbl.sty
+INPUT D:\Program Files\miktex\tex\latex\tools\array.sty
+INPUT D:\Program Files\miktex\tex\latex\tools\array.sty
+INPUT D:\Program Files\miktex\tex\latex\tools\array.sty
+INPUT D:\Program Files\miktex\tex\latex\tools\array.sty
+INPUT D:\Program Files\miktex\tex\latex\tools\array.sty
+INPUT D:\Program Files\miktex\tex\latex\tools\array.sty
+INPUT D:\Program Files\miktex\tex\latex\tools\array.sty
+INPUT D:\Program Files\miktex\tex\latex\tools\array.sty
+INPUT D:\Program Files\miktex\tex\latex\tools\array.sty
+INPUT D:\Program Files\miktex\tex\latex\tools\array.sty
+INPUT D:\Program Files\miktex\tex\latex\tools\array.sty
+INPUT D:\Program Files\miktex\tex\latex\graphics\color.sty
 INPUT D:\Program Files\miktex\tex\latex\geometry\geometry.sty
 INPUT D:\Program Files\miktex\tex\latex\geometry\geometry.sty
 INPUT D:\Program Files\miktex\tex\latex\geometry\geometry.sty
@@ -104,25 +146,7 @@ INPUT D:\Program Files\miktex\tex\latex\graphics-cfg\graphics.cfg
 INPUT D:\Program Files\miktex\tex\latex\graphics-cfg\graphics.cfg
 INPUT D:\Program Files\miktex\tex\latex\graphics-cfg\graphics.cfg
 INPUT D:\Program Files\miktex\tex\latex\graphics-cfg\graphics.cfg
-INPUT D:\Program Files\miktex\tex\latex\graphics-def\pdftex.def
-INPUT D:\Program Files\miktex\tex\latex\graphics-def\pdftex.def
-INPUT D:\Program Files\miktex\tex\latex\graphics-def\pdftex.def
-INPUT D:\Program Files\miktex\tex\latex\graphics-def\pdftex.def
 INPUT D:\Program Files\miktex\tex\latex\xcolor\xcolor.sty
-INPUT D:\Program Files\miktex\tex\latex\xcolor\xcolor.sty
-INPUT D:\Program Files\miktex\tex\latex\xcolor\xcolor.sty
-INPUT D:\Program Files\miktex\tex\latex\xcolor\xcolor.sty
-INPUT D:\Program Files\miktex\tex\latex\xcolor\xcolor.sty
-INPUT D:\Program Files\miktex\tex\latex\xcolor\xcolor.sty
-INPUT D:\Program Files\miktex\tex\latex\xcolor\xcolor.sty
-INPUT D:\Program Files\miktex\tex\latex\xcolor\xcolor.sty
-INPUT D:\Program Files\miktex\tex\latex\xcolor\xcolor.sty
-INPUT D:\Program Files\miktex\tex\latex\xcolor\xcolor.sty
-INPUT D:\Program Files\miktex\tex\latex\xcolor\xcolor.sty
-INPUT D:\Program Files\miktex\tex\latex\graphics-cfg\color.cfg
-INPUT D:\Program Files\miktex\tex\latex\graphics-cfg\color.cfg
-INPUT D:\Program Files\miktex\tex\latex\graphics-cfg\color.cfg
-INPUT D:\Program Files\miktex\tex\latex\graphics-cfg\color.cfg
 INPUT D:\Program Files\miktex\tex\latex\mdframed\mdframed.sty
 INPUT D:\Program Files\miktex\tex\latex\mdframed\mdframed.sty
 INPUT D:\Program Files\miktex\tex\latex\mdframed\mdframed.sty
@@ -586,6 +610,15 @@ INPUT labs.toc
 INPUT D:\Program Files\miktex\fonts\tfm\public\cm\cmss12.tfm
 INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\lasx1200.tfm
 OUTPUT labs.toc
+INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\lass1440.tfm
+INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\lasx1440.tfm
+INPUT .\img\\1-2.png
+INPUT .\img\\1-2.png
+INPUT img\\1-2.png
+INPUT .\img\\1-2.png
+INPUT .\img\\1-2.png
+INPUT .\img\\1-2.png
+INPUT .\img\\1-2.png
 INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\lass0800.tfm
 INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\lass0600.tfm
 INPUT .\img\\1-1.png
@@ -602,8 +635,6 @@ INPUT .\img\\2-1.png
 INPUT .\img\\2-1.png
 INPUT .\img\\2-1.png
 INPUT .\img\\2-1.png
-INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\lass1440.tfm
-INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\lasx1440.tfm
 INPUT .\img\\2-2.png
 INPUT .\img\\2-2.png
 INPUT img\\2-2.png
@@ -639,7 +670,37 @@ INPUT .\img\\2-5.png
 INPUT .\img\\2-5.png
 INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\lacc0800.tfm
 INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\lacc0600.tfm
+INPUT .\img\\3-1.png
+INPUT .\img\\3-1.png
+INPUT img\\3-1.png
+INPUT .\img\\3-1.png
+INPUT .\img\\3-1.png
+INPUT .\img\\3-1.png
+INPUT .\img\\3-1.png
+INPUT D:\Program Files\miktex\tex\latex\base\ts1cmss.fd
+INPUT D:\Program Files\miktex\tex\latex\base\ts1cmss.fd
+INPUT D:\Program Files\miktex\tex\latex\base\ts1cmss.fd
+INPUT D:\Program Files\miktex\tex\latex\base\ts1cmss.fd
+INPUT D:\Program Files\miktex\fonts\tfm\jknappen\ec\tcss1200.tfm
+INPUT .\img\\3-2.png
+INPUT .\img\\3-2.png
+INPUT img\\3-2.png
+INPUT .\img\\3-2.png
+INPUT .\img\\3-2.png
+INPUT .\img\\3-2.png
+INPUT .\img\\3-2.png
+INPUT .\img\\3-3.png
+INPUT .\img\\3-3.png
+INPUT img\\3-3.png
+INPUT .\img\\3-3.png
+INPUT .\img\\3-3.png
+INPUT .\img\\3-3.png
+INPUT .\img\\3-3.png
 INPUT labs.aux
+INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\lass0800.pk
+INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\lass0800.pk
+INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcss1200.pk
+INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcss1200.pk
 INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\latt1200.pk
 INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\latt1200.pk
 INPUT C:\Users\SpectrumPC\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\lasx1440.pk
@@ -664,5 +725,7 @@ INPUT D:\Program Files\miktex\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT D:\Program Files\miktex\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT D:\Program Files\miktex\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT D:\Program Files\miktex\fonts\type1\public\amsfonts\cm\cmr8.pfb
+INPUT D:\Program Files\miktex\fonts\type1\public\amsfonts\cm\cmss12.pfb
+INPUT D:\Program Files\miktex\fonts\type1\public\amsfonts\cm\cmss12.pfb
 INPUT D:\Program Files\miktex\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT D:\Program Files\miktex\fonts\type1\public\amsfonts\cm\cmsy10.pfb
