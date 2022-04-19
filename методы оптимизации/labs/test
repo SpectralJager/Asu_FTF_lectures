@@ -44,29 +44,3 @@ n4&5       &3       &5       &$\infty$&4       & \\ \hline
 n5&8       &4       &5       &9       &$\infty$& \\ \hline
 \end{tabular}
 \end{table}
-
-% $L() = + + = $
-% \begin{table}[H]
-% \centering
-% \begin{tabular}{c|c|c|c|c|c|c}
-%   &n1      &n2      &n3      &n4      &n5       &\\ \hline
-% n1&$\infty$&8       &5       &15      &6        &\\ \hline
-% n2&6       &$\infty$&5       &5       &2        &\\ \hline
-% n3&6       &5       &$\infty$&5       &6        &\\ \hline
-% n4&5       &3       &5       &$\infty$&4        &\\ \hline
-% n5&8       &4       &5       &9       &$\infty$ &\\ \hline
-% \end{tabular}
-% \end{table}
-% \begin{table}[H]
-% \centering
-% \begin{tabular}{c|c|c|c|c|c|}
-%   &n1      &n2      &n3      &n4      &n5      \\ \hline
-% n1&$\infty$&8       &5       &15      &6       \\ \hline
-% n2&6       &$\infty$&5       &5       &2       \\ \hline
-% n3&6       &5       &$\infty$&5       &6       \\ \hline
-% n4&5       &3       &5       &$\infty$&4       \\ \hline
-% n5&8       &4       &5       &9       &$\infty$\\ \hline
-%   &-       &-       &-       &-       &-       \\ 
-% \end{tabular}
-% \end{table}
-
