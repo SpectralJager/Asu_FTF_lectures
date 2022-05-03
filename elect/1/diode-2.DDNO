@@ -1,0 +1,80 @@
+********************************************************************************
+***                       Micro-Cap 12.2.0.5 (64 bit)                        ***
+***                                                                          ***
+***                                                                          ***
+***                          Dynamic DC of diode-2                           ***
+***                           03.05.2022 12:09:31                            ***
+********************************************************************************
+
+*****************************************************
+***                Temperature=27                 ***
+*****************************************************
+
+Temperature=27
+
+DC Operating Point Voltages
+===========================
+Node         Voltage  Node         Voltage 
+1            10.000   2           827.744m 
+
+
+Operating Point for Devices of Type Diode
+=========================================
+Instance:               Z1
+Using model:         1N752
+
+Capacitance Terms:
+CAP               310.628p
+
+Current Terms:
+ID                  9.172m
+
+Resistance Terms:
+REQ                 2.820 
+
+Voltage Terms:
+VD                827.744m
+
+Power DC Terms:
+PD                  7.592m
+PS                  0.000 
+
+DC Pin Currents:
+Id                  9.172m
+
+Condition:
+State                   ON
+
+Device Variables:
+area                1.000 
+ic                  0.000 
+
+
+
+Operating Point for Devices of Type Resistor
+============================================
+Instance:                R1
+V                    9.172 
+Power DC Terms:
+PD                  84.130m
+
+DC Pin Currents:
+Ir                   9.172m
+
+Device Variables:
+tc1                  0.000 
+tc2                  0.000 
+
+
+
+Operating Point for Devices of Type SPICE Source
+================================================
+Instance:               V1
+V                  10.000 
+Power DC Terms:
+PG                 91.723m
+
+DC Pin Currents:
+ISource            -9.172m
+
+
