@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.6.5)  6 JUN 2022 21:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.6.5)  7 JUN 2022 21:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -669,24 +669,42 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout3 = `report.toc'.
 
  [1]
-Overfull \hbox (10.79192pt too wide) in paragraph at lines 80--81
+Overfull \hbox (10.79192pt too wide) in paragraph at lines 81--82
 []\T2A/cmss/m/n/12 Установка и на-строй-ка про-грамм-но-го обес-пе-че-ния для опе-ра-ци-он-ных си-стем Windows
  []
 
-[2] (./report.aux) ) 
+[2]
+Overfull \hbox (3.55783pt too wide) in paragraph at lines 106--107
+\T2A/cmss/m/n/12 АлтГУ об-ра-зо-ван в со-от-вет-ствии с по-ста-нов-ле-ни-ем Со-ве-та Ми-ни-стров СССР от 27.03.1973
+ []
+
+
+Overfull \hbox (24.3927pt too wide) in paragraph at lines 116--117
+[]\T2A/cmss/m/n/12 Кафедра вы-чис-ли-тель-ной тех-ни-ки и элек-тро-ни-ки бы-ла об-ра-зо-ва-на на физико-техническом
+ []
+
+[3]
+Overfull \hbox (15.7728pt too wide) in paragraph at lines 128--129
+[]\T2A/cmss/m/n/12 Проверка ра-бо-то-спо-соб-но-сти RAM с по-мо-щью про-грам-мы Memory Test 86 (memtest86)
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 135.
+(/usr/share/texmf-dist/tex/latex/base/ts1cmss.fd
+File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+) [4] [5] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 9120 strings out of 478238
- 144550 string characters out of 5850457
- 463658 words of memory out of 5000000
- 27193 multiletter control sequences out of 15000+600000
- 481549 words of font info for 56 fonts, out of 8000000 for 9000
+ 9140 strings out of 478238
+ 145141 string characters out of 5850457
+ 464658 words of memory out of 5000000
+ 27209 multiletter control sequences out of 15000+600000
+ 481892 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 73i,5n,77p,565b,261s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}</usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb>
-Output written on report.pdf (3 pages, 71821 bytes).
+ 73i,5n,77p,828b,261s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}</usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb>
+Output written on report.pdf (6 pages, 115375 bytes).
 PDF statistics:
- 45 PDF objects out of 1000 (max. 8388607)
- 27 compressed objects within 1 object stream
+ 58 PDF objects out of 1000 (max. 8388607)
+ 36 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,2 +1,9 @@
 \babel@toc {russian}{}\relax 
-\contentsline {section}{\numberline {1}Введение}{2}{}%
+\contentsline {section}{\numberline {0}Введение}{2}{}%
+\contentsline {section}{\numberline {1}Место прохождения практики}{3}{}%
+\contentsline {section}{\numberline {2}Нормативная база программиста АлтГУ}{3}{}%
+\contentsline {section}{\numberline {3}Диагностика компьютеров. Устранение найденныйх проблем.}{3}{}%
+\contentsline {section}{\numberline {4}Установка Linux Ubuntu. Установка программного обеспечения}{4}{}%
+\contentsline {section}{\numberline {5}Написание PowerShell скрипта}{5}{}%
+\contentsline {section}{\numberline {6}Руководство группой людей}{5}{}%
+\contentsline {section}{\numberline {7}Выполнение индивидуального задания}{5}{}%

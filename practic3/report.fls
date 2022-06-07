@@ -629,7 +629,13 @@ INPUT /home/spectrum/.texlive/texmf-var/fonts/tfm/lh/lh-t2a/lasx1200.tfm
 OUTPUT report.toc
 INPUT /home/spectrum/.texlive/texmf-var/fonts/tfm/lh/lh-t2a/lass1440.tfm
 INPUT /home/spectrum/.texlive/texmf-var/fonts/tfm/lh/lh-t2a/lasx1440.tfm
+INPUT /usr/share/texmf-dist/tex/latex/base/ts1cmss.fd
+INPUT /usr/share/texmf-dist/tex/latex/base/ts1cmss.fd
+INPUT /usr/share/texmf-dist/tex/latex/base/ts1cmss.fd
+INPUT /usr/share/texmf-dist/tex/latex/base/ts1cmss.fd
+INPUT /usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcss1200.tfm
 INPUT report.aux
+INPUT /usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT /usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc
 INPUT /usr/share/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb
 INPUT /usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb
