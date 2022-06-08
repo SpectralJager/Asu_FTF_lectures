@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{part of}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}gameselect.dart\PYGZsq{}}\PYG{p}{;}
+
+\PYG{k+kd}{class}\PYG{+w}{ }\PYG{n+nc}{GameSelectBloc}\PYG{+w}{ }\PYG{k+kd}{extends}\PYG{+w}{ }\PYG{n}{Cubit}\PYG{o}{\PYGZlt{}}\PYG{n}{GameSelectState}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{GameSelectBloc}\PYG{p}{()}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{k}{super}\PYG{p}{(}\PYG{n}{GameSelectInit}\PYG{p}{())}\PYG{+w}{ }\PYG{p}{\PYGZob{}\PYGZcb{}}
+
+\PYG{+w}{  }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n}{changeType}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{index}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kd}{var}\PYG{+w}{ }\PYG{n}{type}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{OfflineType}\PYG{p}{.}\PYG{n}{values}\PYG{p}{[}\PYG{n}{index}\PYG{p}{];}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{type}\PYG{p}{.}\PYG{n}{name}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{n}{state}\PYG{p}{.}\PYG{n}{type}\PYG{p}{.}\PYG{n}{name}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{      }\PYG{n}{emit}\PYG{p}{(}\PYG{n}{GameSelectCurrent}\PYG{p}{(}\PYG{n}{type}\PYG{p}{));}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,24 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{part of}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}game.dart\PYGZsq{}}\PYG{p}{;}
+
+\PYG{k+kd}{abstract}\PYG{+w}{ }\PYG{k+kd}{class}\PYG{+w}{ }\PYG{n+nc}{GameState}\PYG{+w}{ }\PYG{k+kd}{extends}\PYG{+w}{ }\PYG{n}{Equatable}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{k+kd}{final}\PYG{+w}{ }\PYG{n}{Game}\PYG{+w}{ }\PYG{n}{game}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{n}{GameState}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n}{game}\PYG{p}{);}
+
+\PYG{+w}{  }\PYG{n+nd}{@override}
+\PYG{+w}{  }\PYG{n}{List}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{Object}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{k+kd}{get}\PYG{+w}{ }\PYG{n}{props}\PYG{+w}{ }\PYG{o}{=\PYGZgt{}}\PYG{+w}{ }\PYG{p}{[}\PYG{n}{game}\PYG{p}{];}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kd}{class}\PYG{+w}{ }\PYG{n+nc}{GameStateInit}\PYG{+w}{ }\PYG{k+kd}{extends}\PYG{+w}{ }\PYG{n}{GameState}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{GameStateInit}\PYG{p}{(}\PYG{n}{Game}\PYG{o}{?}\PYG{+w}{ }\PYG{n}{game}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{k}{super}\PYG{p}{(}\PYG{n}{game}\PYG{+w}{ }\PYG{o}{??}\PYG{+w}{ }\PYG{n}{Game}\PYG{p}{());}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kd}{class}\PYG{+w}{ }\PYG{n+nc}{GameStateRunning}\PYG{+w}{ }\PYG{k+kd}{extends}\PYG{+w}{ }\PYG{n}{GameState}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{GameStateRunning}\PYG{p}{(}\PYG{n}{Game}\PYG{+w}{ }\PYG{n}{game}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{k}{super}\PYG{p}{(}\PYG{n}{game}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kd}{class}\PYG{+w}{ }\PYG{n+nc}{GameStateFinish}\PYG{+w}{ }\PYG{k+kd}{extends}\PYG{+w}{ }\PYG{n}{GameState}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{GameStateFinish}\PYG{p}{(}\PYG{n}{Game}\PYG{+w}{ }\PYG{n}{game}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{k}{super}\PYG{p}{(}\PYG{n}{game}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

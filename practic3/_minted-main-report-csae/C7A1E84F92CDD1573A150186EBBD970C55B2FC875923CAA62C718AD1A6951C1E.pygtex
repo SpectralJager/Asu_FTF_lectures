@@ -1,0 +1,70 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{import}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}package:flutter/material.dart\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{import}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}package:flutter\PYGZus{}bloc/flutter\PYGZus{}bloc.dart\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{import}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}package:google\PYGZus{}fonts/google\PYGZus{}fonts.dart\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{import}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}package:smct/gameselect/gameselect.dart\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{import}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}package:smct/home/home.dart\PYGZsq{}}\PYG{p}{;}
+
+\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n}{main}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{runApp}\PYG{p}{(}\PYG{n}{MultiBlocProvider}\PYG{p}{(}\PYG{n+nl}{providers:}\PYG{+w}{ }\PYG{p}{[}
+\PYG{+w}{    }\PYG{n}{BlocProvider}\PYG{o}{\PYGZlt{}}\PYG{n}{HomeBloc}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{n+nl}{create:}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{\PYGZus{}}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{=\PYGZgt{}}\PYG{+w}{ }\PYG{n}{HomeBloc}\PYG{p}{()),}
+\PYG{+w}{    }\PYG{n}{BlocProvider}\PYG{o}{\PYGZlt{}}\PYG{n}{GameSelectBloc}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{n+nl}{create:}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{\PYGZus{}}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{=\PYGZgt{}}\PYG{+w}{ }\PYG{n}{GameSelectBloc}\PYG{p}{()),}
+\PYG{+w}{  }\PYG{p}{],}\PYG{+w}{ }\PYG{n+nl}{child:}\PYG{+w}{ }\PYG{k}{const}\PYG{+w}{ }\PYG{n}{MentalCalc}\PYG{p}{()));}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kd}{class}\PYG{+w}{ }\PYG{n+nc}{MentalCalc}\PYG{+w}{ }\PYG{k+kd}{extends}\PYG{+w}{ }\PYG{n}{StatelessWidget}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{k}{const}\PYG{+w}{ }\PYG{n}{MentalCalc}\PYG{p}{(\PYGZob{}}\PYG{n}{Key}\PYG{o}{?}\PYG{+w}{ }\PYG{n}{key}\PYG{p}{\PYGZcb{})}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{k}{super}\PYG{p}{(}\PYG{n+nl}{key:}\PYG{+w}{ }\PYG{n}{key}\PYG{p}{);}
+
+\PYG{+w}{  }\PYG{n+nd}{@override}
+\PYG{+w}{  }\PYG{n}{Widget}\PYG{+w}{ }\PYG{n}{build}\PYG{p}{(}\PYG{n}{BuildContext}\PYG{+w}{ }\PYG{n}{context}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{MaterialApp}\PYG{p}{(}
+\PYG{+w}{      }\PYG{n+nl}{debugShowCheckedModeBanner:}\PYG{+w}{ }\PYG{k+kc}{false}\PYG{p}{,}
+\PYG{+w}{      }\PYG{n+nl}{home:}\PYG{+w}{ }\PYG{n}{HomeView}\PYG{p}{(),}
+\PYG{+w}{      }\PYG{n+nl}{theme:}\PYG{+w}{ }\PYG{n}{ThemeData}\PYG{p}{.}\PYG{n}{from}\PYG{p}{(}
+\PYG{+w}{        }\PYG{n+nl}{colorScheme:}\PYG{+w}{ }\PYG{k}{const}\PYG{+w}{ }\PYG{n}{ColorScheme}\PYG{p}{(}
+\PYG{+w}{          }\PYG{n+nl}{brightness:}\PYG{+w}{ }\PYG{n}{Brightness}\PYG{p}{.}\PYG{n}{dark}\PYG{p}{,}
+\PYG{+w}{          }\PYG{c+c1}{// Primary}
+\PYG{+w}{          }\PYG{n+nl}{primary:}\PYG{+w}{ }\PYG{n}{Color}\PYG{p}{(}\PYG{l+m+mh}{0xffFFB77E}\PYG{p}{),}
+\PYG{+w}{          }\PYG{n+nl}{onPrimary:}\PYG{+w}{ }\PYG{n}{Color}\PYG{p}{(}\PYG{l+m+mh}{0xff4F2500}\PYG{p}{),}
+\PYG{+w}{          }\PYG{n+nl}{primaryContainer:}\PYG{+w}{ }\PYG{n}{Color}\PYG{p}{(}\PYG{l+m+mh}{0xff703800}\PYG{p}{),}
+\PYG{+w}{          }\PYG{n+nl}{onPrimaryContainer:}\PYG{+w}{ }\PYG{n}{Color}\PYG{p}{(}\PYG{l+m+mh}{0xffFFDCC2}\PYG{p}{),}
+\PYG{+w}{          }\PYG{c+c1}{// Secondary}
+\PYG{+w}{          }\PYG{n+nl}{secondary:}\PYG{+w}{ }\PYG{n}{Color}\PYG{p}{(}\PYG{l+m+mh}{0xffE3BFA6}\PYG{p}{),}
+\PYG{+w}{          }\PYG{n+nl}{onSecondary:}\PYG{+w}{ }\PYG{n}{Color}\PYG{p}{(}\PYG{l+m+mh}{0xff422B1A}\PYG{p}{),}
+\PYG{+w}{          }\PYG{n+nl}{secondaryContainer:}\PYG{+w}{ }\PYG{n}{Color}\PYG{p}{(}\PYG{l+m+mh}{0xff5A412F}\PYG{p}{),}
+\PYG{+w}{          }\PYG{n+nl}{onSecondaryContainer:}\PYG{+w}{ }\PYG{n}{Color}\PYG{p}{(}\PYG{l+m+mh}{0xffFFDCC2}\PYG{p}{),}
+\PYG{+w}{          }\PYG{c+c1}{// Tertiary}
+\PYG{+w}{          }\PYG{n+nl}{tertiary:}\PYG{+w}{ }\PYG{n}{Color}\PYG{p}{(}\PYG{l+m+mh}{0xffC6CA95}\PYG{p}{),}
+\PYG{+w}{          }\PYG{n+nl}{onTertiary:}\PYG{+w}{ }\PYG{n}{Color}\PYG{p}{(}\PYG{l+m+mh}{0xff2F330B}\PYG{p}{),}
+\PYG{+w}{          }\PYG{n+nl}{tertiaryContainer:}\PYG{+w}{ }\PYG{n}{Color}\PYG{p}{(}\PYG{l+m+mh}{0xff464A21}\PYG{p}{),}
+\PYG{+w}{          }\PYG{n+nl}{onTertiaryContainer:}\PYG{+w}{ }\PYG{n}{Color}\PYG{p}{(}\PYG{l+m+mh}{0xffE3E7AF}\PYG{p}{),}
+\PYG{+w}{          }\PYG{c+c1}{// Error}
+\PYG{+w}{          }\PYG{n+nl}{error:}\PYG{+w}{ }\PYG{n}{Color}\PYG{p}{(}\PYG{l+m+mh}{0xffFFB4A9}\PYG{p}{),}
+\PYG{+w}{          }\PYG{n+nl}{onError:}\PYG{+w}{ }\PYG{n}{Color}\PYG{p}{(}\PYG{l+m+mh}{0xff680003}\PYG{p}{),}
+\PYG{+w}{          }\PYG{n+nl}{errorContainer:}\PYG{+w}{ }\PYG{n}{Color}\PYG{p}{(}\PYG{l+m+mh}{0xff930006}\PYG{p}{),}
+\PYG{+w}{          }\PYG{n+nl}{onErrorContainer:}\PYG{+w}{ }\PYG{n}{Color}\PYG{p}{(}\PYG{l+m+mh}{0xffFFDAD4}\PYG{p}{),}
+\PYG{+w}{          }\PYG{c+c1}{// Background}
+\PYG{+w}{          }\PYG{n+nl}{background:}\PYG{+w}{ }\PYG{n}{Color}\PYG{p}{(}\PYG{l+m+mh}{0xffECE0DA}\PYG{p}{),}
+\PYG{+w}{          }\PYG{n+nl}{onBackground:}\PYG{+w}{ }\PYG{n}{Color}\PYG{p}{(}\PYG{l+m+mh}{0xff201A17}\PYG{p}{),}
+\PYG{+w}{          }\PYG{n+nl}{surface:}\PYG{+w}{ }\PYG{n}{Color}\PYG{p}{(}\PYG{l+m+mh}{0xffECE0DA}\PYG{p}{),}
+\PYG{+w}{          }\PYG{n+nl}{onSurface:}\PYG{+w}{ }\PYG{n}{Color}\PYG{p}{(}\PYG{l+m+mh}{0xff201A17}\PYG{p}{),}
+\PYG{+w}{        }\PYG{p}{),}
+\PYG{+w}{        }\PYG{n+nl}{useMaterial3:}\PYG{+w}{ }\PYG{k+kc}{true}\PYG{p}{,}
+\PYG{+w}{        }\PYG{n+nl}{textTheme:}\PYG{+w}{ }\PYG{n}{TextTheme}\PYG{p}{(}
+\PYG{+w}{            }\PYG{n+nl}{displaySmall:}\PYG{+w}{ }\PYG{n}{GoogleFonts}\PYG{p}{.}\PYG{n}{oswald}\PYG{p}{(}
+\PYG{+w}{              }\PYG{n+nl}{fontSize:}\PYG{+w}{ }\PYG{l+m}{36}\PYG{p}{,}
+\PYG{+w}{              }\PYG{n+nl}{fontWeight:}\PYG{+w}{ }\PYG{n}{FontWeight}\PYG{p}{.}\PYG{n}{w400}\PYG{p}{,}
+\PYG{+w}{            }\PYG{p}{),}
+\PYG{+w}{            }\PYG{n+nl}{headlineMedium:}\PYG{+w}{ }\PYG{n}{GoogleFonts}\PYG{p}{.}\PYG{n}{oswald}\PYG{p}{(}
+\PYG{+w}{              }\PYG{n+nl}{fontSize:}\PYG{+w}{ }\PYG{l+m}{28}\PYG{p}{,}
+\PYG{+w}{              }\PYG{n+nl}{fontWeight:}\PYG{+w}{ }\PYG{n}{FontWeight}\PYG{p}{.}\PYG{n}{w400}\PYG{p}{,}
+\PYG{+w}{            }\PYG{p}{),}
+\PYG{+w}{            }\PYG{n+nl}{labelLarge:}\PYG{+w}{ }\PYG{n}{GoogleFonts}\PYG{p}{.}\PYG{n}{openSans}\PYG{p}{(}
+\PYG{+w}{              }\PYG{n+nl}{fontSize:}\PYG{+w}{ }\PYG{l+m}{14}\PYG{p}{,}
+\PYG{+w}{              }\PYG{n+nl}{fontWeight:}\PYG{+w}{ }\PYG{n}{FontWeight}\PYG{p}{.}\PYG{n}{w500}\PYG{p}{,}
+\PYG{+w}{            }\PYG{p}{)),}
+\PYG{+w}{      }\PYG{p}{),}
+\PYG{+w}{    }\PYG{p}{);}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

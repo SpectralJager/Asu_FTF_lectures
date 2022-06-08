@@ -1,0 +1,95 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{part of}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}gameselect.dart\PYGZsq{}}\PYG{p}{;}
+
+\PYG{k+kd}{class}\PYG{+w}{ }\PYG{n+nc}{GameSelectView}\PYG{+w}{ }\PYG{k+kd}{extends}\PYG{+w}{ }\PYG{n}{StatefulWidget}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{k}{const}\PYG{+w}{ }\PYG{n}{GameSelectView}\PYG{p}{(\PYGZob{}}\PYG{n}{Key}\PYG{o}{?}\PYG{+w}{ }\PYG{n}{key}\PYG{p}{\PYGZcb{})}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{k}{super}\PYG{p}{(}\PYG{n+nl}{key:}\PYG{+w}{ }\PYG{n}{key}\PYG{p}{);}
+
+\PYG{+w}{  }\PYG{n+nd}{@override}
+\PYG{+w}{  }\PYG{n}{State}\PYG{o}{\PYGZlt{}}\PYG{n}{StatefulWidget}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{createState}\PYG{p}{()}\PYG{+w}{ }\PYG{o}{=\PYGZgt{}}\PYG{+w}{ }\PYG{n}{\PYGZus{}GameSelectViewState}\PYG{p}{();}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kd}{class}\PYG{+w}{ }\PYG{n+nc}{\PYGZus{}GameSelectViewState}\PYG{+w}{ }\PYG{k+kd}{extends}\PYG{+w}{ }\PYG{n}{State}\PYG{o}{\PYGZlt{}}\PYG{n}{GameSelectView}\PYG{o}{\PYGZgt{}}
+\PYG{+w}{    }\PYG{k+kd}{with}\PYG{+w}{ }\PYG{n}{SingleTickerProviderStateMixin}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{k+kd}{late}\PYG{+w}{ }\PYG{n}{TabController}\PYG{+w}{ }\PYG{n}{\PYGZus{}tab\PYGZus{}controller}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k+kd}{final}\PYG{+w}{ }\PYG{n}{animations\PYGZus{}list}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{[}
+\PYG{+w}{    }\PYG{l+s+s2}{\PYGZdq{}assets/anim/plus.json\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{l+s+s2}{\PYGZdq{}assets/anim/minus.json\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{l+s+s2}{\PYGZdq{}assets/anim/plus.json\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{l+s+s2}{\PYGZdq{}assets/anim/div.json\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{  }\PYG{p}{];}
+\PYG{+w}{  }\PYG{n+nd}{@override}
+\PYG{+w}{  }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n}{initState}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k}{super}\PYG{p}{.}\PYG{n}{initState}\PYG{p}{();}
+\PYG{+w}{    }\PYG{k}{this}\PYG{p}{.}\PYG{n}{\PYGZus{}tab\PYGZus{}controller}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{TabController}\PYG{p}{(}\PYG{n+nl}{length:}\PYG{+w}{ }\PYG{l+m}{3}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nl}{vsync:}\PYG{+w}{ }\PYG{k}{this}\PYG{p}{);}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{  }\PYG{n+nd}{@override}
+\PYG{+w}{  }\PYG{n}{Widget}\PYG{+w}{ }\PYG{n}{build}\PYG{p}{(}\PYG{n}{BuildContext}\PYG{+w}{ }\PYG{n}{context}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{Scaffold}\PYG{p}{(}
+\PYG{+w}{      }\PYG{n+nl}{body:}\PYG{+w}{ }\PYG{n}{Container}\PYG{p}{(}
+\PYG{+w}{        }\PYG{n+nl}{width:}\PYG{+w}{ }\PYG{n}{MediaQuery}\PYG{p}{.}\PYG{n}{of}\PYG{p}{(}\PYG{n}{context}\PYG{p}{).}\PYG{n}{size}\PYG{p}{.}\PYG{n}{width}\PYG{p}{,}
+\PYG{+w}{        }\PYG{n+nl}{height:}\PYG{+w}{ }\PYG{n}{MediaQuery}\PYG{p}{.}\PYG{n}{of}\PYG{p}{(}\PYG{n}{context}\PYG{p}{).}\PYG{n}{size}\PYG{p}{.}\PYG{n}{height}\PYG{p}{,}
+\PYG{+w}{        }\PYG{n+nl}{padding:}\PYG{+w}{ }\PYG{n}{EdgeInsets}\PYG{p}{.}\PYG{n}{only}\PYG{p}{(}\PYG{n+nl}{top:}\PYG{+w}{ }\PYG{l+m}{80}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nl}{left:}\PYG{+w}{ }\PYG{l+m}{20}\PYG{p}{),}
+\PYG{+w}{        }\PYG{n+nl}{child:}\PYG{+w}{ }\PYG{n}{Column}\PYG{p}{(}
+\PYG{+w}{          }\PYG{n+nl}{crossAxisAlignment:}\PYG{+w}{ }\PYG{n}{CrossAxisAlignment}\PYG{p}{.}\PYG{n}{start}\PYG{p}{,}
+\PYG{+w}{          }\PYG{n+nl}{children:}\PYG{+w}{ }\PYG{p}{[}
+\PYG{+w}{            }\PYG{n}{Text}\PYG{p}{(}
+\PYG{+w}{              }\PYG{l+s+s2}{\PYGZdq{}Offline modes\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{              }\PYG{n+nl}{style:}\PYG{+w}{ }\PYG{n}{Theme}\PYG{p}{.}\PYG{n}{of}\PYG{p}{(}\PYG{n}{context}\PYG{p}{).}\PYG{n}{textTheme}\PYG{p}{.}\PYG{n}{displaySmall}\PYG{o}{!}\PYG{p}{.}\PYG{n}{copyWith}\PYG{p}{(}
+\PYG{+w}{                    }\PYG{n+nl}{color:}\PYG{+w}{ }\PYG{n}{Theme}\PYG{p}{.}\PYG{n}{of}\PYG{p}{(}\PYG{n}{context}\PYG{p}{).}\PYG{n}{colorScheme}\PYG{p}{.}\PYG{n}{onBackground}\PYG{p}{,}
+\PYG{+w}{                  }\PYG{p}{),}
+\PYG{+w}{            }\PYG{p}{),}
+\PYG{+w}{            }\PYG{n}{Container}\PYG{p}{(}
+\PYG{+w}{              }\PYG{n+nl}{height:}\PYG{+w}{ }\PYG{l+m}{80}\PYG{p}{,}
+\PYG{+w}{              }\PYG{n+nl}{child:}\PYG{+w}{ }\PYG{n}{Align}\PYG{p}{(}
+\PYG{+w}{                }\PYG{n+nl}{alignment:}\PYG{+w}{ }\PYG{n}{Alignment}\PYG{p}{.}\PYG{n}{centerLeft}\PYG{p}{,}
+\PYG{+w}{                }\PYG{n+nl}{child:}\PYG{+w}{ }\PYG{n}{TabBar}\PYG{p}{(}
+\PYG{+w}{                  }\PYG{n+nl}{isScrollable:}\PYG{+w}{ }\PYG{k+kc}{true}\PYG{p}{,}
+\PYG{+w}{                  }\PYG{n+nl}{controller:}\PYG{+w}{ }\PYG{k}{this}\PYG{p}{.}\PYG{n}{\PYGZus{}tab\PYGZus{}controller}
+\PYG{+w}{                    }\PYG{p}{..}\PYG{n}{addListener}\PYG{p}{(()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                      }\PYG{n}{context}
+\PYG{+w}{                          }\PYG{p}{.}\PYG{n}{read}\PYG{o}{\PYGZlt{}}\PYG{n}{GameSelectBloc}\PYG{o}{\PYGZgt{}}\PYG{p}{()}
+\PYG{+w}{                          }\PYG{p}{.}\PYG{n}{changeType}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n}{\PYGZus{}tab\PYGZus{}controller}\PYG{p}{.}\PYG{n}{index}\PYG{p}{);}
+\PYG{+w}{                    }\PYG{p}{\PYGZcb{}),}
+\PYG{+w}{                  }\PYG{n+nl}{indicator:}\PYG{+w}{ }\PYG{n}{DotIndicator}\PYG{p}{(}
+\PYG{+w}{                    }\PYG{n+nl}{color:}\PYG{+w}{ }\PYG{n}{Theme}\PYG{p}{.}\PYG{n}{of}\PYG{p}{(}\PYG{n}{context}\PYG{p}{).}\PYG{n}{colorScheme}\PYG{p}{.}\PYG{n}{primary}\PYG{p}{,}
+\PYG{+w}{                    }\PYG{n+nl}{distanceFromCenter:}\PYG{+w}{ }\PYG{l+m}{20}\PYG{p}{,}
+\PYG{+w}{                    }\PYG{n+nl}{radius:}\PYG{+w}{ }\PYG{l+m}{4}\PYG{p}{,}
+\PYG{+w}{                  }\PYG{p}{),}
+\PYG{+w}{                  }\PYG{n+nl}{tabs:}\PYG{+w}{ }\PYG{p}{[}
+\PYG{+w}{                    }\PYG{n}{Tab}\PYG{p}{(}
+\PYG{+w}{                      }\PYG{n+nl}{text:}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Timer\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{                    }\PYG{p}{),}
+\PYG{+w}{                    }\PYG{n}{Tab}\PYG{p}{(}
+\PYG{+w}{                      }\PYG{n+nl}{text:}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Survive\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{                    }\PYG{p}{),}
+\PYG{+w}{                    }\PYG{n}{Tab}\PYG{p}{(}
+\PYG{+w}{                      }\PYG{n+nl}{text:}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Endurance\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{                    }\PYG{p}{)}
+\PYG{+w}{                  }\PYG{p}{],}
+\PYG{+w}{                }\PYG{p}{),}
+\PYG{+w}{              }\PYG{p}{),}
+\PYG{+w}{            }\PYG{p}{),}
+\PYG{+w}{            }\PYG{n}{Container}\PYG{p}{(}
+\PYG{+w}{              }\PYG{n+nl}{width:}\PYG{+w}{ }\PYG{n}{MediaQuery}\PYG{p}{.}\PYG{n}{of}\PYG{p}{(}\PYG{n}{context}\PYG{p}{).}\PYG{n}{size}\PYG{p}{.}\PYG{n}{width}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m}{20}\PYG{p}{,}
+\PYG{+w}{              }\PYG{n+nl}{height:}\PYG{+w}{ }\PYG{l+m}{300}\PYG{p}{,}
+\PYG{+w}{              }\PYG{n+nl}{child:}\PYG{+w}{ }\PYG{n}{ListView}\PYG{p}{.}\PYG{n}{builder}\PYG{p}{(}
+\PYG{+w}{                }\PYG{n+nl}{scrollDirection:}\PYG{+w}{ }\PYG{n}{Axis}\PYG{p}{.}\PYG{n}{horizontal}\PYG{p}{,}
+\PYG{+w}{                }\PYG{n+nl}{itemBuilder:}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{context}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{index}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                  }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{ModeCard}\PYG{p}{(}
+\PYG{+w}{                    }\PYG{n+nl}{mode:}\PYG{+w}{ }\PYG{n}{Mode}\PYG{p}{.}\PYG{n}{values}\PYG{p}{[}\PYG{n}{index}\PYG{p}{],}
+\PYG{+w}{                    }\PYG{n+nl}{mode\PYGZus{}anim:}\PYG{+w}{ }\PYG{k}{this}\PYG{p}{.}\PYG{n}{animations\PYGZus{}list}\PYG{p}{[}\PYG{n}{index}\PYG{p}{],}
+\PYG{+w}{                    }\PYG{n+nl}{lvl:}\PYG{+w}{ }\PYG{l+m}{8}\PYG{p}{,}
+\PYG{+w}{                    }\PYG{n+nl}{points:}\PYG{+w}{ }\PYG{l+m}{30000}\PYG{p}{,}
+\PYG{+w}{                  }\PYG{p}{);}
+\PYG{+w}{                }\PYG{p}{\PYGZcb{},}
+\PYG{+w}{                }\PYG{n+nl}{itemCount:}\PYG{+w}{ }\PYG{n}{Mode}\PYG{p}{.}\PYG{n}{values}\PYG{p}{.}\PYG{n}{length}\PYG{p}{,}
+\PYG{+w}{              }\PYG{p}{),}
+\PYG{+w}{            }\PYG{p}{)}
+\PYG{+w}{          }\PYG{p}{],}
+\PYG{+w}{        }\PYG{p}{),}
+\PYG{+w}{      }\PYG{p}{),}
+\PYG{+w}{    }\PYG{p}{);}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

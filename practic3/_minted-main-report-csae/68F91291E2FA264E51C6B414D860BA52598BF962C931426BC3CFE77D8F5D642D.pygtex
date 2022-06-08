@@ -1,0 +1,38 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{part of}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}game.dart\PYGZsq{}}\PYG{p}{;}
+
+\PYG{k+kd}{class}\PYG{+w}{ }\PYG{n+nc}{GameBloc}\PYG{+w}{ }\PYG{k+kd}{extends}\PYG{+w}{ }\PYG{n}{Bloc}\PYG{o}{\PYGZlt{}}\PYG{n}{GameEvent}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{GameState}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{k+kd}{late}\PYG{+w}{ }\PYG{k+kd}{final}\PYG{+w}{ }\PYG{n}{Game}\PYG{+w}{ }\PYG{n}{\PYGZus{}game}\PYG{p}{;}
+\PYG{+w}{  }\PYG{n}{GameBloc}\PYG{p}{(}\PYG{n}{Game}\PYG{+w}{ }\PYG{n}{game}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{k}{super}\PYG{p}{(}\PYG{n}{GameStateInit}\PYG{p}{(}\PYG{n}{game}\PYG{p}{))}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k}{this}\PYG{p}{.}\PYG{n}{\PYGZus{}game}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{game}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k+kd}{on}\PYG{o}{\PYGZlt{}}\PYG{n}{GameEventStart}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{n}{\PYGZus{}onStart}\PYG{p}{);}
+\PYG{+w}{    }\PYG{k+kd}{on}\PYG{o}{\PYGZlt{}}\PYG{n}{GameEventSubmit}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{n}{\PYGZus{}onSubmit}\PYG{p}{);}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{  }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n}{\PYGZus{}onSubmit}\PYG{p}{(}\PYG{n}{GameEventSubmit}\PYG{+w}{ }\PYG{n}{event}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Emitter}\PYG{o}{\PYGZlt{}}\PYG{n}{GameState}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{emit}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kd}{var}\PYG{+w}{ }\PYG{n}{game}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{state}\PYG{p}{.}\PYG{n}{game}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{event}\PYG{p}{.}\PYG{n}{answer}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{game}\PYG{p}{.}\PYG{n}{result}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{      }\PYG{n}{game}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{game}\PYG{p}{.}\PYG{n}{incrementPoints}\PYG{p}{();}
+\PYG{+w}{      }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{game}\PYG{p}{.}\PYG{n}{points}\PYG{+w}{ }\PYG{o}{\PYGZpc{}}\PYG{+w}{ }\PYG{p}{(}\PYG{l+m}{5}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{game}\PYG{p}{.}\PYG{n}{lvl}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{l+m}{0}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{game}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{game}\PYG{p}{.}\PYG{n}{changeLvl}\PYG{p}{();}
+\PYG{+w}{        }\PYG{n}{game}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{game}\PYG{p}{.}\PYG{n}{changeMinMax}\PYG{p}{();}
+\PYG{+w}{      }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{k}{else}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{      }\PYG{n}{game}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{game}\PYG{p}{.}\PYG{n}{decrementPoints}\PYG{p}{();}
+\PYG{+w}{      }\PYG{n}{game}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{game}\PYG{p}{.}\PYG{n}{decrementHealth}\PYG{p}{();}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{game}\PYG{p}{.}\PYG{n}{health}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{l+m}{0}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{      }\PYG{n}{emit}\PYG{p}{(}\PYG{n}{GameStateFinish}\PYG{p}{(}\PYG{n}{game}\PYG{p}{));}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{k}{else}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{      }\PYG{n}{game}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{game}\PYG{p}{.}\PYG{n}{generateValues}\PYG{p}{();}
+\PYG{+w}{      }\PYG{n}{emit}\PYG{p}{(}\PYG{n}{GameStateRunning}\PYG{p}{(}\PYG{n}{game}\PYG{p}{));}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{  }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n}{\PYGZus{}onStart}\PYG{p}{(}\PYG{n}{GameEventStart}\PYG{+w}{ }\PYG{n}{event}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Emitter}\PYG{o}{\PYGZlt{}}\PYG{n}{GameState}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{emit}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n}{Game}\PYG{+w}{ }\PYG{n}{game}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{this}\PYG{p}{.}\PYG{n}{\PYGZus{}game}\PYG{p}{.}\PYG{n}{copyWith}\PYG{p}{();}
+\PYG{+w}{    }\PYG{n}{game}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{game}\PYG{p}{.}\PYG{n}{generateValues}\PYG{p}{();}
+\PYG{+w}{    }\PYG{n}{emit}\PYG{p}{(}\PYG{n}{GameStateRunning}\PYG{p}{(}\PYG{n}{game}\PYG{p}{));}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

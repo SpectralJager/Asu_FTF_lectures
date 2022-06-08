@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{part of}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}home.dart\PYGZsq{}}\PYG{p}{;}
+
+\PYG{k+kd}{class}\PYG{+w}{ }\PYG{n+nc}{HomeBloc}\PYG{+w}{ }\PYG{k+kd}{extends}\PYG{+w}{ }\PYG{n}{Bloc}\PYG{o}{\PYGZlt{}}\PYG{n}{HomeEvent}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{HomeState}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{HomeBloc}\PYG{p}{()}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{k}{super}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{n}{HomeInit}\PYG{p}{())}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kd}{on}\PYG{o}{\PYGZlt{}}\PYG{n}{HomeChangeView}\PYG{o}{\PYGZgt{}}\PYG{p}{(}\PYG{n}{\PYGZus{}changeView}\PYG{p}{);}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{  }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n}{\PYGZus{}changeView}\PYG{p}{(}\PYG{n}{HomeChangeView}\PYG{+w}{ }\PYG{n}{event}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{Emitter}\PYG{o}{\PYGZlt{}}\PYG{n}{HomeState}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{emit}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kd}{final}\PYG{+w}{ }\PYG{n}{view\PYGZus{}id}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{event}\PYG{p}{.}\PYG{n}{view\PYGZus{}id}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{view\PYGZus{}id}\PYG{+w}{ }\PYG{o}{\PYGZgt{}=}\PYG{+w}{ }\PYG{l+m}{0}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{      }\PYG{n}{emit}\PYG{p}{(}\PYG{n}{HomeCurrentView}\PYG{p}{(}\PYG{n}{view\PYGZus{}id}\PYG{p}{));}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

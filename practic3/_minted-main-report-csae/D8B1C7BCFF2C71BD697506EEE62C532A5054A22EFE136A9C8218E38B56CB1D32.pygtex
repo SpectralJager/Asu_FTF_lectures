@@ -1,0 +1,20 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{part of}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}home.dart\PYGZsq{}}\PYG{p}{;}
+
+\PYG{k+kd}{abstract}\PYG{+w}{ }\PYG{k+kd}{class}\PYG{+w}{ }\PYG{n+nc}{HomeState}\PYG{+w}{ }\PYG{k+kd}{extends}\PYG{+w}{ }\PYG{n}{Equatable}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{k+kd}{final}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{current\PYGZus{}view}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{k}{const}\PYG{+w}{ }\PYG{n}{HomeState}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n}{current\PYGZus{}view}\PYG{p}{);}
+
+\PYG{+w}{  }\PYG{n+nd}{@override}
+\PYG{+w}{  }\PYG{n}{List}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{Object}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{k+kd}{get}\PYG{+w}{ }\PYG{n}{props}\PYG{+w}{ }\PYG{o}{=\PYGZgt{}}\PYG{+w}{ }\PYG{p}{[}\PYG{k}{this}\PYG{p}{.}\PYG{n}{current\PYGZus{}view}\PYG{p}{];}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kd}{class}\PYG{+w}{ }\PYG{n+nc}{HomeInit}\PYG{+w}{ }\PYG{k+kd}{extends}\PYG{+w}{ }\PYG{n}{HomeState}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{k}{const}\PYG{+w}{ }\PYG{n}{HomeInit}\PYG{p}{()}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{k}{super}\PYG{p}{(}\PYG{l+m}{0}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kd}{class}\PYG{+w}{ }\PYG{n+nc}{HomeCurrentView}\PYG{+w}{ }\PYG{k+kd}{extends}\PYG{+w}{ }\PYG{n}{HomeState}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{k}{const}\PYG{+w}{ }\PYG{n}{HomeCurrentView}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{view\PYGZus{}id}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{k}{super}\PYG{p}{(}\PYG{n}{view\PYGZus{}id}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

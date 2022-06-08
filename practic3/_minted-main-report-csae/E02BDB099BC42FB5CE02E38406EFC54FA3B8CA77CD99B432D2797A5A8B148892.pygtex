@@ -1,0 +1,23 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{import}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}dart:async\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{import}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}dart:math\PYGZsq{}}\PYG{p}{;}
+
+\PYG{k}{import}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}package:equatable/equatable.dart\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{import}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}package:flutter/material.dart\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{import}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}package:flutter\PYGZus{}bloc/flutter\PYGZus{}bloc.dart\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{import}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}package:smct/gameselect/gameselect.dart\PYGZsq{}}\PYG{p}{;}
+
+\PYG{k}{part}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}gamemodel.dart\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{part}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}gameview.dart\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{part}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}gamestate.dart\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{part}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}gameevent.dart\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{part}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}gamebloc.dart\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{part}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}gamepage.dart\PYGZsq{}}\PYG{p}{;}
+
+\PYG{n}{enum}\PYG{+w}{ }\PYG{n}{Mode}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{Summation}\PYG{p}{,}
+\PYG{+w}{  }\PYG{n}{Subtraction}\PYG{p}{,}
+\PYG{+w}{  }\PYG{n}{Multiplication}\PYG{p}{,}
+\PYG{+w}{  }\PYG{n}{Division}\PYG{p}{,}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

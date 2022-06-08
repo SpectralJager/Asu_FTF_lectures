@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{import}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}package:equatable/equatable.dart\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{import}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}package:flutter/material.dart\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{import}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}package:flutter\PYGZus{}bloc/flutter\PYGZus{}bloc.dart\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{import}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}package:smct/gameselect/gameselect.dart\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{import}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}package:smct/widgets/widgets.dart\PYGZsq{}}\PYG{p}{;}
+
+\PYG{k}{part}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}homestate.dart\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{part}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}homeevent.dart\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{part}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}homebloc.dart\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{part}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}homeview.dart\PYGZsq{}}\PYG{p}{;}
+\end{Verbatim}
