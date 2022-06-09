@@ -1,0 +1,145 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{n+nb}{Write\PYGZhy{}Host} \PYG{l+s+s2}{\PYGZdq{}Change Virtual Memory\PYGZdq{}}
+\PYG{n+nv}{\PYGZdl{}physicalmem}\PYG{p}{=}\PYG{n+nb}{get\PYGZhy{}wmiobject}  \PYG{n}{Win32\PYGZus{}ComputerSystem} \PYG{p}{|} \PYG{p}{\PYGZpc{}} \PYG{p}{\PYGZob{}}\PYG{n+nv}{\PYGZdl{}\PYGZus{}}\PYG{p}{.}\PYG{n}{TotalPhysicalMemory}\PYG{p}{\PYGZcb{}}
+\PYG{n+nv}{\PYGZdl{}physicalmem1}\PYG{p}{=}\PYG{n+no}{[math]}\PYG{p}{::}\PYG{n}{Round}\PYG{p}{(}\PYG{n+nv}{\PYGZdl{}physicalmem} \PYG{p}{/} \PYG{n}{1048576}\PYG{p}{)}
+\PYG{n+nv}{\PYGZdl{}computersys} \PYG{p}{=} \PYG{n+nb}{Get\PYGZhy{}WmiObject} \PYG{n}{Win32\PYGZus{}ComputerSystem} \PYG{n}{\PYGZhy{}EnableAllPrivileges}\PYG{p}{;}
+\PYG{n+nv}{\PYGZdl{}computersys}\PYG{p}{.}\PYG{n}{AutomaticManagedPagefile} \PYG{p}{=} \PYG{n+nv}{\PYGZdl{}False}\PYG{p}{;}
+\PYG{n+nv}{\PYGZdl{}computersys}\PYG{p}{.}\PYG{n}{Put}\PYG{p}{();}
+\PYG{n+nv}{\PYGZdl{}pagefile} \PYG{p}{=} \PYG{n+nb}{Get\PYGZhy{}WmiObject} \PYG{n}{\PYGZhy{}Query} \PYG{l+s+s2}{\PYGZdq{}Select * From Win32\PYGZus{}PageFileSetting Where Name like \PYGZsq{}\PYGZpc{}pagefile.sys\PYGZsq{}\PYGZdq{}}\PYG{p}{;}
+\PYG{n+nv}{\PYGZdl{}newphysicalmem} \PYG{p}{=} \PYG{n+nv}{\PYGZdl{}physicalmem1}\PYG{p}{*}\PYG{n}{2}
+\PYG{n+nv}{\PYGZdl{}pagefile}\PYG{p}{.}\PYG{n}{InitialSize} \PYG{p}{=} \PYG{n+nv}{\PYGZdl{}newphysicalmem}\PYG{p}{;}
+\PYG{n+nv}{\PYGZdl{}pagefile}\PYG{p}{.}\PYG{n}{MaximumSize} \PYG{p}{=} \PYG{n+nv}{\PYGZdl{}newphysicalmem}\PYG{p}{;}
+\PYG{n+nv}{\PYGZdl{}newpagefile}\PYG{p}{=}\PYG{n+nv}{\PYGZdl{}pagefile}\PYG{p}{.}\PYG{n}{Put}\PYG{p}{();}
+
+\PYG{n+nb}{Write\PYGZhy{}Host} \PYG{l+s+s2}{\PYGZdq{}\PYGZsq{}\PYGZdl{}physicalmem1\PYGZsq{} old, \PYGZsq{}\PYGZdl{}newphysicalmem\PYGZsq{} new\PYGZdq{}}
+
+\PYG{c}{\PYGZsh{} Set\PYGZhy{}ExecutionPolicy RemoteSigned}
+\PYG{n+nb}{Write\PYGZhy{}Host} \PYG{l+s+s2}{\PYGZdq{}Disable Hyper\PYGZhy{}V Service\PYGZdq{}}
+\PYG{c}{\PYGZsh{} Интерфейс гостевой службы Hyper\PYGZhy{}V}
+\PYG{n+nb}{Set\PYGZhy{}Service} \PYG{n}{vmicguestinterface} \PYG{n}{\PYGZhy{}StartupType} \PYG{n}{Disabled}
+\PYG{c}{\PYGZsh{} Служба пульса (Hyper\PYGZhy{}V)}
+\PYG{n+nb}{Set\PYGZhy{}Service} \PYG{n}{vmicheartbeat} \PYG{n}{\PYGZhy{}StartupType} \PYG{n}{Disabled}
+\PYG{c}{\PYGZsh{} Служба обмена данными (Hyper\PYGZhy{}V)}
+\PYG{n+nb}{Set\PYGZhy{}Service} \PYG{n}{vmickvpexchange} \PYG{n}{\PYGZhy{}StartupType} \PYG{n}{Disabled}
+\PYG{c}{\PYGZsh{} Служба виртуализации удаленных рабо...    }
+\PYG{n+nb}{Set\PYGZhy{}Service} \PYG{n}{vmicrdv} \PYG{n}{\PYGZhy{}StartupType} \PYG{n}{Disabled}
+\PYG{c}{\PYGZsh{} Служба завершения работы в качестве...            }
+\PYG{n+nb}{Set\PYGZhy{}Service} \PYG{n}{vmicshutdown} \PYG{n}{\PYGZhy{}StartupType} \PYG{n}{Disabled}
+\PYG{c}{\PYGZsh{} Служба синхронизации времени Hyper\PYGZhy{}V       }
+\PYG{n+nb}{Set\PYGZhy{}Service} \PYG{n}{vmictimesync} \PYG{n}{\PYGZhy{}StartupType} \PYG{n}{Disabled}
+\PYG{c}{\PYGZsh{} Служба Hyper\PYGZhy{}V PowerShell Direct       }
+\PYG{n+nb}{Set\PYGZhy{}Service} \PYG{n}{vmicvmsession} \PYG{n}{\PYGZhy{}StartupType} \PYG{n}{Disabled}
+\PYG{c}{\PYGZsh{} Служба запросов на теневое копирова...}
+\PYG{n+nb}{Set\PYGZhy{}Service} \PYG{n}{vmicvss} \PYG{n}{\PYGZhy{}StartupType} \PYG{n}{Disabled}
+
+\PYG{n+nb}{Write\PYGZhy{}Host} \PYG{l+s+s2}{\PYGZdq{}Disable Bluetooth Service\PYGZdq{}}
+\PYG{n+nb}{Set\PYGZhy{}Service} \PYG{n}{bthserv} \PYG{n}{\PYGZhy{}StartupType} \PYG{n}{Disabled}
+\PYG{n+nb}{Set\PYGZhy{}Service} \PYG{n}{BluetoothUserService} \PYG{n}{\PYGZhy{}StartupType} \PYG{n}{Disable}
+
+
+\PYG{n+nb}{Write\PYGZhy{}Host} \PYG{l+s+s2}{\PYGZdq{}Disable Live Tiles\PYGZdq{}}
+\PYG{k}{function} \PYG{n}{Pin\PYGZhy{}Remove\PYGZhy{}App} \PYG{p}{\PYGZob{}}    \PYG{k}{param}\PYG{p}{(}
+        \PYG{n+no}{[string]}\PYG{n+nv}{\PYGZdl{}apptilename}
+    \PYG{p}{)}
+    \PYG{k}{try}\PYG{p}{\PYGZob{}}
+		\PYG{p}{((}\PYG{n+nb}{New\PYGZhy{}Object} \PYG{n}{\PYGZhy{}Com} \PYG{n}{Shell}\PYG{p}{.}\PYG{n}{Application}\PYG{p}{).}\PYG{n}{NameSpace}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}shell:::\PYGZob{}4234d49b\PYGZhy{}0245\PYGZhy{}4df3\PYGZhy{}b780\PYGZhy{}3893943456e1\PYGZcb{}\PYGZsq{}}\PYG{p}{).}\PYG{n}{Items}\PYG{p}{()} \PYG{p}{|} \PYG{p}{?\PYGZob{}}\PYG{n+nv}{\PYGZdl{}\PYGZus{}}\PYG{p}{.}\PYG{n}{Name} \PYG{o}{\PYGZhy{}eq} \PYG{n+nv}{\PYGZdl{}apptilename}\PYG{p}{\PYGZcb{}).}\PYG{n}{Verbs}\PYG{p}{()} \PYG{p}{|} \PYG{p}{?\PYGZob{}}\PYG{n+nv}{\PYGZdl{}\PYGZus{}}\PYG{p}{.}\PYG{n}{Name}\PYG{p}{.}\PYG{n}{replace}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZam{}\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{)} \PYG{o}{\PYGZhy{}match} \PYG{l+s+s1}{\PYGZsq{}Von \PYGZdq{}Start\PYGZdq{} lösen|Unpin from Start\PYGZsq{}}\PYG{p}{\PYGZcb{}} \PYG{p}{|} \PYG{p}{\PYGZpc{}\PYGZob{}}\PYG{n+nv}{\PYGZdl{}\PYGZus{}}\PYG{p}{.}\PYG{n}{DoIt}\PYG{p}{()\PYGZcb{}}
+		\PYG{n+nb}{Write\PYGZhy{}Host} \PYG{l+s+s2}{\PYGZdq{}App \PYGZsq{}\PYGZdl{}apptilename\PYGZsq{} unpinned from Start\PYGZdq{}} \PYG{n}{\PYGZhy{}ForegroundColor} \PYG{n}{Green}
+    \PYG{p}{\PYGZcb{}}\PYG{k}{catch}\PYG{p}{\PYGZob{}}
+        \PYG{c}{\PYGZsh{}Write\PYGZhy{}Error \PYGZdq{}Error Pinning/Unpinning App! (App\PYGZhy{}Name correct?)\PYGZdq{}}
+		\PYG{n+nb}{Write\PYGZhy{}Host} \PYG{l+s+s2}{\PYGZdq{}App \PYGZsq{}\PYGZdl{}apptilename\PYGZsq{} not found\PYGZdq{}} \PYG{n}{\PYGZhy{}ForegroundColor} \PYG{n}{Red}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} List of apps \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+\PYG{n+nv}{\PYGZdl{}tiles} \PYG{p}{=} \PYG{l+s+s2}{\PYGZdq{}Mail\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Microsoft Store\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Calendar\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Microsoft Edge\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Photos\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Cortana\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Weather\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Phone Companion\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Twitter\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Skype Video\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Skype\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Candy Crush Soda Saga\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Xbox\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Groove music\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Wallet\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Get Office\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Onenote\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}News\PYGZdq{}} \PYG{p}{,} 
+ \PYG{l+s+s2}{\PYGZdq{}Camera\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}3D Viewer\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Alarms \PYGZam{} Clock\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Calendar\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Candy Crush Saga\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Candy Crush Friends Saga\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Feedback Hub\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Get Help\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Microsoft Solitaire Collection\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Minecraft for Windows 10\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Mixed Reality Portal\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Money\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Movies \PYGZam{} TV\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Netflix\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}People\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Scan\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Snip \PYGZam{} Sketch\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Sports\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Sticky Notes\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Tips\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Voice Recorder\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Xbox Game Bar\PYGZdq{}} \PYG{p}{,}
+ \PYG{l+s+s2}{\PYGZdq{}Your Phone\PYGZdq{}}
+ \PYG{c}{\PYGZsh{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} End of list of apps \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
+ 
+ \PYG{k}{foreach}\PYG{p}{(}\PYG{n+nv}{\PYGZdl{}tile} \PYG{k}{in} \PYG{n+nv}{\PYGZdl{}tiles}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{n}{Pin\PYGZhy{}Remove\PYGZhy{}App} \PYG{n+nv}{\PYGZdl{}tile}
+ \PYG{p}{\PYGZcb{}}
+ 
+ \PYG{n+nb}{Write\PYGZhy{}Host} \PYG{l+s+s2}{\PYGZdq{}Remove apps\PYGZdq{}}
+ 
+ \PYG{n+nv}{\PYGZdl{}apps} \PYG{p}{=} \PYG{l+s+s2}{\PYGZdq{}3dbuilder\PYGZdq{}}\PYG{p}{,}
+	\PYG{l+s+s2}{\PYGZdq{}windowsalarms\PYGZdq{}}\PYG{p}{,}
+	\PYG{l+s+s2}{\PYGZdq{}windowscalculator\PYGZdq{}}\PYG{p}{,}
+	\PYG{l+s+s2}{\PYGZdq{}windowscommunicaitonsapps\PYGZdq{}}\PYG{p}{,}
+	\PYG{l+s+s2}{\PYGZdq{}windowscamera\PYGZdq{}}\PYG{p}{,}
+	\PYG{l+s+s2}{\PYGZdq{}officehub\PYGZdq{}}\PYG{p}{,}
+	\PYG{l+s+s2}{\PYGZdq{}skypeapp\PYGZdq{}}\PYG{p}{,}
+	\PYG{l+s+s2}{\PYGZdq{}getstarted\PYGZdq{}}\PYG{p}{,}
+	\PYG{l+s+s2}{\PYGZdq{}zunemisic\PYGZdq{}}\PYG{p}{,}
+	\PYG{l+s+s2}{\PYGZdq{}windowsmaps\PYGZdq{}}\PYG{p}{,}
+	\PYG{l+s+s2}{\PYGZdq{}solitairecollection\PYGZdq{}}\PYG{p}{,}
+	\PYG{l+s+s2}{\PYGZdq{}bingfinance\PYGZdq{}}\PYG{p}{,}
+	\PYG{l+s+s2}{\PYGZdq{}zunevideo\PYGZdq{}}\PYG{p}{,}
+	\PYG{l+s+s2}{\PYGZdq{}bingnews\PYGZdq{}}\PYG{p}{,}
+	\PYG{l+s+s2}{\PYGZdq{}onenote\PYGZdq{}}\PYG{p}{,}
+	\PYG{l+s+s2}{\PYGZdq{}people\PYGZdq{}}\PYG{p}{,}
+	\PYG{l+s+s2}{\PYGZdq{}windowsphone\PYGZdq{}}\PYG{p}{,}
+	\PYG{l+s+s2}{\PYGZdq{}photos\PYGZdq{}}\PYG{p}{,}
+	\PYG{l+s+s2}{\PYGZdq{}windowsstore\PYGZdq{}}\PYG{p}{,}
+	\PYG{l+s+s2}{\PYGZdq{}bingsports\PYGZdq{}}\PYG{p}{,}
+	\PYG{l+s+s2}{\PYGZdq{}soundrecorder\PYGZdq{}}\PYG{p}{,}
+	\PYG{l+s+s2}{\PYGZdq{}bingweather\PYGZdq{}}\PYG{p}{,}
+	\PYG{l+s+s2}{\PYGZdq{}xboxapp\PYGZdq{}}\PYG{p}{,}
+	\PYG{l+s+s2}{\PYGZdq{}549981c3f5f10\PYGZdq{}}\PYG{p}{,}
+	\PYG{l+s+s2}{\PYGZdq{}XboxGamingOverlay\PYGZdq{}}
+
+\PYG{k}{foreach}\PYG{p}{(}\PYG{n+nv}{\PYGZdl{}app} \PYG{k}{in} \PYG{n+nv}{\PYGZdl{}apps}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{k}{try}\PYG{p}{\PYGZob{}}
+		\PYG{n+nb}{Get\PYGZhy{}AppxPackage} \PYG{n}{\PYGZhy{}AllUsers} \PYG{n}{\PYGZhy{}PackageTypeFilter} \PYG{n}{Bundle} \PYG{n}{\PYGZhy{}name} \PYG{p}{*}\PYG{n+nv}{\PYGZdl{}app}\PYG{p}{*} \PYG{p}{|} \PYG{n+nb}{Remove\PYGZhy{}AppxPackage}
+		\PYG{n+nb}{Write\PYGZhy{}Host} \PYG{l+s+s2}{\PYGZdq{}App \PYGZsq{}\PYGZdl{}app\PYGZsq{} removed\PYGZdq{}} \PYG{n}{\PYGZhy{}ForegroundColor} \PYG{n}{Green}
+    \PYG{p}{\PYGZcb{}}\PYG{k}{catch}\PYG{p}{\PYGZob{}}
+		\PYG{n+nb}{Write\PYGZhy{}Host} \PYG{l+s+s2}{\PYGZdq{}App \PYGZsq{}\PYGZdl{}app\PYGZsq{} not found or cant remove\PYGZdq{}} \PYG{n}{\PYGZhy{}ForegroundColor} \PYG{n}{Red}
+    \PYG{p}{\PYGZcb{}}
+ \PYG{p}{\PYGZcb{}}
+
+\PYG{n+nv}{\PYGZdl{}confirmation}\PYG{p}{=}\PYG{n+nb}{Read\PYGZhy{}host} \PYG{l+s+s2}{\PYGZdq{}Do you want to Restart the PC (Y/N)\PYGZdq{}}
+\PYG{k}{if}\PYG{p}{(}\PYG{n+nv}{\PYGZdl{}confirmation} \PYG{o}{\PYGZhy{}eq} \PYG{l+s+s1}{\PYGZsq{}N\PYGZsq{}}\PYG{p}{)\PYGZob{}}
+	\PYG{n+nb}{Write\PYGZhy{}host} \PYG{l+s+s2}{\PYGZdq{}The system restart is skipped by the user\PYGZdq{}} \PYG{n}{\PYGZhy{}BackgroundColor} \PYG{n}{DarkRed}
+\PYG{p}{\PYGZcb{}}\PYG{k}{else}\PYG{p}{\PYGZob{}}
+	\PYG{n+nb}{Write\PYGZhy{}Host} \PYG{l+s+s2}{\PYGZdq{}The system will be restarting ....\PYGZdq{}} \PYG{n}{\PYGZhy{}BackgroundColor} \PYG{n}{DarkGreen}
+	\PYG{n+nb}{Restart\PYGZhy{}Computer} \PYG{n}{\PYGZhy{}Force}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
