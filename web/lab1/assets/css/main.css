@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 1400px;
+  margin: auto;
+  padding-bottom: 80px;
+}
+
+#navbar {
+  display: block;
+  background-color: #d2d2fa;
+  padding: 10px;
+}
+#navbar #top-nav {
+  width: 1300px;
+  margin: auto;
+}
+#navbar #top-nav li {
+  color: black;
+  display: inline-block;
+  margin: 0px 10px 0px 10px;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
+#hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 150px;
+}
+#hero .hero_item {
+  width: 27%;
+  text-align: center;
+}
+#hero #logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+#hero #info {
+  font-size: 0.8rem;
+}
+#hero #info b {
+  font-size: 1.2rem;
+}
+#hero #func {
+  font-size: 0.8rem;
+}
+#hero #func form {
+  margin-top: 20px;
+}
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background-color: black;
+}
+
+#main {
+  display: grid;
+  grid-template-columns: 23% 77%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+#main #side {
+  flex-basis: 33%;
+}
+#main #side ul {
+  list-style: none;
+}
+#main #side #side-nav {
+  margin: 10px 20px 10px 5px;
+}
+#main #side #side-nav li {
+  font-size: 0.9rem;
+}
+#main #side #side-nav #side-subnav {
+  margin: 10px 0 10px 30px;
+}
+#main #side #side-nav #side-subnav li {
+  color: #608f1a;
+}
+#main #content .products {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 10px 70px 10px;
+  gap: 20px;
+}
+#main #content .products .products_item {
+  width: 25%;
+}
+#main #content table {
+  width: 100%;
+  margin: 20px 10px 70px 10px;
+}
+#main #content table td {
+  width: 33%;
+}
+#main #content table td .products_item {
+  margin: auto;
+  width: 250px;
+}
+#main #content .products_item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+#main #content .products_item .products_item-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  text-align: center;
+}
+#main #content .products_item .products_item-info * {
+  display: block;
+}
+#main #content .products_item .products_item-info .products_item-btn {
+  width: 110px;
+  padding: 5px;
+  background-color: orange;
+  color: black;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+#main #content #info .upper-case {
+  text-transform: uppercase;
+}
+#main #content #info h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#card {
+  display: flex;
+  margin-left: 30px;
+  margin-top: 10px;
+  gap: 10px;
+}
+#card * {
+  display: block;
+}/*# sourceMappingURL=main.css.map */

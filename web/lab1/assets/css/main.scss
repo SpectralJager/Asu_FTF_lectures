@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 1400px;
+    margin: auto;
+    padding-bottom: 80px;
+}
+
+#navbar{
+    display: block;
+    background-color: rgb(210, 210, 250);
+    padding: 10px;
+    #top-nav{
+        width: 1300px;
+        margin: auto;
+        li{
+            color: black;
+            display: inline-block;
+            margin: 0px 10px 0px 10px;
+            text-decoration-line: underline;
+        }
+    }
+}
+#hero{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 150px;
+    .hero_item{
+        width: 27%;
+        text-align: center;
+    }
+    #logo{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    #info{
+        font-size: 0.8rem;
+        b{
+            font-size: 1.2rem;
+        }
+    }
+    #func{
+        font-size: 0.8rem;
+        form{
+            margin-top: 20px;
+        }
+    }
+}
+.divider{
+    height: 1px;
+    width: 100%;
+    background-color: black;
+}
+#main{
+    display: grid;
+    grid-template-columns: 23% 77%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    #side{
+        flex-basis: 33%;
+        ul{
+            list-style: none;
+        }
+        #side-nav{
+            margin: 10px 20px 10px 5px;
+            
+            li{
+                font-size: 0.9rem;
+            }
+            #side-subnav{
+                margin:10px 0 10px 30px;
+                li{
+                    color: rgb(96, 143, 26);
+                }
+            }
+        }
+    }
+    #content{
+        .products{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 10px 70px 10px;
+            gap: 20px;
+            .products_item{
+                width: 25%;
+            }
+        }
+        table{
+            width: 100%;
+            margin: 20px 10px 70px 10px;
+            td{
+                width: 33%;
+                .products_item{
+                    margin: auto;
+                    width: 250px;
+                }
+            }
+        }
+        .products_item{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            .products_item-info{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 5px;
+                text-align: center;
+                *{
+                    display: block;
+                }
+                .products_item-btn{
+                    width: 110px;
+                    padding: 5px;
+                    background-color: orange;
+                    color: black;
+                    text-decoration-line: none;
+                }
+            }
+        }
+        #info{
+            .upper-case{
+                text-transform: uppercase;
+            }
+            h1{
+                text-align: center;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+#card{
+    display: flex;
+    margin-left: 30px;
+    margin-top: 10px;
+    gap: 10px;
+    *{
+        display: block;
+    }
+}
