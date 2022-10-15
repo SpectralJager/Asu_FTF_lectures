@@ -2,12 +2,12 @@
 ***                       Micro-Cap 12.2.0.5 (64 bit)                        ***
 ***                                                                          ***
 ***                                                                          ***
-***                      Transient Analysis of lab1-12                       ***
-***                          10/10/2022 12:28:11 PM                          ***
+***                       Transient Analysis of lab1-7                       ***
+***                          10/10/2022 11:43:49 AM                          ***
 ********************************************************************************
 Limits
 ======
-Maximum Run Time           16m
+Maximum Run Time           8m
 Output Start Time (tstart) 0
 Maximum Time Step          0
 Number of Points           51
@@ -33,6 +33,6 @@ Temperature=27
 DC Operating Point Digital States
 =================================
 Node     State Node     State Node     State Node     State Node     State
-1        0     2        0     G0       0     4        0     G1       0    
-G3       0     G2       0    
+1        0     2        0     3        0     4        1     S_OUT    0    
+6        1     7        1     8        1     9        1     C_OUT    0    
 
