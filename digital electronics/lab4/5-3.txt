@@ -1,0 +1,14 @@
+mvi D, 58
+dcr D
+lxi H, 0900h
+mov A, M
+loop:
+    inc L
+    mov B, M
+    cmp A, B 
+    jc l1
+    mov A, B
+    l1:
+        dcr D,
+        jnz loop
+hlt

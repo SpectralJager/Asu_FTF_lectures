@@ -1,0 +1,80 @@
+06 // x
+05 // y
+09 // z
+main: 
+  lxi HL, 0000 // point to x
+  mov A, (HL) // move x to A
+  inc HL // point to (y)
+  mov B, (HL) // move y to B
+  inc HL // point to (z)
+  mov C, (HL) // move z to C
+  cmp A,B // compare a-b
+  jnc compare //  a > b => go to compare
+  dcr HL // point to (y)
+  mov A, (HL) // move y to A
+  dcr HL // point to (x)
+  mov B, (HL) // move x to B
+  jmp compare // go to compare
+
+compare: 
+  lxi D, 0000
+  cmp A,C // compare a1-a3
+    jc else1 // a1 < a3 
+    mov E, A // E = a1
+    push D // save 00:a1
+    mov A, B // A = a2
+    cmp A, C // compare a2-a3
+      jc else2 // if a2 < a3 go to else2
+      mov E, B, // E = a2
+      push D // save a2
+      mov E, C // E = a3
+      push D // save a3
+      jmp print // go to print
+    else2:  // if a2 < a3
+      mov E, C // E = a3
+      push D // save a3
+      mov E, B, // E = a2
+      push D // save a2
+      jmp print // go to print
+  else1: // if a1 < a3
+    mov E, C // E = a3
+    push D // save a3
+    mov E, A // E = a1
+    push D // save a1
+    mov E, B, // E = a2
+    push D // save a2
+    jmp print
+
+print:
+  mvi C,03h // set counter to 3
+  lxi H,0900h // 
+  loop:
+    lxi D,0000h // zero D
+    pop D // get data from stack
+    mov M, E // write into (HL) <- E
+    inc L // L += 1
+    dcr C // C -= 1
+    jnz loop
+  hlt
+
+
+
+
+if x > y:
+	compare(x,y,z)
+else:
+	compare(y,x,z)
+
+func compare(a1, a2, a3):		
+	if a1 > a3:
+			push a1;
+			if a2 > a3:
+				push a2;
+				push a3;
+			else:
+				push a3;
+				push a2;
+	else:
+    push a3;
+    push a1;
+    push a2;
