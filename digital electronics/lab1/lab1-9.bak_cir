@@ -7,13 +7,8 @@ Shape Version=11.00
 Screen=1920,1080
 MCAPVersion=12.2.0.5
 Key ID=Demo
-NLCnt=27
+NLCnt=24
 TXCnt=1
-
-[shapedef]
-Name=Animated SPST Switch
-Animated SPST Switch=0,-8,48,8
-Current=16,8,32,8
 
 [shapedef]
 Name=Capacitor
@@ -22,13 +17,6 @@ Line=22,-8,22,8
 Line=26,-8,26,8
 Line=26,0,48,0
 Current=32,12,16,12
-
-[shapedef]
-Name=Ground
-Line=0,0,12,0
-Line=12,-8,12,8
-Line=18,-4,18,4
-Line=24,0,24,0
 
 [shapedef]
 Name=Nand2
@@ -76,28 +64,6 @@ PinCnt=3
 Pin="In0",0,0,-8,-2
 Pin="In1",0,2,-8,-1
 Pin="Out",6,1,-9,-1
-
-[compdef]
-Name=Animated SPST Switch
-Definition=ANIMATED SPST SWITCH
-Shape=Animated SPST Switch
-Mask=4352
-memo=Animated Single Pole, Single Throw Switch
-Label Offset=2,5,11,11
-PinCnt=2
-Pin="A",0,0,5,0
-Pin="B",6,0,-10,1
-
-[compdef]
-Name=Ground
-Definition=Ground
-Shape=Ground
-Mask=1793
-Used=274
-memo=Ground
-Label Offset=0,0,0,0
-PinCnt=1
-Pin="PinA",0,0,-3,-7
 
 [compdef]
 Name=Capacitor
@@ -266,37 +232,6 @@ ON=0,0,PACKAGE
 V
 
 [Comp]
-Name=Animated SPST Switch
-Px=320,352
-Rot=1
-
-[Attr]
-ON=11,11,PART
-V=Switch1
-Style=8192
-
-[Attr]
-ON=11,25,STATE
-V=Open
-
-[Attr]
-ON=11,39,RON
-V=1m
-
-[Attr]
-ON=11,53,ROFF
-V=1e15
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Comp]
-Name=Ground
-Px=320,400
-Rot=7
-
-[Comp]
 Name=Capacitor
 Px=392,160
 Rot=6
@@ -333,9 +268,6 @@ Style=8192
 [Attr]
 ON=0,0,PACKAGE
 V
-
-[Wire]
-Pxs=320,280,320,352
 
 [Wire]
 Pxs=320,280,344,280
@@ -599,7 +531,7 @@ Scale 0=1
 Scale 1=1
 Scale 2=1
 Scale 3=1
-Px=499,376
+Px=488,356
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000

@@ -7,8 +7,8 @@ Shape Version=11.00
 Screen=1920,1080
 MCAPVersion=12.2.0.5
 Key ID=Demo
-NLCnt=25
-TXCnt=1
+NLCnt=48
+TXCnt=2
 
 [shapedef]
 Name=Capacitor
@@ -81,25 +81,11 @@ Root="Plus.root",41,7,0
 Current=32,16,16,16
 
 [compdef]
-Name=Nand2
-Definition=NAND
-Shape=Nand2
-Mask=5123
-Used=14
-Data1=2
-memo=2 Input Generic NAND Gate
-Label Offset=14,4,8,9
-PinCnt=3
-Pin="In0",0,0,-8,-2
-Pin="In1",0,2,-8,-1
-Pin="Out",6,1,-9,-1
-
-[compdef]
 Name=Capacitor
 Definition=Capacitor
 Shape=Capacitor
 Mask=7425
-Used=24
+Used=25
 memo=Capacitor
 Label Offset=16,12,12,12
 PinCnt=2
@@ -110,8 +96,8 @@ Pin="Minus",0,0,-14,-5
 Name=Resistor
 Definition=Resistor
 Shape=Resistor
-Mask=6913
-Used=163
+Mask=6401
+Used=168
 memo=Resistor
 Label Offset=18,6,8,11
 PinCnt=2
@@ -123,7 +109,7 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=274
+Used=278
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
@@ -140,6 +126,19 @@ Label Offset=18,13,15,9
 PinCnt=2
 Pin="Plus",6,0,-5,-4
 Pin="Minus",0,0,-19,-4
+
+[compdef]
+Name=7400
+Definition=Subckt
+Shape=Nand2
+Mask=5248
+Used=7
+memo=Quad 2-Input Nand Gates
+Label Offset=13,20,8,8
+PinCnt=3
+Pin="1A",d,0,0,-5,-2
+Pin="1Y",d,6,1,-7,-3
+Pin="1B",d,0,2,-5,-1
 
 [Circuit]
 Window Placement=0,3, -1,-1, -4,-23, 220,220,1623,771
@@ -172,122 +171,8 @@ Show Attribute Text=True
 Show Grid Text=False
 
 [Comp]
-Name=Nand2
-Px=184,320
-Rot=4
-
-[Attr]
-ON=14,-18,PART
-V=U1
-Style=8192
-
-[Attr]
-ON=14,-32,TIMING MODEL
-V=D_00
-
-[Attr]
-ON=14,-46,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=14,-60,MNTYMXDLY
-V=0
-
-[Attr]
-ON=14,-74,IO_LEVEL
-V=0
-
-[Attr]
-ON=14,-88,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=14,-102,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Comp]
-Name=Nand2
-Px=360,320
-Rot=4
-
-[Attr]
-ON=14,-18,PART
-V=U2
-Style=8192
-
-[Attr]
-ON=14,-32,TIMING MODEL
-V=D_00
-
-[Attr]
-ON=14,-46,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=14,-60,MNTYMXDLY
-V=0
-
-[Attr]
-ON=14,-74,IO_LEVEL
-V=0
-
-[Attr]
-ON=14,-88,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=14,-102,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Comp]
-Name=Nand2
-Px=464,320
-Rot=4
-
-[Attr]
-ON=14,-18,PART
-V=U3
-Style=8192
-
-[Attr]
-ON=14,-32,TIMING MODEL
-V=D_00
-
-[Attr]
-ON=14,-46,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=14,-60,MNTYMXDLY
-V=0
-
-[Attr]
-ON=14,-74,IO_LEVEL
-V=0
-
-[Attr]
-ON=14,-88,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=14,-102,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Comp]
 Name=Capacitor
-Px=312,312
+Px=640,328
 Rot=6
 
 [Attr]
@@ -305,23 +190,23 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=360,304,360,312
+Pxs=688,320,688,328
 
 [Wire]
-Pxs=408,312,432,312
+Pxs=736,328,760,328
 
 [Wire]
-Pxs=464,312,464,320
+Pxs=792,328,792,336
 
 [Wire]
-Pxs=464,304,464,312
+Pxs=792,320,792,328
 
 [Wire]
-Pxs=512,312,552,312
+Pxs=840,328,880,328
 
 [Comp]
 Name=Resistor
-Px=360,408
+Px=688,424
 Rot=3
 
 [Attr]
@@ -331,7 +216,7 @@ Style=8192
 
 [Attr]
 ON=-35,-39,RESISTANCE
-V=5k
+V=4k3
 Style=8192
 
 [Attr]
@@ -339,49 +224,40 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=312,312,360,312
+Pxs=640,328,688,328
 
 [Wire]
-Pxs=360,312,360,320
+Pxs=688,328,688,336
 
 [Wire]
-Pxs=360,320,360,360
+Pxs=688,376,688,392
 
 [Wire]
-Pxs=360,360,360,376
+Pxs=560,328,592,328
 
 [Wire]
-Pxs=232,312,264,312
+Pxs=760,256,760,328
 
 [Wire]
-Pxs=432,240,432,312
+Pxs=488,256,760,256
 
 [Wire]
-Pxs=160,240,432,240
+Pxs=760,328,792,328
 
 [Wire]
-Pxs=432,312,464,312
+Pxs=488,256,488,320
 
 [Wire]
-Pxs=160,240,160,304
-
-[Wire]
-Pxs=160,304,184,304
-
-[Wire]
-Pxs=160,320,184,320
-
-[Wire]
-Pxs=160,320,160,360
+Pxs=488,320,512,320
 
 [Comp]
 Name=Ground
-Px=360,408
+Px=688,424
 Rot=7
 
 [Comp]
 Name=Pulse Source
-Px=160,408
+Px=480,504
 Rot=3
 
 [Attr]
@@ -399,12 +275,277 @@ V
 
 [Comp]
 Name=Ground
-Px=160,408
+Px=480,504
 Rot=7
+
+[Comp]
+Name=Capacitor
+Px=184,224
+Rot=6
+
+[Attr]
+ON=-33,-25,PART
+V=C2
+Style=8192
+
+[Attr]
+ON=-33,-39,CAPACITANCE
+V=10n
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Resistor
+Px=184,288
+Rot=2
+
+[Attr]
+ON=-30,-23,PART
+V=R2
+Style=8192
+
+[Attr]
+ON=-29,-37,RESISTANCE
+V=4k3
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=112,344,136,344
+
+[Wire]
+Pxs=136,328,136,344
+
+[Wire]
+Pxs=184,336,216,336
+
+[Wire]
+Pxs=248,336,248,344
+
+[Wire]
+Pxs=248,328,248,336
+
+[Wire]
+Pxs=296,336,320,336
+
+[Wire]
+Pxs=112,288,136,288
+
+[Wire]
+Pxs=112,224,136,224
+
+[Wire]
+Pxs=112,224,112,288
+
+[Wire]
+Pxs=112,288,112,344
+
+[Wire]
+Pxs=184,288,216,288
+
+[Wire]
+Pxs=216,288,216,336
+
+[Wire]
+Pxs=216,336,248,336
+
+[Wire]
+Pxs=184,224,320,224
+
+[Wire]
+Pxs=320,224,320,320
+
+[Comp]
+Name=7400
+Px=248,344
+Rot=4
+
+[Attr]
+ON=13,-34,PART
+V=X1
+Style=8192
+
+[Attr]
+ON=13,-48,NAME
+V=7400
+
+[Attr]
+ON=13,-76,PACKAGE
+V=DIP14
+
+[Attr]
+ON=13,-90,GATE
+V=A
+
+[Attr]
+ON=13,-104,COMPNAME
+V=UX1
+
+[Comp]
+Name=7400
+Px=136,344
+Rot=4
+
+[Attr]
+ON=13,-34,PART
+V=X2
+Style=8192
+
+[Attr]
+ON=13,-48,NAME
+V=7400
+
+[Attr]
+ON=13,-76,PACKAGE
+V=DIP14
+
+[Attr]
+ON=13,-90,GATE
+V=A
+
+[Attr]
+ON=13,-104,COMPNAME
+V=UX1
+
+[Comp]
+Name=7400
+Px=512,336
+Rot=4
+
+[Attr]
+ON=13,-34,PART
+V=X3
+Style=8192
+
+[Attr]
+ON=13,-48,NAME
+V=7400
+
+[Attr]
+ON=13,-76,PACKAGE
+V=DIP14
+
+[Attr]
+ON=13,-90,GATE
+V=A
+
+[Attr]
+ON=13,-104,COMPNAME
+V=UX1
+
+[Comp]
+Name=7400
+Px=792,336
+Rot=4
+
+[Attr]
+ON=13,-34,PART
+V=X4
+Style=8192
+
+[Attr]
+ON=13,-48,NAME
+V=7400
+
+[Attr]
+ON=13,-76,PACKAGE
+V=DIP14
+
+[Attr]
+ON=13,-90,GATE
+V=A
+
+[Attr]
+ON=13,-104,COMPNAME
+V=UX1
+
+[Comp]
+Name=7400
+Px=688,336
+Rot=4
+
+[Attr]
+ON=13,-34,PART
+V=X5
+Style=8192
+
+[Attr]
+ON=13,-48,NAME
+V=7400
+
+[Attr]
+ON=13,-76,PACKAGE
+V=DIP14
+
+[Attr]
+ON=13,-90,GATE
+V=A
+
+[Attr]
+ON=13,-104,COMPNAME
+V=UX1
+
+[Wire]
+Pxs=688,336,688,376
+
+[Comp]
+Name=7400
+Px=320,336
+Rot=4
+
+[Attr]
+ON=13,-34,PART
+V=X6
+Style=8192
+
+[Attr]
+ON=13,-48,NAME
+V=7400
+
+[Attr]
+ON=13,-76,PACKAGE
+V=DIP14
+
+[Attr]
+ON=13,-90,GATE
+V=A
+
+[Attr]
+ON=13,-104,COMPNAME
+V=UX1
+
+[Wire]
+Pxs=320,320,320,336
+
+[Wire]
+Pxs=368,328,456,328
+
+[Wire]
+Pxs=456,328,456,344
+
+[Wire]
+Pxs=456,344,512,344
+
+[Wire]
+Pxs=512,336,512,344
 
 [Grid Text]
 Text="Out"
-Px=552,312
+Px=880,328
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="Out1"
+Px=440,344
 GridSnap=True
 JustifyH=Left
 JustifyV=Bottom
@@ -607,7 +748,7 @@ Scale 0=1
 Scale 1=1
 Scale 2=1
 Scale 3=1
-Px=159,386
+Px=580,630
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -671,7 +812,6 @@ Type=Text
 Print=False
 Enable=True
 Name=Models
-SB 0=0,21
 Font=Height=-15,FStyle=0,Color=#000000,Name=Courier New
 Comment Color=#008000
 WinBackGround Color=#FFFFFF
@@ -971,7 +1111,7 @@ ALIGNBOTTOM=Yes
 
 [APage]
 Analysis=Transient
-Name="MAIN"
+Name="Main"
 
 [DC]
 WinID=3
