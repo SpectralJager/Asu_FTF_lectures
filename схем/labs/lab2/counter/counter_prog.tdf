@@ -1,0 +1,33 @@
+SUBDESIGN counter_prog
+(
+qd[4..0]:OUTPUT;
+%out:OUTPUT;%
+CLR,CLK:INPUT;
+)
+VARIABLE
+	L[4..0] : SRFF;
+BEGIN
+	qd[4..0] = L[4..0];
+
+	L[4..0].clk = CLK;
+	L[4..0].clrn = CLR;
+
+% E %
+	L[0].r = L[0];
+	L[0].s = (!L[4] or !L[2] or !L[1]) and !L[0];
+
+% D %
+	L[1].r = ((L[4] and L[2]) or L[0]) and L[1];
+	L[1].s = !L[1] and L[0];
+% C %
+	L[2].r = ((L[4] and !L[0]) or L[0]) and L[1];
+	L[2].s = L[0] and !L[2] and L[1];
+% B %
+	L[3].r = (L[0] and L[1] and L[2]) and L[3];
+	L[3].s = (L[0] and L[1] and L[2]) and !L[3];
+% A %
+	L[4].r = !L[3] and L[1] and L[2];
+	L[4].s = L[3] and L[2] and L[1] and L[0];
+
+	
+END;

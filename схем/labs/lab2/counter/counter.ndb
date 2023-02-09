@@ -1,0 +1,58 @@
+NDB006
+The number of symbol table entries is: 1
+The length of the symbol table is: 13
+
+Index Hierarchy Path
+----- --------------
+!	&null_hpath&
+
+The number of name info structs is : 46
+
+InsOrder BitField SymTableIndex NextSyn SynParent Loc ChainType NextChain ChainParent FanOut DirExp ParExp ShareExp NodeName
+-------- -------- ------------- ------- --------- --- --------- --------- ----------- ------ ------ ------ -------- --------
+"	INu}	!	-	/A	~
+#	INu}	!	,	/B	"!
+$	INu}	!	+	/C	|
+%	INu}	!	*	/D	}
+&	INu}	!	)	/E	{
+'	IVOQ	!	O	:10	""
+(	IGdW	!	:11	"*
+)	IVOQ	!	&	:12	{
+*	IVOQ	!	%	:13	}
++	IVOQ	!	$	:14	|
+,	IVOQ	!	#	:15	"!
+-	IVOQ	!	"	:16	~
+.	IGdW	!	:17	"+
+/	IGdW	!	:18	"(
+0	IVOQ	!	J	:19	")
+1	IVOQ	!	N	:20	"'
+2	IGdW	!	:21	",
+3	IVOQ	!	I	:22	"%
+4	IGdW	!	:23	"&
+5	IVOQ	!	M	:24	"-
+6	IGdW	!	:25	"/
+7	IVOQ	!	L	:26	"$
+8	IVOQ	!	H	:27	"#
+9	IVOQ	!	G	:28	".
+:	IVOQ	!	K	:38	"0
+;	IGdG	!	:4	v
+<	IGdG	!	:5	z
+=	IGdG	!	:6	y
+>	IGdG	!	:7	x
+?	IGdG	!	:8	w
+@	Ky&}	!	4	@	B	E	F	a	r
+A	Ky&}	!	2	@	A	b	s
+B	Ky&}	!	5	@	A	B	E	F	c	t
+C	(@>U^	!	5	F	@	A	B	E	clk	o
+D	(@>U^	!	5	F	@	A	B	E	clr	p
+E	Ky&}	!	5	@	A	B	E	F	d	u
+F	Ky&}	!	5	@	A	B	E	F	e	q
+G	INu}	!	9	Ra	".
+H	INu}	!	8	Rb	"#
+I	INu}	!	3	Rc	"%
+J	INu}	!	0	Rd	")
+K	INu}	!	:	Sa	"0
+L	INu}	!	7	Sb	"$
+M	INu}	!	5	Sc	"-
+N	INu}	!	1	Sd	"'
+O	INu}	!	'	Se	""
