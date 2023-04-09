@@ -1,0 +1,22 @@
+subdesign register(
+	clk : INPUT;
+	en_din  : INPUT;
+	cs  : INPUT;
+	load : INPUT;
+	data[7..0]:BIDIR;
+)
+variable
+	ff[7..0]: dffe;
+begin
+	ff[].clk = clk;
+	ff[].ena = cs and !en_din;
+	if load == 1 then 
+		ff[].d = data[];
+	else
+		ff[].d = (ff[0], ff[7..1]);
+	end if;
+
+	for i in 0 to 7 generate
+		data[i] = tri(.in=ff[i].q, .oe=cs and en_din);
+	end generate;
+end;

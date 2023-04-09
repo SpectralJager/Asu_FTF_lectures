@@ -1,0 +1,83 @@
+NDB006
+The number of symbol table entries is: 1
+The length of the symbol table is: 13
+
+Index Hierarchy Path
+----- --------------
+!	&null_hpath&
+
+The number of name info structs is : 71
+
+InsOrder BitField SymTableIndex NextSyn SynParent Loc ChainType NextChain ChainParent FanOut DirExp ParExp ShareExp NodeName
+-------- -------- ------------- ------- --------- --- --------- --------- ----------- ------ ------ ------ -------- --------
+"	IeEA	!	20	13	:47	"%
+#	IeEA	!	20	13	:48	"&
+$	IeEA	!	20	13	:49	"'
+%	IeEA	!	20	13	:50	"(
+&	IeEA	!	20	13	:51	")
+'	IeEA	!	20	13	:52	"*
+(	IeEA	!	20	13	:53	"+
+)	IeEA	!	20	13	:54	",
+*	IeEA	!	12	16	:55	"-
++	IeEA	!	12	16	:56	".
+,	IeEA	!	14	10	:57	"/
+-	IeEA	!	14	10	:58	"0
+.	IeEA	!	14	10	:59	"1
+/	IeEA	!	14	10	:60	"2
+0	IeEA	!	14	10	:61	"3
+1	IeEA	!	14	10	:62	"4
+2	IeEA	!	14	10	:63	"5
+3	IeEA	!	14	10	:64	"6
+4	IeEA	!	16	10	:65	"7
+5	IeEA	!	16	10	:66	"8
+6	IeEA	!	16	10	:67	"9
+7	IeEA	!	16	10	:68	":
+8	IeEA	!	16	10	:69	";
+9	IeEA	!	16	10	:70	"<
+:	IeEA	!	16	10	:71	"=
+;	IeEA	!	16	10	:72	">
+<	IeEA	!	16	10	:73	"?
+=	IeEA	!	16	10	:74	"@
+>	IeEA	!	16	10	:75	"A
+?	IeEA	!	16	10	:76	"B
+@	IeEA	!	16	10	:77	"C
+A	IeEA	!	16	10	:78	"D
+B	IeEA	!	16	10	:79	"E
+C	IeEA	!	16	10	:80	"F
+D	IeEA	!	16	10	:81	"G
+E	IeEA	!	16	10	:82	"H
+F	IeEA	!	16	10	:83	"I
+G	IeEA	!	16	10	:84	"J
+H	IeEA	!	16	10	:85	"K
+I	IeEA	!	16	10	:86	"L
+J	IeEA	!	16	10	:87	"M
+K	IeEA	!	16	10	:88	"N
+L	IeEA	!	20	37	:89	"O
+M	IeEA	!	20	37	:90	"P
+N	IeEA	!	20	37	:91	"Q
+O	IeEA	!	20	37	:92	"R
+P	IeEA	!	20	37	:93	"S
+Q	IeEA	!	20	37	:94	"T
+R	IeEA	!	20	37	:95	"U
+S	IeEA	!	20	37	:96	"V
+T	(@\6H	!	2	2	8	]	\	[	Z	Y	X	W	V	clk	o
+U	L8ef	!	4	2	9	V	W	X	Y	Z	[	\	]	g	cs	q
+V	L8ei	!	20	7	2	V	]	data0	z
+W	L8ei	!	20	7	2	W	V	data1	y
+X	L8ei	!	20	7	2	X	W	data2	x
+Y	L8ei	!	20	7	2	X	Y	data3	w
+Z	L8ei	!	20	7	2	Y	Z	data4	v
+[	L8ei	!	20	7	2	[	Z	data5	u
+\	L8ei	!	20	7	2	\	[	data6	t
+]	L8ei	!	20	7	2	\	]	data7	s
+^	L8ef	!	3	2	9	V	W	X	Y	Z	[	\	]	g	en_din	p
+_	IeE1	!	9	4	ff0	"$
+`	IeE1	!	9	4	ff1	"#
+a	IeE1	!	9	4	ff2	""
+b	IeE1	!	9	4	ff3	"!
+c	IeE1	!	9	4	ff4	~
+d	IeE1	!	9	4	ff5	}
+e	IeE1	!	9	4	ff6	|
+f	IeE1	!	9	4	ff7	{
+g	L7gU	!	9	4	8	]	\	[	Z	Y	X	W	V	ff7~1	%\
+h	L8ef	!	5	2	8	V	W	X	Y	Z	[	\	]	load	r

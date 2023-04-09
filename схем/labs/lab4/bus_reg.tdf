@@ -1,0 +1,13 @@
+subdesign bus_reg
+(
+	clk : input;
+	oe : input;
+	io : bidir;
+)
+variable
+	d : dff;
+begin
+	d.clk = clk;
+	d.d = io;
+	io = tri(d, oe);
+end;

@@ -1,0 +1,9 @@
+subdesign decoder
+(
+	A[2..0] : input;
+	cs, cs1: output;
+)
+begin
+	cs = not((a[] == 5) or (a[] == 4) or (a[] == 1));
+	cs1 = (a[] == 5) or (a[] == 1);  
+end;
