@@ -5,9 +5,9 @@ Program=Micro-Cap
 Component Version=10.00
 Shape Version=11.00
 Screen=1920,1080
-MCAPVersion=12.2.0.5
+MCAPVersion=12.2.0.4
 Key ID=Demo
-NLCnt=21
+NLCnt=23
 TXCnt=4
 
 [shapedef]
@@ -91,7 +91,7 @@ Name=Opamp
 Definition=Opamp
 Shape=Opamp5
 Mask=5121
-Used=6
+Used=4
 memo=Opamp
 Label Offset=44,29,-14,39
 PinCnt=5
@@ -105,8 +105,8 @@ Pin="VCC",4,-1,5,14
 Name=Battery
 Definition=Battery
 Shape=Battery
-Mask=7425
-Used=56
+Mask=7937
+Used=51
 memo=Battery
 Label Offset=19,7,10,13
 PinCnt=2
@@ -118,7 +118,7 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=283
+Used=273
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
@@ -128,8 +128,8 @@ Pin="PinA",0,0,-3,-7
 Name=Resistor
 Definition=Resistor
 Shape=Resistor
-Mask=6145
-Used=171
+Mask=6913
+Used=164
 memo=Resistor
 Label Offset=18,6,8,11
 PinCnt=2
@@ -141,7 +141,7 @@ Name=Voltage Source
 Definition=VSpice
 Shape=SPICE_V
 Mask=4865
-Used=57
+Used=51
 memo=Voltage Source
 Label Offset=19,13,15,13
 PinCnt=2
@@ -149,7 +149,7 @@ Pin="Plus",6,0,-5,-6
 Pin="Minus",0,0,-20,-6
 
 [Circuit]
-Window Placement=2,3, -1,-1, -8,-31, 52,52,1415,692
+Window Placement=0,3, -1,-1, -4,-30, 52,52,1415,692
 Default Object=Color=#000080
 Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Default Object Apply Border To Text=No
@@ -162,10 +162,11 @@ PathDelayFormat=3
 WarningFormat=3
 GridTextFormulaFormat=3
 Window Placement in Transient Analysis=2,3, -1,-1, -8,-31, 52,52,1415,692
+Window Placement in Transient Probe=0,1, -1,-1, 0,31, 953,0,1906,835
 SpiceType=AMBIGUOUS
 Title_Block_Border=None
 Title_Block=False
-Show Nodes=True
+Show Nodes=False
 Show Voltages=False
 Show Current=False
 Show Power=False
@@ -201,13 +202,13 @@ Rot=3
 Page=3
 
 [Attr]
-ON=-26,-27,VALUE
-V=15
+ON=-26,-41,PART
+V=V1
 Style=8192
 
 [Attr]
-ON=-26,-41,PART
-V=V1
+ON=-26,-27,VALUE
+V=15
 Style=8192
 
 [Comp]
@@ -223,13 +224,13 @@ Rot=3
 Page=3
 
 [Attr]
-ON=-31,-27,VALUE
-V=-15
+ON=-26,-41,PART
+V=V2
 Style=8192
 
 [Attr]
-ON=-26,-41,PART
-V=V2
+ON=-31,-27,VALUE
+V=-15
 Style=8192
 
 [Comp]
@@ -299,14 +300,11 @@ Pxs=648,296,696,296
 Pxs=600,416,600,464
 
 [Wire]
-Pxs=432,464,600,464
-
-[Wire]
-Pxs=432,368,480,368
+Pxs=384,464,600,464
 
 [Comp]
 Name=Voltage Source
-Px=432,440
+Px=384,440
 Rot=3
 
 [Attr]
@@ -316,7 +314,7 @@ Style=8192
 
 [Attr]
 ON=-192,-41,VALUE
-V=DC 0 AC 1 0 Sin 0 1 1k 0 0 0
+V=DC 0 AC 1 0 Sin 0 2 1k 0 0 0
 
 [Attr]
 ON=0,0,PACKAGE
@@ -344,24 +342,88 @@ Style=256
 
 [Attr]
 ON=0,0,Saved_Pulse
-V=DC 0 AC 1 0 Pulse 0 5 100n 10n 10n 400n 1u
+V=DC 0 AC 1 0 Pulse -1.5 1.5 0 500u 500u 0 0
 Style=256
 
 [Attr]
 ON=0,0,Saved_Sin
-V=DC 0 AC 1 0 Sin 0 1 1k 0 0 0
+V=DC 0 AC 1 0 Sin 0 2 1k 0 0 0
+Style=256
+
+[Attr]
+ON=0,11,Saved_Exp
+V=DC 0 AC 1 0 Exp 0 1 100n 100n 500n 100n
+Style=256
+
+[Attr]
+ON=0,22,Saved_PWLS
+V=N
+Style=256
+
+[Attr]
+ON=0,33,Saved_PWLF
+V=.2
+Style=256
+
+[Attr]
+ON=0,44,Saved_PWL
+V=DC 0 AC 1 0 PWL 0,1 100n,2 400n,3 500n,4 600n,1 700n,2 1u,0
+Style=256
+
+[Attr]
+ON=0,55,Saved_SFFM
+V=DC 0 AC 1 0 SFFM 0 1 1e6 .5 1e7
+Style=256
+
+[Attr]
+ON=0,66,Saved_Noise
+V=DC 0 AC 1 0 Noise 10n 1 0 1u
+Style=256
+
+[Attr]
+ON=0,77,Saved_Gaussian
+V=DC 0 AC 1 0 Gaussian 1 500n 200n 1u
+Style=256
+
+[Attr]
+ON=0,88,Saved_Define
+V
 Style=256
 
 [Wire]
-Pxs=432,368,432,392
-
-[Wire]
-Pxs=432,440,432,464
+Pxs=384,440,384,464
 
 [Comp]
 Name=Ground
-Px=432,464
+Px=384,464
 Rot=7
+
+[Comp]
+Name=Resistor
+Px=408,368
+
+[Attr]
+ON=18,6,PART
+V=R0
+Style=8192
+
+[Attr]
+ON=18,20,RESISTANCE
+V=0
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=384,368,408,368
+
+[Wire]
+Pxs=384,368,384,392
+
+[Wire]
+Pxs=456,368,480,368
 
 [Grid Text]
 Text="VC"
@@ -405,7 +467,7 @@ CurrentSection 3=0
 Splitter.xs=0
 Splitter.ys=0
 TextQuad=4099
-Scale=0.66666666666666663
+Scale=1
 GridUser=10
 ShapeGroups="Main","Euro","Polarity","Main1","Main11","Electrolytic","GroundArrow","DeMorgan"
 CalcRMS=False
@@ -571,7 +633,7 @@ ALIGNBOTTOM=Yes
 
 [Section]
 Index=0
-Name="circuit1"
+Name="op-1"
 Type=Main
 Enable=True
 CurrentPage 0=0
@@ -593,9 +655,9 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=199,107
-Scale 3=0.66666666666666663
-Px=327,603
+SB 3=0,24
+Scale 3=1
+Px=183,107
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -782,6 +844,7 @@ WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
 Select Box Color=#000080
+Window Placement in Probe=0,1, -1,-1, 0,31, 0,0,953,835
 Title
 AutoTitle=Yes
 Grid Color=#808080
@@ -998,7 +1061,7 @@ ALIGNBOTTOM=Yes
 
 [APage]
 Analysis=Transient
-Name="MAIN"
+Name="Main"
 
 [Monte Carlo Options]
 Analysis=Transient
