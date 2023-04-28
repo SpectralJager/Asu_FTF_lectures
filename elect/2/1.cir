@@ -7,7 +7,7 @@ Shape Version=11.00
 Screen=1920,1080
 MCAPVersion=12.2.0.4
 Key ID=Demo
-NLCnt=12
+NLCnt=13
 TXCnt=0
 
 [shapedef]
@@ -70,8 +70,8 @@ Current=32,8,16,8
 Name=Resistor
 Definition=Resistor
 Shape=Resistor
-Mask=6913
-Used=163
+Mask=6401
+Used=170
 memo=Resistor
 Label Offset=18,6,8,11
 PinCnt=2
@@ -83,7 +83,7 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=273
+Used=277
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
@@ -93,8 +93,8 @@ Pin="PinA",0,0,-3,-7
 Name=Battery
 Definition=Battery
 Shape=Battery
-Mask=7937
-Used=51
+Mask=6657
+Used=53
 memo=Battery
 Label Offset=19,7,10,13
 PinCnt=2
@@ -106,7 +106,6 @@ Name=2N3904
 Definition=NPN
 Shape=NPN
 Mask=4224
-Used=1
 memo=NPN General Purpose Transistor Vceo=40V Ic=.2A Pd=625mW
 Label Offset=29,-11,-6,26
 PinCnt=3
@@ -129,26 +128,57 @@ PathDelayFormat=3
 WarningFormat=3
 GridTextFormulaFormat=3
 Window Placement in Transient Analysis=0,1, -1,-1, 48,48, 929,0,1858,780
-Window Placement in Transient Probe=0,1, -1,-1, 48,48, 0,0,1907,828
+Window Placement in Transient Probe=0,1, -1,-1, 0,31, 0,0,1907,835
 Window Placement in DC Probe=0,1, -1,-1, -4,-23, 0,0,1863,784
 SpiceType=AMBIGUOUS
 Title_Block_Border=None
 Title_Block=False
-Show Nodes=True
+Show Nodes=False
 Show Voltages=False
 Show Current=False
 Show Power=False
 Show Condition=False
-Show Pin Connections=True
+Show Pin Connections=False
 Show Connection Warnings=False
 Show Cross=False
 Show Attribute Text=True
 Show Grid Text=False
 
+[Object]
+Object=SpreadSheet
+CBorder=#000080
+Px=811,247,1110,444
+Title=Data
+MaxRows=6
+MaxCols=2
+IsMin=False
+TitleBkgdColor=#3296FA
+TitleFS=Height=-15,FStyle=0,Color=#000000,Name=Arial
+MU_ColW=128
+MU_RowH=25
+MU_Font=Height=-15,FStyle=0,Color=#000000,Name=Arial
+MU_BKColor=#FFFFFF
+MU_CColor=#FFFFFF
+MU_Format=3
+ColWidth[0]=42
+Text=A1,Vin
+Text=B1,=V(V2)
+Text=A2,Ib
+Text=B2,=I(R1)
+Text=A3,Ic
+Text=B3,=I(R2)
+Text=A4,Vr1/r1
+Text=B4,=V(R1)/4700
+Text=A5,Beta
+Text=B5,=B3/B4
+Text=A6,Vr1
+Text=B6,=V(R1)
+
 [Comp]
 Name=Resistor
 Px=448,360
 Rot=2
+COff=8,421,371,-14,0
 
 [Attr]
 ON=-27,11,PART
@@ -168,6 +198,7 @@ V
 Name=Resistor
 Px=496,304
 Rot=5
+COff=8,506,302,3,-26
 
 [Attr]
 ON=10,-2,PART
@@ -240,8 +271,8 @@ V=V2
 Style=8192
 
 [Attr]
-ON=18,-35,VALUE
-V=2
+ON=18,-36,VALUE
+V=1
 Style=8192
 
 [Attr]
@@ -251,6 +282,9 @@ V
 [Comp]
 Name=2N3904
 Px=472,360
+COff=8,472,360,-8,4
+COff=8,496,336,11,-9
+COff=23,472,371,65,-17
 
 [Attr]
 ON=29,-11,PART
@@ -273,7 +307,8 @@ CurrentSection 3=0
 Splitter.xs=0
 Splitter.ys=0
 TextQuad=4099
-Scale=1
+Scale=0.66666666666666663
+GridType=Normal
 GridUser=10
 ShapeGroups="Main","Euro","Polarity","Main1","Main11","Electrolytic","GroundArrow","DeMorgan"
 CalcRMS=False
@@ -461,8 +496,9 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-Scale 3=1
-Px=640,174
+SB 3=158,100
+Scale 3=0.66666666666666663
+Px=1019,149
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -526,7 +562,6 @@ Type=Text
 Print=False
 Enable=True
 Name=Models
-SB 0=60,23
 Font=Height=-15,FStyle=0,Color=#000000,Name=Courier New
 Comment Color=#008000
 WinBackGround Color=#FFFFFF
@@ -611,7 +646,7 @@ WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
 Select Box Color=#000080
-Window Placement in Probe=1,2, 0,797, 48,48, 0,0,1907,828
+Window Placement in Probe=1,2, 0,797, 0,31, 0,0,1907,835
 Title=circuit1.cir V2=0...3
 AutoTitle=Yes
 Grid Color=#808080
