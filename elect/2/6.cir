@@ -7,7 +7,7 @@ Shape Version=11.00
 Screen=1920,1080
 MCAPVersion=12.2.0.4
 Key ID=Demo
-NLCnt=35
+NLCnt=29
 TXCnt=0
 
 [shapedef]
@@ -97,8 +97,8 @@ Current=32,16,16,16
 Name=Battery
 Definition=Battery
 Shape=Battery
-Mask=7937
-Used=51
+Mask=7169
+Used=54
 memo=Battery
 Label Offset=19,7,10,13
 PinCnt=2
@@ -122,8 +122,8 @@ Pin="Emitter",3,3,5,1
 Name=Voltage Source
 Definition=VSpice
 Shape=SPICE_V
-Mask=4865
-Used=51
+Mask=4609
+Used=52
 memo=Voltage Source
 Label Offset=19,13,15,13
 PinCnt=2
@@ -134,8 +134,8 @@ Pin="Minus",0,0,-20,-6
 Name=Resistor
 Definition=Resistor
 Shape=Resistor
-Mask=6913
-Used=163
+Mask=6657
+Used=173
 memo=Resistor
 Label Offset=18,6,8,11
 PinCnt=2
@@ -146,8 +146,8 @@ Pin="Minus",0,0,-14,-4
 Name=Capacitor
 Definition=Capacitor
 Shape=Capacitor
-Mask=7425
-Used=24
+Mask=6401
+Used=27
 memo=Capacitor
 Label Offset=16,12,12,12
 PinCnt=2
@@ -159,7 +159,7 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=273
+Used=277
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
@@ -178,7 +178,7 @@ PowerFormat=3
 PathDelayFormat=3
 WarningFormat=3
 GridTextFormulaFormat=3
-Window Placement in Transient Probe=0,1, -1,-1, 48,48, 929,0,1858,780
+Window Placement in Transient Probe=0,1, -1,-1, 48,48, 953,0,1906,835
 SpiceType=AMBIGUOUS
 Title_Block_Border=None
 Title_Block=False
@@ -191,7 +191,7 @@ Show Pin Connections=False
 Show Connection Warnings=False
 Show Cross=False
 Show Attribute Text=True
-Show Grid Text=True
+Show Grid Text=False
 
 [Comp]
 Name=Battery
@@ -234,8 +234,8 @@ V=TO-18
 
 [Comp]
 Name=Voltage Source
-Px=256,312
-COff=8,275,325,8,14
+Px=288,312
+COff=8,307,325,8,14
 
 [Attr]
 ON=19,13,PART
@@ -244,7 +244,7 @@ Style=8192
 
 [Attr]
 ON=19,27,VALUE
-V=DC 0 AC 1 0 Pulse -0.026 0.026 0 0.05m 0.05m 0 0.1m
+V=DC 0 AC 1 0 Pulse 1 -1 0 0.05m 0.05m 0 0.1m
 
 [Attr]
 ON=0,0,PACKAGE
@@ -272,7 +272,7 @@ Style=256
 
 [Attr]
 ON=0,0,Saved_Pulse
-V=DC 0 AC 1 0 Pulse -0.026 0.026 0 0.05m 0.05m 0 0.1m
+V=DC 0 AC 1 0 Pulse 1 -1 0 0.05m 0.05m 0 0.1m
 Style=256
 
 [Attr]
@@ -300,7 +300,7 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=504,336,504,360
+Pxs=504,336,504,384
 
 [Wire]
 Pxs=256,480,432,480
@@ -309,7 +309,7 @@ Pxs=256,480,432,480
 Pxs=256,312,256,480
 
 [Wire]
-Pxs=504,432,504,456
+Pxs=504,432,504,480
 
 [Comp]
 Name=Resistor
@@ -364,12 +364,6 @@ Pxs=432,480,504,480
 [Wire]
 Pxs=432,312,432,384
 
-[Wire]
-Pxs=504,360,560,360
-
-[Wire]
-Pxs=504,360,504,384
-
 [Comp]
 Name=Capacitor
 Px=432,312
@@ -389,19 +383,10 @@ Style=8192
 ON=0,0,PACKAGE
 V
 
-[Wire]
-Pxs=304,312,384,312
-
 [Comp]
 Name=Ground
 Px=504,480
 Rot=7
-
-[Wire]
-Pxs=504,456,560,456
-
-[Wire]
-Pxs=504,456,504,480
 
 [Wire]
 Pxs=552,176,664,176
@@ -411,12 +396,6 @@ Pxs=664,176,664,480
 
 [Wire]
 Pxs=504,480,664,480
-
-[Wire]
-Pxs=560,360,560,384
-
-[Wire]
-Pxs=560,432,560,456
 
 [Comp]
 Name=Resistor
@@ -444,32 +423,19 @@ Pxs=504,176,504,216
 Pxs=504,264,504,280
 
 [Wire]
-Pxs=504,280,576,280
+Pxs=432,176,432,216
+
+[Wire]
+Pxs=336,312,384,312
+
+[Wire]
+Pxs=256,312,288,312
+
+[Wire]
+Pxs=504,280,560,280
 
 [Wire]
 Pxs=504,280,504,288
-
-[Wire]
-Pxs=432,176,432,216
-
-[Comp]
-Name=Capacitor
-Px=560,432
-Rot=3
-
-[Attr]
-ON=17,-39,PART
-V=C2
-Style=8192
-
-[Attr]
-ON=15,-20,CAPACITANCE
-V=15u
-Style=8192
-
-[Attr]
-ON=0,0,PACKAGE
-V
 
 [Schematic]
 CurrentSection 0=0
@@ -667,9 +633,9 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=0,79
+SB 3=0,31
 Scale 3=1
-Px=834,164
+Px=247,150
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -733,7 +699,6 @@ Type=Text
 Print=False
 Enable=True
 Name=Models
-SB 0=44,20
 Font=Height=-15,FStyle=0,Color=#000000,Name=Courier New
 Comment Color=#008000
 WinBackGround Color=#FFFFFF
@@ -808,7 +773,7 @@ WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
 Select Box Color=#000080
-Window Placement in Probe=0,1, -1,-1, 48,48, 0,0,929,780
+Window Placement in Probe=0,1, -1,-1, 48,48, 0,0,953,835
 Title
 AutoTitle=Yes
 Grid Color=#808080

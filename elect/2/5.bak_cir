@@ -7,7 +7,7 @@ Shape Version=11.00
 Screen=1920,1080
 MCAPVersion=12.2.0.4
 Key ID=Demo
-NLCnt=17
+NLCnt=18
 TXCnt=0
 
 [shapedef]
@@ -70,8 +70,8 @@ Current=32,8,16,8
 Name=NPN
 Definition=NPN
 Shape=NPN
-Mask=4097
-Used=19
+Mask=5633
+Used=11
 memo=NPN Transistor
 Label Offset=37,-17,-14,33
 PinCnt=3
@@ -84,7 +84,7 @@ Name=Battery
 Definition=Battery
 Shape=Battery
 Mask=6657
-Used=61
+Used=53
 memo=Battery
 Label Offset=19,7,10,13
 PinCnt=2
@@ -96,7 +96,7 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=287
+Used=277
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
@@ -106,8 +106,8 @@ Pin="PinA",0,0,-3,-7
 Name=Resistor
 Definition=Resistor
 Shape=Resistor
-Mask=6913
-Used=188
+Mask=6401
+Used=171
 memo=Resistor
 Label Offset=18,6,8,11
 PinCnt=2
@@ -115,7 +115,7 @@ Pin="Plus",6,0,-10,-4
 Pin="Minus",0,0,-14,-4
 
 [Circuit]
-Window Placement=0,3, -1,-1, -4,-23, 242,238,1609,780
+Window Placement=0,3, -1,-1, -4,-30, 22,22,1389,564
 Default Object=Color=#000080
 Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Default Object Apply Border To Text=No
@@ -127,7 +127,7 @@ PowerFormat=3
 PathDelayFormat=3
 WarningFormat=3
 GridTextFormulaFormat=3
-Window Placement in Transient Probe=0,1, -1,-1, -4,-23, 929,0,1858,780
+Window Placement in Transient Probe=0,1, -1,-1, 0,32, 0,0,1907,835
 SpiceType=AMBIGUOUS
 Title_Block_Border=None
 Title_Block=False
@@ -142,6 +142,30 @@ Show Cross=False
 Show Attribute Text=True
 Show Grid Text=True
 
+[Object]
+Object=SpreadSheet
+CBorder=#000080
+Px=838,209,1140,342
+Title=Data
+MaxRows=3
+MaxCols=2
+IsMin=False
+TitleBkgdColor=#3296FA
+TitleFS=Height=-15,FStyle=0,Color=#000000,Name=Arial
+MU_ColW=128
+MU_RowH=25
+MU_Font=Height=-15,FStyle=0,Color=#000000,Name=Arial
+MU_BKColor=#FFFFFF
+MU_CColor=#FFFFFF
+MU_Format=3
+ColWidth[0]=42
+Text=A1,R3
+Text=B1,=R(R3)
+Text=A2,Ir3
+Text=B2,=I(R3)
+Text=A3,Rout
+Text=B3,=V(V1)/I(R3) - R(R3)
+
 [Comp]
 Name=NPN
 Px=480,368
@@ -153,11 +177,11 @@ Style=8192
 
 [Attr]
 ON=37,-3,MODEL
-V=$GENERIC_N
+V=2N2222A
 
 [Attr]
 ON=0,0,PACKAGE
-V
+V=TO-18
 
 [Comp]
 Name=Battery
@@ -227,12 +251,12 @@ Px=504,320
 Rot=3
 
 [Attr]
-ON=-24,-25,PART
+ON=11,-22,PART
 V=R3
 Style=8192
 
 [Attr]
-ON=-24,-39,RESISTANCE
+ON=7,-40,RESISTANCE
 V=10k
 Style=8192
 
@@ -447,7 +471,7 @@ ALIGNBOTTOM=Yes
 
 [Section]
 Index=0
-Name="circuit4"
+Name="5"
 Type=Main
 Enable=True
 CurrentPage 0=0
@@ -470,7 +494,7 @@ Scale 0=1
 Scale 1=1
 Scale 2=1
 Scale 3=1
-Px=234,187
+Px=568,137
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -534,6 +558,7 @@ Type=Text
 Print=False
 Enable=True
 Name=Models
+SB 0=44,20
 Font=Height=-15,FStyle=0,Color=#000000,Name=Courier New
 Comment Color=#008000
 WinBackGround Color=#FFFFFF
@@ -580,6 +605,11 @@ Text=* .Model BJT1 NPN (RE=12 LOT/1/GAUSS=30% DEV/2/UNIFORM=2%)
 Text=*
 Text=* A .cir file is typically found in the data directory
 Text=*
+Text=*** From file C:\MC12\library\UTILITY.LBR
+Text=*** NPN Generic
+Text=.MODEL $GENERIC_N NPN (BF=200 BR=2 CJC=30p CJE=40p IKF=100m IKR=35 IS=5p
+Text=+ ISC=10f ISE=2p ITF=10m MJC=500m MJE=500m NF=1.2 RC=1m RE=500m TF=400p TR=200n
+Text=+ VAF=100 VJC=700m VJE=700m VTF=10 XTF=500m)
 
 [InfoPage]
 InfoPage=True
@@ -603,8 +633,8 @@ WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
 Select Box Color=#000080
-Window Placement in Probe=0,1, -1,-1, 0,0, 0,0,929,780
-Title
+Window Placement in Probe=0,1, -1,-1, 0,32, 1617,0,1906,332
+Title=5.cir
 AutoTitle=Yes
 Grid Color=#808080
 Grid Weight=1
@@ -690,6 +720,7 @@ Num Out Allow Dup Y Expr=False
 Num Out Low="TSTART"
 Num Out High="TMAX"
 Num Out Font=Height=-15,FStyle=0,Color=#000000,Name=Courier New
+Num Out Window Placement=0,1, -1,-1, -1,-1, 0,0,1907,828
 Num Out Format=3
 Num Out HideNonSelected=False
 Num Out UseActualDataPoints=False
