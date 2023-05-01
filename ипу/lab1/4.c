@@ -20,10 +20,10 @@ BOOL init(HANDLE handler) {
     }
     printf("Successfully set settings for port...\n");
 
-    /*if(!SetCommTimeouts(handler, &timeouts)){
+    if(!SetCommTimeouts(handler, &timeouts)){
         printf("Err: Cant set timeouts...");
         return FALSE;
-    }*/
+    }
 
     return TRUE;
 }
@@ -53,16 +53,20 @@ BOOL writeSYNC(HANDLE handler) {
 }
 
 BOOL receiveSYNC(HANDLE handler) {
-    char buffer[256] = {0x0};
+    char buffer[2] = {0x0};
     unsigned long readedBytes;
     printf("Receiving chars from port...\n");
     while(1) {
-        if(!ReadFile(handler, buffer, 256, &readedBytes, NULL)) {
+        if(!ReadFile(handler, buffer, 1, &readedBytes, NULL)) {
             printf("Err: ReadFile is failed...");
             return FALSE;
         }
-        printf("%s", buffer);
-        Sleep(100);
+        //printf("%d:", readedBytes);
+        if(readedBytes){
+            printf("%s\n", &buffer);
+        }
+        //buffer[0] = 0x20;
+        //Sleep(1000);
     }
     return TRUE;
 }
