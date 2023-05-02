@@ -15,14 +15,6 @@ func main() {
 
 	old, new := 0, 0
 
-	var devs []*gousb.Device
-
-	defer func() {
-		for _, d := range devs {
-			d.Close()
-		}
-	}()
-
 	for {
 		new = 0
 		ctx.OpenDevices(func(desc *gousb.DeviceDesc) bool {
@@ -70,7 +62,7 @@ func main() {
 				// 			}
 				// 		}
 				// 		fmt.Println("\t--------------------------------------------------")
-				// 	}
+				// }
 				// }
 				return false
 			})
