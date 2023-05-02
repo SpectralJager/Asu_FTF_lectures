@@ -533,7 +533,6 @@
     )
   )
 
-
   (junction (at 153.67 88.9) (diameter 0) (color 0 0 0 0)
     (uuid 254a046d-6c75-4d3c-be06-c4d1349beb78)
   )
@@ -882,7 +881,7 @@
     (property "Value" "BC549" (at 168.91 90.1699 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Package_TO_SOT_THT:TO-92_Inline" (at 168.91 90.805 0)
+    (property "Footprint" "Package_TO_SOT_THT:TO-92_Wide" (at 168.91 90.805 0)
       (effects (font (size 1.27 1.27) italic) (justify left) hide)
     )
     (property "Datasheet" "https://www.onsemi.com/pub/Collateral/BC550-D.pdf" (at 163.83 88.9 0)
@@ -1089,7 +1088,7 @@
     (property "Value" "BC549" (at 181.61 80.0099 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "Package_TO_SOT_THT:TO-92_Inline" (at 181.61 80.645 0)
+    (property "Footprint" "Package_TO_SOT_THT:TO-92_Wide" (at 181.61 80.645 0)
       (effects (font (size 1.27 1.27) italic) (justify left) hide)
     )
     (property "Datasheet" "https://www.onsemi.com/pub/Collateral/BC550-D.pdf" (at 176.53 78.74 0)
