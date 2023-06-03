@@ -200,7 +200,7 @@ Show Nodes=False
 Show Voltages=False
 Show Current=False
 Show Power=False
-Show Condition=False
+Show Condition=True
 Show Pin Connections=False
 Show Connection Warnings=False
 Show Cross=False
@@ -219,7 +219,7 @@ Style=8192
 
 [Attr]
 ON=10,27,VALUE
-V=12
+V=9
 Style=8192
 
 [Attr]
@@ -230,6 +230,7 @@ V
 Name=1N4148
 Px=736,240
 Rot=1
+COff=23,736,251,19,8
 
 [Attr]
 ON=18,10,PART
@@ -247,6 +248,7 @@ V=DO-35
 [Comp]
 Name=BC549
 Px=712,312
+COff=23,712,323,57,-18
 
 [Attr]
 ON=29,-11,PART
@@ -680,7 +682,7 @@ Scale 1=1
 Scale 2=1
 SB 3=213,0
 Scale 3=1
-Px=860,69
+Px=848,102
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000

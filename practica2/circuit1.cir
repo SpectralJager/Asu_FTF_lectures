@@ -7,8 +7,15 @@ Shape Version=11.00
 Screen=1920,1080
 MCAPVersion=12.2.0.4
 Key ID=Demo
-NLCnt=34
+NLCnt=37
 TXCnt=0
+
+[shapedef]
+Name=Animated Analog Led
+Animated Analog Led=0,-24,8,0
+Current=-4,8,12,8
+Line=-4,-6,-4,-2
+Line=-6,-4,-2,-4
 
 [shapedef]
 Name=Animated SPST Switch
@@ -38,29 +45,6 @@ PolyOpen=3
 PolyLine=24,24
 PolyLine=24,12
 PolyLine=14,2
-
-[shapedef]
-Name=Capacitor
-Line=0,0,22,0
-Line=22,-8,22,8
-Line=26,-8,26,8
-Line=26,0,48,0
-Current=32,12,16,12
-
-[shapedef]
-Name=Diode
-Root="Diode.root",0,0,0
-
-[shapedef]
-Name=Diode.root
-Line=0,0,20,0
-Line=28,0,48,0
-Rectangle=18,-8,20,8
-PolyClosed=3
-PolyLine=20,0
-PolyLine=28,-8
-PolyLine=28,8
-Current=32,16,16,16
 
 [shapedef]
 Name=Ground
@@ -98,25 +82,13 @@ Current=32,8,16,8
 Name=Battery
 Definition=Battery
 Shape=Battery
-Mask=6401
-Used=55
+Mask=6657
+Used=61
 memo=Battery
 Label Offset=19,7,10,13
 PinCnt=2
 Pin="Plus",6,0,-4,-5
 Pin="Minus",0,0,-10,-5
-
-[compdef]
-Name=1N4148
-Definition=Diode
-Shape=Diode
-Mask=4226
-Used=1
-memo=Switching Diode Vr=100V If=200mA
-Label Offset=18,10,12,12
-PinCnt=2
-Pin="Anode",6,0,-13,-8
-Pin="Cathode",0,0,-27,-8
 
 [compdef]
 Name=BC549
@@ -136,8 +108,8 @@ Power=0.625
 Name=Resistor
 Definition=Resistor
 Shape=Resistor
-Mask=6145
-Used=178
+Mask=7425
+Used=201
 memo=Resistor
 Label Offset=18,6,8,11
 PinCnt=2
@@ -145,23 +117,11 @@ Pin="Plus",6,0,-10,-4
 Pin="Minus",0,0,-14,-4
 
 [compdef]
-Name=Capacitor
-Definition=Capacitor
-Shape=Capacitor
-Mask=6401
-Used=29
-memo=Capacitor
-Label Offset=16,12,12,12
-PinCnt=2
-Pin="Plus",6,0,-3,-5
-Pin="Minus",0,0,-14,-5
-
-[compdef]
 Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=280
+Used=291
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
@@ -179,6 +139,18 @@ PinCnt=2
 Pin="A",0,0,5,0
 Pin="B",6,0,-10,1
 
+[compdef]
+Name=Animated Analog LED
+Definition=ANIMATED ANALOG LED
+Shape=Animated Analog Led
+Mask=4096
+Used=2
+memo=Animated Analog LED
+Label Offset=12,-27,5,10
+PinCnt=2
+Pin="Anode",0,0,-24,5
+Pin="Cathode",1,0,5,5
+
 [Circuit]
 Window Placement=0,3, -1,-1, -4,-30, 174,174,1628,752
 Default Object=Color=#000080
@@ -192,7 +164,7 @@ PowerFormat=3
 PathDelayFormat=3
 WarningFormat=3
 GridTextFormulaFormat=3
-Window Placement in Transient Probe=0,1, -1,-1, 0,31, 953,0,1906,835
+Window Placement in Transient Probe=0,1, -1,-1, 0,31, 953,0,1906,808
 SpiceType=AMBIGUOUS
 Title_Block_Border=None
 Title_Block=False
@@ -209,7 +181,7 @@ Show Grid Text=True
 
 [Comp]
 Name=Battery
-Px=736,192
+Px=952,208
 Rot=1
 
 [Attr]
@@ -227,28 +199,9 @@ ON=0,0,PACKAGE
 V
 
 [Comp]
-Name=1N4148
-Px=736,240
-Rot=1
-COff=23,736,251,19,8
-
-[Attr]
-ON=18,10,PART
-V=D1
-Style=8192
-
-[Attr]
-ON=18,24,MODEL
-V=1N4148
-
-[Attr]
-ON=18,52,PACKAGE
-V=DO-35
-
-[Comp]
 Name=BC549
-Px=712,312
-COff=23,712,323,57,-18
+Px=928,328
+COff=23,928,339,57,-18
 
 [Attr]
 ON=29,-11,PART
@@ -269,7 +222,7 @@ V=TO-92
 
 [Comp]
 Name=BC549
-Px=640,384
+Px=856,400
 
 [Attr]
 ON=29,-11,PART
@@ -290,7 +243,7 @@ V=TO-92
 
 [Comp]
 Name=Resistor
-Px=400,440
+Px=616,456
 Rot=1
 
 [Attr]
@@ -309,7 +262,7 @@ V
 
 [Comp]
 Name=Resistor
-Px=464,384
+Px=680,400
 
 [Attr]
 ON=18,6,PART
@@ -327,7 +280,7 @@ V
 
 [Comp]
 Name=Resistor
-Px=664,248
+Px=880,264
 Rot=1
 
 [Attr]
@@ -346,7 +299,7 @@ V
 
 [Comp]
 Name=Resistor
-Px=664,448
+Px=880,464
 Rot=1
 
 [Attr]
@@ -363,96 +316,68 @@ Style=8192
 ON=0,0,PACKAGE
 V
 
-[Comp]
-Name=Capacitor
-Px=552,448
-Rot=1
-
-[Attr]
-ON=12,12,PART
-V=C2
-Style=8192
-
-[Attr]
-ON=12,26,CAPACITANCE
-V=10u
-Style=8192
-
-[Attr]
-ON=0,0,PACKAGE
-V
+[Wire]
+Pxs=880,256,952,256
 
 [Wire]
-Pxs=664,240,736,240
+Pxs=880,256,880,264
 
 [Wire]
-Pxs=664,240,664,248
+Pxs=616,256,880,256
 
 [Wire]
-Pxs=400,240,664,240
+Pxs=880,312,880,328
 
 [Wire]
-Pxs=664,296,664,312
+Pxs=880,328,928,328
 
 [Wire]
-Pxs=664,312,712,312
+Pxs=880,328,880,376
 
 [Wire]
-Pxs=664,312,664,360
+Pxs=880,424,880,448
 
 [Wire]
-Pxs=664,408,664,432
+Pxs=952,352,952,448
 
 [Wire]
-Pxs=736,336,736,432
+Pxs=880,448,952,448
 
 [Wire]
-Pxs=664,432,736,432
+Pxs=880,448,880,464
 
 [Wire]
-Pxs=664,432,664,448
+Pxs=880,512,880,552
 
 [Wire]
-Pxs=664,496,664,536
+Pxs=768,552,880,552
 
 [Wire]
-Pxs=552,536,664,536
+Pxs=616,552,768,552
 
 [Wire]
-Pxs=552,496,552,536
+Pxs=616,504,616,552
 
 [Wire]
-Pxs=400,536,552,536
+Pxs=616,400,616,456
 
 [Wire]
-Pxs=400,488,400,536
+Pxs=616,400,680,400
 
 [Wire]
-Pxs=400,384,400,440
+Pxs=728,400,856,400
 
 [Wire]
-Pxs=400,384,464,384
-
-[Wire]
-Pxs=512,384,552,384
-
-[Wire]
-Pxs=552,384,552,448
-
-[Wire]
-Pxs=552,384,640,384
-
-[Wire]
-Pxs=400,240,400,312
+Pxs=616,256,616,328
 
 [Comp]
 Name=Ground
-Px=552,536
+Px=768,552
 Rot=7
 
 [Comp]
 Name=Animated SPST Switch
-Px=400,312
+Px=616,328
 Rot=1
 
 [Attr]
@@ -477,12 +402,71 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=400,360,400,384
+Pxs=616,376,616,400
 
 [Comp]
 Name=Ground
-Px=736,192
+Px=952,208
 Rot=3
+
+[Comp]
+Name=Resistor
+Px=1016,256
+
+[Attr]
+ON=16,-21,PART
+V=R5
+Style=8192
+
+[Attr]
+ON=16,-35,RESISTANCE
+V=33
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Animated Analog LED
+Px=1088,288
+Rot=1
+
+[Attr]
+ON=41,-1,PART
+V=Led5
+Style=8192
+
+[Attr]
+ON=12,-13,COLOR
+V=Blue,3.4V,0.012A,.5ohm,20pF
+
+[Attr]
+ON=0,0,COLOR_REF
+V=#0000FF
+Style=256
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=952,256,1016,256
+
+[Wire]
+Pxs=1064,256,1088,256
+
+[Wire]
+Pxs=1088,256,1088,288
+
+[Wire]
+Pxs=952,304,1088,304
+
+[Wire]
+Pxs=952,304,952,312
+
+[Wire]
+Pxs=1088,296,1088,304
 
 [Schematic]
 CurrentSection 0=0
@@ -680,9 +664,9 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=213,0
+SB 3=390,0
 Scale 3=1
-Px=848,102
+Px=1426,197
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -815,7 +799,7 @@ WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
 Select Box Color=#000080
-Window Placement in Probe=0,1, -1,-1, 0,31, 0,0,953,835
+Window Placement in Probe=0,1, -1,-1, 0,31, 0,0,953,808
 Title
 AutoTitle=Yes
 Grid Color=#808080
