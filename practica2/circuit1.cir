@@ -18,11 +18,6 @@ Line=-4,-6,-4,-2
 Line=-6,-4,-2,-4
 
 [shapedef]
-Name=Animated SPST Switch
-Animated SPST Switch=0,-8,48,8
-Current=16,8,32,8
-
-[shapedef]
 Name=Battery
 Line=0,0,22,0
 Line=22,-3,22,3
@@ -82,8 +77,8 @@ Current=32,8,16,8
 Name=Battery
 Definition=Battery
 Shape=Battery
-Mask=6657
-Used=61
+Mask=7425
+Used=63
 memo=Battery
 Label Offset=19,7,10,13
 PinCnt=2
@@ -109,7 +104,7 @@ Name=Resistor
 Definition=Resistor
 Shape=Resistor
 Mask=7425
-Used=201
+Used=213
 memo=Resistor
 Label Offset=18,6,8,11
 PinCnt=2
@@ -121,23 +116,11 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=291
+Used=294
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
 Pin="PinA",0,0,-3,-7
-
-[compdef]
-Name=Animated SPST Switch
-Definition=ANIMATED SPST SWITCH
-Shape=Animated SPST Switch
-Mask=4352
-Used=2
-memo=Animated Single Pole, Single Throw Switch
-Label Offset=2,5,11,11
-PinCnt=2
-Pin="A",0,0,5,0
-Pin="B",6,0,-10,1
 
 [compdef]
 Name=Animated Analog LED
@@ -169,7 +152,7 @@ SpiceType=AMBIGUOUS
 Title_Block_Border=None
 Title_Block=False
 Show Nodes=False
-Show Voltages=False
+Show Voltages=True
 Show Current=False
 Show Power=False
 Show Condition=True
@@ -253,7 +236,7 @@ Style=8192
 
 [Attr]
 ON=8,25,RESISTANCE
-V=4.7k
+V=2.3k
 Style=8192
 
 [Attr]
@@ -375,32 +358,6 @@ Name=Ground
 Px=768,552
 Rot=7
 
-[Comp]
-Name=Animated SPST Switch
-Px=616,328
-Rot=1
-
-[Attr]
-ON=11,11,PART
-V=Switch4
-Style=8192
-
-[Attr]
-ON=11,25,STATE
-V=Open
-
-[Attr]
-ON=11,39,RON
-V=1m
-
-[Attr]
-ON=11,53,ROFF
-V=1e15
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
 [Wire]
 Pxs=616,376,616,400
 
@@ -439,7 +396,7 @@ Style=8192
 
 [Attr]
 ON=12,-13,COLOR
-V=Blue,3.4V,0.012A,.5ohm,20pF
+V=Blue,3.4V,0.02A,.5ohm,20pF
 
 [Attr]
 ON=0,0,COLOR_REF
@@ -467,6 +424,34 @@ Pxs=952,304,952,312
 
 [Wire]
 Pxs=1088,296,1088,304
+
+[Comp]
+Name=Resistor
+Px=616,376
+Rot=5
+
+[Attr]
+ON=8,-25,PART
+V=R6
+Style=8192
+
+[Attr]
+ON=8,-40,RESISTANCE
+V=50k
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Node Offsets]
+Section=0
+;Node,Page,GridX,GridY,OffsetX,OffsetY
+Offset=2,0,952,304,44,0
+Offset=3,0,928,328,-45,-2
+Offset=4,0,952,352,6,91
+Offset=5,0,856,400,-57,2
+Offset=6,0,616,456,-1,-53
 
 [Schematic]
 CurrentSection 0=0
@@ -666,7 +651,7 @@ Scale 1=1
 Scale 2=1
 SB 3=390,0
 Scale 3=1
-Px=1426,197
+Px=1196,155
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
