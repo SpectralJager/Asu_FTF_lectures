@@ -4,10 +4,10 @@ Version=12.00
 Program=Micro-Cap
 Component Version=10.00
 Shape Version=11.00
-Screen=1920,1080
+Screen=1920,1200
 MCAPVersion=12.2.0.4
 Key ID=Demo
-NLCnt=37
+NLCnt=44
 TXCnt=0
 
 [shapedef]
@@ -40,6 +40,14 @@ PolyOpen=3
 PolyLine=24,24
 PolyLine=24,12
 PolyLine=14,2
+
+[shapedef]
+Name=Capacitor_Electrolytic
+Line=0,0,22,0
+Line=26,-8,26,8
+Line=26,0,48,0
+Current=32,12,16,12
+Arc=-26,-16,22,16 , 18,8,18,-8
 
 [shapedef]
 Name=Ground
@@ -77,8 +85,8 @@ Current=32,8,16,8
 Name=Battery
 Definition=Battery
 Shape=Battery
-Mask=7425
-Used=63
+Mask=7937
+Used=51
 memo=Battery
 Label Offset=19,7,10,13
 PinCnt=2
@@ -90,7 +98,6 @@ Name=BC549
 Definition=NPN
 Shape=NPN
 Mask=4224
-Used=2
 memo=NPN Low Noise Transistor Vceo=30V Ic=.1A Pd=625mW
 Label Offset=29,-11,-6,26
 PinCnt=3
@@ -103,8 +110,8 @@ Power=0.625
 Name=Resistor
 Definition=Resistor
 Shape=Resistor
-Mask=7425
-Used=213
+Mask=6913
+Used=164
 memo=Resistor
 Label Offset=18,6,8,11
 PinCnt=2
@@ -116,7 +123,7 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=294
+Used=277
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
@@ -127,15 +134,26 @@ Name=Animated Analog LED
 Definition=ANIMATED ANALOG LED
 Shape=Animated Analog Led
 Mask=4096
-Used=2
 memo=Animated Analog LED
 Label Offset=12,-27,5,10
 PinCnt=2
 Pin="Anode",0,0,-24,5
 Pin="Cathode",1,0,5,5
 
+[compdef]
+Name=TLJJ106K006R8000
+Definition=Subckt
+Shape=Capacitor_Electrolytic
+Mask=4224
+Used=2
+memo=Tantalum Solid Electrolytic Chip Capacitor 10uF 6.3Vdc
+Label Offset=15,12,13,9
+PinCnt=2
+Pin="1",a,6,0,-3,-2
+Pin="9",a,0,0,-2,-3
+
 [Circuit]
-Window Placement=0,3, -1,-1, -4,-30, 174,174,1628,752
+Window Placement=0,3, -1,-1, -4,-30, 945,0,1890,939
 Default Object=Color=#000080
 Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Default Object Apply Border To Text=No
@@ -147,13 +165,13 @@ PowerFormat=3
 PathDelayFormat=3
 WarningFormat=3
 GridTextFormulaFormat=3
-Window Placement in Transient Probe=0,1, -1,-1, 0,31, 953,0,1906,808
+Window Placement in Transient Probe=0,1, -1,-1, 0,31, 0,0,1891,939
 SpiceType=AMBIGUOUS
 Title_Block_Border=None
 Title_Block=False
 Show Nodes=False
 Show Voltages=True
-Show Current=False
+Show Current=True
 Show Power=False
 Show Condition=True
 Show Pin Connections=False
@@ -166,6 +184,7 @@ Show Grid Text=True
 Name=Battery
 Px=952,208
 Rot=1
+COff=8,962,221,-61,3
 
 [Attr]
 ON=10,13,PART
@@ -184,6 +203,9 @@ V
 [Comp]
 Name=BC549
 Px=928,328
+COff=8,928,328,-45,-16
+COff=8,952,304,-4,-16
+COff=8,952,352,16,-8
 COff=23,928,339,57,-18
 
 [Attr]
@@ -193,7 +215,7 @@ Style=8192
 
 [Attr]
 ON=29,3,MODEL
-V=BC549
+V=BC549C
 
 [Attr]
 ON=29,17,POWER
@@ -206,6 +228,10 @@ V=TO-92
 [Comp]
 Name=BC549
 Px=856,400
+COff=8,856,400,-44,-27
+COff=8,880,376,-9,-16
+COff=8,880,424,-5,4
+COff=23,856,411,41,-12
 
 [Attr]
 ON=29,-11,PART
@@ -214,7 +240,7 @@ Style=8192
 
 [Attr]
 ON=29,3,MODEL
-V=BC549
+V=BC549C
 
 [Attr]
 ON=29,17,POWER
@@ -228,10 +254,11 @@ V=TO-92
 Name=Resistor
 Px=616,456
 Rot=1
+COff=8,624,467,-69,7
 
 [Attr]
 ON=8,11,PART
-V=R1
+V=R2
 Style=8192
 
 [Attr]
@@ -246,10 +273,11 @@ V
 [Comp]
 Name=Resistor
 Px=680,400
+COff=8,698,406,-12,7
 
 [Attr]
 ON=18,6,PART
-V=R2
+V=R3
 Style=8192
 
 [Attr]
@@ -265,10 +293,11 @@ V
 Name=Resistor
 Px=880,264
 Rot=1
+COff=8,888,275,-60,6
 
 [Attr]
 ON=8,11,PART
-V=R3
+V=R4
 Style=8192
 
 [Attr]
@@ -284,10 +313,11 @@ V
 Name=Resistor
 Px=880,464
 Rot=1
+COff=8,888,475,-60,6
 
 [Attr]
 ON=8,11,PART
-V=R4
+V=R5
 Style=8192
 
 [Attr]
@@ -306,7 +336,7 @@ Pxs=880,256,952,256
 Pxs=880,256,880,264
 
 [Wire]
-Pxs=616,256,880,256
+Pxs=616,256,752,256
 
 [Wire]
 Pxs=880,312,880,328
@@ -348,7 +378,7 @@ Pxs=616,400,616,456
 Pxs=616,400,680,400
 
 [Wire]
-Pxs=728,400,856,400
+Pxs=728,400,768,400
 
 [Wire]
 Pxs=616,256,616,328
@@ -369,10 +399,11 @@ Rot=3
 [Comp]
 Name=Resistor
 Px=1016,256
+COff=8,1032,235,-9,34
 
 [Attr]
 ON=16,-21,PART
-V=R5
+V=R6
 Style=8192
 
 [Attr]
@@ -388,6 +419,7 @@ V
 Name=Animated Analog LED
 Px=1088,288
 Rot=1
+COff=8,1088,288,-19,21
 
 [Attr]
 ON=41,-1,PART
@@ -429,10 +461,11 @@ Pxs=1088,296,1088,304
 Name=Resistor
 Px=616,376
 Rot=5
+COff=8,624,351,-71,-5
 
 [Attr]
 ON=8,-25,PART
-V=R6
+V=R1
 Style=8192
 
 [Attr]
@@ -444,14 +477,68 @@ Style=8192
 ON=0,0,PACKAGE
 V
 
+[Comp]
+Name=Ground
+Px=752,304
+Rot=7
+
+[Comp]
+Name=TLJJ106K006R8000
+Px=768,472
+Rot=5
+
+[Attr]
+ON=17,-29,PART
+V=X1
+Style=8192
+
+[Attr]
+ON=15,26,NAME
+V=TLJJ106K006R8000
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=TLJJ106K006R8000
+Px=752,304
+Rot=5
+
+[Attr]
+ON=17,-26,PART
+V=X2
+Style=8192
+
+[Attr]
+ON=15,26,NAME
+V=TLJJ106K006R8000
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=752,256,880,256
+
+[Wire]
+Pxs=768,400,768,424
+
+[Wire]
+Pxs=768,400,856,400
+
+[Wire]
+Pxs=768,472,768,552
+
 [Node Offsets]
 Section=0
 ;Node,Page,GridX,GridY,OffsetX,OffsetY
-Offset=2,0,952,304,44,0
-Offset=3,0,928,328,-45,-2
-Offset=4,0,952,352,6,91
-Offset=5,0,856,400,-57,2
-Offset=6,0,616,456,-1,-53
+Offset=2,0,952,304,73,0
+Offset=3,0,928,328,-80,1
+Offset=4,0,952,352,-103,98
+Offset=5,0,856,400,-90,-10
+Offset=6,0,616,456,-31,-55
+Offset=7,0,1064,256,24,0
 
 [Schematic]
 CurrentSection 0=0
@@ -461,7 +548,7 @@ CurrentSection 3=0
 Splitter.xs=0
 Splitter.ys=0
 TextQuad=4099
-Scale=1
+Scale=0.5
 GridUser=10
 ShapeGroups="Main","Euro","Polarity","Main1","Main11","Electrolytic","GroundArrow","DeMorgan"
 CalcRMS=False
@@ -649,9 +736,9 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-SB 3=390,0
-Scale 3=1
-Px=1196,155
+SB 3=365,166
+Scale 3=0.5
+Px=1015,412
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -761,6 +848,12 @@ Text=* .Model BJT1 NPN (RE=12 LOT/1/GAUSS=30% DEV/2/UNIFORM=2%)
 Text=*
 Text=* A .cir file is typically found in the data directory
 Text=*
+Text=*** From file C:\MC12\library\MSBJT.LBR
+Text=*** NPN Low Noise Transistors
+Text=.MODEL BC549 NPN (BF=437.778 BR=3.12472 CJC=3.95759p CJE=6.98126p IKF=540.655m
+Text=+ IKR=18.5707m IS=10.033f ISC=56.5841f ISE=.000000121848f ITF=9.95056m MJC=300m
+Text=+ MJE=334.494m NE=2.99723 NF=1.01548 RC=554.461m RE=2 TF=505.102p TR=10n
+Text=+ VAF=100 VJC=723.124m VJE=700m VTF=10 XTF=499.996m)
 
 [InfoPage]
 InfoPage=True
@@ -784,7 +877,7 @@ WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
 Select Box Color=#000080
-Window Placement in Probe=0,1, -1,-1, 0,31, 0,0,953,808
+Window Placement in Probe=1,2, 0,908, 0,31, 0,0,945,939
 Title
 AutoTitle=Yes
 Grid Color=#808080
@@ -1113,6 +1206,16 @@ Analysis=ImDistortion
 
 [Pane]
 Analysis=Stability
+
+[Stepping]
+Analysis=Transient
+Index=1
+Parameter Type=Component
+Name=R1
+Param=value
+From=2K
+To=50K
+Value=1k
 
 [Watch]
 Analysis=Transient
