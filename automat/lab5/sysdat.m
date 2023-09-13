@@ -1,0 +1,12 @@
+clear all;
+clc;
+Ts = 16.4;
+K = 0.08;
+Tr = 1;
+Toc = 3;
+Ti = 200;
+Kc = 1.04;
+ddMax = 3;
+deltaMax = 30;
+phiZad = 30;
+fConst = 0;
