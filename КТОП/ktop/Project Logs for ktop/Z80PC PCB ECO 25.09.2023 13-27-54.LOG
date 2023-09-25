@@ -1,0 +1,6 @@
+Added Component: Designator=*(DIP-32)
+Added Component: Designator=*(DIP-28)
+Added Component: Designator=*(LQFP-44)
+Added Component: Designator=*(DIP-24)
+Added Component: Designator=*(SOP14)
+Added Class: Name=Z80PC
