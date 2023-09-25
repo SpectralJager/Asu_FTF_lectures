@@ -1,0 +1,67 @@
+MACRO ASSEMBLER SWITCHER                                    09/19/123 16:54:49 PAGE     1
+
+
+WIN32 MACRO ASSEMBLER A51 V6.03.08
+OBJECT MODULE PLACED IN Z:\μορ\1\SWITCHER.OBJ
+ASSEMBLER INVOKED BY: A51.EXE Z:\μορ\1\SWITCHER.ASM OJ(Z:\μορ\1\SWITCHER.OBJ) PIN(C:\FSI\INC) EP LINES PR(Z:\μορ\1\SWITCHER.LST) XR DB PW(80) RB(0) 
+
+LOC     OBJ           LINE    SOURCE
+                         1    NAME SWITCH
+                         2    MAIN SEGMENT CODE 
+------                   3    CSEG AT 0
+0000    020000   F       4    LJMP START
+                         5    USING 0
+------                   6    RSEG MAIN
+                         7    START:   
+0000    75907F           8    	MOV P1,#07FH
+                         9    DBNC:  
+0003    7C05            10    	MOV R4,#5
+                        11    DBNC1:   
+0005    7BFF            12    	MOV R3,#0FFH
+                        13    DBNC2:  
+0007    20B2F9          14    	JB P3.2, DBNC
+000A    DBFB            15    	DJNZ R3, DBNC2
+000C    DCF7            16    	DJNZ R4, DBNC1
+000E    30B2FD          17    	JNB P3.2,$
+0011    209707          18    	JB P1.7, SWITCH
+0014    D297            19    	SETB P1.7
+0016    C296            20    	CLR P1.6 
+0018    020000   F      21    	JMP DBNC 
+                        22    SWITCH:   
+001B    C297            23    	CLR P1.7 
+001D    D296            24    	SETB P1.6 
+001F    020000   F      25    	JMP DBNC 
+                        26    END 
+MACRO ASSEMBLER SWITCHER                                    09/19/123 16:54:49 PAGE     2
+
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
+
+P1 . . . . . . . .  D ADDR   0090H   A                          8 18 19 20 23 24 
+                                                                
+P3 . . . . . . . .  D ADDR   00B0H   A                          14 17 30 
+MAIN . . . . . . .  C SEG    0022H      REL=UNIT                6# 
+DBNC1. . . . . . .  C ADDR   0005H   R  SEG=MAIN                11# 16 
+DBNC2. . . . . . .  C ADDR   0007H   R  SEG=MAIN                13# 15 
+START. . . . . . .  C ADDR   0000H   R  SEG=MAIN                4 7# 
+SWITCH . . . . . .  C ADDR   001BH   R  SEG=MAIN                18 22# 
+DBNC . . . . . . .  C ADDR   0003H   R  SEG=MAIN                9# 14 21 25 
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     37    ----
+   XDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+REGISTER BANK(S) USED : 0 
+
+ASSEMBLY COMPLETE.   0 WARNING(S)   0 ERROR(S)
