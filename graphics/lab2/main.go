@@ -1,72 +1,50 @@
 package main
 
 import (
+	"fmt"
+	"image"
 	"os"
 	"time"
 
-	"gioui.org/app"
-	"gioui.org/io/system"
-	"gioui.org/layout"
-	"gioui.org/op"
-	"gioui.org/unit"
-	"gioui.org/widget"
-	"gioui.org/widget/material"
+	g "github.com/AllenDang/giu"
+	"golang.org/x/image/bmp"
 )
 
-var progress float32
+var (
+	img    image.Image
+	rgba   *image.RGBA
+	status string
+	tex    g.Texture
+)
 
 func main() {
-	go run()
+	file, err := os.Open("2.bmp")
+	if err != nil {
+		panic(err)
+	}
+	img, err = bmp.Decode(file)
+	if err != nil {
+		panic(err)
+	}
+	bounds := img.Bounds()
+	rgba = g.ImageToRgba(img)
 
-	app.Main()
+	w := g.NewMasterWindow("lab 2", bounds.Max.X, bounds.Max.Y+100, g.MasterWindowFlagsNotResizable)
+	g.EnqueueNewTextureFromRgba(rgba, func(t *g.Texture) {
+		tex = *t
+	})
+	w.Run(Loop)
 }
 
-func run() {
-	w := app.NewWindow(
-		app.Title("Egg timer"),
-		app.Size(unit.Dp(300), unit.Dp(450)),
+func Loop() {
+	g.SingleWindow().Layout(
+		g.Image(&tex).Size(float32(img.Bounds().Dx()), float32(img.Bounds().Dy())),
+		g.Event().OnHover(func() {
+			pos := g.GetMousePos()
+			clr := rgba.At(pos.X, pos.Y)
+			status = fmt.Sprint(clr)
+		}),
+		g.Label(status),
 	)
-
-	ops := op.Ops{}
-	strtBtn := widget.Clickable{}
-	th := material.NewTheme()
-
-	for e := range w.Events() {
-		switch e := e.(type) {
-		case system.FrameEvent:
-			ctx := layout.NewContext(&ops, e)
-			layout.Flex{
-				Axis:    layout.Vertical,
-				Spacing: layout.SpaceStart,
-			}.Layout(
-				ctx,
-				layout.Rigid(
-					func(gtx layout.Context) layout.Dimensions {
-						bar := material.ProgressBar(th, progress) // Here progress is used
-						return bar.Layout(gtx)
-					}),
-				layout.Rigid(
-					func(gtx layout.Context) layout.Dimensions {
-						margins := layout.Inset{
-							Top:    unit.Dp(25),
-							Bottom: unit.Dp(25),
-							Right:  unit.Dp(35),
-							Left:   unit.Dp(35),
-						}
-						return margins.Layout(gtx,
-							func(gtx layout.Context) layout.Dimensions {
-								btn := material.Button(th, &strtBtn, "Start")
-								return btn.Layout(gtx)
-							},
-						)
-					},
-				),
-			)
-			e.Frame(ctx.Ops)
-			time.Sleep(time.Millisecond * 17)
-		case system.DestroyEvent:
-			os.Exit(1)
-		}
-	}
-	os.Exit(0)
+	time.Sleep(time.Second / 24)
 }
