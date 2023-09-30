@@ -1,6 +1,5 @@
 const std = @import("std");
 const fs = std.fs;
-const linux = std.os.linux;
 
 pub fn main() !void {
     var dir = try fs.cwd().openIterableDir("input", .{});
