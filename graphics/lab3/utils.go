@@ -33,7 +33,7 @@ func initGlfw() *glfw.Window {
 	glfw.WindowHint(glfw.ContextVersionMajor, 3)
 	glfw.WindowHint(glfw.Resizable, glfw.False)
 
-	window, err := glfw.CreateWindow(width, height, "Conway's Game of life", nil, nil)
+	window, err := glfw.CreateWindow(width, height, "", nil, nil)
 	if err != nil {
 		panic(err)
 	}

@@ -17,17 +17,27 @@ const (
 
 var (
 	square = []float32{
-		-.5, .5, 0,
-		-.5, -.5, 0,
-		.5, -.5, 0,
+		0.4, 0.4, 0.0,
+		0.7, 0.6, 0.0,
+		0.7, 0.3, 0.0,
 
-		-.5, .5, 0,
-		.5, .5, 0,
-		.5, -.5, 0,
+		0.7, 0.6, 0.0,
+		0.7, 0.3, 0.0,
+		1.0, 0.4, 0.0,
+
+		0.7, 0.3, 0.0,
+		1.0, 0.4, 0.0,
+		0.8, 0.1, 0.0,
+
+		0.4, 0.4, 0.0,
+		0.7, 0.3, 0.0,
+		0.6, 0.1, 0.0,
 	}
 )
 
 func draw(window *glfw.Window, program uint32) error {
+	// rtmx := mgl32.Rotate2D(-10)
+	// newmx := mgl32.mu
 	vao := makeVao(square)
 	gl.BindVertexArray(vao)
 	gl.DrawArrays(gl.TRIANGLES, 0, int32(len(square)/3))
