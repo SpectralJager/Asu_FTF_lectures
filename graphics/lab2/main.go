@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"image"
 	"image/color"
-	"log"
 	"os"
 	"time"
 
@@ -22,18 +21,22 @@ import (
 )
 
 type state struct {
-	image       image.Image
+	origImage   image.Image
 	insideImage bool
-	status      string
+	statusRGB   string
+	statusHSV   string
 	th          *material.Theme
 	btnToGrey   widget.Clickable
 	btnToBlack  widget.Clickable
+	btnRefresh  widget.Clickable
+	newImage    image.Image
 }
 
 func NewState() *state {
 	return &state{
-		status: "R: nil, G: nil, B: nil",
-		th:     material.NewTheme(),
+		statusRGB: "R: nil, G: nil, B: nil",
+		statusHSV: "H: nil\nS: nil\nV: nil\n",
+		th:        material.NewTheme(),
 	}
 }
 
@@ -43,7 +46,8 @@ func (s *state) LoadImage(path string) {
 		panic(err)
 	}
 	img, _ := bmp.Decode(file)
-	s.image = img
+	s.origImage = img
+	s.newImage = img
 }
 
 func main() {
@@ -51,8 +55,9 @@ func main() {
 	st.LoadImage("1.bmp")
 	go func() {
 		w := app.NewWindow(
-			app.MinSize(unit.Dp(500), unit.Dp(600)),
-			app.MaxSize(unit.Dp(500), unit.Dp(600)),
+			app.MinSize(unit.Dp(700), unit.Dp(500)),
+			app.MaxSize(unit.Dp(700), unit.Dp(500)),
+			app.Title("Graphics"),
 		)
 		if err := loop(w, st); err != nil {
 			panic(err)
@@ -80,29 +85,79 @@ func loop(w *app.Window, st *state) error {
 }
 
 func draw(gtx layout.Context, st *state) {
-	layout.Flex{Axis: layout.Vertical}.Layout(
+	layout.Flex{Axis: layout.Horizontal}.Layout(
 		gtx,
 		layout.Rigid(func(gtx layout.Context) layout.Dimensions {
-			return doImg(gtx, st, image.Rect(0, 0, 500, 500))
-		}),
-		layout.Rigid(func(gtx layout.Context) layout.Dimensions {
-			return material.Body1(st.th, st.status).Layout(gtx)
+			layout.Flex{Axis: layout.Vertical}.Layout(
+				gtx,
+				layout.Rigid(func(gtx layout.Context) layout.Dimensions {
+					return material.Body2(st.th, st.statusRGB).Layout(gtx)
+				}),
+				layout.Rigid(func(gtx layout.Context) layout.Dimensions {
+					return drawRect(gtx, image.Rect(0, 0, 0, 10), color.NRGBA{})
+				}),
+				layout.Rigid(func(gtx layout.Context) layout.Dimensions {
+					return material.Subtitle2(st.th, st.statusHSV).Layout(gtx)
+				}),
+				layout.Rigid(func(gtx layout.Context) layout.Dimensions {
+					return drawRect(gtx, image.Rect(0, 0, 0, 10), color.NRGBA{})
+				}),
+				layout.Rigid(func(gtx layout.Context) layout.Dimensions {
+					if st.btnToGrey.Clicked() {
+						newImg := image.NewRGBA(st.origImage.Bounds())
+						for x := 0; x < st.origImage.Bounds().Dx(); x++ {
+							for y := 0; y < st.origImage.Bounds().Dy(); y++ {
+								px := st.origImage.At(x, y)
+								// r, g, b, _ := px.RGBA()
+								// w := 0.299*float64(r) + 0.587*float64(g) + 0.114*float64(b)
+								// newImg.Set(x, y, color.Gray{uint8(w / 255)})
+								newImg.Set(x, y, color.GrayModel.Convert(px))
+							}
+						}
+						st.newImage = newImg
+					}
+					return material.Button(st.th, &st.btnToGrey, "To Grey").Layout(gtx)
+				}),
+				layout.Rigid(func(gtx layout.Context) layout.Dimensions {
+					return drawRect(gtx, image.Rect(0, 0, 0, 10), color.NRGBA{})
+				}),
+				layout.Rigid(func(gtx layout.Context) layout.Dimensions {
+					if st.btnToBlack.Clicked() {
+						newImg := image.NewRGBA(st.origImage.Bounds())
+						for x := 0; x < st.origImage.Bounds().Dx(); x++ {
+							for y := 0; y < st.origImage.Bounds().Dy(); y++ {
+								px := st.origImage.At(x, y)
+								r, g, b, _ := px.RGBA()
+								w := 0.299*float64(r) + 0.587*float64(g) + 0.114*float64(b)
+								var cl color.Color
+								if uint16(w) > 0xa000 {
+									cl = color.Black
+								} else {
+									cl = color.White
+								}
+								newImg.Set(x, y, cl)
+								// return Pixel(uint16(y) < 0x8000)
+							}
+						}
+						st.newImage = newImg
+					}
+					return material.Button(st.th, &st.btnToBlack, "To Black").Layout(gtx)
+				}),
+				layout.Rigid(func(gtx layout.Context) layout.Dimensions {
+					return drawRect(gtx, image.Rect(0, 0, 0, 10), color.NRGBA{})
+				}),
+				layout.Rigid(func(gtx layout.Context) layout.Dimensions {
+					if st.btnRefresh.Clicked() {
+						st.newImage = st.origImage
+					}
+					return material.Button(st.th, &st.btnRefresh, "Refresh").Layout(gtx)
+				}),
+			)
+			return layout.Dimensions{Size: image.Pt(200, 500)}
 
 		}),
 		layout.Rigid(func(gtx layout.Context) layout.Dimensions {
-			if st.btnToGrey.Clicked() {
-				log.Println("to grey")
-			}
-			return material.Button(st.th, &st.btnToGrey, "Grey").Layout(gtx)
-		}),
-		layout.Rigid(func(gtx layout.Context) layout.Dimensions {
-			return drawRect(gtx, image.Rect(0, 0, 0, 10), color.NRGBA{})
-		}),
-		layout.Rigid(func(gtx layout.Context) layout.Dimensions {
-			if st.btnToBlack.Clicked() {
-				log.Println("to black")
-			}
-			return material.Button(st.th, &st.btnToBlack, "Black").Layout(gtx)
+			return doImg(gtx, st, image.Rect(0, 0, 500, 500))
 		}),
 	)
 }
@@ -116,9 +171,10 @@ func doImg(gtx layout.Context, st *state, rect image.Rectangle) layout.Dimension
 			case pointer.Leave:
 				st.insideImage = false
 			case pointer.Move:
-				col := st.image.At(x.Position.Round().X, x.Position.Round().Y)
+				col := st.newImage.At(x.Position.Round().X, x.Position.Round().Y)
 				r, g, b, _ := col.RGBA()
-				st.status = fmt.Sprintf("R: 0x%X, G: 0x%X, B: 0x%X", uint8(r), uint8(g), uint8(b))
+				st.statusRGB = fmt.Sprintf("R: 0x%X, G: 0x%X, B: 0x%X", uint8(r), uint8(g), uint8(b))
+				st.statusHSV = rgbTohsv(col)
 			}
 		}
 	}
@@ -127,7 +183,7 @@ func doImg(gtx layout.Context, st *state, rect image.Rectangle) layout.Dimension
 		Tag:   st.insideImage,
 		Types: pointer.Enter | pointer.Leave | pointer.Move,
 	}.Add(gtx.Ops)
-	return drawImage(gtx, st.image, rect)
+	return drawImage(gtx, st.newImage, rect)
 }
 
 func drawRRect(gtx layout.Context, rect image.Rectangle, r int, color color.NRGBA) layout.Dimensions {
@@ -152,4 +208,61 @@ func drawImage(gtx layout.Context, img image.Image, rect image.Rectangle) layout
 	// op.Affine(f32.Affine2D{}.Scale(f32.Pt(0, 0), f32.Pt(0.5, 0.5))).Add(gtx.Ops)
 	paint.PaintOp{}.Add(gtx.Ops)
 	return layout.Dimensions{Size: rect.Max}
+}
+
+func rgbTohsv(cl color.Color) string {
+	tr, tg, tb, _ := cl.RGBA()
+	var r, g, b, h, s, v float64
+	r = float64(uint8(tr)) / 255.0
+	g = float64(uint8(tg)) / 255.0
+	b = float64(uint8(tb)) / 255.0
+	mx := max(r, g, b)
+	mn := min(r, g, b)
+
+	v = mx
+	delta := mx - mn
+	if delta < 0.00001 {
+		s = 0
+		h = 0
+		return fmt.Sprintf("H: %f\nS: %f\nV: %f\n", h, s, v)
+	}
+	if mx > 0.0 {
+		s = delta / mx
+	} else {
+		s = 0
+		h = 0
+		return fmt.Sprintf("H: %f\nS: %f\nV: %f\n", h, s, v)
+	}
+	if r >= mx {
+		h = (g - b) / delta
+	} else if g >= mx {
+		h = 2.0 + (b-r)/delta
+	} else {
+		h = 4.0 + (r-g)/delta
+	}
+	h *= 60.0
+	if h < 0.0 {
+		h += 360
+	}
+	return fmt.Sprintf("H: %f\nS: %f\nV: %f\n", h, s, v)
+}
+
+func max(args ...float64) float64 {
+	var m float64 = 0
+	for _, v := range args {
+		if m < v {
+			m = v
+		}
+	}
+	return m
+}
+
+func min(args ...float64) float64 {
+	var m float64 = args[0]
+	for _, v := range args {
+		if m > v {
+			m = v
+		}
+	}
+	return m
 }
