@@ -1,0 +1,62 @@
+MACRO ASSEMBLER MUL24                                       10/03/123 17:23:06 PAGE     1
+
+
+WIN32 MACRO ASSEMBLER A51 V6.03.08
+OBJECT MODULE PLACED IN Y:\лаб1\1\MUL24.OBJ
+ASSEMBLER INVOKED BY: A51.EXE Y:\лаб1\1\MUL24.ASM OJ(Y:\лаб1\1\MUL24.OBJ) PIN(C:\FSI\INC) EP LINES PR(Y:\лаб1\1\MUL24.LST) XR DB PW(80) RB(0) 
+
+LOC     OBJ           LINE    SOURCE
+                         1    NAME ADDFIVE
+                         2    MAIN SEGMENT CODE 
+------                   3    CSEG AT 0
+0000    020000   F       4    LJMP START
+                         5    USING 0
+------                   6    RSEG MAIN 
+                         7    ; Написать программу умножения двух трехбайтных чисел. Первое чис-
+                         8    ; ло находится во внешней памяти, второе число принимается побайтно
+                         9    ; из порта 2 микроконтроллера. Результата умножения вывести в после-
+                        10    ; довательный порт (UART). Скорость и режим работы UART задается
+                        11    ; преподавателем. Обязательное использование подпрограмм и симво-
+                        12    ; лических переменных в отдельном файле проекта
+                        13    START:  
+                        14    ; READ FROM EXTERNAL MEMORY 3 BYTES
+0000    900020          15    	MOV DPTR, #0020H
+0003    E0              16    	MOVX A, @DPTR
+0004    F8              17    	MOV R0, A
+0005    A3              18    	INC DPTR
+0006    E0              19    	MOVX A, @DPTR
+0007    F9              20    	MOV R1, A
+0008    A3              21    	INC DPTR
+0009    E0              22    	MOVX A, @DPTR
+000A    FA              23    	MOV R2, A
+000B    A3              24    	INC DPTR
+                        25    ; READ FROM PORT2 3 BYTES
+                        26    			
+                        27    END
+MACRO ASSEMBLER MUL24                                       10/03/123 17:23:06 PAGE     2
+
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
+
+MAIN . . . . . . .  C SEG    000CH      REL=UNIT                6# 
+START. . . . . . .  C ADDR   0000H   R  SEG=MAIN                4 13# 
+ADDFIVE. . . . . .  N NUMB   -----
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     15    ----
+   XDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+REGISTER BANK(S) USED : 0 
+
+ASSEMBLY COMPLETE.   0 WARNING(S)   0 ERROR(S)

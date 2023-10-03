@@ -15,7 +15,7 @@
 0 
 0 
 0 
-2 CODE 0 2 370 781 567 3  Hardware 0 785 4 350 260 3 
+3 Space 0 537 0 409 245 34  Space 1 536 245 410 245 64  Hardware 0 538 487 350 260 64 
 0
 8 InterruptController Timer0 Timer1 Port0 Port1 Port2 Port3 UART 
 1 0 65535 0 

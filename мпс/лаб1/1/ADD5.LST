@@ -1,0 +1,51 @@
+MACRO ASSEMBLER ADD5                                        10/03/123 16:40:02 PAGE     1
+
+
+WIN32 MACRO ASSEMBLER A51 V6.03.08
+OBJECT MODULE PLACED IN Y:\лаб1\1\ADD5.OBJ
+ASSEMBLER INVOKED BY: A51.EXE Y:\лаб1\1\ADD5.ASM OJ(Y:\лаб1\1\ADD5.OBJ) PIN(C:\FSI\INC) EP LINES PR(Y:\лаб1\1\ADD5.LST) XR DB PW(80) RB(0) 
+
+LOC     OBJ           LINE    SOURCE
+                         1    NAME ADDFIVE
+                         2    MAIN SEGMENT CODE 
+------                   3    CSEG AT 0
+0000    020000   F       4    LJMP START
+                         5    USING 0
+------                   6    RSEG MAIN 
+                         7    ; Написать программу сложения числа, находящегося во второй поло-
+                         8    ; вине внутренней памяти данных МК, с числом 5. Результат поместить
+                         9    ; во внешнюю память.
+                        10    START:   
+0000    E540            11    	MOV A, 40H
+0002    C3              12    	CLR C
+0003    2405            13    	ADD A, #5
+0005    900020          14    	MOV DPTR, #0020H
+0008    F0              15       MOVX @DPTR, A
+                        16    END
+MACRO ASSEMBLER ADD5                                        10/03/123 16:40:02 PAGE     2
+
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
+
+MAIN . . . . . . .  C SEG    0009H      REL=UNIT                6# 
+START. . . . . . .  C ADDR   0000H   R  SEG=MAIN                4 10# 
+ADDFIVE. . . . . .  N NUMB   -----
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     12    ----
+   XDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+REGISTER BANK(S) USED : 0 
+
+ASSEMBLY COMPLETE.   0 WARNING(S)   0 ERROR(S)
