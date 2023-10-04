@@ -1,6 +1,7 @@
 package main
 
 import (
+	"image/color"
 	"log"
 	"math"
 	"runtime"
@@ -11,9 +12,12 @@ import (
 )
 
 const width, height = 1024, 800
-const total = 100
+const total = 20
 
 var a float32 = 0
+var mat_specular []float32 = []float32{.2, .2, .2, .1}
+var mat_shinnes []float32 = []float32{20}
+var light_pos []float32 = []float32{1, 1, 1, 0}
 
 var sphere [][]point
 
@@ -64,6 +68,13 @@ func main() {
 	gl.DepthFunc(gl.LEQUAL)
 	gl.Hint(gl.PERSPECTIVE_CORRECTION_HINT, gl.NICEST)
 
+	// gl.Materialfv(gl.FRONT, gl.SPECULAR, &mat_specular[0])
+	// gl.Materialfv(gl.FRONT, gl.SHININESS, &mat_shinnes[0])
+	// gl.Lightfv(gl.LIGHT0, gl.POSITION, &light_pos[0])
+
+	// gl.Enable(gl.LIGHTING)
+	// gl.Enable(gl.LIGHT0)
+
 	getSphere(0.8)
 
 	for !window.ShouldClose() {
@@ -77,24 +88,67 @@ func main() {
 }
 
 func draw() {
-	// gl.Scalef(.3, .3, .3)
-	gl.Rotatef(a, 1, 1, 1)
-	drawSphereT()
+	gl.Rotatef(a, .2, .6, .3)
+	gl.Scalef(.1, .1, .1)
+	drawSphereT(color.RGBA{202, 135, 1, 255})
+	gl.LoadIdentity()
+
+	gl.Rotatef(a*4, 0, .5, .5)
+	gl.Translatef(0.15, 0, 0)
+	gl.Scalef(.04, .04, .04)
+	drawSphereT(color.RGBA{181, 161, 129, 255})
+	gl.LoadIdentity()
+
+	gl.Rotatef(a*3, 0, .5, .5)
+	gl.Translatef(0.25, 0, 0)
+	gl.Scalef(.05, .05, .05)
+	drawSphereT(color.RGBA{240, 188, 89, 255})
+	gl.LoadIdentity()
+
+	gl.Rotatef(a*2, 0, .5, .5)
+	gl.Translatef(0.38, 0, 0)
+	gl.Scalef(.06, .06, .06)
+	drawSphereT(color.RGBA{160, 167, 136, 255})
+	gl.LoadIdentity()
+
+	gl.Rotatef(a*1.7, 0, .5, .5)
+	gl.Translatef(0.5, 0, 0)
+	gl.Scalef(.05, .05, .05)
+	drawSphereT(color.RGBA{211, 177, 148, 255})
+	gl.LoadIdentity()
+
+	gl.Rotatef(a*1.4, 0, .5, .5)
+	gl.Translatef(0.64, 0, 0)
+	gl.Scalef(.1, .1, .1)
+	drawSphereT(color.RGBA{148, 117, 77, 255})
+	gl.LoadIdentity()
+
+	gl.Rotatef(a*1, 0, .5, .5)
+	gl.Translatef(0.82, 0, 0)
+	gl.Scalef(.1, .1, .1)
+	drawSphereT(color.RGBA{255, 244, 200, 255})
+	gl.LoadIdentity()
+
+	gl.Rotatef(a*.8, 0, .5, .5)
+	gl.Translatef(.95, 0, 0)
+	gl.Scalef(.06, .06, .06)
+	drawSphereT(color.RGBA{198, 220, 228, 255})
+	gl.LoadIdentity()
+
+	gl.Rotatef(a*.5, 0, .5, .5)
+	gl.Translatef(1.1, 0, 0)
+	gl.Scalef(.06, .06, .06)
+	drawSphereT(color.RGBA{163, 196, 255, 255})
 	gl.LoadIdentity()
 
 	a += 1
 }
 
-func drawSphereT() {
-	gl.Color3f(0.7, 0, 0)
+func drawSphereT(cl color.RGBA) {
+	gl.Color3f(float32(cl.R)/255, float32(cl.G)/255, float32(cl.B)/255)
 	gl.Begin(gl.TRIANGLE_STRIP)
 	for i := 0; i < total; i++ {
 		for j := 0; j < total; j++ {
-			if i%2 == 0 {
-				gl.Color3f(0.7, 0, 0)
-			} else {
-				gl.Color3f(.7, 0, .7)
-			}
 			v0 := sphere[i][j]
 			v1 := sphere[i][j+1]
 			v2 := sphere[i+1][j]
