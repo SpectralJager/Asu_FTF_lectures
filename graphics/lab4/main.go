@@ -15,9 +15,9 @@ const width, height = 1024, 800
 const total = 20
 
 var a float32 = 0
-var mat_specular []float32 = []float32{.2, .2, .2, .1}
-var mat_shinnes []float32 = []float32{20}
-var light_pos []float32 = []float32{1, 1, 1, 0}
+var mat_specular []float32 = []float32{1, 0, 0, .2}
+var mat_shinnes []float32 = []float32{80}
+var light_pos []float32 = []float32{0, 0, .1, .1}
 
 var sphere [][]point
 
