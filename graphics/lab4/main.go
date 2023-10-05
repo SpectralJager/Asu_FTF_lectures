@@ -11,7 +11,7 @@ import (
 	"github.com/go-gl/glfw/v3.3/glfw"
 )
 
-const width, height = 1024, 800
+const width, height = 1800, 1024
 const total = 20
 
 var a float32 = 0
@@ -145,8 +145,23 @@ func draw() {
 }
 
 func drawSphereT(cl color.RGBA) {
-	gl.Color3f(float32(cl.R)/255, float32(cl.G)/255, float32(cl.B)/255)
 	gl.Begin(gl.TRIANGLE_STRIP)
+	for i := uint8(0); i < total; i++ {
+		for j := uint8(0); j < total; j++ {
+			v0 := sphere[i][j]
+			v1 := sphere[i][j+1]
+			v2 := sphere[i+1][j]
+			v3 := sphere[i+1][j+1]
+			gl.Color3f(float32(cl.R)/255, float32(cl.G)/255, float32(cl.B)/255)
+			gl.Vertex3f(v0.x, v0.y, v0.z)
+			gl.Vertex3f(v1.x, v1.y, v1.z)
+			gl.Vertex3f(v2.x, v2.y, v2.z)
+			gl.Vertex3f(v3.x, v3.y, v3.z)
+		}
+	}
+	gl.End()
+	gl.Color3f(.7, .7, .7)
+	gl.Begin(gl.LINE_STRIP)
 	for i := 0; i < total; i++ {
 		for j := 0; j < total; j++ {
 			v0 := sphere[i][j]
@@ -160,21 +175,6 @@ func drawSphereT(cl color.RGBA) {
 		}
 	}
 	gl.End()
-	// gl.Color3f(.7, .7, .7)
-	// gl.Begin(gl.LINE_STRIP)
-	// for i := 0; i < total; i++ {
-	// 	for j := 0; j < total; j++ {
-	// 		v0 := sphere[i][j]
-	// 		v1 := sphere[i][j+1]
-	// 		v2 := sphere[i+1][j]
-	// 		v3 := sphere[i+1][j+1]
-	// 		gl.Vertex3f(v0.x, v0.y, v0.z)
-	// 		gl.Vertex3f(v1.x, v1.y, v1.z)
-	// 		gl.Vertex3f(v2.x, v2.y, v2.z)
-	// 		gl.Vertex3f(v3.x, v3.y, v3.z)
-	// 	}
-	// }
-	// gl.End()
 }
 
 func drawSphereP() {
