@@ -12,7 +12,7 @@ import (
 )
 
 const width, height = 1800, 1024
-const total = 20
+const total = 10
 
 var a float32 = 0
 var mat_specular []float32 = []float32{1, 0, 0, .2}
