@@ -1,0 +1,127 @@
+Added Component: Designator=C1(1206 Capacitor)
+Added Component: Designator=C2(1206 Capacitor)
+Added Component: Designator=DD1(TSSOP14)
+Added Component: Designator=DD2(DIP24)
+Added Component: Designator=DD3(LQFP44)
+Added Component: Designator=DD4(SOP14)
+Added Component: Designator=DD5(DIP28)
+Added Component: Designator=DD6(SOP32)
+Added Component: Designator=R1(1206 Resistor)
+Added Component: Designator=R2(1206 Resistor)
+Added Component: Designator=R3(1206 Resistor)
+Added Component: Designator=R4(1206 Resistor)
+Added Component: Designator=S1(BUT: 6x3.5 TH)
+Add component (AddParameter): Name = "CommentText"; Value = "Reset"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "HelpURL"; Value = "https://www.digikey.com/product-detail/en/te-connectivity-alcoswitch-switches/FSM2JSMAATR/450-1792-1-ND/3503931"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "TE Connectivity"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "6x6mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PartNumber"; Value = "FSM2JSMAATR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "TypeButton"; Value = "Tactile button"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ValueManufacturerPartNumber"; Value = "Tactile button, 6x6mm"; VariantName = "[No Variations]"
+Added Component: Designator=X1(USB connector)
+Added Component: Designator=ZQ1(HC-49S)
+Added Pin To Net: NetName=A0 Pin=DD2-11
+Added Net: Name=A0
+Added Pin To Net: NetName=A6 Pin=DD2-10
+Added Pin To Net: NetName=A6 Pin=DD4-4
+Added Net: Name=A6
+Added Pin To Net: NetName=A7 Pin=DD2-9
+Added Net: Name=A7
+Added Pin To Net: NetName=A13 Pin=DD4-5
+Added Net: Name=A13
+Added Pin To Net: NetName=A15 Pin=DD4-2
+Added Net: Name=A15
+Added Pin To Net: NetName=NetC1_1 Pin=C1-1
+Added Pin To Net: NetName=NetC1_1 Pin=C2-1
+Added Pin To Net: NetName=NetC1_1 Pin=DD1-7
+Added Pin To Net: NetName=NetC1_1 Pin=DD2-1
+Added Pin To Net: NetName=NetC1_1 Pin=DD3-26
+Added Pin To Net: NetName=NetC1_1 Pin=DD4-7
+Added Pin To Net: NetName=NetC1_1 Pin=DD5-1
+Added Pin To Net: NetName=NetC1_1 Pin=DD5-14
+Added Pin To Net: NetName=NetC1_1 Pin=DD6-2
+Added Pin To Net: NetName=NetC1_1 Pin=DD6-16
+Added Pin To Net: NetName=NetC1_1 Pin=DD6-22
+Added Pin To Net: NetName=NetC1_1 Pin=S1-1
+Added Pin To Net: NetName=NetC1_1 Pin=X1-6
+Added Net: Name=NetC1_1
+Added Pin To Net: NetName=NetC1_2 Pin=C1-2
+Added Pin To Net: NetName=NetC1_2 Pin=DD1-13
+Added Pin To Net: NetName=NetC1_2 Pin=ZQ1-1
+Added Net: Name=NetC1_2
+Added Pin To Net: NetName=NetC2_2 Pin=C2-2
+Added Pin To Net: NetName=NetC2_2 Pin=R2-1
+Added Pin To Net: NetName=NetC2_2 Pin=ZQ1-2
+Added Net: Name=NetC2_2
+Added Pin To Net: NetName=NetDD1_3 Pin=DD1-3
+Added Pin To Net: NetName=NetDD1_3 Pin=DD3-16
+Added Net: Name=NetDD1_3
+Added Pin To Net: NetName=NetDD1_4 Pin=DD1-4
+Added Pin To Net: NetName=NetDD1_4 Pin=DD2-14
+Added Net: Name=NetDD1_4
+Added Pin To Net: NetName=NetDD1_8 Pin=DD1-8
+Added Pin To Net: NetName=NetDD1_8 Pin=DD2-3
+Added Pin To Net: NetName=NetDD1_8 Pin=DD2-4
+Added Pin To Net: NetName=NetDD1_8 Pin=DD3-1
+Added Net: Name=NetDD1_8
+Added Pin To Net: NetName=NetDD1_9 Pin=DD1-9
+Added Pin To Net: NetName=NetDD1_9 Pin=DD1-12
+Added Pin To Net: NetName=NetDD1_9 Pin=R1-1
+Added Net: Name=NetDD1_9
+Added Pin To Net: NetName=NetDD1_14 Pin=DD1-14
+Added Pin To Net: NetName=NetDD1_14 Pin=DD2-12
+Added Pin To Net: NetName=NetDD1_14 Pin=DD3-6
+Added Pin To Net: NetName=NetDD1_14 Pin=DD3-13
+Added Pin To Net: NetName=NetDD1_14 Pin=DD3-21
+Added Pin To Net: NetName=NetDD1_14 Pin=DD3-22
+Added Pin To Net: NetName=NetDD1_14 Pin=DD4-14
+Added Pin To Net: NetName=NetDD1_14 Pin=DD5-28
+Added Pin To Net: NetName=NetDD1_14 Pin=DD6-32
+Added Pin To Net: NetName=NetDD1_14 Pin=X1-4
+Added Net: Name=NetDD1_14
+Added Pin To Net: NetName=NetDD2_2 Pin=DD2-2
+Added Pin To Net: NetName=NetDD2_2 Pin=X1-2
+Added Net: Name=NetDD2_2
+Added Pin To Net: NetName=NetDD2_5 Pin=DD2-5
+Added Pin To Net: NetName=NetDD2_5 Pin=X1-5
+Added Net: Name=NetDD2_5
+Added Pin To Net: NetName=NetDD2_6 Pin=DD2-6
+Added Pin To Net: NetName=NetDD2_6 Pin=X1-3
+Added Net: Name=NetDD2_6
+Added Pin To Net: NetName=NetDD2_7 Pin=DD2-7
+Added Pin To Net: NetName=NetDD2_7 Pin=DD3-12
+Added Pin To Net: NetName=NetDD2_7 Pin=R3-1
+Added Net: Name=NetDD2_7
+Added Pin To Net: NetName=NetDD2_8 Pin=DD2-8
+Added Pin To Net: NetName=NetDD2_8 Pin=DD3-24
+Added Net: Name=NetDD2_8
+Added Pin To Net: NetName=NetDD2_13 Pin=DD2-13
+Added Pin To Net: NetName=NetDD2_13 Pin=DD3-19
+Added Pin To Net: NetName=NetDD2_13 Pin=DD4-13
+Added Net: Name=NetDD2_13
+Added Pin To Net: NetName=NetDD3_15 Pin=DD3-15
+Added Pin To Net: NetName=NetDD3_15 Pin=DD4-10
+Added Pin To Net: NetName=NetDD3_15 Pin=DD4-12
+Added Net: Name=NetDD3_15
+Added Pin To Net: NetName=NetDD3_18 Pin=DD3-18
+Added Pin To Net: NetName=NetDD3_18 Pin=DD4-9
+Added Net: Name=NetDD3_18
+Added Pin To Net: NetName=NetDD3_23 Pin=DD3-23
+Added Pin To Net: NetName=NetDD3_23 Pin=R4-1
+Added Pin To Net: NetName=NetDD3_23 Pin=S1-2
+Added Net: Name=NetDD3_23
+Added Pin To Net: NetName=NetDD4_1 Pin=DD4-1
+Added Pin To Net: NetName=NetDD4_1 Pin=DD4-6
+Added Net: Name=NetDD4_1
+Added Pin To Net: NetName=NetDD4_3 Pin=DD4-3
+Added Pin To Net: NetName=NetDD4_3 Pin=DD5-20
+Added Pin To Net: NetName=NetDD4_3 Pin=DD6-30
+Added Net: Name=NetDD4_3
+Added Pin To Net: NetName=NetDD4_8 Pin=DD4-8
+Added Pin To Net: NetName=NetDD4_8 Pin=DD5-22
+Added Pin To Net: NetName=NetDD4_8 Pin=DD6-24
+Added Net: Name=NetDD4_8
+Added Pin To Net: NetName=NetDD4_11 Pin=DD4-11
+Added Pin To Net: NetName=NetDD4_11 Pin=DD6-29
+Added Net: Name=NetDD4_11
+Added Class: Name=Z80PC

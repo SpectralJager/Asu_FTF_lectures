@@ -100,7 +100,7 @@ GenerateClassCluster=0
 DocumentUniqueId=FQNOSUWQ
 
 [Document4]
-DocumentPath=Z80.PcbDoc
+DocumentPath=Z80PC.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -114,7 +114,7 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=GNUGEBJT
+DocumentUniqueId=EYSHTGJI
 
 [Configuration1]
 Name=Sources
