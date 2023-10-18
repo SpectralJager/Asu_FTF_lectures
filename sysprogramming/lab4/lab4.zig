@@ -6,8 +6,8 @@ const string = []const u8;
 pub fn main() !void {
     var dir = try fs.cwd().openIterableDir("input", .{});
     defer dir.close();
-    var map = std.AutoHashMap(u64, u64).init(std.heap.page_allocator);
     var it = dir.iterate();
+    var map = std.AutoHashMap(u64, u64).init(std.heap.page_allocator);
     var maxInode: u64 = 0;
     while (try it.next()) |entry| {
         if (entry.kind == fs.File.Kind.sym_link) {
@@ -25,6 +25,11 @@ pub fn main() !void {
             }
         }
     }
+    try printResult(maxInode, map, dir);
+}
+
+pub fn printResult(maxInode: u64, map: std.HashMap(u64, u64, std.hash_map.AutoContext(u64), 80), dir: std.fs.IterableDir) !void {
+    var it = dir.iterate();
     var maxValue: u64 = map.get(maxInode) orelse 0;
     var kt = map.keyIterator();
     while (kt.next()) |key| {
