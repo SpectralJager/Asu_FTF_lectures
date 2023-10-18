@@ -1,4 +1,4 @@
-MACRO ASSEMBLER MUL24                                       10/03/123 17:23:06 PAGE     1
+MACRO ASSEMBLER MUL24                                       10/17/123 17:04:22 PAGE     1
 
 
 WIN32 MACRO ASSEMBLER A51 V6.03.08
@@ -33,7 +33,7 @@ LOC     OBJ           LINE    SOURCE
                         25    ; READ FROM PORT2 3 BYTES
                         26    			
                         27    END
-MACRO ASSEMBLER MUL24                                       10/03/123 17:23:06 PAGE     2
+MACRO ASSEMBLER MUL24                                       10/17/123 17:04:22 PAGE     2
 
 
 SYMBOL TABLE LISTING
