@@ -1,0 +1,101 @@
+Added Pin To Net: NetName=A0 Pin=DD3-27
+Added Pin To Net: NetName=A6 Pin=DD3-34
+Added Pin To Net: NetName=A7 Pin=DD3-35
+Added Pin To Net: NetName=A13 Pin=DD3-42
+Added Pin To Net: NetName=A14 Pin=DD3-43
+Added Pin To Net: NetName=A15 Pin=DD3-44
+Added Pin To Net: NetName=A7 Pin=DD5-3
+Added Pin To Net: NetName=A6 Pin=DD5-4
+Added Pin To Net: NetName=A0 Pin=DD5-10
+Added Pin To Net: NetName=A14 Pin=DD6-3
+Added Pin To Net: NetName=A7 Pin=DD6-5
+Added Pin To Net: NetName=A6 Pin=DD6-6
+Added Pin To Net: NetName=A0 Pin=DD6-12
+Added Pin To Net: NetName=A13 Pin=DD6-28
+Added Pin To Net: NetName=A15 Pin=DD6-31
+Add Pin To Net: Unknown Pin: Pin R1-0
+Add Pin To Net: Unknown Pin: Pin R2-0
+Add Pin To Net: Unknown Pin: Pin R3-0
+Add Pin To Net: Unknown Pin: Pin R4-0
+Added Pin To Net: NetName=A1 Pin=DD3-28
+Added Pin To Net: NetName=A1 Pin=DD5-9
+Added Pin To Net: NetName=A1 Pin=DD6-11
+Added Net: Name=A1
+Added Pin To Net: NetName=A2 Pin=DD3-29
+Added Pin To Net: NetName=A2 Pin=DD5-8
+Added Pin To Net: NetName=A2 Pin=DD6-10
+Added Net: Name=A2
+Added Pin To Net: NetName=A3 Pin=DD3-30
+Added Pin To Net: NetName=A3 Pin=DD5-7
+Added Pin To Net: NetName=A3 Pin=DD6-9
+Added Net: Name=A3
+Added Pin To Net: NetName=A4 Pin=DD3-31
+Added Pin To Net: NetName=A4 Pin=DD5-6
+Added Pin To Net: NetName=A4 Pin=DD6-8
+Added Net: Name=A4
+Added Pin To Net: NetName=A5 Pin=DD3-32
+Added Pin To Net: NetName=A5 Pin=DD5-5
+Added Pin To Net: NetName=A5 Pin=DD6-7
+Added Net: Name=A5
+Added Pin To Net: NetName=A8 Pin=DD3-36
+Added Pin To Net: NetName=A8 Pin=DD5-25
+Added Pin To Net: NetName=A8 Pin=DD6-27
+Added Net: Name=A8
+Added Pin To Net: NetName=A9 Pin=DD3-37
+Added Pin To Net: NetName=A9 Pin=DD5-24
+Added Pin To Net: NetName=A9 Pin=DD6-26
+Added Net: Name=A9
+Added Pin To Net: NetName=A10 Pin=DD3-38
+Added Pin To Net: NetName=A10 Pin=DD5-21
+Added Pin To Net: NetName=A10 Pin=DD6-23
+Added Net: Name=A10
+Added Pin To Net: NetName=A11 Pin=DD3-40
+Added Pin To Net: NetName=A11 Pin=DD5-23
+Added Pin To Net: NetName=A11 Pin=DD6-25
+Added Net: Name=A11
+Added Pin To Net: NetName=A12 Pin=DD3-41
+Added Pin To Net: NetName=A12 Pin=DD5-2
+Added Pin To Net: NetName=A12 Pin=DD6-4
+Added Net: Name=A12
+Added Pin To Net: NetName=D0 Pin=DD2-22
+Added Pin To Net: NetName=D0 Pin=DD3-9
+Added Pin To Net: NetName=D0 Pin=DD5-11
+Added Pin To Net: NetName=D0 Pin=DD6-13
+Added Net: Name=D0
+Added Pin To Net: NetName=D1 Pin=DD2-21
+Added Pin To Net: NetName=D1 Pin=DD3-10
+Added Pin To Net: NetName=D1 Pin=DD5-12
+Added Pin To Net: NetName=D1 Pin=DD6-14
+Added Net: Name=D1
+Added Pin To Net: NetName=D2 Pin=DD2-20
+Added Pin To Net: NetName=D2 Pin=DD3-7
+Added Pin To Net: NetName=D2 Pin=DD5-13
+Added Pin To Net: NetName=D2 Pin=DD6-15
+Added Net: Name=D2
+Added Pin To Net: NetName=D3 Pin=DD2-19
+Added Pin To Net: NetName=D3 Pin=DD3-3
+Added Pin To Net: NetName=D3 Pin=DD5-15
+Added Pin To Net: NetName=D3 Pin=DD6-17
+Added Net: Name=D3
+Added Pin To Net: NetName=D4 Pin=DD2-18
+Added Pin To Net: NetName=D4 Pin=DD3-2
+Added Pin To Net: NetName=D4 Pin=DD5-16
+Added Pin To Net: NetName=D4 Pin=DD6-18
+Added Net: Name=D4
+Added Pin To Net: NetName=D5 Pin=DD2-17
+Added Pin To Net: NetName=D5 Pin=DD3-4
+Added Pin To Net: NetName=D5 Pin=DD5-17
+Added Pin To Net: NetName=D5 Pin=DD6-19
+Added Net: Name=D5
+Added Pin To Net: NetName=D6 Pin=DD2-16
+Added Pin To Net: NetName=D6 Pin=DD3-5
+Added Pin To Net: NetName=D6 Pin=DD5-18
+Added Pin To Net: NetName=D6 Pin=DD6-20
+Added Net: Name=D6
+Added Pin To Net: NetName=D7 Pin=DD2-15
+Added Pin To Net: NetName=D7 Pin=DD3-8
+Added Pin To Net: NetName=D7 Pin=DD5-19
+Added Pin To Net: NetName=D7 Pin=DD6-21
+Added Net: Name=D7
+Added Class: Name=A[0..15]
+Added Class: Name=D[0..7]
