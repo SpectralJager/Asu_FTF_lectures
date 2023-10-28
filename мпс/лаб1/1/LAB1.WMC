@@ -15,7 +15,7 @@
 0 
 0 
 0 
-1 Hardware 4 589 119 214 210 914888192 
+3 Hardware 0 0 490 350 260 914888192  Space 1 764 0 1152 245 64  Space 0 764 245 1152 245 32 
 0
 8 InterruptController Timer0 Timer1 Port0 Port1 Port2 Port3 UART 
 1 0 65535 0 

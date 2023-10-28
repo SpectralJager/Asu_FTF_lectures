@@ -5,8 +5,8 @@ LJMP start
 USING 0
 RSEG MAIN
 start: 
-	MOV P1,#0ffH
-	MOV P3,#07fh
+	MOV P3,#0feH
+	MOV P1,#0ffh
 dbnc:
 	MOV R4,#5
 dbnc1: 
@@ -25,8 +25,6 @@ switch:
 	SETB P3.7 
 	JMP dbnc 
 END 
-
-
 
 
 

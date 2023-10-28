@@ -1,4 +1,4 @@
-MACRO ASSEMBLER ADD5                                        10/03/123 16:40:02 PAGE     1
+MACRO ASSEMBLER ADD5                                        10/28/123 11:46:18 PAGE     1
 
 
 WIN32 MACRO ASSEMBLER A51 V6.03.08
@@ -18,11 +18,15 @@ LOC     OBJ           LINE    SOURCE
                         10    START:   
 0000    E540            11    	MOV A, 40H
 0002    C3              12    	CLR C
-0003    2405            13    	ADD A, #5
+0003    2405            13    	ADD A, #05H
 0005    900020          14    	MOV DPTR, #0020H
 0008    F0              15       MOVX @DPTR, A
-                        16    END
-MACRO ASSEMBLER ADD5                                        10/03/123 16:40:02 PAGE     2
+0009    E4              16       CLR A
+000A    3500            17       ADDC A, 0H
+000C    A3              18       INC DPTR
+000D    F0              19       MOVX @DPTR, A
+                        20    END
+MACRO ASSEMBLER ADD5                                        10/28/123 11:46:18 PAGE     2
 
 
 SYMBOL TABLE LISTING
@@ -31,14 +35,14 @@ SYMBOL TABLE LISTING
 
 N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
 
-MAIN . . . . . . .  C SEG    0009H      REL=UNIT                6# 
+MAIN . . . . . . .  C SEG    000EH      REL=UNIT                6# 
 START. . . . . . .  C ADDR   0000H   R  SEG=MAIN                4 10# 
 ADDFIVE. . . . . .  N NUMB   -----
 
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     12    ----
+   CODE SIZE        =     17    ----
    XDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----

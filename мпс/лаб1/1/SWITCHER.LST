@@ -1,9 +1,9 @@
-MACRO ASSEMBLER SWITCHER                                    09/19/123 16:54:49 PAGE     1
+MACRO ASSEMBLER SWITCHER                                    10/28/123 11:14:04 PAGE     1
 
 
 WIN32 MACRO ASSEMBLER A51 V6.03.08
-OBJECT MODULE PLACED IN Z:\ьяё\1\SWITCHER.OBJ
-ASSEMBLER INVOKED BY: A51.EXE Z:\ьяё\1\SWITCHER.ASM OJ(Z:\ьяё\1\SWITCHER.OBJ) PIN(C:\FSI\INC) EP LINES PR(Z:\ьяё\1\SWITCHER.LST) XR DB PW(80) RB(0) 
+OBJECT MODULE PLACED IN Y:\ырс1\1\SWITCHER.OBJ
+ASSEMBLER INVOKED BY: A51.EXE Y:\ырс1\1\SWITCHER.ASM OJ(Y:\ырс1\1\SWITCHER.OBJ) PIN(C:\FSI\INC) EP LINES PR(Y:\ырс1\1\SWITCHER.LST) XR DB PW(80) RB(0) 
 
 LOC     OBJ           LINE    SOURCE
                          1    NAME SWITCH
@@ -13,26 +13,27 @@ LOC     OBJ           LINE    SOURCE
                          5    USING 0
 ------                   6    RSEG MAIN
                          7    START:   
-0000    75907F           8    	MOV P1,#07FH
-                         9    DBNC:  
-0003    7C05            10    	MOV R4,#5
-                        11    DBNC1:   
-0005    7BFF            12    	MOV R3,#0FFH
-                        13    DBNC2:  
-0007    20B2F9          14    	JB P3.2, DBNC
-000A    DBFB            15    	DJNZ R3, DBNC2
-000C    DCF7            16    	DJNZ R4, DBNC1
-000E    30B2FD          17    	JNB P3.2,$
-0011    209707          18    	JB P1.7, SWITCH
-0014    D297            19    	SETB P1.7
-0016    C296            20    	CLR P1.6 
-0018    020000   F      21    	JMP DBNC 
-                        22    SWITCH:   
-001B    C297            23    	CLR P1.7 
-001D    D296            24    	SETB P1.6 
-001F    020000   F      25    	JMP DBNC 
-                        26    END 
-MACRO ASSEMBLER SWITCHER                                    09/19/123 16:54:49 PAGE     2
+0000    7590FF           8    	MOV P1,#0FFH
+0003    75B07F           9    	MOV P3,#07FH
+                        10    DBNC:  
+0006    7C05            11    	MOV R4,#5
+                        12    DBNC1:   
+0008    7BFF            13    	MOV R3,#0FFH
+                        14    DBNC2:  
+000A    20B2F9          15    	JB P3.2, DBNC
+000D    DBFB            16    	DJNZ R3, DBNC2
+000F    DCF7            17    	DJNZ R4, DBNC1
+0011    30B2FD          18    	JNB P3.2,$
+0014    209007          19    	JB P1.0, SWITCH                              
+0017    D290            20    	SETB P1.0
+0019    C2B7            21    	CLR P3.7 
+001B    020000   F      22    	JMP DBNC 
+                        23    SWITCH:   
+001E    C290            24    	CLR P1.0 
+0020    D2B7            25    	SETB P3.7 
+0022    020000   F      26    	JMP DBNC 
+                        27    END 
+MACRO ASSEMBLER SWITCHER                                    10/28/123 11:14:04 PAGE     2
 
 
 SYMBOL TABLE LISTING
@@ -41,20 +42,20 @@ SYMBOL TABLE LISTING
 
 N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
 
-P1 . . . . . . . .  D ADDR   0090H   A                          8 18 19 20 23 24 
+P1 . . . . . . . .  D ADDR   0090H   A                          8 19 20 24 
+P3 . . . . . . . .  D ADDR   00B0H   A                          9 15 18 21 25 38 
                                                                 
-P3 . . . . . . . .  D ADDR   00B0H   A                          14 17 30 
-MAIN . . . . . . .  C SEG    0022H      REL=UNIT                6# 
-DBNC1. . . . . . .  C ADDR   0005H   R  SEG=MAIN                11# 16 
-DBNC2. . . . . . .  C ADDR   0007H   R  SEG=MAIN                13# 15 
+MAIN . . . . . . .  C SEG    0025H      REL=UNIT                6# 
+DBNC1. . . . . . .  C ADDR   0008H   R  SEG=MAIN                12# 17 
+DBNC2. . . . . . .  C ADDR   000AH   R  SEG=MAIN                14# 16 
 START. . . . . . .  C ADDR   0000H   R  SEG=MAIN                4 7# 
-SWITCH . . . . . .  C ADDR   001BH   R  SEG=MAIN                18 22# 
-DBNC . . . . . . .  C ADDR   0003H   R  SEG=MAIN                9# 14 21 25 
+SWITCH . . . . . .  C ADDR   001EH   R  SEG=MAIN                19 23# 
+DBNC . . . . . . .  C ADDR   0006H   R  SEG=MAIN                10# 15 22 26 
 
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     37    ----
+   CODE SIZE        =     40    ----
    XDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----

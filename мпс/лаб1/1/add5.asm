@@ -10,7 +10,15 @@ RSEG MAIN
 start: 
 	MOV A, 40H
 	CLR C
-	ADD A, #5
+	ADD A, #05H
 	MOV DPTR, #0020H
    MOVX @DPTR, A
+   CLR A
+   ADDC A, 0H
+   INC DPTR
+   MOVX @DPTR, A
 END
+
+
+
+

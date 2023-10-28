@@ -292,7 +292,7 @@ ResData=0
 Startaddr=8000
 Lockedmode=0
 Nb Obj=1
-y:\лаб1\1\mul24.OBJ
+y:\лаб1\1\sub5.OBJ
 Nb Flash=0
 End Group Flashing
 Begin Group Listing
@@ -317,7 +317,7 @@ Maxpage=32
 Genmacro=1
 Noplm=1
 Nb Modules=1
-ADDFIVE Y:\лаб1\1\MUL24.OBJ 2147483647
+ADDFIVE Y:\лаб1\1\SUB5.OBJ 2147483647
 End Group Bank switching
 Begin Group More
 More=
@@ -405,16 +405,16 @@ End Options OH51
 App Number=1
 Name=LAB1.PRJ
 Tool Ref=L51
-Info Code=15
+Info Code=12
 Info XData=0
 Info Data=64
 Use Local=0
 Nb Nodes=1
 Node Begin
-Relative Path=mul24.asm
+Relative Path=sub5.asm
 Tool Ref=A51
 Nb Dep=0
-Info Code=15
+Info Code=12
 Info Const=0
 Info XData=0
 Info PData=0
@@ -427,7 +427,9 @@ Node End
 
 
 [Desktop Files]
-Nb Desktop Files=0
+Nb Desktop Files=1
+y:\лаб1\1\sub5.asm (0,0-764,490) 0
+
 
 [Closed Files]
 Nb Closed Files=5
@@ -446,11 +448,11 @@ C:\FSI\EXAMPLES\8051\A51\SAMPLE1.A51 (0,0-0,0) 0
 Nb Dim Views=13
 0 (0,0-0,0)
 1 (0,0-0,0)
-2 (-30,596-932,918)
+2 (162,940-322,964)
 3 (0,0-0,0)
 4 (4,372-785,939)
 5 (2,492-352,752)
-6 (126,224-546,877)
+6 (766,328-1918,492)
 7 (0,0-0,0)
 8 (0,0-0,0)
 9 (0,0-0,0)

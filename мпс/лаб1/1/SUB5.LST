@@ -1,4 +1,4 @@
-MACRO ASSEMBLER SUB5                                        10/03/123 17:08:25 PAGE     1
+MACRO ASSEMBLER SUB5                                        10/28/123 11:46:46 PAGE     1
 
 
 WIN32 MACRO ASSEMBLER A51 V6.03.08
@@ -22,7 +22,7 @@ LOC     OBJ           LINE    SOURCE
 0005    9405            14    	SUBB A, #5H
 0007    F540            15    	MOV 40H, A
                         16    END
-MACRO ASSEMBLER SUB5                                        10/03/123 17:08:25 PAGE     2
+MACRO ASSEMBLER SUB5                                        10/28/123 11:46:46 PAGE     2
 
 
 SYMBOL TABLE LISTING
