@@ -10,12 +10,12 @@
 0 51 8051 12 0 0 0 0 0 PV32S050.DLL
 0 1 0 0 1 0 0 10 0 0 1 0
 490 764 0
+1  y:\лаб1\1\mul24.asm 21 0 0 1
 0 
 0 
 0 
 0 
-0 
-3 Hardware 0 0 490 350 260 914888192  Space 1 764 0 1152 245 64  Space 0 764 245 1152 245 32 
+5 Hardware 0 0 490 350 260 914888192  Space 1 764 0 420 245 103  Space 0 764 245 420 245 0  Hardware 8 350 490 534 472 0  Hardware 6 884 490 214 210 0 
 0
 8 InterruptController Timer0 Timer1 Port0 Port1 Port2 Port3 UART 
 1 0 65535 0 

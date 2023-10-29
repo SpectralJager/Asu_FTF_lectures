@@ -1,4 +1,4 @@
-MACRO ASSEMBLER MUL24                                       10/17/123 17:04:22 PAGE     1
+MACRO ASSEMBLER MUL24                                       10/29/123 03:17:45 PAGE     1
 
 
 WIN32 MACRO ASSEMBLER A51 V6.03.08
@@ -6,34 +6,47 @@ OBJECT MODULE PLACED IN Y:\лаб1\1\MUL24.OBJ
 ASSEMBLER INVOKED BY: A51.EXE Y:\лаб1\1\MUL24.ASM OJ(Y:\лаб1\1\MUL24.OBJ) PIN(C:\FSI\INC) EP LINES PR(Y:\лаб1\1\MUL24.LST) XR DB PW(80) RB(0) 
 
 LOC     OBJ           LINE    SOURCE
-                         1    NAME ADDFIVE
-                         2    MAIN SEGMENT CODE 
-------                   3    CSEG AT 0
-0000    020000   F       4    LJMP START
-                         5    USING 0
-------                   6    RSEG MAIN 
-                         7    ; Написать программу умножения двух трехбайтных чисел. Первое чис-
-                         8    ; ло находится во внешней памяти, второе число принимается побайтно
-                         9    ; из порта 2 микроконтроллера. Результата умножения вывести в после-
-                        10    ; довательный порт (UART). Скорость и режим работы UART задается
-                        11    ; преподавателем. Обязательное использование подпрограмм и симво-
-                        12    ; лических переменных в отдельном файле проекта
-                        13    START:  
-                        14    ; READ FROM EXTERNAL MEMORY 3 BYTES
-0000    900020          15    	MOV DPTR, #0020H
-0003    E0              16    	MOVX A, @DPTR
-0004    F8              17    	MOV R0, A
-0005    A3              18    	INC DPTR
-0006    E0              19    	MOVX A, @DPTR
-0007    F9              20    	MOV R1, A
-0008    A3              21    	INC DPTR
-0009    E0              22    	MOVX A, @DPTR
-000A    FA              23    	MOV R2, A
-000B    A3              24    	INC DPTR
-                        25    ; READ FROM PORT2 3 BYTES
-                        26    			
-                        27    END
-MACRO ASSEMBLER MUL24                                       10/17/123 17:04:22 PAGE     2
+                         1    NAME MUL24
+                         2    MAIN SEGMENT CODE
+                         3    XVARS SEGMENT XDATA
+                         4    
+------                   5    RSEG XVARS
+0000                     6    NUM1:   DS 3
+0003                     7    NUM2:   DS 3
+0006                     8    RES:    DS 3
+                         9     
+------                  10    CSEG AT 0
+0000    020000   F      11    LJMP START
+                        12    USING 0
+------                  13    RSEG MAIN 
+                        14    ; Написать программу умножения двух трехбайтных чисел. Первое чис-
+                        15    ; ло находится во внешней памяти, второе число принимается побайтно
+                        16    ; из порта 2 микроконтроллера. Результата умножения вывести в после-
+                        17    ; довательный порт (UART). Скорость и режим работы UART задается
+                        18    ; преподавателем. Обязательное использование подпрограмм и симво-
+                        19    ; лических переменных в отдельном файле проекта
+                        20    START:  
+0000    120000   F      21       CALL READ_PORT
+0003    900000   F      22       MOV DPTR, #NUM1
+0006    E0              23       MOVX A, @DPTR
+0007    F5F0            24       MOV B, A
+0009    900000   F      25       MOV DPTR, #NUM2
+000C    E0              26       MOVX A, @DPTR
+000D    A4              27       MUL AB
+000E    020000   F      28    	JMP $
+                        29    
+                        30    READ_PORT:  
+0011    7B03            31    	MOV R3, #03H
+0013    900000   F      32    	MOV DPTR, #NUM2
+                        33    READ_LOOP:  
+0016    E5A0            34    	MOV A, P2
+0018    F0              35    	MOVX @DPTR, A
+0019    A3              36    	INC DPTR
+001A    DBFA            37    	DJNZ R3, READ_LOOP
+001C    22              38    	RET
+                        39    			
+                        40    END
+MACRO ASSEMBLER MUL24                                       10/29/123 03:17:45 PAGE     2
 
 
 SYMBOL TABLE LISTING
@@ -42,15 +55,23 @@ SYMBOL TABLE LISTING
 
 N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
 
-MAIN . . . . . . .  C SEG    000CH      REL=UNIT                6# 
-START. . . . . . .  C ADDR   0000H   R  SEG=MAIN                4 13# 
-ADDFIVE. . . . . .  N NUMB   -----
+READ_PORT. . . . .  C ADDR   0011H   R  SEG=MAIN                21 30# 
+NUM1 . . . . . . .  X ADDR   0000H   R  SEG=XVARS               6# 22 
+NUM2 . . . . . . .  X ADDR   0003H   R  SEG=XVARS               7# 25 32 
+B. . . . . . . . .  D ADDR   00F0H   A                          24 
+P2 . . . . . . . .  D ADDR   00A0H   A                          34 
+MAIN . . . . . . .  C SEG    001DH      REL=UNIT                13# 
+RES. . . . . . . .  X ADDR   0006H   R  SEG=XVARS               8# 
+START. . . . . . .  C ADDR   0000H   R  SEG=MAIN                11 20# 
+XVARS. . . . . . .  X SEG    0009H      REL=UNIT                5# 
+READ_LOOP. . . . .  C ADDR   0016H   R  SEG=MAIN                33# 37 
+MUL24. . . . . . .  N NUMB   -----
 
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     15    ----
-   XDATA SIZE       =   ----    ----
+   CODE SIZE        =     32    ----
+   XDATA SIZE       =      9    ----
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----

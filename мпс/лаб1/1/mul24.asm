@@ -1,5 +1,12 @@
-NAME addfive
-MAIN SEGMENT CODE 
+NAME mul24
+MAIN SEGMENT CODE
+XVARS SEGMENT XDATA
+
+RSEG XVARS
+NUM1: DS 3
+NUM2: DS 3
+RES:  DS 3
+ 
 CSEG AT 0
 LJMP start
 USING 0
@@ -11,21 +18,47 @@ RSEG MAIN
 ; преподавателем. Обязательное использование подпрограмм и симво-
 ; лических переменных в отдельном файле проекта
 start:
-; READ FROM EXTERNAL MEMORY 3 BYTES
-	MOV DPTR, #0020H
-	MOVX A, @DPTR
-	MOV R0, A
+   CALL READ_PORT
+   MOV DPTR, #NUM1
+   MOVX A, @DPTR
+   MOV B, A
+   MOV DPTR, #NUM2
+   MOVX A, @DPTR
+   MUL AB
+	JMP $
+
+READ_PORT:
+	MOV R3, #03H
+	MOV DPTR, #NUM2
+read_loop:
+	MOV A, P2
+	MOVX @DPTR, A
 	INC DPTR
-	MOVX A, @DPTR
-	MOV R1, A
-	INC DPTR
-	MOVX A, @DPTR
-	MOV R2, A
-	INC DPTR
-; READ FROM PORT2 3 BYTES
+	DJNZ R3, read_loop
+	RET
 			
 END
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
