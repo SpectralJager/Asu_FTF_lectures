@@ -1,4 +1,4 @@
-MACRO ASSEMBLER MUL24                                       10/29/123 03:17:45 PAGE     1
+MACRO ASSEMBLER MUL24                                       10/31/123 16:23:08 PAGE     1
 
 
 WIN32 MACRO ASSEMBLER A51 V6.03.08
@@ -9,44 +9,109 @@ LOC     OBJ           LINE    SOURCE
                          1    NAME MUL24
                          2    MAIN SEGMENT CODE
                          3    XVARS SEGMENT XDATA
-                         4    
-------                   5    RSEG XVARS
-0000                     6    NUM1:   DS 3
-0003                     7    NUM2:   DS 3
-0006                     8    RES:    DS 3
-                         9     
-------                  10    CSEG AT 0
-0000    020000   F      11    LJMP START
-                        12    USING 0
-------                  13    RSEG MAIN 
-                        14    ; Написать программу умножения двух трехбайтных чисел. Первое чис-
-                        15    ; ло находится во внешней памяти, второе число принимается побайтно
-                        16    ; из порта 2 микроконтроллера. Результата умножения вывести в после-
-                        17    ; довательный порт (UART). Скорость и режим работы UART задается
-                        18    ; преподавателем. Обязательное использование подпрограмм и симво-
-                        19    ; лических переменных в отдельном файле проекта
-                        20    START:  
-0000    120000   F      21       CALL READ_PORT
-0003    900000   F      22       MOV DPTR, #NUM1
-0006    E0              23       MOVX A, @DPTR
-0007    F5F0            24       MOV B, A
-0009    900000   F      25       MOV DPTR, #NUM2
-000C    E0              26       MOVX A, @DPTR
-000D    A4              27       MUL AB
-000E    020000   F      28    	JMP $
-                        29    
-                        30    READ_PORT:  
-0011    7B03            31    	MOV R3, #03H
-0013    900000   F      32    	MOV DPTR, #NUM2
-                        33    READ_LOOP:  
-0016    E5A0            34    	MOV A, P2
-0018    F0              35    	MOVX @DPTR, A
-0019    A3              36    	INC DPTR
-001A    DBFA            37    	DJNZ R3, READ_LOOP
-001C    22              38    	RET
-                        39    			
-                        40    END
-MACRO ASSEMBLER MUL24                                       10/29/123 03:17:45 PAGE     2
+                         4    VARS SEGMENT DATA
+                         5    
+------                   6    RSEG VARS
+0000                     7    TMP1:   DS 4
+0004                     8    TMP2:   DS 4
+0008                     9    TMP3:   DS 4
+                        10    
+------                  11    RSEG XVARS
+0000                    12    NUM1:   DS 3
+0003                    13    NUM2:   DS 3
+0006                    14    RES:   DS 3
+                        15     
+------                  16    CSEG AT 0
+0000    020000   F      17    LJMP START
+                        18    USING 0
+------                  19    RSEG MAIN 
+                        20    ; Написать программу умножения двух трехбайтных чисел. Первое чис-
+                        21    ; ло находится во внешней памяти, второе число принимается побайтно
+                        22    ; из порта 2 микроконтроллера. Результата умножения вывести в после-
+                        23    ; довательный порт (UART). Скорость и режим работы UART задается
+                        24    ; преподавателем. Обязательное использование подпрограмм и симво-
+                        25    ; лических переменных в отдельном файле проекта
+                        26    START:  
+0000    120000   F      27       CALL READ_PORT
+0003    120000   F      28       CALL EVAL_NUMS
+                        29       
+0006    75A000          30       MOV P2, #00H
+0009    7800     F      31       MOV R0, #RES
+
+*** WARNING #53 IN LINE 31 OF mul24.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+
+*** WARNING #53 IN LINE 31 OF mul24.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+000B    E500     F      32       MOV A, TMP1
+000D    F2              33       MOVX @R0, A
+000E    08              34       INC R0
+000F    8500F0   F      35       MOV B, TMP1 + 1
+0012    E500     F      36       MOV A, TMP2
+0014    25F0            37       ADD A, B
+0016    F2              38       MOVX @R0, A
+                        39       
+0017    020000   F      40       JMP $
+                        41       
+                        42    EVAL_NUMS:  
+001A    D0E0            43    	POP ACC
+001C    FC              44    	MOV R4, A
+001D    D0E0            45    	POP ACC
+001F    FD              46    	MOV R5, A
+0020    75A000          47    	MOV P2, #00H
+0023    7800     F      48    	MOV R0, #NUM1-1
+
+*** WARNING #53 IN LINE 48 OF mul24.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+
+*** WARNING #53 IN LINE 48 OF mul24.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+0025    7E03            49    	MOV R6, #03H
+                        50    O_LOOP:  
+0027    08              51    	INC R0
+0028    7900     F      52    	MOV R1, #NUM2
+
+*** WARNING #53 IN LINE 52 OF mul24.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+
+*** WARNING #53 IN LINE 52 OF mul24.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+002A    E3              53    	MOVX A, @R1
+002B    F5F0            54    	MOV B, A
+002D    E2              55    	MOVX A, @R0
+002E    A4              56    	MUL AB
+002F    C0E0            57    	PUSH ACC   
+0031    E5F0            58    	MOV A, B
+0033    C0E0            59    	PUSH ACC
+0035    7F02            60    	MOV R7, #02H
+                        61    S_LOOP:  	
+0037    09              62    	INC R1
+0038    E3              63    	MOVX A, @R1
+0039    F5F0            64    	MOV B, A
+003B    E2              65    	MOVX A, @R0
+003C    A4              66    	MUL AB
+003D    ABF0            67    	MOV R3, B
+003F    F5F0            68    	MOV B, A
+0041    D0E0            69    	POP ACC
+0043    25F0            70    	ADD A, B
+0045    C0E0            71    	PUSH ACC
+0047    EB              72    	MOV A, R3
+0048    3400            73    	ADDC A, #00H
+004A    C0E0            74    	PUSH ACC
+004C    DFE9            75    	DJNZ R7, S_LOOP
+004E    DED7            76    	DJNZ R6, O_LOOP
+0050    ED              77    	MOV A, R5
+0051    C0E0            78    	PUSH ACC
+0053    EC              79    	MOV A, R4
+0054    C0E0            80    	PUSH ACC
+0056    22              81    	RET
+                        82    	
+                        83    READ_PORT:  
+0057    7B03            84    	MOV R3, #03H
+0059    900000   F      85    	MOV DPTR, #NUM2
+                        86    READ_LOOP:  
+005C    E5A0            87    	MOV A, P2
+005E    F0              88    	MOVX @DPTR, A
+005F    A3              89    	INC DPTR
+0060    DBFA            90    	DJNZ R3, READ_LOOP
+0062    22              91    	RET
+                        92    			
+                        93    END
+MACRO ASSEMBLER MUL24                                       10/31/123 16:23:08 PAGE     2
 
 
 SYMBOL TABLE LISTING
@@ -55,24 +120,34 @@ SYMBOL TABLE LISTING
 
 N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
 
-READ_PORT. . . . .  C ADDR   0011H   R  SEG=MAIN                21 30# 
-NUM1 . . . . . . .  X ADDR   0000H   R  SEG=XVARS               6# 22 
-NUM2 . . . . . . .  X ADDR   0003H   R  SEG=XVARS               7# 25 32 
-B. . . . . . . . .  D ADDR   00F0H   A                          24 
-P2 . . . . . . . .  D ADDR   00A0H   A                          34 
-MAIN . . . . . . .  C SEG    001DH      REL=UNIT                13# 
-RES. . . . . . . .  X ADDR   0006H   R  SEG=XVARS               8# 
-START. . . . . . .  C ADDR   0000H   R  SEG=MAIN                11 20# 
-XVARS. . . . . . .  X SEG    0009H      REL=UNIT                5# 
-READ_LOOP. . . . .  C ADDR   0016H   R  SEG=MAIN                33# 37 
+READ_PORT. . . . .  C ADDR   0057H   R  SEG=MAIN                27 83# 
+NUM1 . . . . . . .  X ADDR   0000H   R  SEG=XVARS               12# 48 
+NUM2 . . . . . . .  X ADDR   0003H   R  SEG=XVARS               13# 52 85 
+TMP1 . . . . . . .  D ADDR   0000H   R  SEG=VARS                7# 32 35 
+B. . . . . . . . .  D ADDR   00F0H   A                          35 37 54 58 64 67 
+                                                                68 70 
+P2 . . . . . . . .  D ADDR   00A0H   A                          30 47 87 
+TMP2 . . . . . . .  D ADDR   0004H   R  SEG=VARS                8# 36 
+TMP3 . . . . . . .  D ADDR   0008H   R  SEG=VARS                9# 
+MAIN . . . . . . .  C SEG    0063H      REL=UNIT                19# 
+ACC. . . . . . . .  D ADDR   00E0H   A                          43 45 57 59 69 71 
+                                                                74 78 80 
+O_LOOP . . . . . .  C ADDR   0027H   R  SEG=MAIN                50# 76 
+EVAL_NUMS. . . . .  C ADDR   001AH   R  SEG=MAIN                28 42# 
+RES. . . . . . . .  X ADDR   0006H   R  SEG=XVARS               14# 31 
+S_LOOP . . . . . .  C ADDR   0037H   R  SEG=MAIN                61# 75 
+START. . . . . . .  C ADDR   0000H   R  SEG=MAIN                17 26# 
+XVARS. . . . . . .  X SEG    0009H      REL=UNIT                11# 
+READ_LOOP. . . . .  C ADDR   005CH   R  SEG=MAIN                86# 90 
+VARS . . . . . . .  D SEG    000CH      REL=UNIT                6# 
 MUL24. . . . . . .  N NUMB   -----
 
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     32    ----
+   CODE SIZE        =    102    ----
    XDATA SIZE       =      9    ----
-   DATA SIZE        =   ----    ----
+   DATA SIZE        =     12    ----
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
@@ -80,4 +155,4 @@ END OF MODULE INFORMATION.
 
 REGISTER BANK(S) USED : 0 
 
-ASSEMBLY COMPLETE.   0 WARNING(S)   0 ERROR(S)
+ASSEMBLY COMPLETE.   6 WARNING(S)   0 ERROR(S)

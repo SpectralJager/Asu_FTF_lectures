@@ -405,20 +405,20 @@ End Options OH51
 App Number=1
 Name=LAB1.PRJ
 Tool Ref=L51
-Info Code=32
+Info Code=102
 Info XData=9
-Info Data=64
+Info Data=160
 Use Local=0
 Nb Nodes=1
 Node Begin
 Relative Path=mul24.asm
 Tool Ref=A51
 Nb Dep=0
-Info Code=32
+Info Code=102
 Info Const=0
 Info XData=9
 Info PData=0
-Info Data=0
+Info Data=12
 Info IData=0
 Info Bit=0
 Use Local=0
@@ -427,15 +427,17 @@ Node End
 
 
 [Desktop Files]
-Nb Desktop Files=0
+Nb Desktop Files=1
+y:\лаб1\1\mul24.asm (0,0-764,490) 0
+
 
 [Closed Files]
 Nb Closed Files=3
-Y:\лаб1\1\switcher.asm (0,0-0,0) 0
+Y:\лаб1\1\temp.asm (0,0-0,0) 0
 
 y:\лаб1\1\mul24.asm (0,0-0,0) 0
 
-Y:\лаб1\1\temp.asm (0,0-0,0) 0
+Y:\лаб1\1\switcher.asm (0,0-0,0) 0
 
 
 [Dim Views]
