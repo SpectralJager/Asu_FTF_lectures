@@ -1,137 +1,28 @@
 NAME main
 EXTRN DATA (TMP1, TMP2, TMP3)
 EXTRN XDATA (NUM1, NUM2, RES)
+EXTRN CODE (READ_PORT, EVAL_NUMS, SUM_NUMS, OUT_UART)
+
 MAIN SEGMENT CODE
 
 CSEG AT 0
 LJMP start
 USING 0
+
 RSEG MAIN 
-; Написать программу умножения двух трехбайтных чисел. Первое чис-
-; ло находится во внешней памяти, второе число принимается побайтно
-; из порта 2 микроконтроллера. Результата умножения вывести в после-
-; довательный порт (UART). Скорость и режим работы UART задается
-; преподавателем. Обязательное использование подпрограмм и симво-
-; лических переменных в отдельном файле проекта
-start:
+start: 
    CALL READ_PORT
    CALL EVAL_NUMS
    CALL SUM_NUMS
-   CALL OUT_UART   
-   JMP $   
+   CALL OUT_UART
    
-OUT_UART:               
-   MOV TMOD, #00100000B
-   MOV TH1, #0FFH
-   SETB TR1
-   MOV PCON, #10000000B
-   MOV SCON, #01010010B
-   MOV P2, #00H
-   MOV R0, #RES
-   MOV R4, #06H
-uart_loop:
-	MOVX A, @R0
-	INC R0
-   MOV SBUF, A
-   DJNZ R4, UART_LOOP
-   RET
-
-SUM_NUMS:
-   MOV P2, #00H
-   MOV R0, #RES
-   MOV A, TMP1
-   MOVX @R0, A
-   INC R0
-   MOV B, TMP1 + 1
-   MOV A, TMP2
-   ADD A, B
-   MOVX @R0, A
-   INC R0
-   MOV B, TMP1 + 2
-   MOV A, TMP2 + 1
-   ADDC A, B
-   MOV B, A
-   MOV A, TMP1 + 3
-   ADDC A, #0
-   MOV TMP1 + 3, A
-   MOV A, TMP3
-   ADDC A, B
-   MOVX @R0, A
-   INC R0
-   MOV B, TMP1 + 3
-   MOV A, TMP2 + 2
-   ADDC A, B
-   MOV B, A
-   MOV A, TMP2 + 3
-   ADDC A, #0
-   MOV TMP2 + 3, A
-   MOV A, TMP3 + 1
-   ADDC A, B
-   MOVX @R0, A
-   INC R0
-   MOV B, TMP2 + 3
-   MOV A, TMP3 + 2
-   ADDC A, B
-   MOVX @R0, A
-   INC R0
-   MOV A, TMP3 + 3
-   ADDC A, #0
-   MOVX @R0, A
-   RET
+   JMP $ 
    
-EVAL_NUMS:
-	POP ACC
-	MOV R4, A
-	POP ACC
-	MOV R5, A
-	MOV P2, #00H
-	MOV R0, #NUM1-1
-	MOV R6, #03H
-o_loop:
-	INC R0
-	MOV R1, #NUM2
-	MOVX A, @R1
-	MOV B, A
-	MOVX A, @R0
-	MUL AB
-	PUSH ACC   
-	MOV A, B
-	PUSH ACC
-	MOV R7, #02h
-s_loop:	
-	INC R1
-	MOVX A, @R1
-	MOV B, A
-	MOVX A, @R0
-	MUL AB
-	MOV R3, B
-	MOV B, A
-	POP ACC
-	ADD A, B
-	PUSH ACC
-	MOV A, R3
-	ADDC A, #00H
-	PUSH ACC
-	DJNZ R7, S_LOOP
-	DJNZ R6, O_LOOP
-	MOV A, R5
-	PUSH ACC
-	MOV A, R4
-	PUSH ACC
-	RET
-	
-READ_PORT:
-	MOV R3, #03H
-	MOV DPTR, #NUM2
-read_loop:
-	MOV A, P2
-	MOVX @DPTR, A
-	INC DPTR
-	DJNZ R3, read_loop
-	RET
-			
 END
  
+
+
+
 
 
 

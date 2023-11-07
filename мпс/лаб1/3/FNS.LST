@@ -1,0 +1,197 @@
+MACRO ASSEMBLER FNS                                         11/07/123 20:56:15 PAGE     1
+
+
+WIN32 MACRO ASSEMBLER A51 V6.03.08
+OBJECT MODULE PLACED IN Y:\лаб1\3\FNS.OBJ
+ASSEMBLER INVOKED BY: A51.EXE Y:\лаб1\3\FNS.ASM OJ(Y:\лаб1\3\FNS.OBJ) PIN(C:\FSI\INC) EP LINES PR(Y:\лаб1\3\FNS.LST) XR DB PW(80) RB(0) 
+
+LOC     OBJ           LINE    SOURCE
+                         1    PUBLIC READ_PORT, EVAL_NUMS, SUM_NUMS, OUT_UART
+                         2    EXTRN DATA (TMP1, TMP2, TMP3)
+                         3    EXTRN XDATA (NUM1, NUM2, RES)
+                         4    
+                         5    FNS SEGMENT CODE
+                         6    
+------                   7    RSEG FNS
+                         8    
+                         9    READ_PORT:  
+0000    7B03            10    	MOV R3, #03H
+0002    900000   F      11    	MOV DPTR, #NUM2
+                        12    READ_LOOP:  
+0005    E5A0            13    	MOV A, P2
+0007    F0              14    	MOVX @DPTR, A
+0008    A3              15    	INC DPTR
+0009    DBFA            16    	DJNZ R3, READ_LOOP
+000B    22              17    	RET
+                        18    	
+                        19    EVAL_NUMS:  
+000C    D0E0            20    	POP ACC
+000E    FC              21    	MOV R4, A
+000F    D0E0            22    	POP ACC
+0011    FD              23    	MOV R5, A
+0012    75A000          24    	MOV P2, #00H
+0015    7800     F      25    	MOV R0, #NUM1-1
+
+*** WARNING #53 IN LINE 25 OF fns.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+
+*** WARNING #53 IN LINE 25 OF fns.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+0017    7E03            26    	MOV R6, #03H
+                        27    O_LOOP:  
+0019    08              28    	INC R0
+001A    7900     F      29    	MOV R1, #NUM2
+
+*** WARNING #53 IN LINE 29 OF fns.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+
+*** WARNING #53 IN LINE 29 OF fns.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+001C    E3              30    	MOVX A, @R1
+001D    F5F0            31    	MOV B, A
+001F    E2              32    	MOVX A, @R0
+0020    A4              33    	MUL AB
+0021    C0E0            34    	PUSH ACC   
+0023    E5F0            35    	MOV A, B
+0025    C0E0            36    	PUSH ACC
+0027    7F02            37    	MOV R7, #02H
+                        38    S_LOOP:  	
+0029    09              39    	INC R1
+002A    E3              40    	MOVX A, @R1
+002B    F5F0            41    	MOV B, A
+002D    E2              42    	MOVX A, @R0
+002E    A4              43    	MUL AB
+002F    ABF0            44    	MOV R3, B
+0031    F5F0            45    	MOV B, A
+0033    D0E0            46    	POP ACC
+0035    25F0            47    	ADD A, B
+0037    C0E0            48    	PUSH ACC
+0039    EB              49    	MOV A, R3
+003A    3400            50    	ADDC A, #00H
+003C    C0E0            51    	PUSH ACC
+003E    DFE9            52    	DJNZ R7, S_LOOP
+0040    DED7            53    	DJNZ R6, O_LOOP
+0042    ED              54    	MOV A, R5
+0043    C0E0            55    	PUSH ACC
+0045    EC              56    	MOV A, R4
+0046    C0E0            57    	PUSH ACC
+0048    22              58    	RET
+                        59    	
+                        60    SUM_NUMS:  
+0049    75A000          61       MOV P2, #00H
+004C    7800     F      62       MOV R0, #RES
+
+*** WARNING #53 IN LINE 62 OF fns.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+
+*** WARNING #53 IN LINE 62 OF fns.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+004E    E500     F      63       MOV A, TMP1
+0050    F2              64       MOVX @R0, A
+0051    08              65       INC R0
+0052    8500F0   F      66       MOV B, TMP1 + 1
+0055    E500     F      67       MOV A, TMP2
+0057    25F0            68       ADD A, B
+0059    F2              69       MOVX @R0, A
+005A    08              70       INC R0
+005B    8500F0   F      71       MOV B, TMP1 + 2
+005E    E500     F      72       MOV A, TMP2 + 1
+0060    35F0            73       ADDC A, B
+0062    F5F0            74       MOV B, A
+0064    E500     F      75       MOV A, TMP1 + 3
+0066    3400            76       ADDC A, #0
+0068    F500     F      77       MOV TMP1 + 3, A
+006A    E500     F      78       MOV A, TMP3
+006C    35F0            79       ADDC A, B
+006E    F2              80       MOVX @R0, A
+006F    08              81       INC R0
+0070    8500F0   F      82       MOV B, TMP1 + 3
+0073    E500     F      83       MOV A, TMP2 + 2
+0075    35F0            84       ADDC A, B
+0077    F5F0            85       MOV B, A
+0079    E500     F      86       MOV A, TMP2 + 3
+007B    3400            87       ADDC A, #0
+007D    F500     F      88       MOV TMP2 + 3, A
+007F    E500     F      89       MOV A, TMP3 + 1
+0081    35F0            90       ADDC A, B
+0083    F2              91       MOVX @R0, A
+0084    08              92       INC R0
+0085    8500F0   F      93       MOV B, TMP2 + 3
+0088    E500     F      94       MOV A, TMP3 + 2
+008A    35F0            95       ADDC A, B
+008C    F2              96       MOVX @R0, A
+008D    08              97       INC R0
+008E    E500     F      98       MOV A, TMP3 + 3
+0090    3400            99       ADDC A, #0
+0092    F2             100       MOVX @R0, A
+0093    22             101       RET
+                       102       
+                       103        
+                       104    OUT_UART:                 
+0094    758920         105       MOV TMOD, #00100000B
+0097    758DFF         106       MOV TH1, #0FFH
+009A    D28E           107       SETB TR1
+009C    758780         108       MOV PCON, #10000000B
+009F    759852         109       MOV SCON, #01010010B
+00A2    75A000         110       MOV P2, #00H
+00A5    7800     F     111       MOV R0, #RES
+
+*** WARNING #53 IN LINE 111 OF fns.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+
+*** WARNING #53 IN LINE 111 OF fns.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+00A7    7C06           112       MOV R4, #06H
+                       113    UART_LOOP:  
+00A9    E2             114    	MOVX A, @R0
+00AA    08             115    	INC R0
+00AB    F599           116       MOV SBUF, A
+00AD    DCFA           117       DJNZ R4, UART_LOOP
+00AF    22             118       RET
+                       119    END
+MACRO ASSEMBLER FNS                                         11/07/123 20:56:15 PAGE     2
+
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
+
+READ_PORT. . . . .  C ADDR   0000H   R  SEG=FNS                 1 9# 
+NUM1 . . . . . . .  X ADDR   -----      EXT                     3# 25 
+NUM2 . . . . . . .  X ADDR   -----      EXT                     3# 11 29 
+TMP1 . . . . . . .  D ADDR   -----      EXT                     2# 63 66 71 75 77 
+                                                                82 
+B. . . . . . . . .  D ADDR   00F0H   A                          31 35 41 44 45 47 
+                                                                66 68 71 73 74 79 
+                                                                82 84 85 90 93 95 
+                                                                
+P2 . . . . . . . .  D ADDR   00A0H   A                          13 24 61 110 
+TMP2 . . . . . . .  D ADDR   -----      EXT                     2# 67 72 83 86 88 
+                                                                93 
+TMP3 . . . . . . .  D ADDR   -----      EXT                     2# 78 89 94 98 
+FNS. . . . . . . .  C SEG    00B0H      REL=UNIT                7# 
+ACC. . . . . . . .  D ADDR   00E0H   A                          20 22 34 36 46 48 
+                                                                51 55 57 
+O_LOOP . . . . . .  C ADDR   0019H   R  SEG=FNS                 27# 53 
+RES. . . . . . . .  X ADDR   -----      EXT                     3# 62 111 
+EVAL_NUMS. . . . .  C ADDR   000CH   R  SEG=FNS                 1 19# 
+S_LOOP . . . . . .  C ADDR   0029H   R  SEG=FNS                 38# 52 
+TH1. . . . . . . .  D ADDR   008DH   A                          106 
+SBUF . . . . . . .  D ADDR   0099H   A                          116 
+PCON . . . . . . .  D ADDR   0087H   A                          108 
+OUT_UART . . . . .  C ADDR   0094H   R  SEG=FNS                 1 104# 
+SCON . . . . . . .  D ADDR   0098H   A                          109 
+TMOD . . . . . . .  D ADDR   0089H   A                          105 
+UART_LOOP. . . . .  C ADDR   00A9H   R  SEG=FNS                 113# 117 
+READ_LOOP. . . . .  C ADDR   0005H   R  SEG=FNS                 12# 16 
+SUM_NUMS . . . . .  C ADDR   0049H   R  SEG=FNS                 1 60# 
+TR1. . . . . . . .  B ADDR   0088H.6 A                          107 
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    176    ----
+   XDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+REGISTER BANK(S) USED : 0 
+
+ASSEMBLY COMPLETE.   8 WARNING(S)   0 ERROR(S)

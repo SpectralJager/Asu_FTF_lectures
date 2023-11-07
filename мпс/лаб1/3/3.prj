@@ -291,7 +291,10 @@ ResBData=0
 ResData=0
 Startaddr=8000
 Lockedmode=0
-Nb Obj=0
+Nb Obj=3
+y:\лаб1\3\main.OBJ
+y:\лаб1\3\vars.OBJ
+y:\лаб1\3\fns.OBJ
 Nb Flash=0
 End Group Flashing
 Begin Group Listing
@@ -315,7 +318,10 @@ Minaddr=8000
 Maxpage=32
 Genmacro=1
 Noplm=1
-Nb Modules=0
+Nb Modules=3
+MAIN Y:\лаб1\3\MAIN.OBJ 2147483647
+VARS Y:\лаб1\3\VARS.OBJ 2147483647
+FNS Y:\лаб1\3\FNS.OBJ 2147483647
 End Group Bank switching
 Begin Group More
 More=
@@ -401,29 +407,81 @@ End Options OH51
 
 [Nodes]
 App Number=1
-Name=3.prj
+Name=3.PRJ
 Tool Ref=L51
-Info Code=0
-Info XData=0
-Info Data=0
+Info Code=194
+Info XData=9
+Info Data=160
 Use Local=0
-Nb Nodes=0
+Nb Nodes=3
+Node Begin
+Relative Path=main.asm
+Tool Ref=A51
+Nb Dep=0
+Info Code=18
+Info Const=0
+Info XData=0
+Info PData=0
+Info Data=0
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Node End
+Node Begin
+Relative Path=vars.asm
+Tool Ref=A51
+Nb Dep=0
+Info Code=0
+Info Const=0
+Info XData=9
+Info PData=0
+Info Data=12
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Node End
+Node Begin
+Relative Path=fns.asm
+Tool Ref=A51
+Nb Dep=0
+Info Code=176
+Info Const=0
+Info XData=0
+Info PData=0
+Info Data=0
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Node End
 
 
 [Desktop Files]
-Nb Desktop Files=0
+Nb Desktop Files=2
+y:\лаб1\3\fns.asm (0,245-1280,491) 0
+
+y:\лаб1\3\main.asm (0,0-1280,245) 0
+
 
 [Closed Files]
-Nb Closed Files=0
+Nb Closed Files=3
+y:\лаб1\3\vars.asm (0,0-0,0) 0
+
+Y:\лаб1\3\fns.asm (0,0-0,0) 0
+
+y:\лаб1\3\main.asm (0,0-0,0) 0
+
 
 [Dim Views]
 Nb Dim Views=13
 0 (0,0-0,0)
 1 (0,0-0,0)
-2 (0,0-0,0)
+2 (162,940-322,964)
 3 (0,0-0,0)
-4 (0,0-0,0)
-5 (0,0-0,0)
+4 (24,24-1616,662)
+5 (2,493-352,753)
 6 (0,0-0,0)
 7 (0,0-0,0)
 8 (0,0-0,0)

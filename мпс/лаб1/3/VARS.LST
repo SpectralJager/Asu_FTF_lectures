@@ -1,0 +1,56 @@
+MACRO ASSEMBLER VARS                                        11/07/123 20:56:15 PAGE     1
+
+
+WIN32 MACRO ASSEMBLER A51 V6.03.08
+OBJECT MODULE PLACED IN Y:\лаб1\3\VARS.OBJ
+ASSEMBLER INVOKED BY: A51.EXE Y:\лаб1\3\VARS.ASM OJ(Y:\лаб1\3\VARS.OBJ) PIN(C:\FSI\INC) EP LINES PR(Y:\лаб1\3\VARS.LST) XR DB PW(80) RB(0) 
+
+LOC     OBJ           LINE    SOURCE
+                         1    PUBLIC TMP1, TMP2, TMP3, NUM1, NUM2, RES
+                         2    
+                         3    XVARS SEGMENT XDATA
+                         4    VARS SEGMENT DATA
+                         5    
+------                   6    RSEG VARS
+0000                     7    TMP1:   DS 4
+0004                     8    TMP2:   DS 4
+0008                     9    TMP3:   DS 4
+                        10    
+------                  11    RSEG XVARS
+0000                    12    NUM1:   DS 3
+0003                    13    NUM2:   DS 3
+0006                    14    RES:   DS 3
+                        15     
+                        16    END
+MACRO ASSEMBLER VARS                                        11/07/123 20:56:15 PAGE     2
+
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
+
+NUM1 . . . . . . .  X ADDR   0000H   R  SEG=XVARS               1 12# 
+NUM2 . . . . . . .  X ADDR   0003H   R  SEG=XVARS               1 13# 
+TMP1 . . . . . . .  D ADDR   0000H   R  SEG=VARS                1 7# 
+TMP2 . . . . . . .  D ADDR   0004H   R  SEG=VARS                1 8# 
+TMP3 . . . . . . .  D ADDR   0008H   R  SEG=VARS                1 9# 
+RES. . . . . . . .  X ADDR   0006H   R  SEG=XVARS               1 14# 
+XVARS. . . . . . .  X SEG    0009H      REL=UNIT                11# 
+VARS . . . . . . .  D SEG    000CH      REL=UNIT                6# 
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   ----    ----
+   XDATA SIZE       =      9    ----
+   DATA SIZE        =     12    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+REGISTER BANK(S) USED : 0 
+
+ASSEMBLY COMPLETE.   0 WARNING(S)   0 ERROR(S)

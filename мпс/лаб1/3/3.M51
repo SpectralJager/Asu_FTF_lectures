@@ -1,11 +1,13 @@
-L51 CODE BANKING LINKER/LOCATOR V4.08.06        11/07/123  20:08:20  PAGE  1
+L51 CODE BANKING LINKER/LOCATOR V4.08.06        11/07/123  20:56:15  PAGE  1
 WIN32 L51 CODE BANKING LINKER/LOCATOR V4.08.06,  INVOKED BY:
-L51.EXE y:\лаб1\3\main.OBJ  to  Y:\лаб1\3\3.ABS PR(Y:\лаб1\3\3.M51) PW(80) RS&
-(128) ix 
+L51.EXE y:\лаб1\3\main.OBJ,y:\лаб1\3\vars.OBJ,y:\лаб1\3\fns.OBJ  to  Y:\лаб1\&
+3\3.ABS PR(Y:\лаб1\3\3.M51) PW(80) RS(128) ix 
 
 
 INPUT MODULES INCLUDED
   Y:\лаб1\3\MAIN.OBJ(MAIN)
+  Y:\лаб1\3\VARS.OBJ(VARS)
+  Y:\лаб1\3\FNS.OBJ(FNS)
 
 
 LINK MAP OF MODULE: Y:\лаб1\3\3.ABS (MAIN)
@@ -15,17 +17,20 @@ LINK MAP OF MODULE: Y:\лаб1\3\3.ABS (MAIN)
 
     * * * * * * *   DATA          M E M O R Y   * * * * * * *
     REG      0000H      0008H     ABSOLUTE       "REG BANK 0"
+    DATA     0008H      000CH     UNIT           VARS
+
+    * * * * * * *   XDATA         M E M O R Y   * * * * * * *
+    XDATA    0000H      0009H     UNIT           XVARS
 
     * * * * * * *   CODE          M E M O R Y   * * * * * * *
     CODE     0000H      0003H     ABSOLUTE       
-    CODE     0003H      00BFH     UNIT           MAIN
-
-UNRESOLVED EXTERNAL SYMBOLS
+    CODE     0003H      000FH     UNIT           MAIN
+    CODE     0012H      00B0H     UNIT           FNS
 
 EXECUTABLE SUMMARY:
 -------------------
-    Total INTERNAL storage requirement:  0008H (8)
-    Total EXTERNAL storage requirement:  0000H (0)
+    Total INTERNAL storage requirement:  0014H (20)
+    Total EXTERNAL storage requirement:  0009H (9)
     Total   CODE   storage requirement:  00C2H (194)
 Note:  Summary does not include dynamic stack requirements
 
@@ -42,5 +47,134 @@ SYMBOL TABLE FOR Y:\лаб1\3\3.ABS(MAIN)
     VALUE              TYPE               NAME
     -----              ----               ----
 
+	-------            MODULE             MAIN
+	C:0003H            SYMBOL             START
+	C:0000H            LINE#              9
+	C:0003H            LINE#              14
+	C:0006H            LINE#              15
+	C:0009H            LINE#              16
+	C:000CH            LINE#              17
+	C:000FH            LINE#              19
+	-------            ENDMOD             MAIN
+	-------            MODULE             VARS
+	X:0000H            PUBLIC             NUM1
+	X:0003H            PUBLIC             NUM2
+	D:0008H            PUBLIC             TMP1
+	D:000CH            PUBLIC             TMP2
+	D:0010H            PUBLIC             TMP3
+	X:0006H            PUBLIC             RES
+	-------            ENDMOD             VARS
+	-------            MODULE             FNS
+	C:0012H            PUBLIC             READ_PORT
+	C:002BH            SYMBOL             O_LOOP
+	C:001EH            PUBLIC             EVAL_NUMS
+L51 CODE BANKING LINKER/LOCATOR V4.08.06          11/07/123  20:56:15  PAGE  2
 
-LINK/LOCATE RUN COMPLETE, 6 ERRORS FOUND.
+	C:003BH            SYMBOL             S_LOOP
+	C:00A6H            PUBLIC             OUT_UART
+	C:00BBH            SYMBOL             UART_LOOP
+	C:0017H            SYMBOL             READ_LOOP
+	C:005BH            PUBLIC             SUM_NUMS
+	C:0012H            LINE#              10
+	C:0014H            LINE#              11
+	C:0017H            LINE#              13
+	C:0019H            LINE#              14
+	C:001AH            LINE#              15
+	C:001BH            LINE#              16
+	C:001DH            LINE#              17
+	C:001EH            LINE#              20
+	C:0020H            LINE#              21
+	C:0021H            LINE#              22
+	C:0023H            LINE#              23
+	C:0024H            LINE#              24
+	C:0027H            LINE#              25
+	C:0029H            LINE#              26
+	C:002BH            LINE#              28
+	C:002CH            LINE#              29
+	C:002EH            LINE#              30
+	C:002FH            LINE#              31
+	C:0031H            LINE#              32
+	C:0032H            LINE#              33
+	C:0033H            LINE#              34
+	C:0035H            LINE#              35
+	C:0037H            LINE#              36
+	C:0039H            LINE#              37
+	C:003BH            LINE#              39
+	C:003CH            LINE#              40
+	C:003DH            LINE#              41
+	C:003FH            LINE#              42
+	C:0040H            LINE#              43
+	C:0041H            LINE#              44
+	C:0043H            LINE#              45
+	C:0045H            LINE#              46
+	C:0047H            LINE#              47
+	C:0049H            LINE#              48
+	C:004BH            LINE#              49
+	C:004CH            LINE#              50
+	C:004EH            LINE#              51
+	C:0050H            LINE#              52
+	C:0052H            LINE#              53
+	C:0054H            LINE#              54
+	C:0055H            LINE#              55
+	C:0057H            LINE#              56
+	C:0058H            LINE#              57
+	C:005AH            LINE#              58
+	C:005BH            LINE#              61
+	C:005EH            LINE#              62
+	C:0060H            LINE#              63
+	C:0062H            LINE#              64
+	C:0063H            LINE#              65
+	C:0064H            LINE#              66
+	C:0067H            LINE#              67
+	C:0069H            LINE#              68
+	C:006BH            LINE#              69
+	C:006CH            LINE#              70
+	C:006DH            LINE#              71
+	C:0070H            LINE#              72
+	C:0072H            LINE#              73
+	C:0074H            LINE#              74
+	C:0076H            LINE#              75
+	C:0078H            LINE#              76
+	C:007AH            LINE#              77
+	C:007CH            LINE#              78
+	C:007EH            LINE#              79
+L51 CODE BANKING LINKER/LOCATOR V4.08.06          11/07/123  20:56:15  PAGE  3
+
+	C:0080H            LINE#              80
+	C:0081H            LINE#              81
+	C:0082H            LINE#              82
+	C:0085H            LINE#              83
+	C:0087H            LINE#              84
+	C:0089H            LINE#              85
+	C:008BH            LINE#              86
+	C:008DH            LINE#              87
+	C:008FH            LINE#              88
+	C:0091H            LINE#              89
+	C:0093H            LINE#              90
+	C:0095H            LINE#              91
+	C:0096H            LINE#              92
+	C:0097H            LINE#              93
+	C:009AH            LINE#              94
+	C:009CH            LINE#              95
+	C:009EH            LINE#              96
+	C:009FH            LINE#              97
+	C:00A0H            LINE#              98
+	C:00A2H            LINE#              99
+	C:00A4H            LINE#              100
+	C:00A5H            LINE#              101
+	C:00A6H            LINE#              105
+	C:00A9H            LINE#              106
+	C:00ACH            LINE#              107
+	C:00AEH            LINE#              108
+	C:00B1H            LINE#              109
+	C:00B4H            LINE#              110
+	C:00B7H            LINE#              111
+	C:00B9H            LINE#              112
+	C:00BBH            LINE#              114
+	C:00BCH            LINE#              115
+	C:00BDH            LINE#              116
+	C:00BFH            LINE#              117
+	C:00C1H            LINE#              118
+	-------            ENDMOD             FNS
+
+LINK/LOCATE RUN COMPLETE,  NO ERROR FOUND.

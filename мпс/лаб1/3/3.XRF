@@ -1,14 +1,18 @@
 WIN32 L51 CODE BANKING LINKER/LOCATOR V4.08.06,  INVOKED BY: 
-L51.EXE y:\лаб1\3\main.OBJ  to  Y:\лаб1\3\3.ABS PR(Y:\лаб1\3\3.M51) SN(10600000000001876961994) PW(80) RS(128) ix 
+L51.EXE y:\лаб1\3\main.OBJ,y:\лаб1\3\vars.OBJ,y:\лаб1\3\fns.OBJ  to  Y:\лаб1\3\3.ABS PR(Y:\лаб1\3\3.M51) SN(10600000000001876961994) PW(80) RS(128) ix 
 
 INTER-MODULE CROSS-REFERENCE LISTING
 ------------------------------------
 
     NAME. . . . . . . . USAGE   MODULE NAMES
     ----------------------------------------
-    NUM1  . . . . . . . XDATA   [** UNRESOLVED **]: MAIN 
-    NUM2  . . . . . . . XDATA   [** UNRESOLVED **]: MAIN 
-    RES . . . . . . . . XDATA   [** UNRESOLVED **]: MAIN 
-    TMP1  . . . . . . . DATA    [** UNRESOLVED **]: MAIN 
-    TMP2  . . . . . . . DATA    [** UNRESOLVED **]: MAIN 
-    TMP3  . . . . . . . DATA    [** UNRESOLVED **]: MAIN 
+    EVAL_NUMS . . . . . CODE    [FNS]:  MAIN 
+    NUM1  . . . . . . . XDATA   [VARS]:  FNS 
+    NUM2  . . . . . . . XDATA   [VARS]:  FNS 
+    OUT_UART  . . . . . CODE    [FNS]:  MAIN 
+    READ_PORT . . . . . CODE    [FNS]:  MAIN 
+    RES . . . . . . . . XDATA   [VARS]:  FNS 
+    SUM_NUMS  . . . . . CODE    [FNS]:  MAIN 
+    TMP1  . . . . . . . DATA    [VARS]:  FNS 
+    TMP2  . . . . . . . DATA    [VARS]:  FNS 
+    TMP3  . . . . . . . DATA    [VARS]:  FNS 
