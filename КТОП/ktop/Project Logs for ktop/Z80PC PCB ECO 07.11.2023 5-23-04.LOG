@@ -1,0 +1,6 @@
+Change Component Comment : Designator=S1 Old Comment=btn New Comment=Reset
+Added Component: Designator=C3(1206 Capacitor)
+Added Pin To Net: NetName=GND Pin=C3-1
+Added Pin To Net: NetName=NetDD5_23 Pin=C3-2
+Change Net Name : Old Net Name=NetDD5_23 New Net Name=NetC3_2
+Added Member To Class: ClassName=Z80PC Member=Component C3 22p
