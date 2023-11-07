@@ -1,0 +1,46 @@
+L51 CODE BANKING LINKER/LOCATOR V4.08.06        11/07/123  20:08:20  PAGE  1
+WIN32 L51 CODE BANKING LINKER/LOCATOR V4.08.06,  INVOKED BY:
+L51.EXE y:\лаб1\3\main.OBJ  to  Y:\лаб1\3\3.ABS PR(Y:\лаб1\3\3.M51) PW(80) RS&
+(128) ix 
+
+
+INPUT MODULES INCLUDED
+  Y:\лаб1\3\MAIN.OBJ(MAIN)
+
+
+LINK MAP OF MODULE: Y:\лаб1\3\3.ABS (MAIN)
+
+    TYPE     BASE       LENGTH    RELOCATION     SEGMENT NAME
+    ----     ----       ------    ----------     ------------
+
+    * * * * * * *   DATA          M E M O R Y   * * * * * * *
+    REG      0000H      0008H     ABSOLUTE       "REG BANK 0"
+
+    * * * * * * *   CODE          M E M O R Y   * * * * * * *
+    CODE     0000H      0003H     ABSOLUTE       
+    CODE     0003H      00BFH     UNIT           MAIN
+
+UNRESOLVED EXTERNAL SYMBOLS
+
+EXECUTABLE SUMMARY:
+-------------------
+    Total INTERNAL storage requirement:  0008H (8)
+    Total EXTERNAL storage requirement:  0000H (0)
+    Total   CODE   storage requirement:  00C2H (194)
+Note:  Summary does not include dynamic stack requirements
+
+
+REFERENCE MAP OF MODULE: Y:\лаб1\3\3.ABS (MAIN)
+
+SEGMENT
+   +-->CALLED SEGMENT
+---------------------
+
+SYMBOL TABLE FOR Y:\лаб1\3\3.ABS(MAIN)
+---------------------------------------
+
+    VALUE              TYPE               NAME
+    -----              ----               ----
+
+
+LINK/LOCATE RUN COMPLETE, 6 ERRORS FOUND.

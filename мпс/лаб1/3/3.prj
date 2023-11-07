@@ -401,7 +401,7 @@ End Options OH51
 
 [Nodes]
 App Number=1
-Name=ADD5.PRJ
+Name=3.prj
 Tool Ref=L51
 Info Code=0
 Info XData=0
@@ -411,14 +411,10 @@ Nb Nodes=0
 
 
 [Desktop Files]
-Nb Desktop Files=1
-Y:\лаб1\1\add5.asm (958,0-1916,644) 0
-
+Nb Desktop Files=0
 
 [Closed Files]
-Nb Closed Files=1
-Y:\лаб1\1\switcher.asm (0,0-0,0) 0
-
+Nb Closed Files=0
 
 [Dim Views]
 Nb Dim Views=13

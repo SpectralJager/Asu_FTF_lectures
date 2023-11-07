@@ -1,18 +1,7 @@
-NAME mul24
+NAME main
+
 MAIN SEGMENT CODE
-XVARS SEGMENT XDATA
-VARS SEGMENT DATA
 
-RSEG VARS
-TMP1: DS 4
-TMP2: DS 4
-TMP3: DS 4
-
-RSEG XVARS
-NUM1: DS 3
-NUM2: DS 3
-RES: DS 3
- 
 CSEG AT 0
 LJMP start
 USING 0
@@ -26,7 +15,27 @@ RSEG MAIN
 start:
    CALL READ_PORT
    CALL EVAL_NUMS
+   CALL SUM_NUMS
+   CALL OUT_UART   
+   JMP $   
    
+OUT_UART:               
+   MOV TMOD, #00100000B
+   MOV TH1, #0FFH
+   SETB TR1
+   MOV PCON, #10000000B
+   MOV SCON, #01010010B
+   MOV P2, #00H
+   MOV R0, #RES
+   MOV R4, #06H
+uart_loop:
+	MOVX A, @R0
+	INC R0
+   MOV SBUF, A
+   DJNZ R4, UART_LOOP
+   RET
+
+SUM_NUMS:
    MOV P2, #00H
    MOV R0, #RES
    MOV A, TMP1
@@ -36,8 +45,38 @@ start:
    MOV A, TMP2
    ADD A, B
    MOVX @R0, A
-   
-   JMP $
+   INC R0
+   MOV B, TMP1 + 2
+   MOV A, TMP2 + 1
+   ADDC A, B
+   MOV B, A
+   MOV A, TMP1 + 3
+   ADDC A, #0
+   MOV TMP1 + 3, A
+   MOV A, TMP3
+   ADDC A, B
+   MOVX @R0, A
+   INC R0
+   MOV B, TMP1 + 3
+   MOV A, TMP2 + 2
+   ADDC A, B
+   MOV B, A
+   MOV A, TMP2 + 3
+   ADDC A, #0
+   MOV TMP2 + 3, A
+   MOV A, TMP3 + 1
+   ADDC A, B
+   MOVX @R0, A
+   INC R0
+   MOV B, TMP2 + 3
+   MOV A, TMP3 + 2
+   ADDC A, B
+   MOVX @R0, A
+   INC R0
+   MOV A, TMP3 + 3
+   ADDC A, #0
+   MOVX @R0, A
+   RET
    
 EVAL_NUMS:
 	POP ACC
@@ -92,6 +131,26 @@ read_loop:
 			
 END
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

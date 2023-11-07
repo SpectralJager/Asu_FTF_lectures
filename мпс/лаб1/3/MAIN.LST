@@ -1,0 +1,212 @@
+MACRO ASSEMBLER MAIN                                        11/07/123 20:08:20 PAGE     1
+
+
+WIN32 MACRO ASSEMBLER A51 V6.03.08
+OBJECT MODULE PLACED IN Y:\лаб1\3\MAIN.OBJ
+ASSEMBLER INVOKED BY: A51.EXE Y:\лаб1\3\MAIN.ASM OJ(Y:\лаб1\3\MAIN.OBJ) PIN(C:\FSI\INC) EP LINES PR(Y:\лаб1\3\MAIN.LST) XR DB PW(80) RB(0) 
+
+LOC     OBJ           LINE    SOURCE
+                         1    NAME MAIN
+                         2    EXTRN DATA (TMP1, TMP2, TMP3)
+                         3    EXTRN XDATA (NUM1, NUM2, RES)
+                         4    MAIN SEGMENT CODE
+                         5    
+------                   6    CSEG AT 0
+0000    020000   F       7    LJMP START
+                         8    USING 0
+------                   9    RSEG MAIN 
+                        10    ; Написать программу умножения двух трехбайтных чисел. Первое чис-
+                        11    ; ло находится во внешней памяти, второе число принимается побайтно
+                        12    ; из порта 2 микроконтроллера. Результата умножения вывести в после-
+                        13    ; довательный порт (UART). Скорость и режим работы UART задается
+                        14    ; преподавателем. Обязательное использование подпрограмм и симво-
+                        15    ; лических переменных в отдельном файле проекта
+                        16    START:  
+0000    120000   F      17       CALL READ_PORT
+0003    120000   F      18       CALL EVAL_NUMS
+0006    120000   F      19       CALL SUM_NUMS
+0009    120000   F      20       CALL OUT_UART   
+000C    020000   F      21       JMP $   
+                        22       
+                        23    OUT_UART:                 
+000F    758920          24       MOV TMOD, #00100000B
+0012    758DFF          25       MOV TH1, #0FFH
+0015    D28E            26       SETB TR1
+0017    758780          27       MOV PCON, #10000000B
+001A    759852          28       MOV SCON, #01010010B
+001D    75A000          29       MOV P2, #00H
+0020    7800     F      30       MOV R0, #RES
+
+*** WARNING #53 IN LINE 30 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+
+*** WARNING #53 IN LINE 30 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+0022    7C06            31       MOV R4, #06H
+                        32    UART_LOOP:  
+0024    E2              33    	MOVX A, @R0
+0025    08              34    	INC R0
+0026    F599            35       MOV SBUF, A
+0028    DCFA            36       DJNZ R4, UART_LOOP
+002A    22              37       RET
+                        38    
+                        39    SUM_NUMS:  
+002B    75A000          40       MOV P2, #00H
+002E    7800     F      41       MOV R0, #RES
+
+*** WARNING #53 IN LINE 41 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+
+*** WARNING #53 IN LINE 41 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+0030    E500     F      42       MOV A, TMP1
+0032    F2              43       MOVX @R0, A
+0033    08              44       INC R0
+0034    8500F0   F      45       MOV B, TMP1 + 1
+0037    E500     F      46       MOV A, TMP2
+0039    25F0            47       ADD A, B
+003B    F2              48       MOVX @R0, A
+003C    08              49       INC R0
+003D    8500F0   F      50       MOV B, TMP1 + 2
+0040    E500     F      51       MOV A, TMP2 + 1
+0042    35F0            52       ADDC A, B
+0044    F5F0            53       MOV B, A
+0046    E500     F      54       MOV A, TMP1 + 3
+0048    3400            55       ADDC A, #0
+004A    F500     F      56       MOV TMP1 + 3, A
+004C    E500     F      57       MOV A, TMP3
+004E    35F0            58       ADDC A, B
+0050    F2              59       MOVX @R0, A
+0051    08              60       INC R0
+0052    8500F0   F      61       MOV B, TMP1 + 3
+0055    E500     F      62       MOV A, TMP2 + 2
+0057    35F0            63       ADDC A, B
+0059    F5F0            64       MOV B, A
+005B    E500     F      65       MOV A, TMP2 + 3
+005D    3400            66       ADDC A, #0
+005F    F500     F      67       MOV TMP2 + 3, A
+0061    E500     F      68       MOV A, TMP3 + 1
+0063    35F0            69       ADDC A, B
+0065    F2              70       MOVX @R0, A
+0066    08              71       INC R0
+0067    8500F0   F      72       MOV B, TMP2 + 3
+006A    E500     F      73       MOV A, TMP3 + 2
+006C    35F0            74       ADDC A, B
+006E    F2              75       MOVX @R0, A
+006F    08              76       INC R0
+0070    E500     F      77       MOV A, TMP3 + 3
+0072    3400            78       ADDC A, #0
+0074    F2              79       MOVX @R0, A
+0075    22              80       RET
+                        81       
+                        82    EVAL_NUMS:  
+0076    D0E0            83    	POP ACC
+0078    FC              84    	MOV R4, A
+0079    D0E0            85    	POP ACC
+007B    FD              86    	MOV R5, A
+007C    75A000          87    	MOV P2, #00H
+007F    7800     F      88    	MOV R0, #NUM1-1
+
+*** WARNING #53 IN LINE 88 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+
+*** WARNING #53 IN LINE 88 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+0081    7E03            89    	MOV R6, #03H
+                        90    O_LOOP:  
+0083    08              91    	INC R0
+0084    7900     F      92    	MOV R1, #NUM2
+
+*** WARNING #53 IN LINE 92 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+
+*** WARNING #53 IN LINE 92 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+0086    E3              93    	MOVX A, @R1
+0087    F5F0            94    	MOV B, A
+0089    E2              95    	MOVX A, @R0
+008A    A4              96    	MUL AB
+008B    C0E0            97    	PUSH ACC   
+008D    E5F0            98    	MOV A, B
+008F    C0E0            99    	PUSH ACC
+0091    7F02           100    	MOV R7, #02H
+                       101    S_LOOP:  	
+0093    09             102    	INC R1
+0094    E3             103    	MOVX A, @R1
+0095    F5F0           104    	MOV B, A
+0097    E2             105    	MOVX A, @R0
+0098    A4             106    	MUL AB
+0099    ABF0           107    	MOV R3, B
+009B    F5F0           108    	MOV B, A
+009D    D0E0           109    	POP ACC
+009F    25F0           110    	ADD A, B
+00A1    C0E0           111    	PUSH ACC
+00A3    EB             112    	MOV A, R3
+00A4    3400           113    	ADDC A, #00H
+00A6    C0E0           114    	PUSH ACC
+00A8    DFE9           115    	DJNZ R7, S_LOOP
+00AA    DED7           116    	DJNZ R6, O_LOOP
+00AC    ED             117    	MOV A, R5
+00AD    C0E0           118    	PUSH ACC
+00AF    EC             119    	MOV A, R4
+00B0    C0E0           120    	PUSH ACC
+00B2    22             121    	RET
+                       122    	
+                       123    READ_PORT:  
+00B3    7B03           124    	MOV R3, #03H
+00B5    900000   F     125    	MOV DPTR, #NUM2
+                       126    READ_LOOP:  
+00B8    E5A0           127    	MOV A, P2
+00BA    F0             128    	MOVX @DPTR, A
+00BB    A3             129    	INC DPTR
+00BC    DBFA           130    	DJNZ R3, READ_LOOP
+00BE    22             131    	RET
+                       132    			
+                       133    END
+MACRO ASSEMBLER MAIN                                        11/07/123 20:08:20 PAGE     2
+
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
+
+READ_PORT. . . . .  C ADDR   00B3H   R  SEG=MAIN                17 123# 
+NUM1 . . . . . . .  X ADDR   -----      EXT                     3# 88 
+NUM2 . . . . . . .  X ADDR   -----      EXT                     3# 92 125 
+TMP1 . . . . . . .  D ADDR   -----      EXT                     2# 42 45 50 54 56 
+                                                                61 
+B. . . . . . . . .  D ADDR   00F0H   A                          45 47 50 52 53 58 
+                                                                61 63 64 69 72 74 
+                                                                94 98 104 107 108 
+                                                                110 
+P2 . . . . . . . .  D ADDR   00A0H   A                          29 40 87 127 
+TMP2 . . . . . . .  D ADDR   -----      EXT                     2# 46 51 62 65 67 
+                                                                72 
+TMP3 . . . . . . .  D ADDR   -----      EXT                     2# 57 68 73 77 
+MAIN . . . . . . .  C SEG    00BFH      REL=UNIT                9# 
+ACC. . . . . . . .  D ADDR   00E0H   A                          83 85 97 99 109 111 
+                                                                114 118 120 
+O_LOOP . . . . . .  C ADDR   0083H   R  SEG=MAIN                90# 116 
+EVAL_NUMS. . . . .  C ADDR   0076H   R  SEG=MAIN                18 82# 
+RES. . . . . . . .  X ADDR   -----      EXT                     3# 30 41 
+S_LOOP . . . . . .  C ADDR   0093H   R  SEG=MAIN                101# 115 
+TH1. . . . . . . .  D ADDR   008DH   A                          25 
+START. . . . . . .  C ADDR   0000H   R  SEG=MAIN                7 16# 
+SBUF . . . . . . .  D ADDR   0099H   A                          35 
+PCON . . . . . . .  D ADDR   0087H   A                          27 
+OUT_UART . . . . .  C ADDR   000FH   R  SEG=MAIN                20 23# 
+SCON . . . . . . .  D ADDR   0098H   A                          28 
+TMOD . . . . . . .  D ADDR   0089H   A                          24 
+READ_LOOP. . . . .  C ADDR   00B8H   R  SEG=MAIN                126# 130 
+UART_LOOP. . . . .  C ADDR   0024H   R  SEG=MAIN                32# 36 
+SUM_NUMS . . . . .  C ADDR   002BH   R  SEG=MAIN                19 39# 
+TR1. . . . . . . .  B ADDR   0088H.6 A                          26 
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    194    ----
+   XDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+REGISTER BANK(S) USED : 0 
+
+ASSEMBLY COMPLETE.   8 WARNING(S)   0 ERROR(S)
