@@ -1,0 +1,22 @@
+name delay
+main segment code
+cseg at 0
+ljmp start
+rseg main
+start:
+    call delay
+    jmp 0ffffffh
+delay:
+    mov r1, #00h
+x1:
+    mov r2, #00h
+x2:
+    djnz r2, x2
+    djnz r1, x1
+    ret
+end
+
+
+
+
+

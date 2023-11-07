@@ -1,0 +1,53 @@
+MACRO ASSEMBLER DELAY                                       11/07/123 21:32:59 PAGE     1
+
+
+WIN32 MACRO ASSEMBLER A51 V6.03.08
+OBJECT MODULE PLACED IN Y:\лаб1\4\DELAY.OBJ
+ASSEMBLER INVOKED BY: A51.EXE Y:\лаб1\4\DELAY.ASM OJ(Y:\лаб1\4\DELAY.OBJ) PIN(C:\FSI\INC) EP LINES PR(Y:\лаб1\4\DELAY.LST) XR DB PW(80) RB(0) 
+
+LOC     OBJ           LINE    SOURCE
+                         1    NAME DELAY
+                         2    MAIN SEGMENT CODE
+------                   3    CSEG AT 0
+0000    020000   F       4    LJMP START
+------                   5    RSEG MAIN
+                         6    DELAY:  
+0000    7900             7        MOV R1, #00H
+                         8    X1:  
+0002    7A00             9        MOV R2, #00H
+                        10    X2:  
+0004    DAFE            11        DJNZ R2, X2
+0006    D9FA            12        DJNZ R1, X1
+0008    22              13        RET 
+                        14    START:  
+0009    120000   F      15        CALL DELAY
+                        16    END
+MACRO ASSEMBLER DELAY                                       11/07/123 21:32:59 PAGE     2
+
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
+
+MAIN . . . . . . .  C SEG    000CH      REL=UNIT                5# 
+X1 . . . . . . . .  C ADDR   0002H   R  SEG=MAIN                8# 12 
+X2 . . . . . . . .  C ADDR   0004H   R  SEG=MAIN                10# 11 
+START. . . . . . .  C ADDR   0009H   R  SEG=MAIN                4 14# 
+DELAY. . . . . . .  C ADDR   0000H   R  SEG=MAIN                6# 15 
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     15    ----
+   XDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+REGISTER BANK(S) USED : 0 
+
+ASSEMBLY COMPLETE.   0 WARNING(S)   0 ERROR(S)

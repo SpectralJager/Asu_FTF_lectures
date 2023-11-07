@@ -1,0 +1,56 @@
+MACRO ASSEMBLER 5                                           11/07/123 22:45:37 PAGE     1
+
+
+WIN32 MACRO ASSEMBLER A51 V6.03.08
+OBJECT MODULE PLACED IN Y:\лаб1\5\5.OBJ
+ASSEMBLER INVOKED BY: A51.EXE Y:\лаб1\5\5.ASM OJ(Y:\лаб1\5\5.OBJ) PIN(C:\FSI\INC) EP LINES PR(Y:\лаб1\5\5.LST) XR DB PW(80) RB(0) 
+
+LOC     OBJ           LINE    SOURCE
+                         1    NAME TIMER_DELAY
+                         2    MAIN SEGMENT CODE
+                         3    USING 0
+------                   4    CSEG AT 0
+0000    020000   F       5    LJMP START
+------                   6    RSEG MAIN
+                         7    TIMER_DELAY:  
+0000    758C00           8        MOV TH0, #00H
+0003    758A00           9        MOV TL0, #00H
+0006    758901          10        MOV TMOD, #01H
+0009    D28C            11        SETB TCON.4
+000B    308DFD          12        JNB TCON.5, $
+000E    C28D            13        CLR TCON.5
+0010    22              14        RET
+                        15    START:  
+0011    120000   F      16        CALL TIMER_DELAY
+                        17    END
+MACRO ASSEMBLER 5                                           11/07/123 22:45:37 PAGE     2
+
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
+
+MAIN . . . . . . .  C SEG    0014H      REL=UNIT                6# 
+TH0. . . . . . . .  D ADDR   008CH   A                          8 
+START. . . . . . .  C ADDR   0011H   R  SEG=MAIN                5 15# 
+TIMER_DELAY. . . .  C ADDR   0000H   R  SEG=MAIN                7# 16 
+TL0. . . . . . . .  D ADDR   008AH   A                          9 
+TMOD . . . . . . .  D ADDR   0089H   A                          10 
+TCON . . . . . . .  D ADDR   0088H   A                          11 12 13 22 
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     23    ----
+   XDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+REGISTER BANK(S) USED : 0 
+
+ASSEMBLY COMPLETE.   0 WARNING(S)   0 ERROR(S)
