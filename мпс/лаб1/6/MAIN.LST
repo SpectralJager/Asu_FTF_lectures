@@ -1,0 +1,133 @@
+MACRO ASSEMBLER MAIN                                        11/08/123 19:34:46 PAGE     1
+
+
+WIN32 MACRO ASSEMBLER A51 V6.03.08
+OBJECT MODULE PLACED IN Y:\лаб1\6\MAIN.OBJ
+ASSEMBLER INVOKED BY: A51.EXE Y:\лаб1\6\MAIN.ASM OJ(Y:\лаб1\6\MAIN.OBJ) PIN(C:\FSI\INC) EP LINES PR(Y:\лаб1\6\MAIN.LST) XR DB PW(80) RB(0) 
+
+LOC     OBJ           LINE    SOURCE
+                         1    NAME LIGHTS
+                         2    MAIN SEGMENT CODE
+                         3    I0 SEGMENT CODE
+                         4    
+------                   5    CSEG AT 0
+0000    020000   F       6    LJMP START
+                         7    
+------                   8    CSEG AT 03H
+0003    020000   F       9    LJMP IN0
+                        10    
+------                  11    RSEG I0	
+                        12    IN0:  	
+0000    D0E0            13        POP ACC
+0002    D0E0            14        POP ACC
+0004    C3              15        CLR C
+0005    E9              16        MOV A, R1
+0006    6007            17        JZ IN0_0
+0008    E9              18        MOV A, R1
+0009    9401            19        SUBB A, #01H
+000B    6008            20        JZ IN0_1
+000D    800C            21        SJMP IN0_RST
+                        22    IN0_0:  
+000F    7400     F      23        MOV A, #MOD_0
+
+*** WARNING #53 IN LINE 23 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+0011    C0E0            24        PUSH ACC
+0013    8008            25        SJMP IN0_EXIT
+                        26    IN0_1:  
+0015    7400     F      27    	 MOV A, #MOD_1
+
+*** WARNING #53 IN LINE 27 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+0017    C0E0            28    	 PUSH ACC
+0019    8002            29    	 SJMP IN0_EXIT
+                        30    IN0_RST:  
+001B    79FF            31    	 MOV R1, #0FFH
+                        32    IN0_EXIT:  
+001D    09              33    	 INC R1
+001E    7400            34        MOV A, #00H
+0020    C0E0            35        PUSH ACC
+0022    32              36        RETI
+                        37    
+------                  38    RSEG MAIN
+                        39    USING 0
+                        40    START:  
+0000    43A881          41        ORL IE, #81H
+                        42    MOD_0:  
+0003    8002            43    	SJMP MOD0
+                        44    MOD_1:  
+0005    8016            45    	SJMP MOD1
+                        46    
+                        47    MOD0:  
+0007    7BFF            48        MOV R3, #0FFH
+0009    7A01            49        MOV R2, #01H
+                        50    MOD_0_LOOP:  
+000B    EB              51        MOV A, R3
+000C    8AF0            52        MOV B, R2
+000E    C3              53        CLR C
+000F    95F0            54        SUBB A, B
+0011    F590            55        MOV P1, A
+0013    EA              56        MOV A, R2
+0014    75F002          57        MOV B, #02H
+0017    A4              58        MUL AB
+0018    FA              59        MOV R2, A
+0019    D9F0            60        DJNZ R1, MOD_0_LOOP
+001B    80EA            61        SJMP MOD0
+                        62    MOD1:  
+001D    7BFF            63        MOV R3, #0FFH
+001F    7A80            64        MOV R2, #080H
+                        65    MOD_1_LOOP:  
+0021    EB              66        MOV A, R3
+0022    8AF0            67        MOV B, R2
+0024    C3              68        CLR C
+0025    95F0            69        SUBB A, B
+0027    F590            70        MOV P1, A
+0029    EA              71        MOV A, R2
+002A    75F002          72        MOV B, #02H
+002D    84              73        DIV AB
+002E    FA              74        MOV R2, A
+002F    D9F0            75        DJNZ R1, MOD_1_LOOP
+0031    80EA            76        SJMP MOD1
+                        77    END
+MACRO ASSEMBLER MAIN                                        11/08/123 19:34:46 PAGE     2
+
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
+
+IN0_EXIT . . . . .  C ADDR   001DH   R  SEG=I0                  25 29 32# 
+P1 . . . . . . . .  D ADDR   0090H   A                          55 70 
+B. . . . . . . . .  D ADDR   00F0H   A                          52 54 57 67 69 72 
+                                                                
+MAIN . . . . . . .  C SEG    0033H      REL=UNIT                38# 
+IN0. . . . . . . .  C ADDR   0000H   R  SEG=I0                  9 12# 
+ACC. . . . . . . .  D ADDR   00E0H   A                          13 14 24 28 35 
+MOD_0_LOOP . . . .  C ADDR   000BH   R  SEG=MAIN                50# 60 
+MOD_1_LOOP . . . .  C ADDR   0021H   R  SEG=MAIN                65# 75 
+START. . . . . . .  C ADDR   0000H   R  SEG=MAIN                6 40# 
+IE . . . . . . . .  D ADDR   00A8H   A                          41 
+MOD_0. . . . . . .  C ADDR   0003H   R  SEG=MAIN                23 42# 
+MOD0 . . . . . . .  C ADDR   0007H   R  SEG=MAIN                43 47# 61 
+MOD_1. . . . . . .  C ADDR   0005H   R  SEG=MAIN                27 44# 
+MOD1 . . . . . . .  C ADDR   001DH   R  SEG=MAIN                45 62# 76 
+IN0_0. . . . . . .  C ADDR   000FH   R  SEG=I0                  17 22# 
+IN0_1. . . . . . .  C ADDR   0015H   R  SEG=I0                  20 26# 
+I0 . . . . . . . .  C SEG    0023H      REL=UNIT                11# 
+IN0_RST. . . . . .  C ADDR   001BH   R  SEG=I0                  21 30# 
+LIGHTS . . . . . .  N NUMB   -----
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     92    ----
+   XDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+REGISTER BANK(S) USED : 0 
+
+ASSEMBLY COMPLETE.   2 WARNING(S)   0 ERROR(S)

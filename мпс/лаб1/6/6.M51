@@ -1,0 +1,113 @@
+L51 CODE BANKING LINKER/LOCATOR V4.08.06        11/08/123  19:34:46  PAGE  1
+WIN32 L51 CODE BANKING LINKER/LOCATOR V4.08.06,  INVOKED BY:
+L51.EXE y:\лаб1\6\main.OBJ  to  Y:\лаб1\6\6.ABS PR(Y:\лаб1\6\6.M51) PW(80) RS&
+(128) ix 
+
+
+INPUT MODULES INCLUDED
+  Y:\лаб1\6\MAIN.OBJ(LIGHTS)
+
+
+LINK MAP OF MODULE: Y:\лаб1\6\6.ABS (LIGHTS)
+
+    TYPE     BASE       LENGTH    RELOCATION     SEGMENT NAME
+    ----     ----       ------    ----------     ------------
+
+    * * * * * * *   DATA          M E M O R Y   * * * * * * *
+    REG      0000H      0008H     ABSOLUTE       "REG BANK 0"
+
+    * * * * * * *   CODE          M E M O R Y   * * * * * * *
+    CODE     0000H      0003H     ABSOLUTE       
+    CODE     0003H      0003H     ABSOLUTE       
+    CODE     0006H      0033H     UNIT           MAIN
+    CODE     0039H      0023H     UNIT           I0
+
+EXECUTABLE SUMMARY:
+-------------------
+    Total INTERNAL storage requirement:  0008H (8)
+    Total EXTERNAL storage requirement:  0000H (0)
+    Total   CODE   storage requirement:  005CH (92)
+Note:  Summary does not include dynamic stack requirements
+
+
+REFERENCE MAP OF MODULE: Y:\лаб1\6\6.ABS (LIGHTS)
+
+SEGMENT
+   +-->CALLED SEGMENT
+---------------------
+
+SYMBOL TABLE FOR Y:\лаб1\6\6.ABS(LIGHTS)
+-----------------------------------------
+
+    VALUE              TYPE               NAME
+    -----              ----               ----
+
+	-------            MODULE             LIGHTS
+	C:0056H            SYMBOL             IN0_EXIT
+	C:0039H            SYMBOL             IN0
+	C:0011H            SYMBOL             MOD_0_LOOP
+	C:0027H            SYMBOL             MOD_1_LOOP
+	C:0006H            SYMBOL             START
+	C:0009H            SYMBOL             MOD_0
+	C:000DH            SYMBOL             MOD0
+	C:000BH            SYMBOL             MOD_1
+	C:0023H            SYMBOL             MOD1
+	C:0048H            SYMBOL             IN0_0
+	C:004EH            SYMBOL             IN0_1
+	C:0054H            SYMBOL             IN0_RST
+	C:0000H            LINE#              6
+	C:0003H            LINE#              9
+	C:0006H            LINE#              41
+	C:0009H            LINE#              43
+	C:000BH            LINE#              45
+	C:000DH            LINE#              48
+	C:000FH            LINE#              49
+	C:0011H            LINE#              51
+	C:0012H            LINE#              52
+	C:0014H            LINE#              53
+	C:0015H            LINE#              54
+	C:0017H            LINE#              55
+	C:0019H            LINE#              56
+L51 CODE BANKING LINKER/LOCATOR V4.08.06          11/08/123  19:34:46  PAGE  2
+
+	C:001AH            LINE#              57
+	C:001DH            LINE#              58
+	C:001EH            LINE#              59
+	C:001FH            LINE#              60
+	C:0021H            LINE#              61
+	C:0023H            LINE#              63
+	C:0025H            LINE#              64
+	C:0027H            LINE#              66
+	C:0028H            LINE#              67
+	C:002AH            LINE#              68
+	C:002BH            LINE#              69
+	C:002DH            LINE#              70
+	C:002FH            LINE#              71
+	C:0030H            LINE#              72
+	C:0033H            LINE#              73
+	C:0034H            LINE#              74
+	C:0035H            LINE#              75
+	C:0037H            LINE#              76
+	C:0039H            LINE#              13
+	C:003BH            LINE#              14
+	C:003DH            LINE#              15
+	C:003EH            LINE#              16
+	C:003FH            LINE#              17
+	C:0041H            LINE#              18
+	C:0042H            LINE#              19
+	C:0044H            LINE#              20
+	C:0046H            LINE#              21
+	C:0048H            LINE#              23
+	C:004AH            LINE#              24
+	C:004CH            LINE#              25
+	C:004EH            LINE#              27
+	C:0050H            LINE#              28
+	C:0052H            LINE#              29
+	C:0054H            LINE#              31
+	C:0056H            LINE#              33
+	C:0057H            LINE#              34
+	C:0059H            LINE#              35
+	C:005BH            LINE#              36
+	-------            ENDMOD             LIGHTS
+
+LINK/LOCATE RUN COMPLETE,  NO ERROR FOUND.
