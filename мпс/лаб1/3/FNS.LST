@@ -1,4 +1,4 @@
-MACRO ASSEMBLER FNS                                         11/07/123 20:56:15 PAGE     1
+MACRO ASSEMBLER FNS                                         11/14/123 15:59:20 PAGE     1
 
 
 WIN32 MACRO ASSEMBLER A51 V6.03.08
@@ -141,7 +141,7 @@ LOC     OBJ           LINE    SOURCE
 00AD    DCFA           117       DJNZ R4, UART_LOOP
 00AF    22             118       RET
                        119    END
-MACRO ASSEMBLER FNS                                         11/07/123 20:56:15 PAGE     2
+MACRO ASSEMBLER FNS                                         11/14/123 15:59:21 PAGE     2
 
 
 SYMBOL TABLE LISTING
