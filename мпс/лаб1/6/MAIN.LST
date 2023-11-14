@@ -1,4 +1,4 @@
-MACRO ASSEMBLER MAIN                                        11/12/123 18:07:01 PAGE     1
+MACRO ASSEMBLER MAIN                                        11/14/123 14:18:07 PAGE     1
 
 
 WIN32 MACRO ASSEMBLER A51 V6.03.08
@@ -19,187 +19,400 @@ LOC     OBJ           LINE    SOURCE
 ------                  11    CSEG AT 0
 0000    020000   F      12        LJMP START
                         13    
-                        14    
-------                  15    RSEG MAIN
-                        16    USING 0
-                        17    START:  
-0000    758140          18        MOV SP, #040H
-0003    750002   F      19        MOV SPEAD_VR, #02H
-0006    750000   F      20        MOV MOD_VR, #00H
-                        21    MOD_0:  
-0009    8002            22        SJMP MOD0
-                        23    MOD_1:  
-000B    8021            24        SJMP MOD1
-                        25    
-                        26    MOD0:  
-000D    7BFF            27        MOV R3, #0FFH
-000F    7908            28        MOV R1, #08H
-0011    7A01            29        MOV R2, #01H
-                        30    MOD_0_LOOP:  
-0013    EB              31        MOV A, R3
-0014    8AF0            32        MOV B, R2
-0016    C3              33        CLR C
-0017    95F0            34        SUBB A, B
-0019    F590            35        MOV P1, A
-001B    EA              36        MOV A, R2
-001C    75F002          37        MOV B, #02H
-001F    A4              38        MUL AB
-0020    FA              39        MOV R2, A
-0021    120000   F      40        CALL DELAY
-0024    120000   F      41        CALL CHECK_SPD_BTNS
-0027    120000   F      42        CALL CHECK_MOD_BTNS
-002A    D9E7            43        DJNZ R1, MOD_0_LOOP
-002C    80DF            44        SJMP MOD0
-                        45    
-                        46    MOD1:  
-002E    7BFF            47        MOV R3, #0FFH
-0030    7908            48        MOV R1, #08H
-0032    7A80            49        MOV R2, #080H
-                        50    MOD_1_LOOP:  
-0034    EB              51        MOV A, R3
-0035    8AF0            52        MOV B, R2
-0037    C3              53        CLR C
-0038    95F0            54        SUBB A, B
-003A    F590            55        MOV P1, A
-003C    EA              56        MOV A, R2
-003D    75F002          57        MOV B, #02H
-0040    84              58        DIV AB
-0041    FA              59        MOV R2, A
-0042    120000   F      60        CALL DELAY
-0045    120000   F      61        CALL CHECK_SPD_BTNS
-0048    120000   F      62        CALL CHECK_MOD_BTNS
-004B    D9E7            63        DJNZ R1, MOD_1_LOOP
-004D    80DF            64        SJMP MOD1
-                        65    
-                        66    DELAY:  
-004F    750000   F      67        MOV DELAY_TIME, #00H
-0052    750000   F      68        MOV DELAY_TIME+1, #00H
-0055    850000   F      69        MOV DELAY_TIME+2, SPEAD_VR
-                        70    DELAY_LOOP:  
-0058    D500FD   F      71        DJNZ DELAY_TIME, DELAY_LOOP
-005B    D500FA   F      72        DJNZ DELAY_TIME+1, DELAY_LOOP
-005E    D500F7   F      73        DJNZ DELAY_TIME+2, DELAY_LOOP
-0061    22              74        RET
-                        75    
-                        76    CHECK_SPD_BTNS:  
-0062    30B405          77        JNB P3.4, CHECK_INCR
-0065    30B507          78        JNB P3.5, CHECK_DECR
-0068    801C            79        SJMP CHECK_EXIT
-                        80    CHECK_INCR:  
-006A    120000   F      81        CALL INCR_SPD
-006D    8017            82        SJMP CHECK_EXIT
-                        83    CHECK_DECR:  
-006F    120000   F      84        CALL DECR_SPD
-0072    8012            85        SJMP CHECK_EXIT
-                        86    
-                        87    CHECK_MOD_BTNS:  
-0074    30B205          88        JNB P3.2, CHECK_NEXT
-0077    30B307          89        JNB P3.3, CHECK_PREV
-007A    800A            90        SJMP CHECK_EXIT 
-                        91    CHECK_NEXT:  
-007C    120000   F      92        CALL NEXT_MOD
-007F    8005            93        SJMP CHECK_EXIT
-                        94    CHECK_PREV:  
-0081    120000   F      95        CALL PREV_MOD
-0084    8000            96        SJMP CHECK_EXIT
-                        97    
-                        98    CHECK_EXIT:  
-0086    22              99        RET
-                       100    
-                       101    INCR_SPD:  
-0087    C3             102        CLR C
-0088    E500     F     103        MOV A, SPEAD_VR
-008A    9420           104        SUBB A, #020H
-008C    6002           105        JZ INCR_SPD_EXIT
-008E    E500     F     106        MOV A, SPEAD_VR
-                       107    INCR_SPD_EXIT:  
-0090    2402           108        ADD A, #02H
-0092    F500     F     109        MOV SPEAD_VR, A
-0094    22             110        RET
-                       111    
-                       112    DECR_SPD:  
-0095    C3             113        CLR C
-0096    E500     F     114        MOV A, SPEAD_VR
-0098    9402           115        SUBB A, #02H
-009A    C3             116        CLR C
-009B    7002           117        JNZ DECR_SPD_EXIT
-009D    7420           118        MOV A, #020H
-                       119    DECR_SPD_EXIT:  
-009F    F500     F     120        MOV SPEAD_VR, A
-00A1    22             121        RET
-                       122    
-                       123    
-                       124    NEXT_MOD:  	
-00A2    D0E0           125        POP ACC
-00A4    D0E0           126        POP ACC
-00A6    C3             127        CLR C
-00A7    E500     F     128        MOV A, MOD_VR
-00A9    600F           129        JZ NEXT_MOD_1
-00AB    E500     F     130        MOV A, MOD_VR
-00AD    9401           131        SUBB A, #01H
-00AF    6000           132        JZ NEXT_MOD_0
-                       133    NEXT_MOD_0:  
-00B1    750000   F     134        MOV MOD_VR, #00H
-00B4    7400     F     135        MOV A, #MOD_0
+------                  14    RSEG MAIN
+                        15    USING 0
+                        16    START:  
+0000    758140          17        MOV SP, #040H
+0003    750002   F      18        MOV SPEAD_VR, #02H
+0006    750000   F      19        MOV MOD_VR, #00H
+                        20    MOD_0:  
+0009    020000   F      21        JMP MOD0
+                        22    MOD_1:  
+000C    020000   F      23        JMP MOD1
+                        24    MOD_2:  
+000F    020000   F      25        JMP MOD2
+                        26    MOD_3:  
+0012    020000   F      27        JMP MOD3
+                        28    MOD_4:  
+0015    020000   F      29        JMP MOD4
+                        30    MOD_5:  
+0018    020000   F      31        JMP MOD5
+                        32    MOD_6:  
+001B    020000   F      33        JMP MOD6
+                        34    MOD_7:  
+001E    020000   F      35        JMP MOD7
+                        36    
+                        37    MOD0:  
+0021    7BFF            38        MOV R3, #0FFH
+0023    7908            39        MOV R1, #08H
+0025    7A01            40        MOV R2, #01H
+                        41    MOD_0_LOOP:  
+0027    EB              42        MOV A, R3
+0028    8AF0            43        MOV B, R2
+002A    C3              44        CLR C
+002B    95F0            45        SUBB A, B
+002D    F590            46        MOV P1, A
+002F    EA              47        MOV A, R2
+0030    75F002          48        MOV B, #02H
+0033    A4              49        MUL AB
+0034    FA              50        MOV R2, A
+0035    120000   F      51        CALL DELAY
+0038    120000   F      52        CALL CHECK_SPD_BTNS
+003B    120000   F      53        CALL CHECK_MOD_BTNS
+003E    D9E7            54        DJNZ R1, MOD_0_LOOP
+0040    80DF            55        SJMP MOD0
+                        56    
+                        57    MOD1:  
+0042    7BFF            58        MOV R3, #0FFH
+0044    7908            59        MOV R1, #08H
+0046    7A80            60        MOV R2, #080H
+                        61    MOD_1_LOOP:  
+0048    EB              62        MOV A, R3
+0049    8AF0            63        MOV B, R2
+004B    C3              64        CLR C
+004C    95F0            65        SUBB A, B
+004E    F590            66        MOV P1, A
+0050    EA              67        MOV A, R2
+0051    75F002          68        MOV B, #02H
+0054    84              69        DIV AB
+0055    FA              70        MOV R2, A
+0056    120000   F      71        CALL DELAY
+0059    120000   F      72        CALL CHECK_SPD_BTNS
+005C    120000   F      73        CALL CHECK_MOD_BTNS
+005F    D9E7            74        DJNZ R1, MOD_1_LOOP
+0061    80DF            75        SJMP MOD1
+                        76        
+                        77    MOD2:  
+0063    7590FF          78        MOV P1, #0FFH
+0066    7466            79        MOV A, #066H
+                        80    MOD_2_LOOP:  
+0068    F4              81        CPL A
+0069    F590            82        MOV P1, A
+006B    120000   F      83        CALL DELAY
+006E    120000   F      84        CALL CHECK_SPD_BTNS
+0071    120000   F      85        CALL CHECK_MOD_BTNS
+0074    80F2            86        SJMP MOD_2_LOOP
+                        87    
+                        88    MOD3:  
+0076    7590FF          89        MOV P1, #0FFH
+0079    74CC            90        MOV A, #0CCH
+                        91    MOD_3_LOOP:  
+007B    F4              92        CPL A
+007C    F590            93        MOV P1, A
+007E    120000   F      94        CALL DELAY
+0081    120000   F      95        CALL CHECK_SPD_BTNS
+0084    120000   F      96        CALL CHECK_MOD_BTNS
+0087    80F2            97        SJMP MOD_3_LOOP
+                        98    
+                        99    MOD4:  
+0089    7590FF         100        MOV P1, #0FFH
+008C    74AA           101        MOV A, #0AAH
+                       102    MOD_4_LOOP:  
+008E    F4             103        CPL A
+008F    F590           104        MOV P1, A
+0091    120000   F     105        CALL DELAY
+0094    120000   F     106        CALL CHECK_SPD_BTNS
+0097    120000   F     107        CALL CHECK_MOD_BTNS
+009A    80F2           108        SJMP MOD_4_LOOP
+                       109    
+                       110    MOD5:  
+009C    7590FF         111        MOV P1, #0FFH
+009F    7469           112        MOV A, #069H
+                       113    MOD_5_LOOP:  
+00A1    C4             114        SWAP A
+00A2    F590           115        MOV P1, A
+00A4    120000   F     116        CALL DELAY
+00A7    120000   F     117        CALL CHECK_SPD_BTNS
+00AA    120000   F     118        CALL CHECK_MOD_BTNS
+00AD    80F2           119        SJMP MOD_5_LOOP
+                       120    
+                       121    MOD6:  
+00AF    7590FF         122        MOV P1, #0FFH
+00B2    745A           123        MOV A, #05AH
+                       124    MOD_6_LOOP:  
+00B4    C4             125        SWAP A
+00B5    F590           126        MOV P1, A
+00B7    120000   F     127        CALL DELAY
+00BA    120000   F     128        CALL CHECK_SPD_BTNS
+00BD    120000   F     129        CALL CHECK_MOD_BTNS
+00C0    80F2           130        SJMP MOD_6_LOOP
+                       131    
+                       132    MOD7:  
+00C2    7590FF         133        MOV P1, #0FFH
+00C5    749F           134        MOV A, #09FH
+                       135    MOD_7_LOOP:  
+00C7    C4             136        SWAP A
+00C8    F5B0           137        MOV P3, A
+00CA    120000   F     138        CALL DELAY
+00CD    120000   F     139        CALL CHECK_SPD_BTNS
+00D0    120000   F     140        CALL CHECK_MOD_BTNS
+00D3    80F2           141        SJMP MOD_7_LOOP
+                       142    
+                       143    DELAY:  
+00D5    750000   F     144        MOV DELAY_TIME, #00H
+00D8    750000   F     145        MOV DELAY_TIME+1, #00H
+00DB    850000   F     146        MOV DELAY_TIME+2, SPEAD_VR
+                       147    DELAY_LOOP:  
+00DE    D500FD   F     148        DJNZ DELAY_TIME, DELAY_LOOP
+00E1    D500FA   F     149        DJNZ DELAY_TIME+1, DELAY_LOOP
+00E4    D500F7   F     150        DJNZ DELAY_TIME+2, DELAY_LOOP
+00E7    22             151        RET
+                       152    
+                       153    CHECK_SPD_BTNS:  
+00E8    30B405         154        JNB P3.4, CHECK_INCR
+00EB    30B507         155        JNB P3.5, CHECK_DECR
+00EE    801C           156        SJMP CHECK_EXIT
+                       157    CHECK_INCR:  
+00F0    120000   F     158        CALL INCR_SPD
+00F3    8017           159        SJMP CHECK_EXIT
+                       160    CHECK_DECR:  
+00F5    120000   F     161        CALL DECR_SPD
+00F8    8012           162        SJMP CHECK_EXIT
+                       163    
+                       164    CHECK_MOD_BTNS:  
+00FA    30B205         165        JNB P3.2, CHECK_NEXT
+00FD    30B307         166        JNB P3.3, CHECK_PREV
+0100    800A           167        SJMP CHECK_EXIT 
+                       168    CHECK_NEXT:  
+0102    120000   F     169        CALL NEXT_MOD
+0105    8005           170        SJMP CHECK_EXIT
+                       171    CHECK_PREV:  
+0107    120000   F     172        CALL PREV_MOD
+010A    8000           173        SJMP CHECK_EXIT
+                       174    
+                       175    CHECK_EXIT:  
+010C    22             176        RET
+                       177    
+                       178    INCR_SPD:  
+010D    C3             179        CLR C
+010E    E500     F     180        MOV A, SPEAD_VR
+0110    9420           181        SUBB A, #020H
+0112    6002           182        JZ INCR_SPD_EXIT
+0114    E500     F     183        MOV A, SPEAD_VR
+                       184    INCR_SPD_EXIT:  
+0116    2402           185        ADD A, #02H
+0118    F500     F     186        MOV SPEAD_VR, A
+011A    22             187        RET
+                       188    
+                       189    DECR_SPD:  
+011B    C3             190        CLR C
+011C    E500     F     191        MOV A, SPEAD_VR
+011E    9402           192        SUBB A, #02H
+0120    C3             193        CLR C
+0121    7002           194        JNZ DECR_SPD_EXIT
+0123    7420           195        MOV A, #020H
+                       196    DECR_SPD_EXIT:  
+0125    F500     F     197        MOV SPEAD_VR, A
+0127    22             198        RET
+                       199    
+                       200    NEXT_MOD:  	
+0128    D0E0           201        POP ACC
+012A    D0E0           202        POP ACC
+012C    C3             203        CLR C
+012D    E500     F     204        MOV A, MOD_VR
+012F    6033           205        JZ NEXT_MOD_1
+0131    E500     F     206        MOV A, MOD_VR
+0133    9401           207        SUBB A, #01H
+0135    6036           208        JZ NEXT_MOD_2
+0137    E500     F     209        MOV A, MOD_VR
+0139    9402           210        SUBB A, #02H
+013B    6039           211        JZ NEXT_MOD_3
+013D    E500     F     212        MOV A, MOD_VR
+013F    9403           213        SUBB A, #03H
+0141    603C           214        JZ NEXT_MOD_4
+0143    E500     F     215        MOV A, MOD_VR
+0145    9404           216        SUBB A, #04H
+0147    603F           217        JZ NEXT_MOD_5
+0149    E500     F     218        MOV A, MOD_VR
+014B    9405           219        SUBB A, #05H
+014D    6042           220        JZ NEXT_MOD_6
+014F    E500     F     221        MOV A, MOD_VR
+0151    9406           222        SUBB A, #06H
+0153    6045           223        JZ NEXT_MOD_7
+0155    E500     F     224        MOV A, MOD_VR
+0157    9407           225        SUBB A, #07H
+0159    6000           226        JZ NEXT_MOD_0
+                       227    NEXT_MOD_0:  
+015B    750000   F     228        MOV MOD_VR, #00H
+015E    7400     F     229        MOV A, #MOD_0
 
-*** WARNING #53 IN LINE 135 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+*** WARNING #53 IN LINE 229 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
 
-*** WARNING #53 IN LINE 135 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
-00B6    C0E0           136        PUSH ACC
-00B8    8007           137        SJMP NEXT_MOD_EXIT
-                       138    NEXT_MOD_1:  
-00BA    750001   F     139        MOV MOD_VR, #01H
-00BD    7400     F     140        MOV A, #MOD_1
+*** WARNING #53 IN LINE 229 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+0160    C0E0           230        PUSH ACC
+0162    803D           231        SJMP NEXT_MOD_EXIT
+                       232    NEXT_MOD_1:  
+0164    750001   F     233        MOV MOD_VR, #01H
+0167    7400     F     234        MOV A, #MOD_1
 
-*** WARNING #53 IN LINE 140 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+*** WARNING #53 IN LINE 234 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
 
-*** WARNING #53 IN LINE 140 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
-00BF    C0E0           141        PUSH ACC
-                       142    NEXT_MOD_EXIT:  
-00C1    7400           143        MOV A, #00H
-00C3    C0E0           144        PUSH ACC
-00C5    E500     F     145        MOV A, SPEAD_VR
-00C7    750008   F     146        MOV SPEAD_VR, #08H
-00CA    120000   F     147        CALL DELAY
-00CD    F500     F     148        MOV SPEAD_VR, A
-00CF    32             149        RETI
-                       150    
-                       151    PREV_MOD:  
-00D0    D0E0           152        POP ACC
-00D2    D0E0           153        POP ACC
-00D4    C3             154        CLR C
-00D5    E500     F     155        MOV A, MOD_VR
-00D7    600F           156        JZ PREV_MOD_1
-00D9    E500     F     157        MOV A, MOD_VR
-00DB    9401           158        SUBB A, #01H
-00DD    6000           159        JZ PREV_MOD_0
-                       160    PREV_MOD_0:  
-00DF    750000   F     161        MOV MOD_VR, #00H
-00E2    7400     F     162        MOV A, #MOD_0
+*** WARNING #53 IN LINE 234 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+0169    C0E0           235        PUSH ACC
+016B    8034           236        SJMP NEXT_MOD_EXIT
+                       237    NEXT_MOD_2:  
+016D    750002   F     238        MOV MOD_VR, #02H
+0170    7400     F     239        MOV A, #MOD_2
 
-*** WARNING #53 IN LINE 162 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+*** WARNING #53 IN LINE 239 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
 
-*** WARNING #53 IN LINE 162 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
-00E4    C0E0           163        PUSH ACC
-00E6    8007           164        SJMP PREV_MOD_EXIT
-                       165    PREV_MOD_1:  
-00E8    750001   F     166        MOV MOD_VR, #01H
-00EB    7400     F     167        MOV A, #MOD_1
+*** WARNING #53 IN LINE 239 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+0172    C0E0           240        PUSH ACC
+0174    802B           241        SJMP NEXT_MOD_EXIT
+                       242    NEXT_MOD_3:  
+0176    750003   F     243        MOV MOD_VR, #03H
+0179    7400     F     244        MOV A, #MOD_3
 
-*** WARNING #53 IN LINE 167 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+*** WARNING #53 IN LINE 244 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
 
-*** WARNING #53 IN LINE 167 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
-00ED    C0E0           168        PUSH ACC
-                       169    PREV_MOD_EXIT:  
-00EF    7400           170        MOV A, #00H
-00F1    C0E0           171        PUSH ACC
-00F3    E500     F     172        MOV A, SPEAD_VR
-00F5    750008   F     173        MOV SPEAD_VR, #08H
-00F8    120000   F     174        CALL DELAY
-00FB    F500     F     175        MOV SPEAD_VR, A
-00FD    32             176        RETI
-                       177    END
-MACRO ASSEMBLER MAIN                                        11/12/123 18:07:01 PAGE     2
+*** WARNING #53 IN LINE 244 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+017B    C0E0           245        PUSH ACC
+017D    8022           246        SJMP NEXT_MOD_EXIT
+                       247    NEXT_MOD_4:  
+017F    750004   F     248        MOV MOD_VR, #04H
+0182    7400     F     249        MOV A, #MOD_4
+
+*** WARNING #53 IN LINE 249 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+
+*** WARNING #53 IN LINE 249 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+0184    C0E0           250        PUSH ACC
+0186    8019           251        SJMP NEXT_MOD_EXIT
+                       252    NEXT_MOD_5:  
+0188    750005   F     253        MOV MOD_VR, #05H
+018B    7400     F     254        MOV A, #MOD_5
+
+*** WARNING #53 IN LINE 254 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+
+*** WARNING #53 IN LINE 254 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+018D    C0E0           255        PUSH ACC
+018F    8010           256        SJMP NEXT_MOD_EXIT
+                       257    NEXT_MOD_6:  
+0191    750006   F     258        MOV MOD_VR, #06H
+0194    7400     F     259        MOV A, #MOD_6
+
+*** WARNING #53 IN LINE 259 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+
+*** WARNING #53 IN LINE 259 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+0196    C0E0           260        PUSH ACC
+0198    8007           261        SJMP NEXT_MOD_EXIT
+                       262    NEXT_MOD_7:  
+019A    750007   F     263        MOV MOD_VR, #07H
+019D    7400     F     264        MOV A, #MOD_7
+
+*** WARNING #53 IN LINE 264 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+
+*** WARNING #53 IN LINE 264 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+019F    C0E0           265        PUSH ACC
+                       266    NEXT_MOD_EXIT:  
+01A1    7400           267        MOV A, #00H
+01A3    C0E0           268        PUSH ACC
+01A5    32             269        RETI
+                       270    
+                       271    PREV_MOD:  
+01A6    D0E0           272        POP ACC
+01A8    D0E0           273        POP ACC
+01AA    C3             274        CLR C
+01AB    E500     F     275        MOV A, MOD_VR
+01AD    60EB           276        JZ NEXT_MOD_7
+01AF    E500     F     277        MOV A, MOD_VR
+01B1    9401           278        SUBB A, #01H
+01B3    60A6           279        JZ NEXT_MOD_0
+01B5    E500     F     280        MOV A, MOD_VR
+01B7    9402           281        SUBB A, #02H
+01B9    60A9           282        JZ NEXT_MOD_1
+01BB    E500     F     283        MOV A, MOD_VR
+01BD    9403           284        SUBB A, #03H
+01BF    60AC           285        JZ NEXT_MOD_2
+01C1    E500     F     286        MOV A, MOD_VR
+01C3    9404           287        SUBB A, #04H
+01C5    60AF           288        JZ NEXT_MOD_3
+01C7    E500     F     289        MOV A, MOD_VR
+01C9    9405           290        SUBB A, #05H
+01CB    60B2           291        JZ NEXT_MOD_4
+01CD    E500     F     292        MOV A, MOD_VR
+01CF    9406           293        SUBB A, #06H
+01D1    60B5           294        JZ NEXT_MOD_5
+01D3    E500     F     295        MOV A, MOD_VR
+01D5    9407           296        SUBB A, #07H
+01D7    60B8           297        JZ NEXT_MOD_6
+                       298    PREV_MOD_0:  
+01D9    750000   F     299        MOV MOD_VR, #00H
+01DC    7400     F     300        MOV A, #MOD_0
+
+*** WARNING #53 IN LINE 300 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+
+*** WARNING #53 IN LINE 300 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+01DE    C0E0           301        PUSH ACC
+01E0    803F           302        SJMP PREV_MOD_EXIT
+                       303    PREV_MOD_1:  
+01E2    750001   F     304        MOV MOD_VR, #01H
+01E5    7400     F     305        MOV A, #MOD_1
+
+*** WARNING #53 IN LINE 305 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+
+*** WARNING #53 IN LINE 305 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+01E7    C0E0           306        PUSH ACC
+01E9    8036           307        SJMP PREV_MOD_EXIT
+                       308    PREV_MOD_2:  
+01EB    750002   F     309        MOV MOD_VR, #02H
+01EE    7400     F     310        MOV A, #MOD_2
+
+*** WARNING #53 IN LINE 310 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+
+*** WARNING #53 IN LINE 310 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+01F0    C0E0           311        PUSH ACC
+01F2    802D           312        SJMP PREV_MOD_EXIT
+                       313    PREV_MOD_3:  
+01F4    750003   F     314        MOV MOD_VR, #03H
+01F7    7400     F     315        MOV A, #MOD_3
+
+*** WARNING #53 IN LINE 315 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+
+*** WARNING #53 IN LINE 315 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+01F9    C0E0           316        PUSH ACC
+01FB    8024           317        SJMP PREV_MOD_EXIT
+                       318    PREV_MOD_4:  
+01FD    750004   F     319        MOV MOD_VR, #04H
+0200    7400     F     320        MOV A, #MOD_4
+
+*** WARNING #53 IN LINE 320 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+
+*** WARNING #53 IN LINE 320 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+0202    C0E0           321        PUSH ACC
+0204    801B           322        SJMP PREV_MOD_EXIT
+                       323    PREV_MOD_5:  
+0206    750005   F     324        MOV MOD_VR, #05H
+0209    7400     F     325        MOV A, #MOD_5
+
+*** WARNING #53 IN LINE 325 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+
+*** WARNING #53 IN LINE 325 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+020B    C0E0           326        PUSH ACC
+020D    8012           327        SJMP PREV_MOD_EXIT
+                       328    PREV_MOD_6:  
+020F    750006   F     329        MOV MOD_VR, #06H
+0212    7400     F     330        MOV A, #MOD_6
+
+*** WARNING #53 IN LINE 330 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+
+*** WARNING #53 IN LINE 330 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+0214    C0E0           331        PUSH ACC
+0216    8009           332        SJMP PREV_MOD_EXIT
+                       333    PREV_MOD_7:  
+0218    750007   F     334        MOV MOD_VR, #07H
+021B    7400     F     335        MOV A, #MOD_7
+
+*** WARNING #53 IN LINE 335 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+
+*** WARNING #53 IN LINE 335 OF main.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+021D    C0E0           336        PUSH ACC
+021F    8000           337        SJMP PREV_MOD_EXIT
+                       338    PREV_MOD_EXIT:  
+0221    7400           339        MOV A, #00H
+0223    C0E0           340        PUSH ACC
+0225    32             341        RETI
+                       342    END
+MACRO ASSEMBLER MAIN                                        11/14/123 14:18:07 PAGE     2
 
 
 SYMBOL TABLE LISTING
@@ -208,60 +421,104 @@ SYMBOL TABLE LISTING
 
 N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
 
-P1 . . . . . . . .  D ADDR   0090H   A                          35 55 
-B. . . . . . . . .  D ADDR   00F0H   A                          32 34 37 52 54 57 
+P1 . . . . . . . .  D ADDR   0090H   A                          46 66 78 82 89 93 
+                                                                100 104 111 115 122 
+                                                                126 133 
+B. . . . . . . . .  D ADDR   00F0H   A                          43 45 48 63 65 68 
                                                                 
-P3 . . . . . . . .  D ADDR   00B0H   A                          77 78 88 89 
-SP . . . . . . . .  D ADDR   0081H   A                          18 
-DECR_SPD . . . . .  C ADDR   0095H   R  SEG=MAIN                84 112# 
-MAIN . . . . . . .  C SEG    00FEH      REL=UNIT                15# 
-MOD_VR . . . . . .  D ADDR   0000H   R  SEG=VARS                7# 20 128 130 134 
-                                                                139 155 157 161 166 
+P3 . . . . . . . .  D ADDR   00B0H   A                          137 154 155 165 166 
                                                                 
-ACC. . . . . . . .  D ADDR   00E0H   A                          125 126 136 141 144 
-                                                                152 153 163 168 171 
+SP . . . . . . . .  D ADDR   0081H   A                          17 
+DECR_SPD . . . . .  C ADDR   011BH   R  SEG=MAIN                161 189# 
+MAIN . . . . . . .  C SEG    0226H      REL=UNIT                14# 
+MOD_VR . . . . . .  D ADDR   0000H   R  SEG=VARS                7# 19 204 206 209 
+                                                                212 215 218 221 224 
+                                                                228 233 238 243 248 
+                                                                253 258 263 275 277 
+                                                                280 283 286 289 292 
+                                                                295 299 304 309 314 
+                                                                319 324 329 334 
+ACC. . . . . . . .  D ADDR   00E0H   A                          201 202 230 235 240 
+                                                                245 250 255 260 265 
+                                                                268 272 273 301 306 
+                                                                311 316 321 326 331 
+                                                                336 340 
+DELAY_LOOP . . . .  C ADDR   00DEH   R  SEG=MAIN                147# 148 149 150 
                                                                 
-DELAY_LOOP . . . .  C ADDR   0058H   R  SEG=MAIN                70# 71 72 73 
-MOD_0_LOOP . . . .  C ADDR   0013H   R  SEG=MAIN                30# 43 
-CHECK_INCR . . . .  C ADDR   006AH   R  SEG=MAIN                77 80# 
-MOD_1_LOOP . . . .  C ADDR   0034H   R  SEG=MAIN                50# 63 
-PREV_MOD_0 . . . .  C ADDR   00DFH   R  SEG=MAIN                159 160# 
-INCR_SPD_EXIT. . .  C ADDR   0090H   R  SEG=MAIN                105 107# 
-PREV_MOD_1 . . . .  C ADDR   00E8H   R  SEG=MAIN                156 165# 
-NEXT_MOD_0 . . . .  C ADDR   00B1H   R  SEG=MAIN                132 133# 
-NEXT_MOD_1 . . . .  C ADDR   00BAH   R  SEG=MAIN                129 138# 
-START. . . . . . .  C ADDR   0000H   R  SEG=MAIN                12 17# 
-DELAY. . . . . . .  C ADDR   004FH   R  SEG=MAIN                40 60 66# 147 174 
+MOD_0_LOOP . . . .  C ADDR   0027H   R  SEG=MAIN                41# 54 
+CHECK_INCR . . . .  C ADDR   00F0H   R  SEG=MAIN                154 157# 
+MOD_1_LOOP . . . .  C ADDR   0048H   R  SEG=MAIN                61# 74 
+MOD_2_LOOP . . . .  C ADDR   0068H   R  SEG=MAIN                80# 86 
+PREV_MOD_0 . . . .  C ADDR   01D9H   R  SEG=MAIN                298# 
+INCR_SPD_EXIT. . .  C ADDR   0116H   R  SEG=MAIN                182 184# 
+MOD_3_LOOP . . . .  C ADDR   007BH   R  SEG=MAIN                91# 97 
+PREV_MOD_1 . . . .  C ADDR   01E2H   R  SEG=MAIN                303# 
+MOD_4_LOOP . . . .  C ADDR   008EH   R  SEG=MAIN                102# 108 
+PREV_MOD_2 . . . .  C ADDR   01EBH   R  SEG=MAIN                308# 
+NEXT_MOD_0 . . . .  C ADDR   015BH   R  SEG=MAIN                226 227# 279 
+MOD_5_LOOP . . . .  C ADDR   00A1H   R  SEG=MAIN                113# 119 
+PREV_MOD_3 . . . .  C ADDR   01F4H   R  SEG=MAIN                313# 
+NEXT_MOD_1 . . . .  C ADDR   0164H   R  SEG=MAIN                205 232# 282 
+MOD_6_LOOP . . . .  C ADDR   00B4H   R  SEG=MAIN                124# 130 
+START. . . . . . .  C ADDR   0000H   R  SEG=MAIN                12 16# 
+PREV_MOD_4 . . . .  C ADDR   01FDH   R  SEG=MAIN                318# 
+NEXT_MOD_2 . . . .  C ADDR   016DH   R  SEG=MAIN                208 237# 285 
+MOD_7_LOOP . . . .  C ADDR   00C7H   R  SEG=MAIN                135# 141 
+DELAY. . . . . . .  C ADDR   00D5H   R  SEG=MAIN                51 71 83 94 105 116 
+                                                                127 138 143# 
+MOD_0. . . . . . .  C ADDR   0009H   R  SEG=MAIN                20# 229 300 
+PREV_MOD_5 . . . .  C ADDR   0206H   R  SEG=MAIN                323# 
+NEXT_MOD_3 . . . .  C ADDR   0176H   R  SEG=MAIN                211 242# 288 
+MOD_1. . . . . . .  C ADDR   000CH   R  SEG=MAIN                22# 234 305 
+MOD0 . . . . . . .  C ADDR   0021H   R  SEG=MAIN                21 37# 55 
+PREV_MOD_6 . . . .  C ADDR   020FH   R  SEG=MAIN                328# 
+NEXT_MOD_4 . . . .  C ADDR   017FH   R  SEG=MAIN                214 247# 291 
+MOD_2. . . . . . .  C ADDR   000FH   R  SEG=MAIN                24# 239 310 
+MOD1 . . . . . . .  C ADDR   0042H   R  SEG=MAIN                23 57# 75 
+PREV_MOD_7 . . . .  C ADDR   0218H   R  SEG=MAIN                333# 
+NEXT_MOD_5 . . . .  C ADDR   0188H   R  SEG=MAIN                217 252# 294 
+INCR_SPD . . . . .  C ADDR   010DH   R  SEG=MAIN                158 178# 
+MOD_3. . . . . . .  C ADDR   0012H   R  SEG=MAIN                26# 244 315 
+MOD2 . . . . . . .  C ADDR   0063H   R  SEG=MAIN                25 77# 
+NEXT_MOD_6 . . . .  C ADDR   0191H   R  SEG=MAIN                220 257# 297 
+CHECK_MOD_BTNS . .  C ADDR   00FAH   R  SEG=MAIN                53 73 85 96 107 118 
+                                                                129 140 164# 
+MOD_4. . . . . . .  C ADDR   0015H   R  SEG=MAIN                28# 249 320 
+MOD3 . . . . . . .  C ADDR   0076H   R  SEG=MAIN                27 88# 
+NEXT_MOD_7 . . . .  C ADDR   019AH   R  SEG=MAIN                223 262# 276 
+MOD_5. . . . . . .  C ADDR   0018H   R  SEG=MAIN                30# 254 325 
+MOD4 . . . . . . .  C ADDR   0089H   R  SEG=MAIN                29 99# 
+SPEAD_VR . . . . .  D ADDR   0001H   R  SEG=VARS                8# 18 146 180 183 
+                                                                186 191 197 
+PREV_MOD_EXIT. . .  C ADDR   0221H   R  SEG=MAIN                302 307 312 317 322 
+                                                                327 332 337 338# 
                                                                 
-MOD_0. . . . . . .  C ADDR   0009H   R  SEG=MAIN                21# 135 162 
-MOD_1. . . . . . .  C ADDR   000BH   R  SEG=MAIN                23# 140 167 
-MOD0 . . . . . . .  C ADDR   000DH   R  SEG=MAIN                22 26# 44 
-MOD1 . . . . . . .  C ADDR   002EH   R  SEG=MAIN                24 46# 64 
-INCR_SPD . . . . .  C ADDR   0087H   R  SEG=MAIN                81 101# 
-CHECK_MOD_BTNS . .  C ADDR   0074H   R  SEG=MAIN                42 62 87# 
-SPEAD_VR . . . . .  D ADDR   0001H   R  SEG=VARS                8# 19 69 103 106 
-                                                                109 114 120 145 146 
-                                                                148 172 173 175 
-PREV_MOD_EXIT. . .  C ADDR   00EFH   R  SEG=MAIN                164 169# 
-NEXT_MOD_EXIT. . .  C ADDR   00C1H   R  SEG=MAIN                137 142# 
-CHECK_EXIT . . . .  C ADDR   0086H   R  SEG=MAIN                79 82 85 90 93 96 
-                                                                98# 
-CHECK_PREV . . . .  C ADDR   0081H   R  SEG=MAIN                89 94# 
-CHECK_SPD_BTNS . .  C ADDR   0062H   R  SEG=MAIN                41 61 76# 
-CHECK_DECR . . . .  C ADDR   006FH   R  SEG=MAIN                78 83# 
-PREV_MOD . . . . .  C ADDR   00D0H   R  SEG=MAIN                95 151# 
-CHECK_NEXT . . . .  C ADDR   007CH   R  SEG=MAIN                88 91# 
+MOD_6. . . . . . .  C ADDR   001BH   R  SEG=MAIN                32# 259 330 
+MOD5 . . . . . . .  C ADDR   009CH   R  SEG=MAIN                31 110# 
+MOD_7. . . . . . .  C ADDR   001EH   R  SEG=MAIN                34# 264 335 
+MOD6 . . . . . . .  C ADDR   00AFH   R  SEG=MAIN                33 121# 
+NEXT_MOD_EXIT. . .  C ADDR   01A1H   R  SEG=MAIN                231 236 241 246 251 
+                                                                256 261 266# 
+CHECK_EXIT . . . .  C ADDR   010CH   R  SEG=MAIN                156 159 162 167 170 
+                                                                173 175# 
+MOD7 . . . . . . .  C ADDR   00C2H   R  SEG=MAIN                35 132# 
+CHECK_PREV . . . .  C ADDR   0107H   R  SEG=MAIN                166 171# 
+CHECK_SPD_BTNS . .  C ADDR   00E8H   R  SEG=MAIN                52 72 84 95 106 117 
+                                                                128 139 153# 
+CHECK_DECR . . . .  C ADDR   00F5H   R  SEG=MAIN                155 160# 
+PREV_MOD . . . . .  C ADDR   01A6H   R  SEG=MAIN                172 271# 
+CHECK_NEXT . . . .  C ADDR   0102H   R  SEG=MAIN                165 168# 
 VARS . . . . . . .  D SEG    0006H      REL=UNIT                6# 
-DECR_SPD_EXIT. . .  C ADDR   009FH   R  SEG=MAIN                117 119# 
-DELAY_TIME . . . .  D ADDR   0002H   R  SEG=VARS                9# 67 68 69 71 72 
-                                                                73 
-NEXT_MOD . . . . .  C ADDR   00A2H   R  SEG=MAIN                92 124# 
+DECR_SPD_EXIT. . .  C ADDR   0125H   R  SEG=MAIN                194 196# 
+DELAY_TIME . . . .  D ADDR   0002H   R  SEG=VARS                9# 144 145 146 148 
+                                                                149 150 
+NEXT_MOD . . . . .  C ADDR   0128H   R  SEG=MAIN                169 200# 
 LIGHTS . . . . . .  N NUMB   -----
 
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    257    ----
+   CODE SIZE        =    553    ----
    XDATA SIZE       =   ----    ----
    DATA SIZE        =      6    ----
    IDATA SIZE       =   ----    ----
@@ -271,4 +528,4 @@ END OF MODULE INFORMATION.
 
 REGISTER BANK(S) USED : 0 
 
-ASSEMBLY COMPLETE.   8 WARNING(S)   0 ERROR(S)
+ASSEMBLY COMPLETE.  32 WARNING(S)   0 ERROR(S)

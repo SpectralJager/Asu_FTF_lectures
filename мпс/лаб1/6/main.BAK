@@ -1,7 +1,6 @@
 name lights
 
 main segment code
-interupts segment code
 vars segment data
 
 rseg vars
@@ -11,66 +10,6 @@ delay_time: ds 4
 
 cseg at 0
     ljmp start
-cseg at 03h
-    ljmp next_mod
-cseg at 013h
-    ljmp prev_mod
-
-rseg interupts	
-next_mod:	
-    pop acc
-    pop acc
-    clr c
-    mov a, mod_vr
-    jz next_mod_1
-    mov a, mod_vr
-    subb a, #01h
-    jz next_mod_0
-next_mod_0:
-    mov mod_vr, #00h
-    mov a, #mod_0
-    push acc
-    sjmp next_mod_exit
-next_mod_1:
-    mov mod_vr, #01h
-    mov a, #mod_1
-    push acc
-next_mod_exit:
-    mov a, #00h
-    push acc
-    mov a, spead_vr
-    mov spead_vr, #08h
-    call delay
-    mov spead_vr, a
-    reti
-
-prev_mod:
-    pop acc
-    pop acc
-    clr c
-    mov a, mod_vr
-    jz prev_mod_1
-    mov a, mod_vr
-    subb a, #01h
-    jz prev_mod_0
-prev_mod_0:
-    mov mod_vr, #00h
-    mov a, #mod_0
-    push acc
-    sjmp prev_mod_exit
-prev_mod_1:
-    mov mod_vr, #01h
-    mov a, #mod_1
-    push acc
-prev_mod_exit:
-    mov a, #00h
-    push acc
-    mov a, spead_vr
-    mov spead_vr, #08h
-    call delay
-    mov spead_vr, a
-    reti
-
 
 rseg main
 using 0
@@ -78,16 +17,22 @@ start:
     mov sp, #040h
     mov spead_vr, #02h
     mov mod_vr, #00h
-    setb ea
-    setb ex0
-    setb ex1
-    setb et0
-    setb et1
-
 mod_0:
     sjmp mod0
 mod_1:
     sjmp mod1
+mod_2:
+    sjmp mod2
+mod_3:
+    sjmp mod3
+mod_4:
+    sjmp mod4
+mod_5:
+    sjmp mod5
+mod_6:
+    sjmp mod6
+mod_7:
+    sjmp mod7
 
 mod0:
     mov r3, #0ffh
@@ -103,10 +48,9 @@ mod_0_loop:
     mov b, #02h
     mul ab
     mov r2, a
-    clr ea
     call delay
     call check_spd_btns
-    setb ea
+    call check_mod_btns
     djnz r1, mod_0_loop
     sjmp mod0
 
@@ -124,11 +68,77 @@ mod_1_loop:
     mov b, #02h
     div ab
     mov r2, a
-    clr ea
     call delay
-    setb ea
+    call check_spd_btns
+    call check_mod_btns
     djnz r1, mod_1_loop
     sjmp mod1
+    
+mod2:
+    mov p3, #0ffh
+    mov a, #066h
+mod_2_loop:
+    cpl a
+    mov p3, a
+    call delay
+    call check_spd_btns
+    call check_mod_btns
+    sjmp mod_2_loop
+
+mod3:
+    mov p3, #0ffh
+    mov a, #0cch
+mod_3_loop:
+    cpl a
+    mov p3, a
+    call delay
+    call check_spd_btns
+    call check_mod_btns
+    sjmp mod_3_loop
+
+mod4:
+    mov p3, #0ffh
+    mov a, #0aah
+mod_4_loop:
+    cpl a
+    mov p3, a
+    call delay
+    call check_spd_btns
+    call check_mod_btns
+    sjmp mod_4_loop
+
+mod5:
+    mov p3, #0ffh
+    mov a, #069h
+mod_5_loop:
+    swap a
+    mov p3, a
+    call delay
+    call check_spd_btns
+    call check_mod_btns
+    sjmp mod_5_loop
+
+mod6:
+    mov p3, #0ffh
+    mov a, #05ah
+mod_6_loop:
+    swap a
+    mov p3, a
+    call delay
+    call check_spd_btns
+    call check_mod_btns
+    sjmp mod_6_loop
+
+mod7:
+    mov p3, #0ffh
+    mov a, #09fh
+mod_7_loop:
+    swap a
+    mov p3, a
+    call delay
+    call check_spd_btns
+    call check_mod_btns
+    sjmp mod_7_loop
 
 delay:
     mov delay_time, #00h
@@ -143,11 +153,26 @@ delay_loop:
 check_spd_btns:
     jnb p3.4, check_incr
     jnb p3.5, check_decr
+    sjmp check_exit
 check_incr:
     call incr_spd
-    ret
+    sjmp check_exit
 check_decr:
-    call incr_spd
+    call decr_spd
+    sjmp check_exit
+
+check_mod_btns:
+    jnb p3.2, check_next
+    jnb p3.3, check_prev
+    sjmp check_exit 
+check_next:
+    call next_mod
+    sjmp check_exit
+check_prev:
+    call prev_mod
+    sjmp check_exit
+
+check_exit:
     ret
 
 incr_spd:
@@ -169,7 +194,160 @@ decr_spd:
     jnz decr_spd_exit
     mov a, #020h
 decr_spd_exit:
-    subb a, #02h
     mov spead_vr, a
+    ret
+
+next_mod:	
+    pop acc
+    pop acc
+    clr c
+    mov a, mod_vr
+    jz next_mod_1
+    mov a, mod_vr
+    subb a, #01h
+    jz next_mod_2
+    mov a, mod_vr
+    subb a, #02h
+    jz next_mod_3
+    mov a, mod_vr
+    subb a, #03h
+    jz next_mod_4
+    mov a, mod_vr
+    subb a, #04h
+    jz next_mod_5
+    mov a, mod_vr
+    subb a, #05h
+    jz next_mod_6
+    mov a, mod_vr
+    subb a, #06h
+    jz next_mod_7
+    mov a, mod_vr
+    subb a, #07h
+    jz next_mod_0
+next_mod_0:
+    mov mod_vr, #00h
+    mov a, #mod_0
+    push acc
+    sjmp next_mod_exit
+next_mod_1:
+    mov mod_vr, #01h
+    mov a, #mod_1
+    push acc
+    sjmp next_mod_exit
+next_mod_2:
+    mov mod_vr, #02h
+    mov a, #mod_1
+    push acc
+    sjmp next_mod_exit
+next_mod_3:
+    mov mod_vr, #03h
+    mov a, #mod_1
+    push acc
+    sjmp next_mod_exit
+next_mod_4:
+    mov mod_vr, #04h
+    mov a, #mod_1
+    push acc
+    sjmp next_mod_exit
+next_mod_5:
+    mov mod_vr, #05h
+    mov a, #mod_1
+    push acc
+    sjmp next_mod_exit
+next_mod_6:
+    mov mod_vr, #06h
+    mov a, #mod_1
+    push acc
+    sjmp next_mod_exit
+next_mod_7:
+    mov mod_vr, #07h
+    mov a, #mod_1
+    push acc
+next_mod_exit:
+    mov a, #00h
+    push acc
+    reti
+
+prev_mod:
+    pop acc
+    pop acc
+    clr c
+    mov a, mod_vr
+    jz next_mod_7
+    mov a, mod_vr
+    subb a, #01h
+    jz next_mod_0
+    mov a, mod_vr
+    subb a, #02h
+    jz next_mod_1
+    mov a, mod_vr
+    subb a, #03h
+    jz next_mod_2
+    mov a, mod_vr
+    subb a, #04h
+    jz next_mod_3
+    mov a, mod_vr
+    subb a, #05h
+    jz next_mod_4
+    mov a, mod_vr
+    subb a, #06h
+    jz next_mod_5
+    mov a, mod_vr
+    subb a, #07h
+    jz next_mod_6
+prev_mod_0:
+    mov mod_vr, #00h
+    mov a, #mod_0
+    push acc
+    sjmp prev_mod_exit
+prev_mod_1:
+    mov mod_vr, #01h
+    mov a, #mod_1
+    push acc
+    sjmp prev_mod_exit
+prev_mod_2:
+    mov mod_vr, #02h
+    mov a, #mod_2
+    push acc
+    sjmp prev_mod_exit
+prev_mod_3:
+    mov mod_vr, #03h
+    mov a, #mod_3
+    push acc
+    sjmp prev_mod_exit
+prev_mod_4:
+    mov mod_vr, #04h
+    mov a, #mod_4
+    push acc
+    sjmp prev_mod_exit
+prev_mod_5:
+    mov mod_vr, #05h
+    mov a, #mod_5
+    push acc
+    sjmp prev_mod_exit
+prev_mod_6:
+    mov mod_vr, #06h
+    mov a, #mod_6
+    push acc
+    sjmp prev_mod_exit
+prev_mod_7:
+    mov mod_vr, #07h
+    mov a, #mod_7
+    push acc
+    sjmp prev_mod_exit
+prev_mod_exit:
+    mov a, #00h
+    push acc
     reti
 end
+
+
+
+
+
+
+
+
+
+
+
