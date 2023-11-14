@@ -1,0 +1,55 @@
+MACRO ASSEMBLER DELAY                                       11/14/123 22:04:30 PAGE     1
+
+
+WIN32 MACRO ASSEMBLER A51 V6.03.08
+OBJECT MODULE PLACED IN Y:\лаб1\6\DELAY.OBJ
+ASSEMBLER INVOKED BY: A51.EXE Y:\лаб1\6\DELAY.ASM OJ(Y:\лаб1\6\DELAY.OBJ) PIN(C:\FSI\INC) EP LINES PR(Y:\лаб1\6\DELAY.LST) XR DB PW(80) RB(0) 
+
+LOC     OBJ           LINE    SOURCE
+                         1    PUBLIC DELAY
+                         2    
+                         3    EXTRN DATA (DELAY_TIME, SPEAD_VR)
+                         4    
+                         5    DL SEGMENT CODE
+                         6    
+------                   7    RSEG DL
+                         8    DELAY:  
+0000    750000   F       9        MOV DELAY_TIME, #00H
+0003    750000   F      10        MOV DELAY_TIME+1, #00H
+0006    850000   F      11        MOV DELAY_TIME+2, SPEAD_VR
+                        12    DELAY_LOOP:  
+0009    D500FD   F      13        DJNZ DELAY_TIME, DELAY_LOOP
+000C    D500FA   F      14        DJNZ DELAY_TIME+1, DELAY_LOOP
+000F    D500F7   F      15        DJNZ DELAY_TIME+2, DELAY_LOOP
+0012    22              16        RET
+                        17    END
+MACRO ASSEMBLER DELAY                                       11/14/123 22:04:30 PAGE     2
+
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
+
+DELAY_LOOP . . . .  C ADDR   0009H   R  SEG=DL                  12# 13 14 15 
+DELAY. . . . . . .  C ADDR   0000H   R  SEG=DL                  1 8# 
+DL . . . . . . . .  C SEG    0013H      REL=UNIT                7# 
+SPEAD_VR . . . . .  D ADDR   -----      EXT                     3# 11 
+DELAY_TIME . . . .  D ADDR   -----      EXT                     3# 9 10 11 13 14 
+                                                                15 
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     19    ----
+   XDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+REGISTER BANK(S) USED : 0 
+
+ASSEMBLY COMPLETE.   0 WARNING(S)   0 ERROR(S)

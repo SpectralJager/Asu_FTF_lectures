@@ -1,0 +1,67 @@
+MACRO ASSEMBLER CHANGE_SPEAD                                11/14/123 22:04:30 PAGE     1
+
+
+WIN32 MACRO ASSEMBLER A51 V6.03.08
+OBJECT MODULE PLACED IN Y:\лаб1\6\CHANGE_SPEAD.OBJ
+ASSEMBLER INVOKED BY: A51.EXE Y:\лаб1\6\CHANGE_SPEAD.ASM OJ(Y:\лаб1\6\CHANGE_SPEAD.OBJ) PIN(C:\FSI\INC) EP LINES PR(Y:\лаб1\6\CHANGE_SPEAD.LST) XR DB PW(80) RB(0) 
+
+LOC     OBJ           LINE    SOURCE
+                         1    PUBLIC INCR_SPD, DECR_SPD
+                         2    EXTRN DATA (SPEAD_VR)
+                         3    
+                         4    CHANGE_SPEAD SEGMENT CODE
+                         5    
+------                   6    RSEG CHANGE_SPEAD
+                         7    INCR_SPD:  
+0000    C3               8        CLR C
+0001    E500     F       9        MOV A, SPEAD_VR
+0003    9420            10        SUBB A, #020H
+0005    6002            11        JZ INCR_SPD_EXIT
+0007    E500     F      12        MOV A, SPEAD_VR
+                        13    INCR_SPD_EXIT:  
+0009    2402            14        ADD A, #02H
+000B    F500     F      15        MOV SPEAD_VR, A
+000D    22              16        RET
+                        17    
+                        18    DECR_SPD:  
+000E    C3              19        CLR C
+000F    E500     F      20        MOV A, SPEAD_VR
+0011    9402            21        SUBB A, #02H
+0013    C3              22        CLR C
+0014    7002            23        JNZ DECR_SPD_EXIT
+0016    7420            24        MOV A, #020H
+                        25    DECR_SPD_EXIT:  
+0018    F500     F      26        MOV SPEAD_VR, A
+001A    22              27        RET
+                        28    END
+MACRO ASSEMBLER CHANGE_SPEAD                                11/14/123 22:04:30 PAGE     2
+
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
+
+DECR_SPD . . . . .  C ADDR   000EH   R  SEG=CHANGE_SPEAD        1 18# 
+INCR_SPD_EXIT. . .  C ADDR   0009H   R  SEG=CHANGE_SPEAD        11 13# 
+CHANGE_SPEAD . . .  C SEG    001BH      REL=UNIT                6# 
+INCR_SPD . . . . .  C ADDR   0000H   R  SEG=CHANGE_SPEAD        1 7# 
+SPEAD_VR . . . . .  D ADDR   -----      EXT                     2# 9 12 15 20 26 
+                                                                
+DECR_SPD_EXIT. . .  C ADDR   0018H   R  SEG=CHANGE_SPEAD        23 25# 
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     27    ----
+   XDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+REGISTER BANK(S) USED : 0 
+
+ASSEMBLY COMPLETE.   0 WARNING(S)   0 ERROR(S)

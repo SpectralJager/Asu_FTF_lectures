@@ -1,0 +1,77 @@
+MACRO ASSEMBLER CHECKS                                      11/14/123 22:04:30 PAGE     1
+
+
+WIN32 MACRO ASSEMBLER A51 V6.03.08
+OBJECT MODULE PLACED IN Y:\лаб1\6\CHECKS.OBJ
+ASSEMBLER INVOKED BY: A51.EXE Y:\лаб1\6\CHECKS.ASM OJ(Y:\лаб1\6\CHECKS.OBJ) PIN(C:\FSI\INC) EP LINES PR(Y:\лаб1\6\CHECKS.LST) XR DB PW(80) RB(0) 
+
+LOC     OBJ           LINE    SOURCE
+                         1    PUBLIC CHECK_SPD_BTNS, CHECK_MOD_BTNS
+                         2    EXTRN CODE (NEXT_MOD, PREV_MOD, INCR_SPD, DECR_SPD)
+                         3    
+                         4    CHECKS SEGMENT CODE
+                         5    
+------                   6    RSEG CHECKS
+                         7    CHECK_SPD_BTNS:  
+0000    30B405           8        JNB P3.4, CHECK_INCR
+0003    30B507           9        JNB P3.5, CHECK_DECR
+0006    801C            10        SJMP CHECK_EXIT
+                        11    CHECK_INCR:  
+0008    120000   F      12        CALL INCR_SPD
+000B    8017            13        SJMP CHECK_EXIT
+                        14    CHECK_DECR:  
+000D    120000   F      15        CALL DECR_SPD
+0010    8012            16        SJMP CHECK_EXIT
+                        17    
+                        18    CHECK_MOD_BTNS:  
+0012    30B205          19        JNB P3.2, CHECK_NEXT
+0015    30B307          20        JNB P3.3, CHECK_PREV
+0018    800A            21        SJMP CHECK_EXIT 
+                        22    CHECK_NEXT:  
+001A    120000   F      23        CALL NEXT_MOD
+001D    8005            24        SJMP CHECK_EXIT
+                        25    CHECK_PREV:  
+001F    120000   F      26        CALL PREV_MOD
+0022    8000            27        SJMP CHECK_EXIT
+                        28    
+                        29    CHECK_EXIT:  
+0024    22              30        RET
+                        31    END
+MACRO ASSEMBLER CHECKS                                      11/14/123 22:04:30 PAGE     2
+
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
+
+P3 . . . . . . . .  D ADDR   00B0H   A                          8 9 19 20 
+DECR_SPD . . . . .  C ADDR   -----      EXT                     2# 15 
+CHECK_INCR . . . .  C ADDR   0008H   R  SEG=CHECKS              8 11# 
+CHECKS . . . . . .  C SEG    0025H      REL=UNIT                6# 
+INCR_SPD . . . . .  C ADDR   -----      EXT                     2# 12 
+CHECK_MOD_BTNS . .  C ADDR   0012H   R  SEG=CHECKS              1 18# 
+CHECK_EXIT . . . .  C ADDR   0024H   R  SEG=CHECKS              10 13 16 21 24 27 
+                                                                29# 
+CHECK_PREV . . . .  C ADDR   001FH   R  SEG=CHECKS              20 25# 
+CHECK_SPD_BTNS . .  C ADDR   0000H   R  SEG=CHECKS              1 7# 
+CHECK_DECR . . . .  C ADDR   000DH   R  SEG=CHECKS              9 14# 
+CHECK_NEXT . . . .  C ADDR   001AH   R  SEG=CHECKS              19 22# 
+PREV_MOD . . . . .  C ADDR   -----      EXT                     2# 26 
+NEXT_MOD . . . . .  C ADDR   -----      EXT                     2# 23 
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     37    ----
+   XDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+REGISTER BANK(S) USED : 0 
+
+ASSEMBLY COMPLETE.   0 WARNING(S)   0 ERROR(S)

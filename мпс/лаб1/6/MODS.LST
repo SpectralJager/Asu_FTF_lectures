@@ -1,0 +1,287 @@
+MACRO ASSEMBLER MODS                                        11/14/123 22:04:30 PAGE     1
+
+
+WIN32 MACRO ASSEMBLER A51 V6.03.08
+OBJECT MODULE PLACED IN Y:\лаб1\6\MODS.OBJ
+ASSEMBLER INVOKED BY: A51.EXE Y:\лаб1\6\MODS.ASM OJ(Y:\лаб1\6\MODS.OBJ) PIN(C:\FSI\INC) EP LINES PR(Y:\лаб1\6\MODS.LST) XR DB PW(80) RB(0) 
+
+LOC     OBJ           LINE    SOURCE
+                         1    PUBLIC MOD0, MOD1, MOD2, MOD3, MOD4, MOD5, MOD6, MOD7, MOD8, MOD9, MOD10, MOD11, MOD12, MOD13, MOD14, MOD15
+                         2    
+                         3    EXTRN DATA (SP_START)
+                         4    EXTRN CODE (DELAY, CHECK_SPD_BTNS, CHECK_MOD_BTNS)
+                         5    
+                         6    MODS SEGMENT CODE
+                         7    
+------                   8    RSEG MODS
+                         9    MOD0:  
+0000    758100   F      10        MOV SP, #SP_START
+0003    7BFF            11        MOV R3, #0FFH
+0005    7908            12        MOV R1, #08H
+0007    7A01            13        MOV R2, #01H
+                        14    MOD_0_LOOP:  
+0009    EB              15        MOV A, R3
+000A    8AF0            16        MOV B, R2
+000C    C3              17        CLR C
+000D    95F0            18        SUBB A, B
+000F    F590            19        MOV P1, A
+0011    EA              20        MOV A, R2
+0012    75F002          21        MOV B, #02H
+0015    A4              22        MUL AB
+0016    FA              23        MOV R2, A
+0017    120000   F      24        CALL DELAY
+001A    120000   F      25        CALL CHECK_SPD_BTNS
+001D    120000   F      26        CALL CHECK_MOD_BTNS
+0020    D9E7            27        DJNZ R1, MOD_0_LOOP
+0022    80DC            28        SJMP MOD0
+                        29    
+                        30    MOD1:  
+0024    758100   F      31        MOV SP, #SP_START
+0027    7BFF            32        MOV R3, #0FFH
+0029    7908            33        MOV R1, #08H
+002B    7A80            34        MOV R2, #080H
+                        35    MOD_1_LOOP:  
+002D    EB              36        MOV A, R3
+002E    8AF0            37        MOV B, R2
+0030    C3              38        CLR C
+0031    95F0            39        SUBB A, B
+0033    F590            40        MOV P1, A
+0035    EA              41        MOV A, R2
+0036    75F002          42        MOV B, #02H
+0039    84              43        DIV AB
+003A    FA              44        MOV R2, A
+003B    120000   F      45        CALL DELAY
+003E    120000   F      46        CALL CHECK_SPD_BTNS
+0041    120000   F      47        CALL CHECK_MOD_BTNS
+0044    D9E7            48        DJNZ R1, MOD_1_LOOP
+0046    80DC            49        SJMP MOD1
+                        50        
+                        51    MOD2:  
+0048    758100   F      52        MOV SP, #SP_START
+004B    7590FF          53        MOV P1, #0FFH
+004E    7466            54        MOV A, #066H
+                        55    MOD_2_LOOP:  
+0050    F4              56        CPL A
+0051    F590            57        MOV P1, A
+0053    120000   F      58        CALL DELAY
+0056    120000   F      59        CALL CHECK_SPD_BTNS
+0059    120000   F      60        CALL CHECK_MOD_BTNS
+005C    80F2            61        SJMP MOD_2_LOOP
+                        62    
+                        63    MOD3:  
+005E    758100   F      64        MOV SP, #SP_START
+0061    7590FF          65        MOV P1, #0FFH
+0064    74CC            66        MOV A, #0CCH
+                        67    MOD_3_LOOP:  
+0066    F4              68        CPL A
+0067    F590            69        MOV P1, A
+0069    120000   F      70        CALL DELAY
+006C    120000   F      71        CALL CHECK_SPD_BTNS
+006F    120000   F      72        CALL CHECK_MOD_BTNS
+0072    80F2            73        SJMP MOD_3_LOOP
+                        74    
+                        75    MOD4:  
+0074    758100   F      76        MOV SP, #SP_START
+0077    7590FF          77        MOV P1, #0FFH
+007A    74AA            78        MOV A, #0AAH
+                        79    MOD_4_LOOP:  
+007C    F4              80        CPL A
+007D    F590            81        MOV P1, A
+007F    120000   F      82        CALL DELAY
+0082    120000   F      83        CALL CHECK_SPD_BTNS
+0085    120000   F      84        CALL CHECK_MOD_BTNS
+0088    80F2            85        SJMP MOD_4_LOOP
+                        86    
+                        87    MOD5:  
+008A    758100   F      88        MOV SP, #SP_START
+008D    7590FF          89        MOV P1, #0FFH
+0090    7469            90        MOV A, #069H
+                        91    MOD_5_LOOP:  
+0092    C4              92        SWAP A
+0093    F590            93        MOV P1, A
+0095    120000   F      94        CALL DELAY
+0098    120000   F      95        CALL CHECK_SPD_BTNS
+009B    120000   F      96        CALL CHECK_MOD_BTNS
+009E    80F2            97        SJMP MOD_5_LOOP
+                        98    
+                        99    MOD6:  
+00A0    758100   F     100        MOV SP, #SP_START
+00A3    7590FF         101        MOV P1, #0FFH
+00A6    745A           102        MOV A, #05AH
+                       103    MOD_6_LOOP:  
+00A8    C4             104        SWAP A
+00A9    F590           105        MOV P1, A
+00AB    120000   F     106        CALL DELAY
+00AE    120000   F     107        CALL CHECK_SPD_BTNS
+00B1    120000   F     108        CALL CHECK_MOD_BTNS
+00B4    80F2           109        SJMP MOD_6_LOOP
+                       110    
+                       111    MOD7:  
+00B6    758100   F     112        MOV SP, #SP_START
+00B9    7590FF         113        MOV P1, #0FFH
+00BC    749F           114        MOV A, #09FH
+                       115    MOD_7_LOOP:  
+00BE    C4             116        SWAP A
+00BF    F590           117        MOV P1, A
+00C1    120000   F     118        CALL DELAY
+00C4    120000   F     119        CALL CHECK_SPD_BTNS
+00C7    120000   F     120        CALL CHECK_MOD_BTNS
+00CA    80F2           121        SJMP MOD_7_LOOP
+                       122    
+                       123    MOD8:  
+00CC    758100   F     124        MOV SP, #SP_START
+00CF    7590FF         125        MOV P1, #0FFH
+                       126    MOD_8_LOOP:  
+00D2    120000   F     127        CALL DELAY
+00D5    120000   F     128        CALL CHECK_SPD_BTNS
+00D8    120000   F     129        CALL CHECK_MOD_BTNS
+00DB    80F5           130        SJMP MOD_8_LOOP
+                       131    
+                       132    MOD9:  
+00DD    758100   F     133        MOV SP, #SP_START
+00E0    7590FF         134        MOV P1, #0FFH
+                       135    MOD_9_LOOP:  
+00E3    120000   F     136        CALL DELAY
+00E6    120000   F     137        CALL CHECK_SPD_BTNS
+00E9    120000   F     138        CALL CHECK_MOD_BTNS
+00EC    80F5           139        SJMP MOD_9_LOOP
+                       140    
+                       141    MOD10:  
+00EE    758100   F     142        MOV SP, #SP_START
+00F1    7590FF         143        MOV P1, #0FFH
+                       144    MOD_10_LOOP:  
+00F4    120000   F     145        CALL DELAY
+00F7    120000   F     146        CALL CHECK_SPD_BTNS
+00FA    120000   F     147        CALL CHECK_MOD_BTNS
+00FD    80F5           148        SJMP MOD_10_LOOP
+                       149    
+                       150    MOD11:  
+00FF    758100   F     151        MOV SP, #SP_START
+0102    7590FF         152        MOV P1, #0FFH
+                       153    MOD_11_LOOP:  
+0105    120000   F     154        CALL DELAY
+0108    120000   F     155        CALL CHECK_SPD_BTNS
+010B    120000   F     156        CALL CHECK_MOD_BTNS
+010E    80F5           157        SJMP MOD_11_LOOP
+                       158    
+                       159    MOD12:  
+0110    758100   F     160        MOV SP, #SP_START
+0113    7590FF         161        MOV P1, #0FFH
+                       162    MOD_12_LOOP:  
+0116    120000   F     163        CALL DELAY
+0119    120000   F     164        CALL CHECK_SPD_BTNS
+011C    120000   F     165        CALL CHECK_MOD_BTNS
+011F    80F5           166        SJMP MOD_12_LOOP
+                       167    
+                       168    MOD13:  
+0121    758100   F     169        MOV SP, #SP_START
+0124    7590FF         170        MOV P1, #0FFH
+                       171    MOD_13_LOOP:  
+0127    120000   F     172        CALL DELAY
+012A    120000   F     173        CALL CHECK_SPD_BTNS
+012D    120000   F     174        CALL CHECK_MOD_BTNS
+0130    80F5           175        SJMP MOD_13_LOOP
+                       176    
+                       177    MOD14:  
+0132    758100   F     178        MOV SP, #SP_START
+0135    7590FF         179        MOV P1, #0FFH
+                       180    MOD_14_LOOP:  
+0138    120000   F     181        CALL DELAY
+013B    120000   F     182        CALL CHECK_SPD_BTNS
+013E    120000   F     183        CALL CHECK_MOD_BTNS
+0141    808F           184        SJMP MOD_8_LOOP
+                       185        
+                       186    MOD15:  
+0143    758100   F     187        MOV SP, #SP_START
+0146    7590FF         188        MOV P1, #0FFH
+                       189    MOD_15_LOOP:  
+0149    120000   F     190        CALL DELAY
+014C    120000   F     191        CALL CHECK_SPD_BTNS
+014F    120000   F     192        CALL CHECK_MOD_BTNS
+0152    80F5           193        SJMP MOD_15_LOOP
+                       194    
+                       195    END
+MACRO ASSEMBLER MODS                                        11/14/123 22:04:30 PAGE     2
+
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
+
+MOD10. . . . . . .  C ADDR   00EEH   R  SEG=MODS                1 141# 
+P1 . . . . . . . .  D ADDR   0090H   A                          19 40 53 57 65 69 
+                                                                77 81 89 93 101 105 
+                                                                113 117 125 134 143 
+                                                                152 161 170 179 188 
+                                                                
+MOD11. . . . . . .  C ADDR   00FFH   R  SEG=MODS                1 150# 
+B. . . . . . . . .  D ADDR   00F0H   A                          16 18 21 37 39 42 
+                                                                
+MOD12. . . . . . .  C ADDR   0110H   R  SEG=MODS                1 159# 
+SP . . . . . . . .  D ADDR   0081H   A                          10 31 52 64 76 88 
+                                                                100 112 124 133 142 
+                                                                151 160 169 178 187 
+                                                                
+MOD13. . . . . . .  C ADDR   0121H   R  SEG=MODS                1 168# 
+MOD14. . . . . . .  C ADDR   0132H   R  SEG=MODS                1 177# 
+MOD15. . . . . . .  C ADDR   0143H   R  SEG=MODS                1 186# 
+MOD_0_LOOP . . . .  C ADDR   0009H   R  SEG=MODS                14# 27 
+MOD_1_LOOP . . . .  C ADDR   002DH   R  SEG=MODS                35# 48 
+MOD_2_LOOP . . . .  C ADDR   0050H   R  SEG=MODS                55# 61 
+MOD_3_LOOP . . . .  C ADDR   0066H   R  SEG=MODS                67# 73 
+MOD_4_LOOP . . . .  C ADDR   007CH   R  SEG=MODS                79# 85 
+MOD_5_LOOP . . . .  C ADDR   0092H   R  SEG=MODS                91# 97 
+MOD_6_LOOP . . . .  C ADDR   00A8H   R  SEG=MODS                103# 109 
+MOD_7_LOOP . . . .  C ADDR   00BEH   R  SEG=MODS                115# 121 
+DELAY. . . . . . .  C ADDR   -----      EXT                     4# 24 45 58 70 82 
+                                                                94 106 118 127 136 
+                                                                145 154 163 172 181 
+                                                                190 
+MOD_8_LOOP . . . .  C ADDR   00D2H   R  SEG=MODS                126# 130 184 
+SP_START . . . . .  D ADDR   -----      EXT                     3# 10 31 52 64 76 
+                                                                88 100 112 124 133 
+                                                                142 151 160 169 178 
+                                                                187 
+MOD0 . . . . . . .  C ADDR   0000H   R  SEG=MODS                1 9# 28 
+MOD_9_LOOP . . . .  C ADDR   00E3H   R  SEG=MODS                135# 139 
+MOD1 . . . . . . .  C ADDR   0024H   R  SEG=MODS                1 30# 49 
+MOD2 . . . . . . .  C ADDR   0048H   R  SEG=MODS                1 51# 
+MODS . . . . . . .  C SEG    0154H      REL=UNIT                8# 
+CHECK_MOD_BTNS . .  C ADDR   -----      EXT                     4# 26 47 60 72 84 
+                                                                96 108 120 129 138 
+                                                                147 156 165 174 183 
+                                                                192 
+MOD3 . . . . . . .  C ADDR   005EH   R  SEG=MODS                1 63# 
+MOD4 . . . . . . .  C ADDR   0074H   R  SEG=MODS                1 75# 
+MOD5 . . . . . . .  C ADDR   008AH   R  SEG=MODS                1 87# 
+MOD6 . . . . . . .  C ADDR   00A0H   R  SEG=MODS                1 99# 
+MOD7 . . . . . . .  C ADDR   00B6H   R  SEG=MODS                1 111# 
+MOD8 . . . . . . .  C ADDR   00CCH   R  SEG=MODS                1 123# 
+MOD_10_LOOP. . . .  C ADDR   00F4H   R  SEG=MODS                144# 148 
+MOD9 . . . . . . .  C ADDR   00DDH   R  SEG=MODS                1 132# 
+MOD_11_LOOP. . . .  C ADDR   0105H   R  SEG=MODS                153# 157 
+CHECK_SPD_BTNS . .  C ADDR   -----      EXT                     4# 25 46 59 71 83 
+                                                                95 107 119 128 137 
+                                                                146 155 164 173 182 
+                                                                191 
+MOD_12_LOOP. . . .  C ADDR   0116H   R  SEG=MODS                162# 166 
+MOD_13_LOOP. . . .  C ADDR   0127H   R  SEG=MODS                171# 175 
+MOD_14_LOOP. . . .  C ADDR   0138H   R  SEG=MODS                180# 
+MOD_15_LOOP. . . .  C ADDR   0149H   R  SEG=MODS                189# 193 
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    340    ----
+   XDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+REGISTER BANK(S) USED : 0 
+
+ASSEMBLY COMPLETE.   0 WARNING(S)   0 ERROR(S)

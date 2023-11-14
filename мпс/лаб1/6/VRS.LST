@@ -1,0 +1,47 @@
+MACRO ASSEMBLER VRS                                         11/14/123 22:04:30 PAGE     1
+
+
+WIN32 MACRO ASSEMBLER A51 V6.03.08
+OBJECT MODULE PLACED IN Y:\лаб1\6\VRS.OBJ
+ASSEMBLER INVOKED BY: A51.EXE Y:\лаб1\6\VRS.ASM OJ(Y:\лаб1\6\VRS.OBJ) PIN(C:\FSI\INC) EP LINES PR(Y:\лаб1\6\VRS.LST) XR DB PW(80) RB(0) 
+
+LOC     OBJ           LINE    SOURCE
+                         1    PUBLIC MOD_VR, SPEAD_VR, DELAY_TIME, SP_START
+                         2    
+                         3    VARS SEGMENT DATA
+                         4    
+------                   5    RSEG VARS
+0000                     6    MOD_VR:   DS 1
+0001                     7    SPEAD_VR:   DS 1
+0002                     8    DELAY_TIME:   DS 4
+  003F                   9    SP_START EQU 3FH
+                        10    END
+MACRO ASSEMBLER VRS                                         11/14/123 22:04:30 PAGE     2
+
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
+
+MOD_VR . . . . . .  D ADDR   0000H   R  SEG=VARS                1 6# 
+SP_START . . . . .  N NUMB   003Fh                              1 9# 
+SPEAD_VR . . . . .  D ADDR   0001H   R  SEG=VARS                1 7# 
+VARS . . . . . . .  D SEG    0006H      REL=UNIT                5# 
+DELAY_TIME . . . .  D ADDR   0002H   R  SEG=VARS                1 8# 
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   ----    ----
+   XDATA SIZE       =   ----    ----
+   DATA SIZE        =      6    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+REGISTER BANK(S) USED : 0 
+
+ASSEMBLY COMPLETE.   0 WARNING(S)   0 ERROR(S)
