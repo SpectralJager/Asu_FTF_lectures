@@ -291,8 +291,14 @@ ResBData=0
 ResData=0
 Startaddr=8000
 Lockedmode=0
-Nb Obj=1
+Nb Obj=7
 y:\лаб1\6\main.OBJ
+y:\лаб1\6\select_mod.OBJ
+y:\лаб1\6\mods.OBJ
+y:\лаб1\6\delay.OBJ
+y:\лаб1\6\checks.OBJ
+y:\лаб1\6\change_spead.OBJ
+y:\лаб1\6\vrs.OBJ
 Nb Flash=0
 End Group Flashing
 Begin Group Listing
@@ -316,8 +322,14 @@ Minaddr=8000
 Maxpage=32
 Genmacro=1
 Noplm=1
-Nb Modules=1
+Nb Modules=7
 LIGHTS Y:\лаб1\6\MAIN.OBJ 2147483647
+SELECT_MOD Y:\лаб1\6\SELECT_MOD.OBJ 2147483647
+MODS Y:\лаб1\6\MODS.OBJ 2147483647
+DELAY Y:\лаб1\6\DELAY.OBJ 2147483647
+CHECKS Y:\лаб1\6\CHECKS.OBJ 2147483647
+CHANGE_SPEAD Y:\лаб1\6\CHANGE_SPEAD.OBJ 2147483647
+VRS Y:\лаб1\6\VRS.OBJ 2147483647
 End Group Bank switching
 Begin Group More
 More=
@@ -405,16 +417,100 @@ End Options OH51
 App Number=1
 Name=6.PRJ
 Tool Ref=L51
-Info Code=615
+Info Code=825
 Info XData=0
 Info Data=112
 Use Local=0
-Nb Nodes=1
+Nb Nodes=7
 Node Begin
 Relative Path=main.asm
 Tool Ref=A51
 Nb Dep=0
-Info Code=615
+Info Code=18
+Info Const=0
+Info XData=0
+Info PData=0
+Info Data=0
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Node End
+Node Begin
+Relative Path=select_mod.asm
+Tool Ref=A51
+Nb Dep=0
+Info Code=384
+Info Const=0
+Info XData=0
+Info PData=0
+Info Data=0
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Node End
+Node Begin
+Relative Path=mods.asm
+Tool Ref=A51
+Nb Dep=0
+Info Code=340
+Info Const=0
+Info XData=0
+Info PData=0
+Info Data=0
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Node End
+Node Begin
+Relative Path=delay.asm
+Tool Ref=A51
+Nb Dep=0
+Info Code=19
+Info Const=0
+Info XData=0
+Info PData=0
+Info Data=0
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Node End
+Node Begin
+Relative Path=checks.asm
+Tool Ref=A51
+Nb Dep=0
+Info Code=37
+Info Const=0
+Info XData=0
+Info PData=0
+Info Data=0
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Node End
+Node Begin
+Relative Path=change_spead.asm
+Tool Ref=A51
+Nb Dep=0
+Info Code=27
+Info Const=0
+Info XData=0
+Info PData=0
+Info Data=0
+Info IData=0
+Info Bit=0
+Use Local=0
+Do Link=1
+Node End
+Node Begin
+Relative Path=vrs.asm
+Tool Ref=A51
+Nb Dep=0
+Info Code=0
 Info Const=0
 Info XData=0
 Info PData=0
@@ -430,17 +526,23 @@ Node End
 Nb Desktop Files=0
 
 [Closed Files]
-Nb Closed Files=2
-Y:\лаб1\3\fns.asm (0,0-0,0) 0
-
+Nb Closed Files=5
 y:\лаб1\6\main.asm (0,0-0,0) 0
+
+y:\лаб1\6\vrs.asm (0,0-0,0) 0
+
+y:\лаб1\6\select_mod.asm (0,0-0,0) 0
+
+y:\лаб1\6\mods.asm (0,0-0,0) 0
+
+y:\лаб1\6\delay.asm (0,0-0,0) 0
 
 
 [Dim Views]
 Nb Dim Views=13
 0 (0,0-0,0)
 1 (0,0-0,0)
-2 (168,315-954,828)
+2 (162,940-322,964)
 3 (0,0-0,0)
 4 (310,310-1918,964)
 5 (0,0-0,0)
