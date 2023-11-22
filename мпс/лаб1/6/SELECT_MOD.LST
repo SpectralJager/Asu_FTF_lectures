@@ -1,4 +1,4 @@
-MACRO ASSEMBLER SELECT_MOD                                  11/14/123 22:04:30 PAGE     1
+MACRO ASSEMBLER SELECT_MOD                                  11/22/123 16:22:20 PAGE     1
 
 
 WIN32 MACRO ASSEMBLER A51 V6.03.08
@@ -8,7 +8,7 @@ ASSEMBLER INVOKED BY: A51.EXE Y:\лаб1\6\SELECT_MOD.ASM OJ(Y:\лаб1\6\SELECT_MOD.O
 LOC     OBJ           LINE    SOURCE
                          1    PUBLIC  NEXT_MOD, PREV_MOD
                          2    EXTRN DATA (MOD_VR)
-                         3    EXTRN CODE (MOD0, MOD1, MOD2, MOD3, MOD4, MOD5, MOD6, MOD7, MOD8, MOD9, MOD10, MOD11, MOD12, MOD13, MOD14, MOD15)
+                         3    EXTRN CODE (MOD0, MOD1, MOD2, MOD3, MOD4, MOD5, MOD6, MOD7, MOD8, MOD9, MOD10, MOD11, MOD12, MOD13, MOD14, MOD15, MOD_BLIP)
                          4    
                          5    SELECT_MOD SEGMENT CODE
                          6    
@@ -106,117 +106,119 @@ LOC     OBJ           LINE    SOURCE
 00B0    120000   F      98        CALL MOD15
                         99    NEXT_MOD_0:  
 00B3    750000   F     100        MOV MOD_VR, #00H
-00B6    120000   F     101        CALL MOD0
-                       102    
-                       103    PREV_MOD:  
-00B9    C3             104        CLR C
-00BA    E500     F     105        MOV A, MOD_VR
-00BC    7006           106        JNZ PREV_MOD_14
-00BE    75000F   F     107        MOV MOD_VR, #0FH
-00C1    120000   F     108        CALL MOD15
-                       109    PREV_MOD_14:  
-00C4    E500     F     110        MOV A, MOD_VR
-00C6    940F           111        SUBB A, #0FH
-00C8    C3             112        CLR C
-00C9    7006           113        JNZ PREV_MOD_13
-00CB    75000E   F     114        MOV MOD_VR, #0EH
-00CE    120000   F     115        CALL MOD14
-                       116    PREV_MOD_13:  
-00D1    E500     F     117        MOV A, MOD_VR
-00D3    940E           118        SUBB A, #0EH
-00D5    C3             119        CLR C
-00D6    7006           120        JNZ PREV_MOD_12
-00D8    75000D   F     121        MOV MOD_VR, #0DH
-00DB    120000   F     122        CALL MOD13
-                       123    PREV_MOD_12:  
-00DE    E500     F     124        MOV A, MOD_VR
-00E0    940D           125        SUBB A, #0DH
-00E2    C3             126        CLR C
-00E3    7006           127        JNZ PREV_MOD_11
-00E5    75000C   F     128        MOV MOD_VR, #0CH
-00E8    120000   F     129        CALL MOD12
-                       130    PREV_MOD_11:  
-00EB    E500     F     131        MOV A, MOD_VR
-00ED    940C           132        SUBB A, #0CH
-00EF    C3             133        CLR C
-00F0    7006           134        JNZ PREV_MOD_10
-00F2    75000B   F     135        MOV MOD_VR, #0BH
-00F5    120000   F     136        CALL MOD11
-                       137    PREV_MOD_10:  
-00F8    E500     F     138        MOV A, MOD_VR
-00FA    940B           139        SUBB A, #0BH
-00FC    C3             140        CLR C
-00FD    7006           141        JNZ PREV_MOD_9
-00FF    75000A   F     142        MOV MOD_VR, #0AH
-0102    120000   F     143        CALL MOD10
-                       144    PREV_MOD_9:  
-0105    E500     F     145        MOV A, MOD_VR
-0107    940A           146        SUBB A, #0AH
-0109    C3             147        CLR C
-010A    7006           148        JNZ PREV_MOD_8
-010C    750009   F     149        MOV MOD_VR, #09H
-010F    120000   F     150        CALL MOD9
-                       151    PREV_MOD_8:  
-0112    E500     F     152        MOV A, MOD_VR
-0114    9409           153        SUBB A, #09H
-0116    C3             154        CLR C
-0117    7006           155        JNZ PREV_MOD_7
-0119    750008   F     156        MOV MOD_VR, #08H
-011C    120000   F     157        CALL MOD8
-                       158    PREV_MOD_7:  
-011F    E500     F     159        MOV A, MOD_VR
-0121    9408           160        SUBB A, #08H
-0123    C3             161        CLR C
-0124    7006           162        JNZ PREV_MOD_6
-0126    750007   F     163        MOV MOD_VR, #07H
-0129    120000   F     164        CALL MOD7
-                       165    PREV_MOD_6:  
-012C    E500     F     166        MOV A, MOD_VR
-012E    9407           167        SUBB A, #07H
-0130    C3             168        CLR C
-0131    7006           169        JNZ PREV_MOD_5
-0133    750006   F     170        MOV MOD_VR, #06H
-0136    120000   F     171        CALL MOD6
-                       172    PREV_MOD_5:  
-0139    E500     F     173        MOV A, MOD_VR
-013B    9406           174        SUBB A, #06H
-013D    C3             175        CLR C
-013E    7006           176        JNZ PREV_MOD_4
-0140    750005   F     177        MOV MOD_VR, #05H
-0143    120000   F     178        CALL MOD5
-                       179    PREV_MOD_4:  
-0146    E500     F     180        MOV A, MOD_VR
-0148    9405           181        SUBB A, #05H
-014A    C3             182        CLR C
-014B    7006           183        JNZ PREV_MOD_3
-014D    750004   F     184        MOV MOD_VR, #04H
-0150    120000   F     185        CALL MOD4
-                       186    PREV_MOD_3:  
-0153    E500     F     187        MOV A, MOD_VR
-0155    9404           188        SUBB A, #04H
-0157    C3             189        CLR C
-0158    7006           190        JNZ PREV_MOD_2
-015A    750003   F     191        MOV MOD_VR, #03H
-015D    120000   F     192        CALL MOD3
-                       193    PREV_MOD_2:  
-0160    E500     F     194        MOV A, MOD_VR
-0162    9403           195        SUBB A, #03H
-0164    C3             196        CLR C
-0165    7006           197        JNZ PREV_MOD_1
-0167    750002   F     198        MOV MOD_VR, #02H
-016A    120000   F     199        CALL MOD2
-                       200    PREV_MOD_1:  
-016D    E500     F     201        MOV A, MOD_VR
-016F    9402           202        SUBB A, #02H
-0171    C3             203        CLR C
-0172    7006           204        JNZ PREV_MOD_0
-0174    750001   F     205        MOV MOD_VR, #01H
-0177    120000   F     206        CALL MOD1
-                       207    PREV_MOD_0:  
-017A    750000   F     208        MOV MOD_VR, #00H
-017D    120000   F     209        CALL MOD0
-                       210    END
-MACRO ASSEMBLER SELECT_MOD                                  11/14/123 22:04:30 PAGE     2
+00B6    120000   F     101        CALL MOD_BLIP
+00B9    120000   F     102        CALL MOD0
+                       103    
+                       104    PREV_MOD:  
+00BC    C3             105        CLR C
+00BD    E500     F     106        MOV A, MOD_VR
+00BF    7009           107        JNZ PREV_MOD_14
+00C1    75000F   F     108        MOV MOD_VR, #0FH
+00C4    120000   F     109        CALL MOD_BLIP
+00C7    120000   F     110        CALL MOD15
+                       111    PREV_MOD_14:  
+00CA    E500     F     112        MOV A, MOD_VR
+00CC    940F           113        SUBB A, #0FH
+00CE    C3             114        CLR C
+00CF    7006           115        JNZ PREV_MOD_13
+00D1    75000E   F     116        MOV MOD_VR, #0EH
+00D4    120000   F     117        CALL MOD14
+                       118    PREV_MOD_13:  
+00D7    E500     F     119        MOV A, MOD_VR
+00D9    940E           120        SUBB A, #0EH
+00DB    C3             121        CLR C
+00DC    7006           122        JNZ PREV_MOD_12
+00DE    75000D   F     123        MOV MOD_VR, #0DH
+00E1    120000   F     124        CALL MOD13
+                       125    PREV_MOD_12:  
+00E4    E500     F     126        MOV A, MOD_VR
+00E6    940D           127        SUBB A, #0DH
+00E8    C3             128        CLR C
+00E9    7006           129        JNZ PREV_MOD_11
+00EB    75000C   F     130        MOV MOD_VR, #0CH
+00EE    120000   F     131        CALL MOD12
+                       132    PREV_MOD_11:  
+00F1    E500     F     133        MOV A, MOD_VR
+00F3    940C           134        SUBB A, #0CH
+00F5    C3             135        CLR C
+00F6    7006           136        JNZ PREV_MOD_10
+00F8    75000B   F     137        MOV MOD_VR, #0BH
+00FB    120000   F     138        CALL MOD11
+                       139    PREV_MOD_10:  
+00FE    E500     F     140        MOV A, MOD_VR
+0100    940B           141        SUBB A, #0BH
+0102    C3             142        CLR C
+0103    7006           143        JNZ PREV_MOD_9
+0105    75000A   F     144        MOV MOD_VR, #0AH
+0108    120000   F     145        CALL MOD10
+                       146    PREV_MOD_9:  
+010B    E500     F     147        MOV A, MOD_VR
+010D    940A           148        SUBB A, #0AH
+010F    C3             149        CLR C
+0110    7006           150        JNZ PREV_MOD_8
+0112    750009   F     151        MOV MOD_VR, #09H
+0115    120000   F     152        CALL MOD9
+                       153    PREV_MOD_8:  
+0118    E500     F     154        MOV A, MOD_VR
+011A    9409           155        SUBB A, #09H
+011C    C3             156        CLR C
+011D    7006           157        JNZ PREV_MOD_7
+011F    750008   F     158        MOV MOD_VR, #08H
+0122    120000   F     159        CALL MOD8
+                       160    PREV_MOD_7:  
+0125    E500     F     161        MOV A, MOD_VR
+0127    9408           162        SUBB A, #08H
+0129    C3             163        CLR C
+012A    7006           164        JNZ PREV_MOD_6
+012C    750007   F     165        MOV MOD_VR, #07H
+012F    120000   F     166        CALL MOD7
+                       167    PREV_MOD_6:  
+0132    E500     F     168        MOV A, MOD_VR
+0134    9407           169        SUBB A, #07H
+0136    C3             170        CLR C
+0137    7006           171        JNZ PREV_MOD_5
+0139    750006   F     172        MOV MOD_VR, #06H
+013C    120000   F     173        CALL MOD6
+                       174    PREV_MOD_5:  
+013F    E500     F     175        MOV A, MOD_VR
+0141    9406           176        SUBB A, #06H
+0143    C3             177        CLR C
+0144    7006           178        JNZ PREV_MOD_4
+0146    750005   F     179        MOV MOD_VR, #05H
+0149    120000   F     180        CALL MOD5
+                       181    PREV_MOD_4:  
+014C    E500     F     182        MOV A, MOD_VR
+014E    9405           183        SUBB A, #05H
+0150    C3             184        CLR C
+0151    7006           185        JNZ PREV_MOD_3
+0153    750004   F     186        MOV MOD_VR, #04H
+0156    120000   F     187        CALL MOD4
+                       188    PREV_MOD_3:  
+0159    E500     F     189        MOV A, MOD_VR
+015B    9404           190        SUBB A, #04H
+015D    C3             191        CLR C
+015E    7006           192        JNZ PREV_MOD_2
+0160    750003   F     193        MOV MOD_VR, #03H
+0163    120000   F     194        CALL MOD3
+                       195    PREV_MOD_2:  
+0166    E500     F     196        MOV A, MOD_VR
+0168    9403           197        SUBB A, #03H
+016A    C3             198        CLR C
+016B    7006           199        JNZ PREV_MOD_1
+016D    750002   F     200        MOV MOD_VR, #02H
+0170    120000   F     201        CALL MOD2
+                       202    PREV_MOD_1:  
+0173    E500     F     203        MOV A, MOD_VR
+0175    9402           204        SUBB A, #02H
+0177    C3             205        CLR C
+0178    7006           206        JNZ PREV_MOD_0
+017A    750001   F     207        MOV MOD_VR, #01H
+017D    120000   F     208        CALL MOD1
+                       209    PREV_MOD_0:  
+0180    750000   F     210        MOV MOD_VR, #00H
+0183    120000   F     211        CALL MOD0
+                       212    END
+MACRO ASSEMBLER SELECT_MOD                                  11/22/123 16:22:20 PAGE     2
 
 
 SYMBOL TABLE LISTING
@@ -225,72 +227,73 @@ SYMBOL TABLE LISTING
 
 N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
 
-PREV_MOD_14. . . .  C ADDR   00C4H   R  SEG=SELECT_MOD          106 109# 
+PREV_MOD_14. . . .  C ADDR   00CAH   R  SEG=SELECT_MOD          107 111# 
 NEXT_MOD_12. . . .  C ADDR   0083H   R  SEG=SELECT_MOD          72 75# 
 NEXT_MOD_13. . . .  C ADDR   008FH   R  SEG=SELECT_MOD          78 81# 
-MOD10. . . . . . .  C ADDR   -----      EXT                     3# 68 143 
+MOD10. . . . . . .  C ADDR   -----      EXT                     3# 68 145 
 NEXT_MOD_14. . . .  C ADDR   009BH   R  SEG=SELECT_MOD          84 87# 
-MOD11. . . . . . .  C ADDR   -----      EXT                     3# 74 136 
+MOD11. . . . . . .  C ADDR   -----      EXT                     3# 74 138 
 NEXT_MOD_15. . . .  C ADDR   00A7H   R  SEG=SELECT_MOD          90 93# 
-MOD12. . . . . . .  C ADDR   -----      EXT                     3# 80 129 
-MOD13. . . . . . .  C ADDR   -----      EXT                     3# 86 122 
-MOD14. . . . . . .  C ADDR   -----      EXT                     3# 92 115 
-MOD15. . . . . . .  C ADDR   -----      EXT                     3# 98 108 
+MOD12. . . . . . .  C ADDR   -----      EXT                     3# 80 131 
+MOD13. . . . . . .  C ADDR   -----      EXT                     3# 86 124 
+MOD14. . . . . . .  C ADDR   -----      EXT                     3# 92 117 
+MOD_BLIP . . . . .  C ADDR   -----      EXT                     3# 101 109 
+MOD15. . . . . . .  C ADDR   -----      EXT                     3# 98 110 
 MOD_VR . . . . . .  D ADDR   -----      EXT                     2# 11 13 16 19 22 
                                                                 25 28 31 34 37 40 
                                                                 43 46 49 52 55 58 
                                                                 61 64 67 70 73 76 
                                                                 79 82 85 88 91 94 
-                                                                97 100 105 107 110 
-                                                                114 117 121 124 128 
-                                                                131 135 138 142 145 
-                                                                149 152 156 159 163 
-                                                                166 170 173 177 180 
-                                                                184 187 191 194 198 
-                                                                201 205 208 
-PREV_MOD_0 . . . .  C ADDR   017AH   R  SEG=SELECT_MOD          204 207# 
-PREV_MOD_1 . . . .  C ADDR   016DH   R  SEG=SELECT_MOD          197 200# 
-PREV_MOD_2 . . . .  C ADDR   0160H   R  SEG=SELECT_MOD          190 193# 
+                                                                97 100 106 108 112 
+                                                                116 119 123 126 130 
+                                                                133 137 140 144 147 
+                                                                151 154 158 161 165 
+                                                                168 172 175 179 182 
+                                                                186 189 193 196 200 
+                                                                203 207 210 
+PREV_MOD_0 . . . .  C ADDR   0180H   R  SEG=SELECT_MOD          206 209# 
+PREV_MOD_1 . . . .  C ADDR   0173H   R  SEG=SELECT_MOD          199 202# 
+PREV_MOD_2 . . . .  C ADDR   0166H   R  SEG=SELECT_MOD          192 195# 
 NEXT_MOD_0 . . . .  C ADDR   00B3H   R  SEG=SELECT_MOD          96 99# 
-PREV_MOD_3 . . . .  C ADDR   0153H   R  SEG=SELECT_MOD          183 186# 
-PREV_MOD_4 . . . .  C ADDR   0146H   R  SEG=SELECT_MOD          176 179# 
+PREV_MOD_3 . . . .  C ADDR   0159H   R  SEG=SELECT_MOD          185 188# 
+PREV_MOD_4 . . . .  C ADDR   014CH   R  SEG=SELECT_MOD          178 181# 
 NEXT_MOD_2 . . . .  C ADDR   000BH   R  SEG=SELECT_MOD          12 15# 
-PREV_MOD_5 . . . .  C ADDR   0139H   R  SEG=SELECT_MOD          169 172# 
+PREV_MOD_5 . . . .  C ADDR   013FH   R  SEG=SELECT_MOD          171 174# 
 NEXT_MOD_3 . . . .  C ADDR   0017H   R  SEG=SELECT_MOD          18 21# 
-MOD0 . . . . . . .  C ADDR   -----      EXT                     3# 101 209 
-PREV_MOD_6 . . . .  C ADDR   012CH   R  SEG=SELECT_MOD          162 165# 
+MOD0 . . . . . . .  C ADDR   -----      EXT                     3# 102 211 
+PREV_MOD_6 . . . .  C ADDR   0132H   R  SEG=SELECT_MOD          164 167# 
 NEXT_MOD_4 . . . .  C ADDR   0023H   R  SEG=SELECT_MOD          24 27# 
-MOD1 . . . . . . .  C ADDR   -----      EXT                     3# 14 206 
-PREV_MOD_7 . . . .  C ADDR   011FH   R  SEG=SELECT_MOD          155 158# 
+MOD1 . . . . . . .  C ADDR   -----      EXT                     3# 14 208 
+PREV_MOD_7 . . . .  C ADDR   0125H   R  SEG=SELECT_MOD          157 160# 
 NEXT_MOD_5 . . . .  C ADDR   002FH   R  SEG=SELECT_MOD          30 33# 
-MOD2 . . . . . . .  C ADDR   -----      EXT                     3# 20 199 
-PREV_MOD_8 . . . .  C ADDR   0112H   R  SEG=SELECT_MOD          148 151# 
+MOD2 . . . . . . .  C ADDR   -----      EXT                     3# 20 201 
+PREV_MOD_8 . . . .  C ADDR   0118H   R  SEG=SELECT_MOD          150 153# 
 NEXT_MOD_6 . . . .  C ADDR   003BH   R  SEG=SELECT_MOD          36 39# 
-MOD3 . . . . . . .  C ADDR   -----      EXT                     3# 26 192 
-PREV_MOD_9 . . . .  C ADDR   0105H   R  SEG=SELECT_MOD          141 144# 
+MOD3 . . . . . . .  C ADDR   -----      EXT                     3# 26 194 
+PREV_MOD_9 . . . .  C ADDR   010BH   R  SEG=SELECT_MOD          143 146# 
 NEXT_MOD_7 . . . .  C ADDR   0047H   R  SEG=SELECT_MOD          42 45# 
-MOD4 . . . . . . .  C ADDR   -----      EXT                     3# 32 185 
+MOD4 . . . . . . .  C ADDR   -----      EXT                     3# 32 187 
 NEXT_MOD_8 . . . .  C ADDR   0053H   R  SEG=SELECT_MOD          48 51# 
-MOD5 . . . . . . .  C ADDR   -----      EXT                     3# 38 178 
+MOD5 . . . . . . .  C ADDR   -----      EXT                     3# 38 180 
 NEXT_MOD_9 . . . .  C ADDR   005FH   R  SEG=SELECT_MOD          54 57# 
-MOD6 . . . . . . .  C ADDR   -----      EXT                     3# 44 171 
-MOD7 . . . . . . .  C ADDR   -----      EXT                     3# 50 164 
-MOD8 . . . . . . .  C ADDR   -----      EXT                     3# 56 157 
-MOD9 . . . . . . .  C ADDR   -----      EXT                     3# 62 150 
-PREV_MOD_10. . . .  C ADDR   00F8H   R  SEG=SELECT_MOD          134 137# 
-PREV_MOD . . . . .  C ADDR   00B9H   R  SEG=SELECT_MOD          1 103# 
-PREV_MOD_11. . . .  C ADDR   00EBH   R  SEG=SELECT_MOD          127 130# 
-PREV_MOD_12. . . .  C ADDR   00DEH   R  SEG=SELECT_MOD          120 123# 
+MOD6 . . . . . . .  C ADDR   -----      EXT                     3# 44 173 
+MOD7 . . . . . . .  C ADDR   -----      EXT                     3# 50 166 
+MOD8 . . . . . . .  C ADDR   -----      EXT                     3# 56 159 
+MOD9 . . . . . . .  C ADDR   -----      EXT                     3# 62 152 
+PREV_MOD_10. . . .  C ADDR   00FEH   R  SEG=SELECT_MOD          136 139# 
+PREV_MOD . . . . .  C ADDR   00BCH   R  SEG=SELECT_MOD          1 104# 
+PREV_MOD_11. . . .  C ADDR   00F1H   R  SEG=SELECT_MOD          129 132# 
+PREV_MOD_12. . . .  C ADDR   00E4H   R  SEG=SELECT_MOD          122 125# 
 NEXT_MOD_10. . . .  C ADDR   006BH   R  SEG=SELECT_MOD          60 63# 
 NEXT_MOD . . . . .  C ADDR   0000H   R  SEG=SELECT_MOD          1 9# 
-PREV_MOD_13. . . .  C ADDR   00D1H   R  SEG=SELECT_MOD          113 116# 
+PREV_MOD_13. . . .  C ADDR   00D7H   R  SEG=SELECT_MOD          115 118# 
 NEXT_MOD_11. . . .  C ADDR   0077H   R  SEG=SELECT_MOD          66 69# 
-SELECT_MOD . . . .  C SEG    0180H      REL=UNIT                7# 
+SELECT_MOD . . . .  C SEG    0186H      REL=UNIT                7# 
 
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    384    ----
+   CODE SIZE        =    390    ----
    XDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----

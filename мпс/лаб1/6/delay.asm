@@ -15,3 +15,18 @@ delay_loop:
     djnz delay_time+2, delay_loop
     ret
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

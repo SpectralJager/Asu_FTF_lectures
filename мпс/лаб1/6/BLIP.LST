@@ -1,0 +1,81 @@
+MACRO ASSEMBLER BLIP                                        11/22/123 16:22:20 PAGE     1
+
+
+WIN32 MACRO ASSEMBLER A51 V6.03.08
+OBJECT MODULE PLACED IN Y:\лаб1\6\BLIP.OBJ
+ASSEMBLER INVOKED BY: A51.EXE Y:\лаб1\6\BLIP.ASM OJ(Y:\лаб1\6\BLIP.OBJ) PIN(C:\FSI\INC) EP LINES PR(Y:\лаб1\6\BLIP.LST) XR DB PW(80) RB(0) 
+
+LOC     OBJ           LINE    SOURCE
+                         1    PUBLIC MOD_BLIP, SPEAD_BLIP
+                         2    EXTRN DATA (SPEAD_VR)
+                         3    EXTRN CODE (DELAY)
+                         4    
+                         5    BLIPS SEGMENT CODE
+                         6    
+------                   7    RSEG BLIPS
+                         8    
+                         9    MOD_BLIP:  
+0000    C000     F      10        PUSH SPEAD_VR
+0002    750004   F      11        MOV SPEAD_VR, #04H
+0005    C2B7            12        CLR P3.7
+0007    120000   F      13        CALL DELAY
+000A    D2B7            14        SETB P3.7
+000C    120000   F      15        CALL DELAY
+000F    C2B7            16        CLR P3.7
+0011    120000   F      17        CALL DELAY
+0014    D2B7            18        SETB P3.7
+0016    D000     F      19        POP SPEAD_VR
+0018    22              20        RET
+                        21    
+                        22    SPEAD_BLIP:  
+0019    C000     F      23        PUSH SPEAD_VR
+001B    750008   F      24        MOV SPEAD_VR, #08H
+001E    C2B7            25        CLR P3.7
+0020    120000   F      26        CALL DELAY
+0023    D2B7            27        SETB P3.7
+0025    120000   F      28        CALL DELAY
+0028    C2B7            29        CLR P3.7
+002A    120000   F      30        CALL DELAY
+002D    D2B7            31        SETB P3.7
+002F    D000     F      32        POP SPEAD_VR
+0031    22              33        RET
+                        34    
+                        35    
+                        36    
+                        37    
+                        38    
+
+*** WARNING #87 IN LINE 38 OF blip.asm : MISSING 'END' STATEMENT
+MACRO ASSEMBLER BLIP                                        11/22/123 16:22:20 PAGE     2
+
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
+
+P3 . . . . . . . .  D ADDR   00B0H   A                          12 14 16 18 25 27 
+                                                                29 31 
+MOD_BLIP . . . . .  C ADDR   0000H   R  SEG=BLIPS               1 9# 
+DELAY. . . . . . .  C ADDR   -----      EXT                     3# 13 15 17 26 28 
+                                                                30 
+SPEAD_BLIP . . . .  C ADDR   0019H   R  SEG=BLIPS               1 22# 
+SPEAD_VR . . . . .  D ADDR   -----      EXT                     2# 10 11 19 23 24 
+                                                                32 
+BLIPS. . . . . . .  C SEG    0032H      REL=UNIT                7# 
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     50    ----
+   XDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+REGISTER BANK(S) USED : 0 
+
+ASSEMBLY COMPLETE.   1 WARNING(S)   0 ERROR(S)

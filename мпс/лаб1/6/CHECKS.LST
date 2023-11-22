@@ -1,4 +1,4 @@
-MACRO ASSEMBLER CHECKS                                      11/14/123 22:04:30 PAGE     1
+MACRO ASSEMBLER CHECKS                                      11/22/123 16:22:20 PAGE     1
 
 
 WIN32 MACRO ASSEMBLER A51 V6.03.08
@@ -37,7 +37,7 @@ LOC     OBJ           LINE    SOURCE
                         29    CHECK_EXIT:  
 0024    22              30        RET
                         31    END
-MACRO ASSEMBLER CHECKS                                      11/14/123 22:04:30 PAGE     2
+MACRO ASSEMBLER CHECKS                                      11/22/123 16:22:20 PAGE     2
 
 
 SYMBOL TABLE LISTING

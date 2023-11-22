@@ -1,6 +1,6 @@
 public  next_mod, prev_mod
 extrn data (mod_vr)
-extrn code (mod0, mod1, mod2, mod3, mod4, mod5, mod6, mod7, mod8, mod9, mod10, mod11, mod12, mod13, mod14, mod15)
+extrn code (mod0, mod1, mod2, mod3, mod4, mod5, mod6, mod7, mod8, mod9, mod10, mod11, mod12, mod13, mod14, mod15, mod_blip)
 
 select_mod segment code
 
@@ -98,6 +98,7 @@ next_mod_15:
     call mod15
 next_mod_0:
     mov mod_vr, #00h
+    call mod_blip
     call mod0
 
 prev_mod:
@@ -105,6 +106,7 @@ prev_mod:
     mov a, mod_vr
     jnz prev_mod_14
     mov mod_vr, #0fh
+    call mod_blip
     call mod15
 prev_mod_14:
     mov a, mod_vr
@@ -208,21 +210,6 @@ prev_mod_0:
     mov mod_vr, #00h
     call mod0
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

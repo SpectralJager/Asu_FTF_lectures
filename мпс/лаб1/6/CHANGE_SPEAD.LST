@@ -1,4 +1,4 @@
-MACRO ASSEMBLER CHANGE_SPEAD                                11/14/123 22:04:30 PAGE     1
+MACRO ASSEMBLER CHANGE_SPEAD                                11/22/123 16:22:20 PAGE     1
 
 
 WIN32 MACRO ASSEMBLER A51 V6.03.08
@@ -8,33 +8,38 @@ ASSEMBLER INVOKED BY: A51.EXE Y:\лаб1\6\CHANGE_SPEAD.ASM OJ(Y:\лаб1\6\CHANGE_SPE
 LOC     OBJ           LINE    SOURCE
                          1    PUBLIC INCR_SPD, DECR_SPD
                          2    EXTRN DATA (SPEAD_VR)
-                         3    
-                         4    CHANGE_SPEAD SEGMENT CODE
-                         5    
-------                   6    RSEG CHANGE_SPEAD
-                         7    INCR_SPD:  
-0000    C3               8        CLR C
-0001    E500     F       9        MOV A, SPEAD_VR
-0003    9420            10        SUBB A, #020H
-0005    6002            11        JZ INCR_SPD_EXIT
-0007    E500     F      12        MOV A, SPEAD_VR
-                        13    INCR_SPD_EXIT:  
-0009    2402            14        ADD A, #02H
-000B    F500     F      15        MOV SPEAD_VR, A
-000D    22              16        RET
-                        17    
-                        18    DECR_SPD:  
-000E    C3              19        CLR C
-000F    E500     F      20        MOV A, SPEAD_VR
-0011    9402            21        SUBB A, #02H
-0013    C3              22        CLR C
-0014    7002            23        JNZ DECR_SPD_EXIT
-0016    7420            24        MOV A, #020H
-                        25    DECR_SPD_EXIT:  
-0018    F500     F      26        MOV SPEAD_VR, A
-001A    22              27        RET
-                        28    END
-MACRO ASSEMBLER CHANGE_SPEAD                                11/14/123 22:04:30 PAGE     2
+                         3    EXTRN CODE (SPEAD_BLIP)
+                         4    
+                         5    CHANGE_SPEAD SEGMENT CODE
+                         6    
+------                   7    RSEG CHANGE_SPEAD
+                         8    INCR_SPD:  
+0000    C3               9        CLR C
+0001    E500     F      10        MOV A, SPEAD_VR
+0003    9420            11        SUBB A, #020H
+0005    6005            12        JZ INCR_SPD_BLIP
+0007    E500     F      13        MOV A, SPEAD_VR
+0009    020000   F      14        JMP INCR_SPD_EXIT
+                        15    INCR_SPD_BLIP:  
+000C    120000   F      16        CALL SPEAD_BLIP
+                        17    INCR_SPD_EXIT:  
+000F    2402            18        ADD A, #02H
+0011    F500     F      19        MOV SPEAD_VR, A
+0013    22              20        RET
+                        21    
+                        22    DECR_SPD:  
+0014    C3              23        CLR C
+0015    E500     F      24        MOV A, SPEAD_VR
+0017    9402            25        SUBB A, #02H
+0019    C3              26        CLR C
+001A    7005            27        JNZ DECR_SPD_EXIT
+001C    7420            28        MOV A, #020H
+001E    120000   F      29        CALL SPEAD_BLIP
+                        30    DECR_SPD_EXIT:  
+0021    F500     F      31        MOV SPEAD_VR, A
+0023    22              32        RET
+                        33    END
+MACRO ASSEMBLER CHANGE_SPEAD                                11/22/123 16:22:20 PAGE     2
 
 
 SYMBOL TABLE LISTING
@@ -43,18 +48,20 @@ SYMBOL TABLE LISTING
 
 N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
 
-DECR_SPD . . . . .  C ADDR   000EH   R  SEG=CHANGE_SPEAD        1 18# 
-INCR_SPD_EXIT. . .  C ADDR   0009H   R  SEG=CHANGE_SPEAD        11 13# 
-CHANGE_SPEAD . . .  C SEG    001BH      REL=UNIT                6# 
-INCR_SPD . . . . .  C ADDR   0000H   R  SEG=CHANGE_SPEAD        1 7# 
-SPEAD_VR . . . . .  D ADDR   -----      EXT                     2# 9 12 15 20 26 
+DECR_SPD . . . . .  C ADDR   0014H   R  SEG=CHANGE_SPEAD        1 22# 
+INCR_SPD_EXIT. . .  C ADDR   000FH   R  SEG=CHANGE_SPEAD        14 17# 
+CHANGE_SPEAD . . .  C SEG    0024H      REL=UNIT                7# 
+INCR_SPD . . . . .  C ADDR   0000H   R  SEG=CHANGE_SPEAD        1 8# 
+SPEAD_BLIP . . . .  C ADDR   -----      EXT                     3# 16 29 
+SPEAD_VR . . . . .  D ADDR   -----      EXT                     2# 10 13 19 24 31 
                                                                 
-DECR_SPD_EXIT. . .  C ADDR   0018H   R  SEG=CHANGE_SPEAD        23 25# 
+INCR_SPD_BLIP. . .  C ADDR   000CH   R  SEG=CHANGE_SPEAD        12 15# 
+DECR_SPD_EXIT. . .  C ADDR   0021H   R  SEG=CHANGE_SPEAD        27 30# 
 
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     27    ----
+   CODE SIZE        =     36    ----
    XDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----

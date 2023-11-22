@@ -17,3 +17,18 @@ start:
     call mod0
     jmp start
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
