@@ -1,4 +1,4 @@
-MACRO ASSEMBLER BLIP                                        11/22/123 16:22:20 PAGE     1
+MACRO ASSEMBLER BLIP                                        11/22/123 17:11:43 PAGE     1
 
 
 WIN32 MACRO ASSEMBLER A51 V6.03.08
@@ -46,7 +46,7 @@ LOC     OBJ           LINE    SOURCE
                         38    
 
 *** WARNING #87 IN LINE 38 OF blip.asm : MISSING 'END' STATEMENT
-MACRO ASSEMBLER BLIP                                        11/22/123 16:22:20 PAGE     2
+MACRO ASSEMBLER BLIP                                        11/22/123 17:11:43 PAGE     2
 
 
 SYMBOL TABLE LISTING

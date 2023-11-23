@@ -1,4 +1,4 @@
-MACRO ASSEMBLER DELAY                                       11/22/123 16:22:20 PAGE     1
+MACRO ASSEMBLER DELAY                                       11/22/123 17:11:43 PAGE     1
 
 
 WIN32 MACRO ASSEMBLER A51 V6.03.08
@@ -23,7 +23,7 @@ LOC     OBJ           LINE    SOURCE
 000F    D500F7   F      15        DJNZ DELAY_TIME+2, DELAY_LOOP
 0012    22              16        RET
                         17    END
-MACRO ASSEMBLER DELAY                                       11/22/123 16:22:20 PAGE     2
+MACRO ASSEMBLER DELAY                                       11/22/123 17:11:43 PAGE     2
 
 
 SYMBOL TABLE LISTING

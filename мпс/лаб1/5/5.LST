@@ -1,4 +1,4 @@
-MACRO ASSEMBLER 5                                           11/07/123 22:45:37 PAGE     1
+MACRO ASSEMBLER 5                                           11/22/123 19:30:07 PAGE     1
 
 
 WIN32 MACRO ASSEMBLER A51 V6.03.08
@@ -8,22 +8,30 @@ ASSEMBLER INVOKED BY: A51.EXE Y:\лаб1\5\5.ASM OJ(Y:\лаб1\5\5.OBJ) PIN(C:\FSI\INC
 LOC     OBJ           LINE    SOURCE
                          1    NAME TIMER_DELAY
                          2    MAIN SEGMENT CODE
-                         3    USING 0
-------                   4    CSEG AT 0
-0000    020000   F       5    LJMP START
-------                   6    RSEG MAIN
-                         7    TIMER_DELAY:  
-0000    758C00           8        MOV TH0, #00H
-0003    758A00           9        MOV TL0, #00H
-0006    758901          10        MOV TMOD, #01H
-0009    D28C            11        SETB TCON.4
-000B    308DFD          12        JNB TCON.5, $
-000E    C28D            13        CLR TCON.5
-0010    22              14        RET
-                        15    START:  
-0011    120000   F      16        CALL TIMER_DELAY
-                        17    END
-MACRO ASSEMBLER 5                                           11/07/123 22:45:37 PAGE     2
+------                   3    CSEG AT 0BH
+000B    020000   F       4    LJMP TM_INT
+------                   5    CSEG AT 0
+0000    020000   F       6    LJMP START
+------                   7    RSEG MAIN
+                         8    USING 0
+                         9    TIMER_DELAY:  
+0000    758C00          10        MOV TH0, #00H
+0003    758A00          11        MOV TL0, #00H
+0006    758901          12        MOV TMOD, #01H
+0009    D28C            13        SETB TCON.4
+000B    308DFD          14        JNB TCON.5, $
+000E    C28D            15        CLR TCON.5
+0010    22              16        RET
+                        17    START:  
+0011    D2AF            18        SETB IE.7
+0013    D2A9            19        SETB IE.1
+0015    120000   F      20        CALL TIMER_DELAY
+0018    020000   F      21        JMP $
+                        22    
+                        23    TM_INT:  
+001B    32              24        RETI
+                        25    END
+MACRO ASSEMBLER 5                                           11/22/123 19:30:07 PAGE     2
 
 
 SYMBOL TABLE LISTING
@@ -32,18 +40,20 @@ SYMBOL TABLE LISTING
 
 N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
 
-MAIN . . . . . . .  C SEG    0014H      REL=UNIT                6# 
-TH0. . . . . . . .  D ADDR   008CH   A                          8 
-START. . . . . . .  C ADDR   0011H   R  SEG=MAIN                5 15# 
-TIMER_DELAY. . . .  C ADDR   0000H   R  SEG=MAIN                7# 16 
-TL0. . . . . . . .  D ADDR   008AH   A                          9 
-TMOD . . . . . . .  D ADDR   0089H   A                          10 
-TCON . . . . . . .  D ADDR   0088H   A                          11 12 13 22 
+MAIN . . . . . . .  C SEG    001CH      REL=UNIT                7# 
+TM_INT . . . . . .  C ADDR   001BH   R  SEG=MAIN                4 23# 
+TH0. . . . . . . .  D ADDR   008CH   A                          10 
+START. . . . . . .  C ADDR   0011H   R  SEG=MAIN                6 17# 
+IE . . . . . . . .  D ADDR   00A8H   A                          18 19 
+TIMER_DELAY. . . .  C ADDR   0000H   R  SEG=MAIN                9# 20 
+TL0. . . . . . . .  D ADDR   008AH   A                          11 
+TMOD . . . . . . .  D ADDR   0089H   A                          12 
+TCON . . . . . . .  D ADDR   0088H   A                          13 14 15 36 
 
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     23    ----
+   CODE SIZE        =     34    ----
    XDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----
