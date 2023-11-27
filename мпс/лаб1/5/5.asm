@@ -12,25 +12,20 @@ timer_delay:
     mov tmod, #01h
     setb tcon.4
     jnb tcon.5, $
-    clr tcon.5
     ret
 start:
     setb ie.7
     setb ie.1
+    mov r0, #098h
     call timer_delay
     jmp $
 
 tm_int:
+    mov a, r0
+    jz tm_int_end 
+    dec r0
+    reti
+tm_int_end:
+    clr tcon.5
     reti
 end
-
-
-
-
-
-
-
-
-
-
-

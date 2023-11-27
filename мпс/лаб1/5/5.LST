@@ -1,4 +1,4 @@
-MACRO ASSEMBLER 5                                           11/22/123 19:30:07 PAGE     1
+MACRO ASSEMBLER 5                                           11/27/123 18:22:29 PAGE     1
 
 
 WIN32 MACRO ASSEMBLER A51 V6.03.08
@@ -20,18 +20,24 @@ LOC     OBJ           LINE    SOURCE
 0006    758901          12        MOV TMOD, #01H
 0009    D28C            13        SETB TCON.4
 000B    308DFD          14        JNB TCON.5, $
-000E    C28D            15        CLR TCON.5
-0010    22              16        RET
-                        17    START:  
-0011    D2AF            18        SETB IE.7
-0013    D2A9            19        SETB IE.1
+000E    22              15        RET
+                        16    START:  
+000F    D2AF            17        SETB IE.7
+0011    D2A9            18        SETB IE.1
+0013    7898            19        MOV R0, #098H
 0015    120000   F      20        CALL TIMER_DELAY
 0018    020000   F      21        JMP $
                         22    
                         23    TM_INT:  
-001B    32              24        RETI
-                        25    END
-MACRO ASSEMBLER 5                                           11/22/123 19:30:07 PAGE     2
+001B    E8              24        MOV A, R0
+001C    6002            25        JZ TM_INT_END 
+001E    18              26        DEC R0
+001F    32              27        RETI
+                        28    TM_INT_END:  
+0020    C28D            29        CLR TCON.5
+0022    32              30        RETI
+                        31    END
+MACRO ASSEMBLER 5                                           11/27/123 18:22:29 PAGE     2
 
 
 SYMBOL TABLE LISTING
@@ -40,20 +46,21 @@ SYMBOL TABLE LISTING
 
 N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
 
-MAIN . . . . . . .  C SEG    001CH      REL=UNIT                7# 
+TM_INT_END . . . .  C ADDR   0020H   R  SEG=MAIN                25 28# 
+MAIN . . . . . . .  C SEG    0023H      REL=UNIT                7# 
 TM_INT . . . . . .  C ADDR   001BH   R  SEG=MAIN                4 23# 
 TH0. . . . . . . .  D ADDR   008CH   A                          10 
-START. . . . . . .  C ADDR   0011H   R  SEG=MAIN                6 17# 
-IE . . . . . . . .  D ADDR   00A8H   A                          18 19 
+START. . . . . . .  C ADDR   000FH   R  SEG=MAIN                6 16# 
+IE . . . . . . . .  D ADDR   00A8H   A                          17 18 
 TIMER_DELAY. . . .  C ADDR   0000H   R  SEG=MAIN                9# 20 
 TL0. . . . . . . .  D ADDR   008AH   A                          11 
 TMOD . . . . . . .  D ADDR   0089H   A                          12 
-TCON . . . . . . .  D ADDR   0088H   A                          13 14 15 36 
+TCON . . . . . . .  D ADDR   0088H   A                          13 14 29 47 
 
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     34    ----
+   CODE SIZE        =     41    ----
    XDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----
