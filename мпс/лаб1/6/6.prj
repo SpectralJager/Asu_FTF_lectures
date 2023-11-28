@@ -543,15 +543,15 @@ Nb Desktop Files=0
 
 [Closed Files]
 Nb Closed Files=5
-y:\лаб1\6\main.asm (0,0-0,0) 0
-
-y:\лаб1\6\blip.asm (0,0-0,0) 0
-
-y:\лаб1\6\delay.asm (0,0-0,0) 0
+y:\лаб1\6\select_mod.asm (0,0-0,0) 0
 
 y:\лаб1\6\mods.asm (0,0-0,0) 0
 
-y:\лаб1\6\select_mod.asm (0,0-0,0) 0
+y:\лаб1\6\delay.asm (0,0-0,0) 0
+
+y:\лаб1\6\blip.asm (0,0-0,0) 0
+
+y:\лаб1\6\main.asm (0,0-0,0) 0
 
 
 [Dim Views]
