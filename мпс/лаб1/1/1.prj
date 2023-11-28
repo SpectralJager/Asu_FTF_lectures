@@ -292,7 +292,7 @@ ResData=0
 Startaddr=8000
 Lockedmode=0
 Nb Obj=1
-y:\лаб1\4\delay.OBJ
+y:\лаб1\1\add5.OBJ
 Nb Flash=0
 End Group Flashing
 Begin Group Listing
@@ -317,7 +317,7 @@ Maxpage=32
 Genmacro=1
 Noplm=1
 Nb Modules=1
-DELAY Y:\лаб1\4\DELAY.OBJ 2147483647
+ADDFIVE Y:\лаб1\1\ADD5.OBJ 2147483647
 End Group Bank switching
 Begin Group More
 More=
@@ -403,22 +403,22 @@ End Options OH51
 
 [Nodes]
 App Number=1
-Name=4.PRJ
+Name=1.PRJ
 Tool Ref=L51
-Info Code=25
+Info Code=19
 Info XData=0
-Info Data=88
+Info Data=64
 Use Local=0
 Nb Nodes=1
 Node Begin
-Relative Path=delay.asm
+Relative Path=add5.asm
 Tool Ref=A51
 Nb Dep=0
-Info Code=25
+Info Code=19
 Info Const=0
 Info XData=0
 Info PData=0
-Info Data=3
+Info Data=0
 Info IData=0
 Info Bit=0
 Use Local=0
@@ -427,22 +427,24 @@ Node End
 
 
 [Desktop Files]
-Nb Desktop Files=0
+Nb Desktop Files=1
+y:\лаб1\1\add5.asm (0,0-1280,491) 0
+
 
 [Closed Files]
 Nb Closed Files=1
-Y:\лаб1\4\delay.asm (0,0-0,0) 0
+y:\лаб1\1\add5.asm (0,0-0,0) 0
 
 
 [Dim Views]
 Nb Dim Views=13
 0 (0,0-0,0)
 1 (0,0-0,0)
-2 (10,652-1286,973)
+2 (2,644-1278,965)
 3 (0,0-0,0)
 4 (2,247-1282,493)
-5 (2,493-352,753)
-6 (577,225-997,879)
+5 (0,0-0,0)
+6 (0,0-0,0)
 7 (0,0-0,0)
 8 (0,0-0,0)
 9 (0,0-0,0)

@@ -1,0 +1,52 @@
+MACRO ASSEMBLER ADD5                                        11/28/123 15:22:06 PAGE     1
+
+
+WIN32 MACRO ASSEMBLER A51 V6.03.08
+OBJECT MODULE PLACED IN Y:\лаб1\1\ADD5.OBJ
+ASSEMBLER INVOKED BY: A51.EXE Y:\лаб1\1\ADD5.ASM OJ(Y:\лаб1\1\ADD5.OBJ) PIN(C:\FSI\INC) EP LINES PR(Y:\лаб1\1\ADD5.LST) XR DB PW(80) RB(0) 
+
+LOC     OBJ           LINE    SOURCE
+                         1    NAME ADDFIVE
+                         2    MAIN SEGMENT CODE 
+------                   3    CSEG AT 0
+0000    020000   F       4    LJMP START
+                         5    USING 0
+------                   6    RSEG MAIN 
+                         7    START:   
+0000    E540             8    	MOV A, 40H ; зDаписываем значение по адресу 0х40 внутренней пам€ти в регистр ј
+0002    2405             9    	ADD A, #05H ; прибовл€ем в регистр ј значение 0х5
+0004    900020          10    	MOV DPTR, #0020H ; заносим значение адреса внешней пам€ти в регистр DPTR
+0007    F0              11       MOVX @DPTR, A ; записываем регистр ј во внешнию пам€ть по адресу в регистре DPTR
+0008    E4              12       CLR A ; занул€ем ј
+0009    3500            13       ADDC A, 0H ; записываем результат переноса в регистр ј
+000B    A3              14       INC DPTR ; увеличиваем значение рег. DPTR
+000C    F0              15       MOVX @DPTR, A ; записываем рег. ј во внешнию пам€ть по адресу в регистре DPTR
+000D    020000   F      16       JMP START
+                        17    END
+MACRO ASSEMBLER ADD5                                        11/28/123 15:22:06 PAGE     2
+
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
+
+MAIN . . . . . . .  C SEG    0010H      REL=UNIT                6# 
+START. . . . . . .  C ADDR   0000H   R  SEG=MAIN                4 7# 16 
+ADDFIVE. . . . . .  N NUMB   -----
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     19    ----
+   XDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+REGISTER BANK(S) USED : 0 
+
+ASSEMBLY COMPLETE.   0 WARNING(S)   0 ERROR(S)

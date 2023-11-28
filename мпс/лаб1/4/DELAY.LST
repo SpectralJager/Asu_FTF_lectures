@@ -1,4 +1,4 @@
-MACRO ASSEMBLER DELAY                                       11/27/123 18:30:06 PAGE     1
+MACRO ASSEMBLER DELAY                                       11/28/123 12:40:10 PAGE     1
 
 
 WIN32 MACRO ASSEMBLER A51 V6.03.08
@@ -22,17 +22,17 @@ LOC     OBJ           LINE    SOURCE
                         14    DELAY:  
 0000    750000   F      15        MOV DELAY_TIME, #00H
 0003    750000   F      16        MOV DELAY_TIME+1, #00H
-0006    75004C   F      17        MOV DELAY_TIME+2, #04CH
+0006    750001   F      17        MOV DELAY_TIME+2, #001H
                         18    DELAY_LOOP:  
 0009    D500FD   F      19        DJNZ DELAY_TIME, DELAY_LOOP
 000C    D500FA   F      20        DJNZ DELAY_TIME+1, DELAY_LOOP
-000F    D500F7   F      21        DJNZ DELAY_TIME+2, DELAY_LOOP
-0012    22              22        RET 
+                        21        ;DJNZ DELAY_TIME+2, DELAY_LOOP
+000F    22              22        RET 
                         23    START:  
-0013    758140          24        MOV SP, #040H
-0016    120000   F      25        CALL DELAY
+0010    758140          24        MOV SP, #040H
+0013    120000   F      25        CALL DELAY
                         26    END
-MACRO ASSEMBLER DELAY                                       11/27/123 18:30:06 PAGE     2
+MACRO ASSEMBLER DELAY                                       11/28/123 12:40:10 PAGE     2
 
 
 SYMBOL TABLE LISTING
@@ -42,18 +42,18 @@ SYMBOL TABLE LISTING
 N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
 
 SP . . . . . . . .  D ADDR   0081H   A                          24 
-MAIN . . . . . . .  C SEG    0019H      REL=UNIT                12# 
-DELAY_LOOP . . . .  C ADDR   0009H   R  SEG=MAIN                18# 19 20 21 
-START. . . . . . .  C ADDR   0013H   R  SEG=MAIN                10 23# 
+MAIN . . . . . . .  C SEG    0016H      REL=UNIT                12# 
+DELAY_LOOP . . . .  C ADDR   0009H   R  SEG=MAIN                18# 19 20 
+START. . . . . . .  C ADDR   0010H   R  SEG=MAIN                10 23# 
 DELAY. . . . . . .  C ADDR   0000H   R  SEG=MAIN                14# 25 
 VARS . . . . . . .  D SEG    0003H      REL=UNIT                6# 
 DELAY_TIME . . . .  D ADDR   0000H   R  SEG=VARS                7# 15 16 17 19 20 
-                                                                21 
+                                                                
 
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     28    ----
+   CODE SIZE        =     25    ----
    XDATA SIZE       =   ----    ----
    DATA SIZE        =      3    ----
    IDATA SIZE       =   ----    ----

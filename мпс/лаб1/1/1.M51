@@ -1,0 +1,57 @@
+L51 CODE BANKING LINKER/LOCATOR V4.08.06        11/28/123  15:22:06  PAGE  1
+WIN32 L51 CODE BANKING LINKER/LOCATOR V4.08.06,  INVOKED BY:
+L51.EXE y:\лаб1\1\add5.OBJ  to  Y:\лаб1\1\1.ABS PR(Y:\лаб1\1\1.M51) PW(80) RS&
+(128) ix 
+
+
+INPUT MODULES INCLUDED
+  Y:\лаб1\1\ADD5.OBJ(ADDFIVE)
+
+
+LINK MAP OF MODULE: Y:\лаб1\1\1.ABS (ADDFIVE)
+
+    TYPE     BASE       LENGTH    RELOCATION     SEGMENT NAME
+    ----     ----       ------    ----------     ------------
+
+    * * * * * * *   DATA          M E M O R Y   * * * * * * *
+    REG      0000H      0008H     ABSOLUTE       "REG BANK 0"
+
+    * * * * * * *   CODE          M E M O R Y   * * * * * * *
+    CODE     0000H      0003H     ABSOLUTE       
+    CODE     0003H      0010H     UNIT           MAIN
+
+EXECUTABLE SUMMARY:
+-------------------
+    Total INTERNAL storage requirement:  0008H (8)
+    Total EXTERNAL storage requirement:  0000H (0)
+    Total   CODE   storage requirement:  0013H (19)
+Note:  Summary does not include dynamic stack requirements
+
+
+REFERENCE MAP OF MODULE: Y:\лаб1\1\1.ABS (ADDFIVE)
+
+SEGMENT
+   +-->CALLED SEGMENT
+---------------------
+
+SYMBOL TABLE FOR Y:\лаб1\1\1.ABS(ADDFIVE)
+------------------------------------------
+
+    VALUE              TYPE               NAME
+    -----              ----               ----
+
+	-------            MODULE             ADDFIVE
+	C:0003H            SYMBOL             START
+	C:0000H            LINE#              4
+	C:0003H            LINE#              8
+	C:0005H            LINE#              9
+	C:0007H            LINE#              10
+	C:000AH            LINE#              11
+	C:000BH            LINE#              12
+	C:000CH            LINE#              13
+	C:000EH            LINE#              14
+	C:000FH            LINE#              15
+	C:0010H            LINE#              16
+	-------            ENDMOD             ADDFIVE
+
+LINK/LOCATE RUN COMPLETE,  NO ERROR FOUND.
