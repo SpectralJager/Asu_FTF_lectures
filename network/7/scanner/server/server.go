@@ -1,104 +1,57 @@
 package main
 
 import (
-	"bytes"
-	"context"
+	"bufio"
 	"flag"
 	"fmt"
-	"io"
-	"math/rand"
+	"log"
 	"net"
 	"os"
+	"strings"
 	"time"
 )
 
 var (
-	listOfAddresses = flag.Bool("list", false, "get list of available addresses")
+	address = flag.String("addr", "", "scann addresses ports")
 )
 
 const (
-	broadcast   = "192.168.0.255:8080"
-	listenPort  = ":8080"
-	connType    = "udp"
-	letters     = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-	magicLength = 10
+	listenPort = ":8080"
+	connType   = "tcp"
 )
 
 func main() {
 	flag.Parse()
-	if listOfAddresses != nil {
-		ctx, cancel := context.WithTimeout(context.Background(), time.Second*10)
-		defer cancel()
-		addresses, err := pingAddresses(ctx)
-		if err != nil {
-			fmt.Println(err.Error())
-			os.Exit(1)
-		}
-		printAddresses(addresses)
+	if *address == "" {
+		fmt.Println("usage: ./scann -addr <addr>")
+		fmt.Println("example: ./scann -addr 192.168.0.1")
+		os.Exit(1)
 	}
+	data, err := scan(*address)
+	if err != nil {
+		log.Fatal(err)
+	}
+	log.Printf("recived:\n%s\n", data)
 	os.Exit(0)
 }
 
-func pingAddresses(ctx context.Context) ([]string, error) {
-	var addresses []string
-	magicMsg := RandString(magicLength)
-	err := pingBroadcast(ctx, magicMsg)
-	listener, err := net.Listen(connType, listenPort)
+func scan(addr string) (string, error) {
+	ip := strings.Split(addr, ":")[0]
+	remoteAddr := ip + listenPort
+	log.Printf("create remote address: %s", remoteAddr)
+	conn, err := net.DialTimeout("tcp", remoteAddr, time.Second*10)
 	if err != nil {
-		return addresses, err
-	}
-	ipsChan := make(chan string, 10)
-	go func() {
-		var buf bytes.Buffer
-		for {
-			buf.Reset()
-			conn, err := listener.Accept()
-			if err != nil {
-				continue
-			}
-			defer conn.Close()
-			io.Copy(&buf, conn)
-			if buf.String() == magicMsg {
-				ipsChan <- conn.RemoteAddr().String()
-			}
-		}
-	}()
-	for {
-		select {
-		case <-ctx.Done():
-			close(ipsChan)
-			return addresses, nil
-		case address := <-ipsChan:
-			addresses = append(addresses, address)
-		}
-
-	}
-}
-
-func pingBroadcast(ctx context.Context, magic string) error {
-	conn, err := net.Dial(connType, broadcast)
-	if err != nil {
-		return err
+		return "", err
 	}
 	defer conn.Close()
-	_, err = conn.Write([]byte("ping:" + magic))
+	log.Println("connect to remote client")
+	_, err = conn.Write([]byte("scan\x00"))
 	if err != nil {
-		return err
+		return "", err
 	}
-	return nil
-}
+	log.Println("send scan command to remote client")
 
-func printAddresses(addresses []string) {
-	fmt.Println("available addresses:")
-	for _, addr := range addresses {
-		fmt.Printf("\t%s\n", addr)
-	}
-}
-
-func RandString(n int) string {
-	b := make([]byte, n)
-	for i := range b {
-		b[i] = letters[rand.Int63()%int64(len(letters))]
-	}
-	return string(b)
+	result, err := bufio.NewReader(conn).ReadString('\x00')
+	result = result[:len(result)-1]
+	return result, err
 }
