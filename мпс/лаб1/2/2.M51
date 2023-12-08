@@ -1,4 +1,4 @@
-L51 CODE BANKING LINKER/LOCATOR V4.08.06        11/28/123  15:54:47  PAGE  1
+L51 CODE BANKING LINKER/LOCATOR V4.08.06        12/06/123  17:58:09  PAGE  1
 WIN32 L51 CODE BANKING LINKER/LOCATOR V4.08.06,  INVOKED BY:
 L51.EXE y:\лаб1\2\sub5.OBJ  to  Y:\лаб1\2\2.ABS PR(Y:\лаб1\2\2.M51) PW(80) RS&
 (128) ix 
@@ -18,13 +18,13 @@ LINK MAP OF MODULE: Y:\лаб1\2\2.ABS (ADDFIVE)
 
     * * * * * * *   CODE          M E M O R Y   * * * * * * *
     CODE     0000H      0003H     ABSOLUTE       
-    CODE     0003H      000DH     UNIT           MAIN
+    CODE     0003H      0013H     UNIT           MAIN
 
 EXECUTABLE SUMMARY:
 -------------------
     Total INTERNAL storage requirement:  0008H (8)
     Total EXTERNAL storage requirement:  0000H (0)
-    Total   CODE   storage requirement:  0010H (16)
+    Total   CODE   storage requirement:  0016H (22)
 Note:  Summary does not include dynamic stack requirements
 
 
@@ -50,6 +50,10 @@ SYMBOL TABLE FOR Y:\лаб1\2\2.ABS(ADDFIVE)
 	C:000AH            LINE#              12
 	C:000CH            LINE#              13
 	C:000DH            LINE#              14
+	C:000FH            LINE#              15
+	C:0011H            LINE#              16
+	C:0012H            LINE#              17
+	C:0013H            LINE#              18
 	-------            ENDMOD             ADDFIVE
 
 LINK/LOCATE RUN COMPLETE,  NO ERROR FOUND.

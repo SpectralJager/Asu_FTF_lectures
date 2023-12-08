@@ -1,4 +1,4 @@
-MACRO ASSEMBLER SUB5                                        11/28/123 15:54:47 PAGE     1
+MACRO ASSEMBLER SUB5                                        12/06/123 17:58:09 PAGE     1
 
 
 WIN32 MACRO ASSEMBLER A51 V6.03.08
@@ -13,15 +13,19 @@ LOC     OBJ           LINE    SOURCE
                          5    USING 0
 ------                   6    RSEG MAIN 
                          7    START:  
-0000    900020           8    	MOV DPTR, #0020H ; заносим адрес внешней памяти в регистр DPTR
-0003    E0               9    	MOVX A, @DPTR ; записываем из внешеней памяти значение в регистр А
-0004    C3              10    	CLR C ; отчищаем бит переноса
-0005    9405            11    	SUBB A, #5H ; вычитаем из регистра А число 0х5
-0007    7840            12    	MOV R0, #40H ; заносим адрес внутренней памяти в регистр R0
-0009    F6              13    	MOV @R0, A ; с помощью косвенной адресации записываем число регистра А во внутренную память
-000A    020000   F      14    	JMP START
-                        15    END
-MACRO ASSEMBLER SUB5                                        11/28/123 15:54:47 PAGE     2
+0000    900020           8        MOV DPTR, #0020H 
+0003    E0               9        MOVX A, @DPTR 
+0004    C3              10        CLR C 
+0005    9405            11        SUBB A, #5H 
+0007    7840            12        MOV R0, #40H 
+0009    F6              13        MOV @R0, A 
+000A    7400            14        MOV A, #00H
+000C    9400            15        SUBB A, #00H
+000E    08              16        INC R0
+000F    F6              17        MOV @R0, A
+0010    020000   F      18        JMP START
+                        19    END
+MACRO ASSEMBLER SUB5                                        12/06/123 17:58:09 PAGE     2
 
 
 SYMBOL TABLE LISTING
@@ -30,14 +34,14 @@ SYMBOL TABLE LISTING
 
 N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
 
-MAIN . . . . . . .  C SEG    000DH      REL=UNIT                6# 
-START. . . . . . .  C ADDR   0000H   R  SEG=MAIN                4 7# 14 
+MAIN . . . . . . .  C SEG    0013H      REL=UNIT                6# 
+START. . . . . . .  C ADDR   0000H   R  SEG=MAIN                4 7# 18 
 ADDFIVE. . . . . .  N NUMB   -----
 
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     16    ----
+   CODE SIZE        =     22    ----
    XDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----
