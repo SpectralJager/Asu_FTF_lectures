@@ -405,7 +405,7 @@ End Options OH51
 App Number=1
 Name=2.PRJ
 Tool Ref=L51
-Info Code=16
+Info Code=22
 Info XData=0
 Info Data=64
 Use Local=0
@@ -414,7 +414,7 @@ Node Begin
 Relative Path=sub5.asm
 Tool Ref=A51
 Nb Dep=0
-Info Code=16
+Info Code=22
 Info Const=0
 Info XData=0
 Info PData=0
@@ -438,7 +438,7 @@ y:\лаб1\2\sub5.asm (0,0-0,0) 0
 Nb Dim Views=13
 0 (0,0-0,0)
 1 (0,0-0,0)
-2 (4,646-1280,967)
+2 (6,648-1282,969)
 3 (0,0-0,0)
 4 (2,247-1282,493)
 5 (0,0-0,0)

@@ -1,4 +1,4 @@
-MACRO ASSEMBLER FNS                                         11/14/123 15:59:20 PAGE     1
+MACRO ASSEMBLER FNS                                         12/12/123 16:34:05 PAGE     1
 
 
 WIN32 MACRO ASSEMBLER A51 V6.03.08
@@ -121,12 +121,12 @@ LOC     OBJ           LINE    SOURCE
 0093    22             101       RET
                        102       
                        103        
-                       104    OUT_UART:                 
-0094    758920         105       MOV TMOD, #00100000B
-0097    758DFF         106       MOV TH1, #0FFH
+                       104    OUT_UART:  
+0094    758820         105       MOV TCON, #00100000B
+0097    758D00         106       MOV TH1, #000H
 009A    D28E           107       SETB TR1
-009C    758780         108       MOV PCON, #10000000B
-009F    759852         109       MOV SCON, #01010010B
+009C    7598D2         108       MOV SCON, #11010010B
+009F    758780         109       MOV PCON, #10000000B
 00A2    75A000         110       MOV P2, #00H
 00A5    7800     F     111       MOV R0, #RES
 
@@ -141,7 +141,7 @@ LOC     OBJ           LINE    SOURCE
 00AD    DCFA           117       DJNZ R4, UART_LOOP
 00AF    22             118       RET
                        119    END
-MACRO ASSEMBLER FNS                                         11/14/123 15:59:21 PAGE     2
+MACRO ASSEMBLER FNS                                         12/12/123 16:34:05 PAGE     2
 
 
 SYMBOL TABLE LISTING
@@ -172,10 +172,10 @@ EVAL_NUMS. . . . .  C ADDR   000CH   R  SEG=FNS                 1 19#
 S_LOOP . . . . . .  C ADDR   0029H   R  SEG=FNS                 38# 52 
 TH1. . . . . . . .  D ADDR   008DH   A                          106 
 SBUF . . . . . . .  D ADDR   0099H   A                          116 
-PCON . . . . . . .  D ADDR   0087H   A                          108 
+PCON . . . . . . .  D ADDR   0087H   A                          109 
 OUT_UART . . . . .  C ADDR   0094H   R  SEG=FNS                 1 104# 
-SCON . . . . . . .  D ADDR   0098H   A                          109 
-TMOD . . . . . . .  D ADDR   0089H   A                          105 
+SCON . . . . . . .  D ADDR   0098H   A                          108 
+TCON . . . . . . .  D ADDR   0088H   A                          105 
 UART_LOOP. . . . .  C ADDR   00A9H   R  SEG=FNS                 113# 117 
 READ_LOOP. . . . .  C ADDR   0005H   R  SEG=FNS                 12# 16 
 SUM_NUMS . . . . .  C ADDR   0049H   R  SEG=FNS                 1 60# 

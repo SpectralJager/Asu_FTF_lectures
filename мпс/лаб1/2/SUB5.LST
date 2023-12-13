@@ -1,4 +1,4 @@
-MACRO ASSEMBLER SUB5                                        12/06/123 17:58:09 PAGE     1
+MACRO ASSEMBLER SUB5                                        12/12/123 14:19:00 PAGE     1
 
 
 WIN32 MACRO ASSEMBLER A51 V6.03.08
@@ -25,7 +25,7 @@ LOC     OBJ           LINE    SOURCE
 000F    F6              17        MOV @R0, A
 0010    020000   F      18        JMP START
                         19    END
-MACRO ASSEMBLER SUB5                                        12/06/123 17:58:09 PAGE     2
+MACRO ASSEMBLER SUB5                                        12/12/123 14:19:00 PAGE     2
 
 
 SYMBOL TABLE LISTING

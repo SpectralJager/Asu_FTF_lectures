@@ -1,8 +1,6 @@
-NAME FNS
 PUBLIC READ_PORT, EVAL_NUMS, SUM_NUMS, OUT_UART
 EXTRN DATA (TMP1, TMP2, TMP3)
 EXTRN XDATA (NUM1, NUM2, RES)
-
 
 FNS SEGMENT CODE
 
@@ -104,7 +102,8 @@ SUM_NUMS:
    
     
 OUT_UART:               
-   MOV TMOD, #00100000B
+   setb sm0
+   setb sm1
    MOV TH1, #0FFH
    SETB TR1
    MOV PCON, #10000000B
@@ -119,3 +118,12 @@ uart_loop:
    DJNZ R4, UART_LOOP
    RET
 END
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-L51 CODE BANKING LINKER/LOCATOR V4.08.06        11/28/123  12:40:10  PAGE  1
+L51 CODE BANKING LINKER/LOCATOR V4.08.06        12/12/123  14:19:57  PAGE  1
 WIN32 L51 CODE BANKING LINKER/LOCATOR V4.08.06,  INVOKED BY:
 L51.EXE y:\лаб1\4\delay.OBJ  to  Y:\лаб1\4\4.ABS PR(Y:\лаб1\4\4.M51) PW(80) R&
 S(128) ix 
@@ -19,13 +19,13 @@ LINK MAP OF MODULE: Y:\лаб1\4\4.ABS (DELAY)
 
     * * * * * * *   CODE          M E M O R Y   * * * * * * *
     CODE     0000H      0003H     ABSOLUTE       
-    CODE     0003H      0016H     UNIT           MAIN
+    CODE     0003H      0019H     UNIT           MAIN
 
 EXECUTABLE SUMMARY:
 -------------------
     Total INTERNAL storage requirement:  000BH (11)
     Total EXTERNAL storage requirement:  0000H (0)
-    Total   CODE   storage requirement:  0019H (25)
+    Total   CODE   storage requirement:  001CH (28)
 Note:  Summary does not include dynamic stack requirements
 
 
@@ -43,7 +43,7 @@ SYMBOL TABLE FOR Y:\лаб1\4\4.ABS(DELAY)
 
 	-------            MODULE             DELAY
 	C:000CH            SYMBOL             DELAY_LOOP
-	C:0013H            SYMBOL             START
+	C:0016H            SYMBOL             START
 	C:0003H            SYMBOL             DELAY
 	D:0008H            SYMBOL             DELAY_TIME
 	C:0000H            LINE#              10
@@ -52,9 +52,10 @@ SYMBOL TABLE FOR Y:\лаб1\4\4.ABS(DELAY)
 	C:0009H            LINE#              17
 	C:000CH            LINE#              19
 	C:000FH            LINE#              20
-	C:0012H            LINE#              22
-	C:0013H            LINE#              24
-	C:0016H            LINE#              25
+	C:0012H            LINE#              21
+	C:0015H            LINE#              22
+	C:0016H            LINE#              24
+	C:0019H            LINE#              25
 	-------            ENDMOD             DELAY
 
 LINK/LOCATE RUN COMPLETE,  NO ERROR FOUND.

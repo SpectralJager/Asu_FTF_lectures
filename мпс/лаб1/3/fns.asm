@@ -101,12 +101,12 @@ SUM_NUMS:
    RET
    
     
-OUT_UART:               
-   MOV TMOD, #00100000B
-   MOV TH1, #0FFH
+OUT_UART:
+   MOV TCON, #00100000b
+   MOV TH1, #000h
    SETB TR1
+   MOV SCON, #11010010B
    MOV PCON, #10000000B
-   MOV SCON, #01010010B
    MOV P2, #00H
    MOV R0, #RES
    MOV R4, #06H
@@ -117,6 +117,15 @@ uart_loop:
    DJNZ R4, UART_LOOP
    RET
 END
+
+
+
+
+
+
+
+
+
 
 
 
