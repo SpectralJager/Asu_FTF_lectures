@@ -1,4 +1,4 @@
-MACRO ASSEMBLER FNS                                         12/12/123 16:34:05 PAGE     1
+MACRO ASSEMBLER FNS                                         12/26/123 10:26:53 PAGE     1
 
 
 WIN32 MACRO ASSEMBLER A51 V6.03.08
@@ -122,26 +122,27 @@ LOC     OBJ           LINE    SOURCE
                        102       
                        103        
                        104    OUT_UART:  
-0094    758820         105       MOV TCON, #00100000B
-0097    758D00         106       MOV TH1, #000H
-009A    D28E           107       SETB TR1
-009C    7598D2         108       MOV SCON, #11010010B
-009F    758780         109       MOV PCON, #10000000B
-00A2    75A000         110       MOV P2, #00H
-00A5    7800     F     111       MOV R0, #RES
+0094    7598D0         105       MOV SCON, #0D0H
+0097    758780         106       MOV PCON, #080H
+009A    758920         107       MOV TMOD, #020H
+009D    758DFE         108       MOV TH1, #0FEH
+00A0    758BFE         109       MOV TL1, #0FEH
+00A3    D28E           110       SETB TR1
+00A5    75A000         111       MOV P2, #00H
+00A8    7800     F     112       MOV R0, #RES
 
-*** WARNING #53 IN LINE 111 OF fns.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+*** WARNING #53 IN LINE 112 OF fns.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
 
-*** WARNING #53 IN LINE 111 OF fns.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
-00A7    7C06           112       MOV R4, #06H
-                       113    UART_LOOP:  
-00A9    E2             114    	MOVX A, @R0
-00AA    08             115    	INC R0
-00AB    F599           116       MOV SBUF, A
-00AD    DCFA           117       DJNZ R4, UART_LOOP
-00AF    22             118       RET
-                       119    END
-MACRO ASSEMBLER FNS                                         12/12/123 16:34:05 PAGE     2
+*** WARNING #53 IN LINE 112 OF fns.asm : VALUE HAS BEEN TRUNCATED TO 8 BITS
+00AA    7C06           113       MOV R4, #06H
+                       114    UART_LOOP:  
+00AC    E2             115    	MOVX A, @R0
+00AD    08             116    	INC R0
+00AE    F599           117       MOV SBUF, A
+00B0    DCFA           118       DJNZ R4, UART_LOOP
+00B2    22             119       RET
+                       120    END
+MACRO ASSEMBLER FNS                                         12/26/123 10:26:53 PAGE     2
 
 
 SYMBOL TABLE LISTING
@@ -159,32 +160,33 @@ B. . . . . . . . .  D ADDR   00F0H   A                          31 35 41 44 45 4
                                                                 66 68 71 73 74 79 
                                                                 82 84 85 90 93 95 
                                                                 
-P2 . . . . . . . .  D ADDR   00A0H   A                          13 24 61 110 
+P2 . . . . . . . .  D ADDR   00A0H   A                          13 24 61 111 
 TMP2 . . . . . . .  D ADDR   -----      EXT                     2# 67 72 83 86 88 
                                                                 93 
 TMP3 . . . . . . .  D ADDR   -----      EXT                     2# 78 89 94 98 
-FNS. . . . . . . .  C SEG    00B0H      REL=UNIT                7# 
+FNS. . . . . . . .  C SEG    00B3H      REL=UNIT                7# 
 ACC. . . . . . . .  D ADDR   00E0H   A                          20 22 34 36 46 48 
                                                                 51 55 57 
 O_LOOP . . . . . .  C ADDR   0019H   R  SEG=FNS                 27# 53 
-RES. . . . . . . .  X ADDR   -----      EXT                     3# 62 111 
+RES. . . . . . . .  X ADDR   -----      EXT                     3# 62 112 
 EVAL_NUMS. . . . .  C ADDR   000CH   R  SEG=FNS                 1 19# 
 S_LOOP . . . . . .  C ADDR   0029H   R  SEG=FNS                 38# 52 
-TH1. . . . . . . .  D ADDR   008DH   A                          106 
-SBUF . . . . . . .  D ADDR   0099H   A                          116 
-PCON . . . . . . .  D ADDR   0087H   A                          109 
+TH1. . . . . . . .  D ADDR   008DH   A                          108 
+SBUF . . . . . . .  D ADDR   0099H   A                          117 
+PCON . . . . . . .  D ADDR   0087H   A                          106 
+TL1. . . . . . . .  D ADDR   008BH   A                          109 
 OUT_UART . . . . .  C ADDR   0094H   R  SEG=FNS                 1 104# 
-SCON . . . . . . .  D ADDR   0098H   A                          108 
-TCON . . . . . . .  D ADDR   0088H   A                          105 
-UART_LOOP. . . . .  C ADDR   00A9H   R  SEG=FNS                 113# 117 
+SCON . . . . . . .  D ADDR   0098H   A                          105 
+TMOD . . . . . . .  D ADDR   0089H   A                          107 
+UART_LOOP. . . . .  C ADDR   00ACH   R  SEG=FNS                 114# 118 
 READ_LOOP. . . . .  C ADDR   0005H   R  SEG=FNS                 12# 16 
 SUM_NUMS . . . . .  C ADDR   0049H   R  SEG=FNS                 1 60# 
-TR1. . . . . . . .  B ADDR   0088H.6 A                          107 
+TR1. . . . . . . .  B ADDR   0088H.6 A                          110 
 
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    176    ----
+   CODE SIZE        =    179    ----
    XDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----
