@@ -344,7 +344,7 @@ AdrData=0000
 AdrXdata=0000
 AdrCode=0000
 Ramsize=128
-HEX=0
+HEX=1
 EXTEND=0
 LKKRSEM=0
 LKKRDEB=0
@@ -539,26 +539,28 @@ Node End
 
 
 [Desktop Files]
-Nb Desktop Files=0
+Nb Desktop Files=1
+y:\лаб1\6\mods.asm (0,0-1608,655) 0
+
 
 [Closed Files]
 Nb Closed Files=5
-y:\лаб1\6\select_mod.asm (0,0-0,0) 0
-
-y:\лаб1\6\mods.asm (0,0-0,0) 0
-
-y:\лаб1\6\delay.asm (0,0-0,0) 0
+y:\лаб1\6\main.asm (0,0-0,0) 0
 
 y:\лаб1\6\blip.asm (0,0-0,0) 0
 
-y:\лаб1\6\main.asm (0,0-0,0) 0
+y:\лаб1\6\delay.asm (0,0-0,0) 0
+
+y:\лаб1\6\mods.asm (0,0-0,0) 0
+
+y:\лаб1\6\select_mod.asm (0,0-0,0) 0
 
 
 [Dim Views]
 Nb Dim Views=13
 0 (0,0-0,0)
 1 (0,0-0,0)
-2 (2,643-1278,965)
+2 (4,645-1280,967)
 3 (0,0-0,0)
 4 (310,310-1918,964)
 5 (0,0-0,0)

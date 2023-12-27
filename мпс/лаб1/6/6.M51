@@ -1,4 +1,4 @@
-L51 CODE BANKING LINKER/LOCATOR V4.08.06        11/22/123  17:11:43  PAGE  1
+L51 CODE BANKING LINKER/LOCATOR V4.08.06        12/26/123  15:18:17  PAGE  1
 WIN32 L51 CODE BANKING LINKER/LOCATOR V4.08.06,  INVOKED BY:
 L51.EXE y:\лаб1\6\main.OBJ,y:\лаб1\6\blip.OBJ,y:\лаб1\6\select_mod.OBJ,y:\лаб&
 1\6\mods.OBJ,y:\лаб1\6\delay.OBJ,y:\лаб1\6\checks.OBJ, y:\лаб1\6\change_spead&
@@ -68,7 +68,7 @@ SYMBOL TABLE FOR Y:\лаб1\6\6.ABS(LIGHTS)
 	-------            MODULE             BLIP
 	C:0012H            PUBLIC             MOD_BLIP
 	C:002BH            PUBLIC             SPEAD_BLIP
-L51 CODE BANKING LINKER/LOCATOR V4.08.06          11/22/123  17:11:43  PAGE  2
+L51 CODE BANKING LINKER/LOCATOR V4.08.06          12/26/123  15:18:17  PAGE  2
 
 	C:0012H            LINE#              10
 	C:0014H            LINE#              11
@@ -138,7 +138,7 @@ SYMBOL TABLE FOR Y:\лаб1\6\6.ABS(LIGHTS)
 	C:0058H            LINE#              20
 	C:005BH            LINE#              22
 	C:005DH            LINE#              23
-L51 CODE BANKING LINKER/LOCATOR V4.08.06          11/22/123  17:11:43  PAGE  3
+L51 CODE BANKING LINKER/LOCATOR V4.08.06          12/26/123  15:18:17  PAGE  3
 
 	C:005FH            LINE#              24
 	C:0061H            LINE#              25
@@ -208,7 +208,7 @@ SYMBOL TABLE FOR Y:\лаб1\6\6.ABS(LIGHTS)
 	C:00FDH            LINE#              102
 	C:0100H            LINE#              105
 	C:0101H            LINE#              106
-L51 CODE BANKING LINKER/LOCATOR V4.08.06          11/22/123  17:11:43  PAGE  4
+L51 CODE BANKING LINKER/LOCATOR V4.08.06          12/26/123  15:18:17  PAGE  4
 
 	C:0103H            LINE#              107
 	C:0105H            LINE#              108
@@ -278,7 +278,7 @@ SYMBOL TABLE FOR Y:\лаб1\6\6.ABS(LIGHTS)
 	C:0192H            LINE#              183
 	C:0194H            LINE#              184
 	C:0195H            LINE#              185
-L51 CODE BANKING LINKER/LOCATOR V4.08.06          11/22/123  17:11:43  PAGE  5
+L51 CODE BANKING LINKER/LOCATOR V4.08.06          12/26/123  15:18:17  PAGE  5
 
 	C:0197H            LINE#              186
 	C:019AH            LINE#              187
@@ -348,7 +348,7 @@ SYMBOL TABLE FOR Y:\лаб1\6\6.ABS(LIGHTS)
 	C:01DBH            LINE#              20
 	C:01DCH            LINE#              21
 	C:01DFH            LINE#              22
-L51 CODE BANKING LINKER/LOCATOR V4.08.06          11/22/123  17:11:43  PAGE  6
+L51 CODE BANKING LINKER/LOCATOR V4.08.06          12/26/123  15:18:17  PAGE  6
 
 	C:01E0H            LINE#              23
 	C:01E1H            LINE#              24
@@ -418,7 +418,7 @@ SYMBOL TABLE FOR Y:\лаб1\6\6.ABS(LIGHTS)
 	C:0275H            LINE#              106
 	C:0278H            LINE#              107
 	C:027BH            LINE#              108
-L51 CODE BANKING LINKER/LOCATOR V4.08.06          11/22/123  17:11:43  PAGE  7
+L51 CODE BANKING LINKER/LOCATOR V4.08.06          12/26/123  15:18:17  PAGE  7
 
 	C:027EH            LINE#              109
 	C:0280H            LINE#              112
@@ -488,7 +488,7 @@ SYMBOL TABLE FOR Y:\лаб1\6\6.ABS(LIGHTS)
 	C:0327H            LINE#              13
 	C:032AH            LINE#              14
 	C:032DH            LINE#              15
-L51 CODE BANKING LINKER/LOCATOR V4.08.06          11/22/123  17:11:43  PAGE  8
+L51 CODE BANKING LINKER/LOCATOR V4.08.06          12/26/123  15:18:17  PAGE  8
 
 	C:0330H            LINE#              16
 	-------            ENDMOD             DELAY

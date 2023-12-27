@@ -1,4 +1,4 @@
-MACRO ASSEMBLER VRS                                         11/22/123 17:11:43 PAGE     1
+MACRO ASSEMBLER VRS                                         12/26/123 15:18:17 PAGE     1
 
 
 WIN32 MACRO ASSEMBLER A51 V6.03.08
@@ -16,7 +16,7 @@ LOC     OBJ           LINE    SOURCE
 0002                     8    DELAY_TIME:   DS 4
   003F                   9    SP_START EQU 3FH
                         10    END
-MACRO ASSEMBLER VRS                                         11/22/123 17:11:43 PAGE     2
+MACRO ASSEMBLER VRS                                         12/26/123 15:18:17 PAGE     2
 
 
 SYMBOL TABLE LISTING

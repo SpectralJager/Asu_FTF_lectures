@@ -1,4 +1,4 @@
-MACRO ASSEMBLER SELECT_MOD                                  11/22/123 17:11:43 PAGE     1
+MACRO ASSEMBLER SELECT_MOD                                  12/26/123 15:18:17 PAGE     1
 
 
 WIN32 MACRO ASSEMBLER A51 V6.03.08
@@ -218,7 +218,7 @@ LOC     OBJ           LINE    SOURCE
 0180    750000   F     210        MOV MOD_VR, #00H
 0183    120000   F     211        CALL MOD0
                        212    END
-MACRO ASSEMBLER SELECT_MOD                                  11/22/123 17:11:43 PAGE     2
+MACRO ASSEMBLER SELECT_MOD                                  12/26/123 15:18:17 PAGE     2
 
 
 SYMBOL TABLE LISTING

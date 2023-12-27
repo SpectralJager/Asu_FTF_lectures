@@ -1,4 +1,4 @@
-MACRO ASSEMBLER CHANGE_SPEAD                                11/22/123 17:11:43 PAGE     1
+MACRO ASSEMBLER CHANGE_SPEAD                                12/26/123 15:18:17 PAGE     1
 
 
 WIN32 MACRO ASSEMBLER A51 V6.03.08
@@ -39,7 +39,7 @@ LOC     OBJ           LINE    SOURCE
 0021    F500     F      31        MOV SPEAD_VR, A
 0023    22              32        RET
                         33    END
-MACRO ASSEMBLER CHANGE_SPEAD                                11/22/123 17:11:43 PAGE     2
+MACRO ASSEMBLER CHANGE_SPEAD                                12/26/123 15:18:17 PAGE     2
 
 
 SYMBOL TABLE LISTING
