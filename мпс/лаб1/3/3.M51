@@ -1,4 +1,4 @@
-L51 CODE BANKING LINKER/LOCATOR V4.08.06        12/12/123  16:34:05  PAGE  1
+L51 CODE BANKING LINKER/LOCATOR V4.08.06        12/26/123  13:19:23  PAGE  1
 WIN32 L51 CODE BANKING LINKER/LOCATOR V4.08.06,  INVOKED BY:
 L51.EXE y:\лаб1\3\main.OBJ,y:\лаб1\3\vars.OBJ,y:\лаб1\3\fns.OBJ  to  Y:\лаб1\&
 3\3.ABS PR(Y:\лаб1\3\3.M51) PW(80) RS(128) ix 
@@ -25,13 +25,13 @@ LINK MAP OF MODULE: Y:\лаб1\3\3.ABS (MAIN)
     * * * * * * *   CODE          M E M O R Y   * * * * * * *
     CODE     0000H      0003H     ABSOLUTE       
     CODE     0003H      000FH     UNIT           MAIN
-    CODE     0012H      00B0H     UNIT           FNS
+    CODE     0012H      00B3H     UNIT           FNS
 
 EXECUTABLE SUMMARY:
 -------------------
     Total INTERNAL storage requirement:  0014H (20)
     Total EXTERNAL storage requirement:  0009H (9)
-    Total   CODE   storage requirement:  00C2H (194)
+    Total   CODE   storage requirement:  00C5H (197)
 Note:  Summary does not include dynamic stack requirements
 
 
@@ -68,11 +68,11 @@ SYMBOL TABLE FOR Y:\лаб1\3\3.ABS(MAIN)
 	C:0012H            PUBLIC             READ_PORT
 	C:002BH            SYMBOL             O_LOOP
 	C:001EH            PUBLIC             EVAL_NUMS
-L51 CODE BANKING LINKER/LOCATOR V4.08.06          12/12/123  16:34:05  PAGE  2
+L51 CODE BANKING LINKER/LOCATOR V4.08.06          12/26/123  13:19:23  PAGE  2
 
 	C:003BH            SYMBOL             S_LOOP
 	C:00A6H            PUBLIC             OUT_UART
-	C:00BBH            SYMBOL             UART_LOOP
+	C:00BEH            SYMBOL             UART_LOOP
 	C:0017H            SYMBOL             READ_LOOP
 	C:005BH            PUBLIC             SUM_NUMS
 	C:0012H            LINE#              10
@@ -138,7 +138,7 @@ SYMBOL TABLE FOR Y:\лаб1\3\3.ABS(MAIN)
 	C:007AH            LINE#              77
 	C:007CH            LINE#              78
 	C:007EH            LINE#              79
-L51 CODE BANKING LINKER/LOCATOR V4.08.06          12/12/123  16:34:05  PAGE  3
+L51 CODE BANKING LINKER/LOCATOR V4.08.06          12/26/123  13:19:23  PAGE  3
 
 	C:0080H            LINE#              80
 	C:0081H            LINE#              81
@@ -165,16 +165,17 @@ SYMBOL TABLE FOR Y:\лаб1\3\3.ABS(MAIN)
 	C:00A6H            LINE#              105
 	C:00A9H            LINE#              106
 	C:00ACH            LINE#              107
-	C:00AEH            LINE#              108
-	C:00B1H            LINE#              109
-	C:00B4H            LINE#              110
+	C:00AFH            LINE#              108
+	C:00B2H            LINE#              109
+	C:00B5H            LINE#              110
 	C:00B7H            LINE#              111
-	C:00B9H            LINE#              112
-	C:00BBH            LINE#              114
-	C:00BCH            LINE#              115
-	C:00BDH            LINE#              116
-	C:00BFH            LINE#              117
-	C:00C1H            LINE#              118
+	C:00BAH            LINE#              112
+	C:00BCH            LINE#              113
+	C:00BEH            LINE#              115
+	C:00BFH            LINE#              116
+	C:00C0H            LINE#              117
+	C:00C2H            LINE#              118
+	C:00C4H            LINE#              119
 	-------            ENDMOD             FNS
 
 LINK/LOCATE RUN COMPLETE,  NO ERROR FOUND.

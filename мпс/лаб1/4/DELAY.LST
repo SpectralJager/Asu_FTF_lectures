@@ -1,4 +1,4 @@
-MACRO ASSEMBLER DELAY                                       12/12/123 14:19:57 PAGE     1
+MACRO ASSEMBLER DELAY                                       12/26/123 15:19:31 PAGE     1
 
 
 WIN32 MACRO ASSEMBLER A51 V6.03.08
@@ -12,7 +12,7 @@ LOC     OBJ           LINE    SOURCE
                          4    VARS SEGMENT DATA
                          5    
 ------                   6    RSEG VARS
-0000                     7    DELAY_TIME:   DS 3
+0000                     7    DELAY_TIME:   DS 6
                          8    
 ------                   9    CSEG AT 0
 0000    020000   F      10        LJMP START
@@ -20,19 +20,23 @@ LOC     OBJ           LINE    SOURCE
 ------                  12    RSEG MAIN
                         13    USING 0
                         14    DELAY:  
-0000    750000   F      15        MOV DELAY_TIME, #00H
-0003    750000   F      16        MOV DELAY_TIME+1, #00H
-0006    750001   F      17        MOV DELAY_TIME+2, #01H
-                        18    DELAY_LOOP:  
-0009    D500FD   F      19        DJNZ DELAY_TIME, DELAY_LOOP
-000C    D500FA   F      20        DJNZ DELAY_TIME+1, DELAY_LOOP
-000F    D500F7   F      21        DJNZ DELAY_TIME+2, DELAY_LOOP
-0012    22              22        RET 
-                        23    START:  
-0013    758140          24        MOV SP, #040H
-0016    120000   F      25        CALL DELAY
-                        26    END
-MACRO ASSEMBLER DELAY                                       12/12/123 14:19:57 PAGE     2
+0000    750016   F      15        MOV DELAY_TIME+3, #016H
+                        16    DELAY_100:  
+0003    750064   F      17        MOV DELAY_TIME+2, #064H
+                        18    DELAY_MS:  
+0006    7500F9   F      19        MOV DELAY_TIME, #0F9H
+0009    7500F8   F      20        MOV DELAY_TIME+1, #0F8H
+000C    D500FD   F      21        DJNZ DELAY_TIME, $
+000F    D500FD   F      22        DJNZ DELAY_TIME+1, $
+0012    D500F1   F      23        DJNZ DELAY_TIME+2, DELAY_MS
+0015    D500EB   F      24        DJNZ DELAY_TIME+3, DELAY_100
+0018    22              25        RET 
+                        26    START:  
+0019    758140          27        MOV SP, #040H
+001C    120000   F      28        CALL DELAY
+001F    020000   F      29        JMP $
+                        30    END
+MACRO ASSEMBLER DELAY                                       12/26/123 15:19:31 PAGE     2
 
 
 SYMBOL TABLE LISTING
@@ -41,21 +45,22 @@ SYMBOL TABLE LISTING
 
 N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
 
-SP . . . . . . . .  D ADDR   0081H   A                          24 
-MAIN . . . . . . .  C SEG    0019H      REL=UNIT                12# 
-DELAY_LOOP . . . .  C ADDR   0009H   R  SEG=MAIN                18# 19 20 21 
-START. . . . . . .  C ADDR   0013H   R  SEG=MAIN                10 23# 
-DELAY. . . . . . .  C ADDR   0000H   R  SEG=MAIN                14# 25 
-VARS . . . . . . .  D SEG    0003H      REL=UNIT                6# 
-DELAY_TIME . . . .  D ADDR   0000H   R  SEG=VARS                7# 15 16 17 19 20 
-                                                                21 
+SP . . . . . . . .  D ADDR   0081H   A                          27 
+MAIN . . . . . . .  C SEG    0022H      REL=UNIT                12# 
+DELAY_MS . . . . .  C ADDR   0006H   R  SEG=MAIN                18# 23 
+START. . . . . . .  C ADDR   0019H   R  SEG=MAIN                10 26# 
+DELAY. . . . . . .  C ADDR   0000H   R  SEG=MAIN                14# 28 
+VARS . . . . . . .  D SEG    0006H      REL=UNIT                6# 
+DELAY_TIME . . . .  D ADDR   0000H   R  SEG=VARS                7# 15 17 19 20 21 
+                                                                22 23 24 72 
+DELAY_100. . . . .  C ADDR   0003H   R  SEG=MAIN                16# 24 
 
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     28    ----
+   CODE SIZE        =     37    ----
    XDATA SIZE       =   ----    ----
-   DATA SIZE        =      3    ----
+   DATA SIZE        =      6    ----
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
