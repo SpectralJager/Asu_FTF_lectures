@@ -1,34 +1,76 @@
 name timer_delay
 main segment code
+
 cseg at 0bh
-ljmp tm_int
+ljmp timer_int
+
 cseg at 0
 ljmp start
+
 rseg main
 using 0
-timer_delay:
-    mov th0, #00h
-    mov tl0, #00h
-    mov tmod, #01h
-    setb tcon.4
-    jnb tcon.5, $
-    ret
+
 start:
     setb ie.7
     setb ie.1
-    mov r0, #09ah
+    mov r0, #0ah
+    mov r1, #01h
     call timer_delay
     jmp $
 
-tm_int:
-    mov a, r0
-    jz tm_int_end 
+timer_delay:
+    mov tmod, #001h
+    mov tl0, #0f0h
+    mov th0, #0d8h
+    setb tr0
+    jb tr0, $
+    ret
+
+timer_int:
+    mov tl0, #0f0h
+    mov th0, #0d8h
     dec r0
+    mov a, r0
+    jz timer_int_h
     reti
-tm_int_end:
-    clr tcon.5
+timer_int_h:
+    dec r1
+    mov r0, #0ah
+    mov a, r1
+    jz timer_int_exit
+    reti
+timer_int_exit:
+    clr tr0
     reti
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

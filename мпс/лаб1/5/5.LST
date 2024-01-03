@@ -1,4 +1,4 @@
-MACRO ASSEMBLER 5                                           11/27/123 18:22:29 PAGE     1
+MACRO ASSEMBLER 5                                           01/03/124 21:49:25 PAGE     1
 
 
 WIN32 MACRO ASSEMBLER A51 V6.03.08
@@ -8,36 +8,50 @@ ASSEMBLER INVOKED BY: A51.EXE Y:\лаб1\5\5.ASM OJ(Y:\лаб1\5\5.OBJ) PIN(C:\FSI\INC
 LOC     OBJ           LINE    SOURCE
                          1    NAME TIMER_DELAY
                          2    MAIN SEGMENT CODE
-------                   3    CSEG AT 0BH
-000B    020000   F       4    LJMP TM_INT
-------                   5    CSEG AT 0
-0000    020000   F       6    LJMP START
-------                   7    RSEG MAIN
-                         8    USING 0
-                         9    TIMER_DELAY:  
-0000    758C00          10        MOV TH0, #00H
-0003    758A00          11        MOV TL0, #00H
-0006    758901          12        MOV TMOD, #01H
-0009    D28C            13        SETB TCON.4
-000B    308DFD          14        JNB TCON.5, $
-000E    22              15        RET
-                        16    START:  
-000F    D2AF            17        SETB IE.7
-0011    D2A9            18        SETB IE.1
-0013    7898            19        MOV R0, #098H
-0015    120000   F      20        CALL TIMER_DELAY
-0018    020000   F      21        JMP $
-                        22    
-                        23    TM_INT:  
-001B    E8              24        MOV A, R0
-001C    6002            25        JZ TM_INT_END 
-001E    18              26        DEC R0
-001F    32              27        RETI
-                        28    TM_INT_END:  
-0020    C28D            29        CLR TCON.5
-0022    32              30        RETI
-                        31    END
-MACRO ASSEMBLER 5                                           11/27/123 18:22:29 PAGE     2
+                         3    
+------                   4    CSEG AT 0BH
+000B    020000   F       5    LJMP TIMER_INT
+                         6    
+------                   7    CSEG AT 0
+0000    020000   F       8    LJMP START
+                         9    
+------                  10    RSEG MAIN
+                        11    USING 0
+                        12    
+                        13    START:  
+0000    D2AF            14        SETB IE.7
+0002    D2A9            15        SETB IE.1
+0004    780A            16        MOV R0, #0AH
+0006    7947            17        MOV R1, #047H
+0008    120000   F      18        CALL TIMER_DELAY
+000B    020000   F      19        JMP $
+                        20    
+                        21    TIMER_DELAY:  
+000E    758901          22        MOV TMOD, #001H
+0011    758AF6          23        MOV TL0, #0F6H
+0014    758CD8          24        MOV TH0, #0D8H
+0017    D28C            25        SETB TR0
+0019    208CFD          26        JB TR0, $
+001C    22              27        RET
+                        28    
+                        29    TIMER_INT:  
+001D    758AF6          30        MOV TL0, #0F6H
+0020    758CD8          31        MOV TH0, #0D8H
+0023    18              32        DEC R0
+0024    E8              33        MOV A, R0
+0025    6001            34        JZ TIMER_INT_H
+0027    32              35        RETI
+                        36    TIMER_INT_H:  
+0028    19              37        DEC R1
+0029    780A            38        MOV R0, #0AH
+002B    E9              39        MOV A, R1
+002C    6001            40        JZ TIMER_INT_EXIT
+002E    32              41        RETI
+                        42    TIMER_INT_EXIT:  
+002F    C28C            43        CLR TR0
+0031    32              44        RETI
+                        45    END
+MACRO ASSEMBLER 5                                           01/03/124 21:49:25 PAGE     2
 
 
 SYMBOL TABLE LISTING
@@ -46,21 +60,22 @@ SYMBOL TABLE LISTING
 
 N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
 
-TM_INT_END . . . .  C ADDR   0020H   R  SEG=MAIN                25 28# 
-MAIN . . . . . . .  C SEG    0023H      REL=UNIT                7# 
-TM_INT . . . . . .  C ADDR   001BH   R  SEG=MAIN                4 23# 
-TH0. . . . . . . .  D ADDR   008CH   A                          10 
-START. . . . . . .  C ADDR   000FH   R  SEG=MAIN                6 16# 
-IE . . . . . . . .  D ADDR   00A8H   A                          17 18 
-TIMER_DELAY. . . .  C ADDR   0000H   R  SEG=MAIN                9# 20 
-TL0. . . . . . . .  D ADDR   008AH   A                          11 
-TMOD . . . . . . .  D ADDR   0089H   A                          12 
-TCON . . . . . . .  D ADDR   0088H   A                          13 14 29 47 
+TIMER_INT_EXIT . .  C ADDR   002FH   R  SEG=MAIN                40 42# 
+MAIN . . . . . . .  C SEG    0032H      REL=UNIT                10# 
+TIMER_INT. . . . .  C ADDR   001DH   R  SEG=MAIN                5 29# 
+TH0. . . . . . . .  D ADDR   008CH   A                          24 31 
+START. . . . . . .  C ADDR   0000H   R  SEG=MAIN                8 13# 
+IE . . . . . . . .  D ADDR   00A8H   A                          14 15 
+TIMER_DELAY. . . .  C ADDR   000EH   R  SEG=MAIN                18 21# 
+TL0. . . . . . . .  D ADDR   008AH   A                          23 30 
+TIMER_INT_H. . . .  C ADDR   0028H   R  SEG=MAIN                34 36# 
+TMOD . . . . . . .  D ADDR   0089H   A                          22 
+TR0. . . . . . . .  B ADDR   0088H.4 A                          25 26 43 93 
 
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     41    ----
+   CODE SIZE        =     56    ----
    XDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----
