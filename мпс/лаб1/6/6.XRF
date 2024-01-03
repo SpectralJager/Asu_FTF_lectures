@@ -1,37 +1,8 @@
 WIN32 L51 CODE BANKING LINKER/LOCATOR V4.08.06,  INVOKED BY: 
-L51.EXE y:\лаб1\6\main.OBJ,y:\лаб1\6\blip.OBJ,y:\лаб1\6\select_mod.OBJ,y:\лаб1\6\mods.OBJ,y:\лаб1\6\delay.OBJ,y:\лаб1\6\checks.OBJ, y:\лаб1\6\change_spead.OBJ,y:\лаб1\6\vrs.OBJ  to  Y:\лаб1\6\6.ABS PR(Y:\лаб1\6\6.M51) SN(10600000000001876961994) PW(80) RS(128) ix 
+L51.EXE y:\лаб1\6\main.OBJ  to  Y:\лаб1\6\6.ABS PR(Y:\лаб1\6\6.M51) SN(10600000000001876961994) PW(80) RS(128) ix 
 
 INTER-MODULE CROSS-REFERENCE LISTING
 ------------------------------------
 
     NAME. . . . . . . . USAGE   MODULE NAMES
     ----------------------------------------
-    CHECK_MOD_BTNS  . . CODE    [CHECKS]:  MODS 
-    CHECK_SPD_BTNS  . . CODE    [CHECKS]:  MODS 
-    DECR_SPD  . . . . . CODE    [CHANGE_SPEAD]:  CHECKS 
-    DELAY . . . . . . . CODE    [DELAY]:  MODS, BLIP 
-    DELAY_TIME  . . . . DATA    [VRS]:  DELAY 
-    INCR_SPD  . . . . . CODE    [CHANGE_SPEAD]:  CHECKS 
-    MOD0  . . . . . . . CODE    [MODS]:  SELECT_MOD, LIGHTS 
-    MOD1  . . . . . . . CODE    [MODS]:  SELECT_MOD 
-    MOD10 . . . . . . . CODE    [MODS]:  SELECT_MOD 
-    MOD11 . . . . . . . CODE    [MODS]:  SELECT_MOD 
-    MOD12 . . . . . . . CODE    [MODS]:  SELECT_MOD 
-    MOD13 . . . . . . . CODE    [MODS]:  SELECT_MOD 
-    MOD14 . . . . . . . CODE    [MODS]:  SELECT_MOD 
-    MOD15 . . . . . . . CODE    [MODS]:  SELECT_MOD 
-    MOD2  . . . . . . . CODE    [MODS]:  SELECT_MOD 
-    MOD3  . . . . . . . CODE    [MODS]:  SELECT_MOD 
-    MOD4  . . . . . . . CODE    [MODS]:  SELECT_MOD 
-    MOD5  . . . . . . . CODE    [MODS]:  SELECT_MOD 
-    MOD6  . . . . . . . CODE    [MODS]:  SELECT_MOD 
-    MOD7  . . . . . . . CODE    [MODS]:  SELECT_MOD 
-    MOD8  . . . . . . . CODE    [MODS]:  SELECT_MOD 
-    MOD9  . . . . . . . CODE    [MODS]:  SELECT_MOD 
-    MOD_BLIP  . . . . . CODE    [BLIP]:  SELECT_MOD 
-    MOD_VR  . . . . . . DATA    [VRS]:  SELECT_MOD, LIGHTS 
-    NEXT_MOD  . . . . . CODE    [SELECT_MOD]:  CHECKS 
-    PREV_MOD  . . . . . CODE    [SELECT_MOD]:  CHECKS 
-    SPEAD_BLIP  . . . . CODE    [BLIP]:  CHANGE_SPEAD 
-    SPEAD_VR  . . . . . DATA    [VRS]:  CHANGE_SPEAD, DELAY, BLIP, LIGHTS 
-    SP_START  . . . . . DATA    [VRS]:  MODS, LIGHTS 

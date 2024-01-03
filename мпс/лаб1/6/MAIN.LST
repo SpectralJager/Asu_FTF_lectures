@@ -1,4 +1,4 @@
-MACRO ASSEMBLER MAIN                                        12/26/123 15:18:17 PAGE     1
+MACRO ASSEMBLER MAIN                                        01/04/124 02:08:31 PAGE     1
 
 
 WIN32 MACRO ASSEMBLER A51 V6.03.08
@@ -8,24 +8,85 @@ ASSEMBLER INVOKED BY: A51.EXE Y:\лаб1\6\MAIN.ASM OJ(Y:\лаб1\6\MAIN.OBJ) PIN(C:\F
 LOC     OBJ           LINE    SOURCE
                          1    NAME LIGHTS
                          2    
-                         3    EXTRN CODE (MOD0)
-                         4    EXTRN DATA (SP_START, SPEAD_VR, MOD_VR)
-                         5    
-                         6    MAIN SEGMENT CODE
-                         7    
-------                   8    CSEG AT 0
-0000    020000   F       9        LJMP START
-                        10    
-------                  11    RSEG MAIN
-                        12    USING 0
-                        13    START:  
-0000    758100   F      14        MOV SP, #SP_START
-0003    750002   F      15        MOV SPEAD_VR, #02H
-0006    750000   F      16        MOV MOD_VR, #00H
-0009    120000   F      17        CALL MOD0
-000C    020000   F      18        JMP START
-                        19    END
-MACRO ASSEMBLER MAIN                                        12/26/123 15:18:17 PAGE     2
+                         3    MAIN SEGMENT CODE
+                         4    LITTERALS SEGMENT CODE
+                         5    INTERUPS SEGMENT CODE
+                         6    
+  0040                   7    MOD EQU 40H
+  0041                   8    SPD EQU 41H
+------                   9    DSEG AT 48H
+0048                    10    DELAY_TIME:   DS 4
+                        11    
+------                  12    CSEG AT 0
+0000    020000   F      13    LJMP INIT
+                        14    
+------                  15    CSEG AT 03H
+0003    020000   F      16    LJMP NEXT_MODE_INT
+                        17    
+------                  18    RSEG LITTERALS
+0000    FEFCF8F0        19    MODS:   DB 0FEH, 0FCH, 0F8H, 0F0H, 0E0H, 0C0H, 080H, 0FAH, 0EAH, 0AAH, 0E4H, 0A4H, 099H, 011H, 0B3H, 0BDH
+0004    E0C080FA
+0008    EAAAE4A4
+000C    9911B3BD
+0010    02040608        20    SPDS:   DB 002H, 004H, 006H, 008H, 00AH, 00CH, 00EH, 010H, 012H, 014H, 016H, 018H, 01AH, 01CH, 01EH, 020H
+0014    0A0C0E10
+0018    12141618
+001C    1A1C1E20
+                        21    
+------                  22    RSEG INTERUPS
+                        23    USING 2
+                        24    NEXT_MODE_INT:  
+0000    F8              25        MOV R0, A
+0001    E540            26    MOV A , 64 
+0003    04              27        INC A
+0004    F540            28    MOV 64 , A 
+0006    D0E0            29        POP ACC
+0008    D0E0            30        POP ACC
+000A    E8              31        MOV A, R0
+000B    32              32        RETI 
+                        33    
+------                  34    RSEG MAIN
+                        35    USING 0
+                        36    INIT:  
+0000    75A8E5          37        MOV IE, #010000101
+0003    758160          38        MOV SP, #060H
+0006    020000   F      39        LJMP MAIN
+                        40    
+                        41    MAIN:  
+0009    020000   F      42        LJMP EXEC_MODE
+000C    22              43        RET
+                        44    
+                        45    EXEC_MODE:  
+000D    758160          46        MOV SP, #060H
+0010    E540            47    MOV A , 64 
+0012    900000   F      48        MOV DPTR, #MODS
+0015    93              49        MOVC A, @A+DPTR
+                        50    EXEC_MODE_LOOP:  
+0016    F5A0            51        MOV P2, A
+0018    23              52        RL A
+0019    C0E0            53        PUSH ACC
+001B    1100     F      54        ACALL DELAY
+001D    D0E0            55        POP ACC
+001F    020000   F      56        JMP EXEC_MODE_LOOP
+0022    22              57        RET
+                        58    
+                        59    DELAY:  
+0023    E541            60    MOV A , 65 
+0025    900000   F      61        MOV DPTR, #SPDS
+0028    93              62        MOVC A, @A+DPTR
+0029    F54B            63        MOV DELAY_TIME+3, A 
+                        64    DELAY_100:  
+002B    754A64          65        MOV DELAY_TIME+2, #064H
+                        66    DELAY_MS:  
+002E    7548F9          67        MOV DELAY_TIME, #0F9H
+0031    7549F8          68        MOV DELAY_TIME+1, #0F8H
+0034    D548FD          69        DJNZ DELAY_TIME, $
+0037    D549FD          70        DJNZ DELAY_TIME+1, $
+003A    D54AF1          71        DJNZ DELAY_TIME+2, DELAY_MS
+003D    D54BEB          72        DJNZ DELAY_TIME+3, DELAY_100
+0040    22              73        RET 
+                        74    END
+MACRO ASSEMBLER MAIN                                        01/04/124 02:08:31 PAGE     2
 
 
 SYMBOL TABLE LISTING
@@ -34,26 +95,39 @@ SYMBOL TABLE LISTING
 
 N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
 
-SP . . . . . . . .  D ADDR   0081H   A                          14 
-MAIN . . . . . . .  C SEG    000FH      REL=UNIT                11# 
-MOD_VR . . . . . .  D ADDR   -----      EXT                     4# 16 
-START. . . . . . .  C ADDR   0000H   R  SEG=MAIN                9 13# 18 
-SP_START . . . . .  D ADDR   -----      EXT                     4# 14 
-MOD0 . . . . . . .  C ADDR   -----      EXT                     3# 17 
-SPEAD_VR . . . . .  D ADDR   -----      EXT                     4# 15 
+MOD. . . . . . . .  N NUMB   0040h                              7# 26 28 47 
+EXEC_MODE_LOOP . .  C ADDR   0016H   R  SEG=MAIN                50# 56 
+P2 . . . . . . . .  D ADDR   00A0H   A                          51 
+SP . . . . . . . .  D ADDR   0081H   A                          38 46 
+MAIN . . . . . . .  C ADDR   0009H   R  SEG=MAIN                34# 39 41# 
+SPD. . . . . . . .  N NUMB   0041h                              8# 60 
+ACC. . . . . . . .  D ADDR   00E0H   A                          29 30 53 55 
+EXEC_MODE. . . . .  C ADDR   000DH   R  SEG=MAIN                42 45# 
+NEXT_MODE_INT. . .  C ADDR   0000H   R  SEG=INTERUPS            16 24# 
+DELAY_MS . . . . .  C ADDR   002EH   R  SEG=MAIN                66# 71 
+IE . . . . . . . .  D ADDR   00A8H   A                          37 
+DELAY. . . . . . .  C ADDR   0023H   R  SEG=MAIN                54 59# 
+MODS . . . . . . .  C ADDR   0000H   R  SEG=LITTERALS           19# 48 
+INIT . . . . . . .  C ADDR   0000H   R  SEG=MAIN                13 36# 
+LITTERALS. . . . .  C SEG    0020H      REL=UNIT                18# 
+SPDS . . . . . . .  C ADDR   0010H   R  SEG=LITTERALS           20# 61 
+INTERUPS . . . . .  C SEG    000CH      REL=UNIT                22# 
+DELAY_TIME . . . .  D ADDR   0048H   A                          10# 63 65 67 68 69 
+                                                                70 71 72 79 
+DELAY_100. . . . .  C ADDR   002BH   R  SEG=MAIN                64# 72 
 LIGHTS . . . . . .  N NUMB   -----
 
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     18    ----
+   CODE SIZE        =    115    ----
    XDATA SIZE       =   ----    ----
-   DATA SIZE        =   ----    ----
+   DATA SIZE        =      4    ----
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
 
 
-REGISTER BANK(S) USED : 0 
+REGISTER BANK(S) USED : 0 2 
 
 ASSEMBLY COMPLETE.   0 WARNING(S)   0 ERROR(S)

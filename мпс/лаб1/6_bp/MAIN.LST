@@ -1,0 +1,59 @@
+MACRO ASSEMBLER MAIN                                        12/26/123 15:18:17 PAGE     1
+
+
+WIN32 MACRO ASSEMBLER A51 V6.03.08
+OBJECT MODULE PLACED IN Y:\лаб1\6\MAIN.OBJ
+ASSEMBLER INVOKED BY: A51.EXE Y:\лаб1\6\MAIN.ASM OJ(Y:\лаб1\6\MAIN.OBJ) PIN(C:\FSI\INC) EP LINES PR(Y:\лаб1\6\MAIN.LST) XR DB PW(80) RB(0) 
+
+LOC     OBJ           LINE    SOURCE
+                         1    NAME LIGHTS
+                         2    
+                         3    EXTRN CODE (MOD0)
+                         4    EXTRN DATA (SP_START, SPEAD_VR, MOD_VR)
+                         5    
+                         6    MAIN SEGMENT CODE
+                         7    
+------                   8    CSEG AT 0
+0000    020000   F       9        LJMP START
+                        10    
+------                  11    RSEG MAIN
+                        12    USING 0
+                        13    START:  
+0000    758100   F      14        MOV SP, #SP_START
+0003    750002   F      15        MOV SPEAD_VR, #02H
+0006    750000   F      16        MOV MOD_VR, #00H
+0009    120000   F      17        CALL MOD0
+000C    020000   F      18        JMP START
+                        19    END
+MACRO ASSEMBLER MAIN                                        12/26/123 15:18:17 PAGE     2
+
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
+
+SP . . . . . . . .  D ADDR   0081H   A                          14 
+MAIN . . . . . . .  C SEG    000FH      REL=UNIT                11# 
+MOD_VR . . . . . .  D ADDR   -----      EXT                     4# 16 
+START. . . . . . .  C ADDR   0000H   R  SEG=MAIN                9 13# 18 
+SP_START . . . . .  D ADDR   -----      EXT                     4# 14 
+MOD0 . . . . . . .  C ADDR   -----      EXT                     3# 17 
+SPEAD_VR . . . . .  D ADDR   -----      EXT                     4# 15 
+LIGHTS . . . . . .  N NUMB   -----
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     18    ----
+   XDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+REGISTER BANK(S) USED : 0 
+
+ASSEMBLY COMPLETE.   0 WARNING(S)   0 ERROR(S)
