@@ -1,4 +1,4 @@
-MACRO ASSEMBLER 5                                           01/03/124 21:49:25 PAGE     1
+MACRO ASSEMBLER 5                                           01/10/124 11:16:50 PAGE     1
 
 
 WIN32 MACRO ASSEMBLER A51 V6.03.08
@@ -19,10 +19,10 @@ LOC     OBJ           LINE    SOURCE
                         11    USING 0
                         12    
                         13    START:  
-0000    D2AF            14        SETB IE.7
+0000    D2AF            14        SETB IE.7    
 0002    D2A9            15        SETB IE.1
 0004    780A            16        MOV R0, #0AH
-0006    7947            17        MOV R1, #047H
+0006    794C            17        MOV R1, #04CH
 0008    120000   F      18        CALL TIMER_DELAY
 000B    020000   F      19        JMP $
                         20    
@@ -51,7 +51,7 @@ LOC     OBJ           LINE    SOURCE
 002F    C28C            43        CLR TR0
 0031    32              44        RETI
                         45    END
-MACRO ASSEMBLER 5                                           01/03/124 21:49:25 PAGE     2
+MACRO ASSEMBLER 5                                           01/10/124 11:16:50 PAGE     2
 
 
 SYMBOL TABLE LISTING
@@ -70,7 +70,7 @@ TIMER_DELAY. . . .  C ADDR   000EH   R  SEG=MAIN                18 21#
 TL0. . . . . . . .  D ADDR   008AH   A                          23 30 
 TIMER_INT_H. . . .  C ADDR   0028H   R  SEG=MAIN                34 36# 
 TMOD . . . . . . .  D ADDR   0089H   A                          22 
-TR0. . . . . . . .  B ADDR   0088H.4 A                          25 26 43 93 
+TR0. . . . . . . .  B ADDR   0088H.4 A                          25 26 43 98 
 
 
 

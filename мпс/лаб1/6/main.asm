@@ -6,7 +6,7 @@ interups segment code
 
 mod equ 08h
 spd equ 09h
-dseg at 0ah
+dseg at 0ch
 delay_time: ds 4
 
 cseg at 0
@@ -25,21 +25,23 @@ rseg interups
 select_mode:
     push psw
     push acc
-    jnb p3.4, next_mode
-    jnb p3.5, prev_mode
     mov a, mod
     xrl a, #0ffh
-    mov p2, a
+    mov p1, a
+    call delay_100
+    jnb p3.4, next_mode
+    jnb p3.5, prev_mode
     ljmp exit_int
 
 select_spd:
     push psw
     push acc
-    jnb p3.4, next_spd
-    jnb p3.5, prev_spd
     mov a, spd
     xrl a, #0ffh
-    mov p2, a
+    mov p1, a
+    call delay_100
+    jnb p3.4, next_spd
+    jnb p3.5, prev_spd
     ljmp exit_int
 
 next_mode:
@@ -52,6 +54,7 @@ next_mode:
     ljmp mode_exit
 next_mode_reset:
     mov a, #00h
+    ljmp mode_exit
 
 prev_mode:
     push acc
@@ -62,6 +65,7 @@ prev_mode:
     ljmp mode_exit
 prev_mode_reset:
     mov a, #0fh
+    ljmp mode_exit
 
 mode_exit:
     mov mod, a
@@ -77,6 +81,7 @@ next_spd:
     ljmp spd_exit
 next_spd_reset:
     mov a, #00h
+    ljmp spd_exit
 
 prev_spd:
     clr c
@@ -86,6 +91,7 @@ prev_spd:
     ljmp spd_exit
 prev_spd_reset:
     mov a, #0fh
+    ljmp spd_exit
 
 spd_exit:
     mov spd, a
@@ -101,10 +107,14 @@ exit_int:
     push acc
     reti
 
+
 rseg main
 using 0
 main:
-    mov ie, #010000101
+    mov ie, #010000111
+    mov tmod, #001h
+    mov mod, #00h
+    mov spd, #00h
     mov sp, #020h
     ljmp exec_mode
 
@@ -114,19 +124,23 @@ exec_mode:
     mov dptr, #mods
     movc a, @a+dptr
 exec_mode_loop:
-    mov p2, a
+    mov p1, a
     rl a
     push acc
-    acall delay
+    call delay
     pop acc
     jmp exec_mode_loop
-    ret
 
 delay:
     mov a, spd
     mov dptr, #spds
     movc a, @a+dptr
     mov delay_time+3, a 
+delay_loop:
+    call delay_100
+    djnz delay_time+3, delay_loop
+    ret 
+
 delay_100:
     mov delay_time+2, #064h
 delay_ms:
@@ -135,7 +149,26 @@ delay_ms:
     djnz delay_time, $
     djnz delay_time+1, $
     djnz delay_time+2, delay_ms
-    djnz delay_time+3, delay_100
     ret 
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

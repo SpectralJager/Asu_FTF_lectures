@@ -1,4 +1,4 @@
-MACRO ASSEMBLER MAIN                                        01/05/124 01:02:37 PAGE     1
+MACRO ASSEMBLER MAIN                                        01/10/124 16:34:47 PAGE     1
 
 
 WIN32 MACRO ASSEMBLER A51 V6.03.08
@@ -14,145 +14,181 @@ LOC     OBJ           LINE    SOURCE
                          6    
   0008                   7    MOD EQU 08H
   0009                   8    SPD EQU 09H
-------                   9    DSEG AT 0AH
-000A                    10    DELAY_TIME:   DS 4
-                        11    
-------                  12    CSEG AT 0
-0000    020000   F      13    LJMP MAIN
-                        14    
-------                  15    CSEG AT 03H
-0003    020000   F      16    LJMP SELECT_MODE
-------                  17    CSEG AT 013H
-0013    020000   F      18    LJMP SELECT_SPD
-                        19    
-------                  20    RSEG LITTERALS
-0000    FEFCF8F0        21    MODS:   DB 0FEH, 0FCH, 0F8H, 0F0H, 0E0H, 0C0H, 080H, 0FAH, 0EAH, 0AAH, 0E4H, 0A4H, 099H, 011H, 0B3H, 0BDH
+  000A                   9    T0_0  EQU 0AH
+  000B                  10    T0_1  EQU 0BH
+------                  11    DSEG AT 0CH
+000C                    12    DELAY_TIME:   DS 4
+                        13    
+------                  14    CSEG AT 0
+0000    020000   F      15    LJMP MAIN
+                        16    
+------                  17    CSEG AT 03H
+0003    020000   F      18    LJMP SELECT_MODE
+------                  19    CSEG AT 013H
+0013    020000   F      20    LJMP SELECT_SPD
+                        21    
+------                  22    RSEG LITTERALS
+0000    FEFCF8F0        23    MODS:   DB 0FEH, 0FCH, 0F8H, 0F0H, 0E0H, 0C0H, 080H, 0FAH, 0EAH, 0AAH, 0E4H, 0A4H, 099H, 011H, 0B3H, 0BDH
 0004    E0C080FA
 0008    EAAAE4A4
 000C    9911B3BD
-0010    02040608        22    SPDS:   DB 002H, 004H, 006H, 008H, 00AH, 00CH, 00EH, 010H, 012H, 014H, 016H, 018H, 01AH, 01CH, 01EH, 020H
+0010    02040608        24    SPDS:   DB 002H, 004H, 006H, 008H, 00AH, 00CH, 00EH, 010H, 012H, 014H, 016H, 018H, 01AH, 01CH, 01EH, 020H
 0014    0A0C0E10
 0018    12141618
 001C    1A1C1E20
-                        23    
-------                  24    RSEG INTERUPS
-                        25    SELECT_MODE:  
-0000    C0D0            26        PUSH PSW
-0002    C0E0            27        PUSH ACC
-0004    30B41F          28        JNB P3.4, NEXT_MODE
-0007    30B52B          29        JNB P3.5, PREV_MODE
-000A    E508            30    MOV A , 8 
-000C    64FF            31        XRL A, #0FFH
-000E    F5A0            32        MOV P2, A
-0010    020000   F      33        LJMP EXIT_INT
-                        34    
-                        35    SELECT_SPD:  
-0013    C0D0            36        PUSH PSW
-0015    C0E0            37        PUSH ACC
-0017    30B42D          38        JNB P3.4, NEXT_SPD
-001A    30B539          39        JNB P3.5, PREV_SPD
-001D    E509            40    MOV A , 9 
-001F    64FF            41        XRL A, #0FFH
-0021    F5A0            42        MOV P2, A
-0023    020000   F      43        LJMP EXIT_INT
-                        44    
-                        45    NEXT_MODE:  
-0026    C3              46        CLR C
-0027    E508            47    MOV A , 8 
-0029    940F            48        SUBB A, #0FH
-002B    6006            49        JZ NEXT_MODE_RESET
-002D    E508            50    MOV A , 8 
-002F    04              51        INC A
-0030    020000   F      52        LJMP MODE_EXIT
-                        53    NEXT_MODE_RESET:  
-0033    7400            54        MOV A, #00H
-                        55    
-                        56    PREV_MODE:  
-0035    C0E0            57        PUSH ACC
-0037    C3              58        CLR C
-0038    E508            59    MOV A , 8 
-003A    6004            60        JZ PREV_MODE_RESET
-003C    14              61        DEC A
-003D    020000   F      62        LJMP MODE_EXIT
-                        63    PREV_MODE_RESET:  
-0040    740F            64        MOV A, #0FH
-                        65    
-                        66    MODE_EXIT:  
-0042    F508            67    MOV 8 , A 
-0044    020000   F      68        LJMP EXIT_INT
-                        69    
-                        70    NEXT_SPD:  
-0047    C3              71        CLR C
-0048    E509            72    MOV A , 9 
-004A    940F            73        SUBB A, #0FH
-004C    6006            74        JZ NEXT_SPD_RESET
-004E    E509            75    MOV A , 9 
-0050    04              76        INC A
-0051    020000   F      77        LJMP SPD_EXIT
-                        78    NEXT_SPD_RESET:  
-0054    7400            79        MOV A, #00H
-                        80    
-                        81    PREV_SPD:  
-0056    C3              82        CLR C
-0057    E509            83    MOV A , 9 
-0059    6004            84        JZ PREV_SPD_RESET
-005B    14              85        DEC A
-005C    020000   F      86        LJMP SPD_EXIT
-                        87    PREV_SPD_RESET:  
-005F    740F            88        MOV A, #0FH
-                        89    
-                        90    SPD_EXIT:  
-0061    F509            91    MOV 9 , A 
-0063    020000   F      92        LJMP EXIT_INT
-                        93    
-                        94    EXIT_INT:  
-0066    D0E0            95        POP ACC
-0068    D0D0            96        POP PSW
-006A    900000   F      97        MOV DPTR, #EXEC_MODE
-006D    E582            98        MOV A, DPL
-006F    C0E0            99        PUSH ACC
-0071    E583           100        MOV A, DPH
-0073    C0E0           101        PUSH ACC
-0075    32             102        RETI
-                       103    
-------                 104    RSEG MAIN
-                       105    USING 0
-                       106    MAIN:  
-0000    75A8E5         107        MOV IE, #010000101
-0003    758120         108        MOV SP, #020H
-0006    020000   F     109        LJMP EXEC_MODE
-                       110    
-                       111    EXEC_MODE:  
-0009    758120         112        MOV SP, #020H
-000C    E508           113    MOV A , 8 
-000E    900000   F     114        MOV DPTR, #MODS
-0011    93             115        MOVC A, @A+DPTR
-                       116    EXEC_MODE_LOOP:  
-0012    F5A0           117        MOV P2, A
-0014    23             118        RL A
-0015    C0E0           119        PUSH ACC
-0017    1100     F     120        ACALL DELAY
-0019    D0E0           121        POP ACC
-001B    020000   F     122        JMP EXEC_MODE_LOOP
-001E    22             123        RET
-                       124    
-                       125    DELAY:  
-001F    E509           126    MOV A , 9 
-0021    900000   F     127        MOV DPTR, #SPDS
-0024    93             128        MOVC A, @A+DPTR
-0025    F50D           129        MOV DELAY_TIME+3, A 
-                       130    DELAY_100:  
-0027    750C64         131        MOV DELAY_TIME+2, #064H
-                       132    DELAY_MS:  
-002A    750AF9         133        MOV DELAY_TIME, #0F9H
-002D    750BF8         134        MOV DELAY_TIME+1, #0F8H
-0030    D50AFD         135        DJNZ DELAY_TIME, $
-0033    D50BFD         136        DJNZ DELAY_TIME+1, $
-0036    D50CF1         137        DJNZ DELAY_TIME+2, DELAY_MS
-0039    D50DEB         138        DJNZ DELAY_TIME+3, DELAY_100
-003C    22             139        RET 
-                       140    END
-MACRO ASSEMBLER MAIN                                        01/05/124 01:02:37 PAGE     2
+                        25    
+------                  26    RSEG INTERUPS
+                        27    SELECT_MODE:  
+0000    C0D0            28        PUSH PSW
+0002    C0E0            29        PUSH ACC
+0004    E508            30    MOV A , 8 
+0006    64FF            31        XRL A, #0FFH
+0008    F590            32        MOV P1, A
+000A    120000   F      33        CALL DELAY_100
+000D    30B41C          34        JNB P3.4, NEXT_MODE
+0010    30B52B          35        JNB P3.5, PREV_MODE
+0013    020000   F      36        LJMP EXIT_INT
+                        37    
+                        38    SELECT_SPD:  
+0016    C0D0            39        PUSH PSW
+0018    C0E0            40        PUSH ACC
+001A    E509            41    MOV A , 9 
+001C    64FF            42        XRL A, #0FFH
+001E    F590            43        MOV P1, A
+0020    120000   F      44        CALL DELAY_100
+0023    30B42D          45        JNB P3.4, NEXT_SPD
+0026    30B546          46        JNB P3.5, PREV_SPD
+0029    020000   F      47        LJMP EXIT_INT
+                        48    
+                        49    NEXT_MODE:  
+002C    C3              50        CLR C
+002D    E508            51    MOV A , 8 
+002F    940F            52        SUBB A, #0FH
+0031    6006            53        JZ NEXT_MODE_RESET
+0033    E508            54    MOV A , 8 
+0035    04              55        INC A
+0036    020000   F      56        LJMP MODE_EXIT
+                        57    NEXT_MODE_RESET:  
+0039    7400            58        MOV A, #00H
+003B    020000   F      59        LJMP MODE_EXIT
+                        60    
+                        61    PREV_MODE:  
+003E    C0E0            62        PUSH ACC
+0040    C3              63        CLR C
+0041    E508            64    MOV A , 8 
+0043    6004            65        JZ PREV_MODE_RESET
+0045    14              66        DEC A
+0046    020000   F      67        LJMP MODE_EXIT
+                        68    PREV_MODE_RESET:  
+0049    740F            69        MOV A, #0FH
+004B    020000   F      70        LJMP MODE_EXIT
+                        71    
+                        72    MODE_EXIT:  
+004E    F508            73    MOV 8 , A 
+0050    020000   F      74        LJMP EXIT_INT
+                        75    
+                        76    NEXT_SPD:  
+0053    C3              77        CLR C
+0054    E509            78    MOV A , 9 
+0056    940F            79        SUBB A, #0FH
+0058    6006            80        JZ NEXT_SPD_RESET
+005A    E509            81    MOV A , 9 
+005C    04              82        INC A
+005D    020000   F      83        LJMP SPD_EXIT
+                        84    NEXT_SPD_RESET:  
+0060    C2B7            85        CLR P3.7
+0062    750A0A          86    MOV 10 , # 0AH 
+0065    750B0A          87    MOV 11 , # 0AH 
+0068    D28C            88        SETB TR0 
+006A    7400            89        MOV A, #00H
+006C    020000   F      90        LJMP SPD_EXIT
+                        91    
+                        92    PREV_SPD:  
+006F    C3              93        CLR C
+0070    E509            94    MOV A , 9 
+0072    6004            95        JZ PREV_SPD_RESET
+0074    14              96        DEC A
+0075    020000   F      97        LJMP SPD_EXIT
+                        98    PREV_SPD_RESET:  
+0078    740F            99        MOV A, #0FH
+007A    020000   F     100        LJMP SPD_EXIT
+                       101    
+                       102    SPD_EXIT:  
+007D    F509           103    MOV 9 , A 
+007F    020000   F     104        LJMP EXIT_INT
+                       105    
+                       106    EXIT_INT:  
+0082    D0E0           107        POP ACC
+0084    D0D0           108        POP PSW
+0086    900000   F     109        MOV DPTR, #EXEC_MODE
+0089    E582           110        MOV A, DPL
+008B    C0E0           111        PUSH ACC
+008D    E583           112        MOV A, DPH
+008F    C0E0           113        PUSH ACC
+0091    32             114        RETI
+                       115    
+                       116    TIMER0_INT:  
+0092    758AF6         117        MOV TL0, #0F6H
+0095    758CD8         118        MOV TH0, #0D8H
+0098    150A           119    DEC 10 
+009A    E50A           120    MOV A , 10 
+009C    6001           121        JZ TIMER0_INT_H
+009E    32             122        RETI
+                       123    TIMER0_INT_H:  
+009F    150B           124    DEC 11 
+00A1    750A0A         125    MOV 10 , # 0AH 
+00A4    E50B           126    MOV A , 11 
+00A6    6001           127        JZ TIMER0_INT_EXIT
+00A8    32             128        RETI
+                       129    TIMER0_INT_EXIT:  
+00A9    D2B7           130        SETB P3.7
+00AB    C28C           131        CLR TR0
+00AD    32             132        RETI
+                       133    
+------                 134    RSEG MAIN
+                       135    USING 0
+                       136    MAIN:  
+0000    75A8EF         137        MOV IE, #010000111
+0003    758901         138        MOV TMOD, #001H
+0006    750800         139    MOV 8 , # 00H 
+0009    750900         140    MOV 9 , # 00H 
+000C    758120         141        MOV SP, #020H
+000F    020000   F     142        LJMP EXEC_MODE
+                       143    
+                       144    EXEC_MODE:  
+0012    758120         145        MOV SP, #020H
+0015    E508           146    MOV A , 8 
+0017    900000   F     147        MOV DPTR, #MODS
+001A    93             148        MOVC A, @A+DPTR
+                       149    EXEC_MODE_LOOP:  
+001B    F590           150        MOV P1, A
+001D    23             151        RL A
+001E    C0E0           152        PUSH ACC
+0020    120000   F     153        CALL DELAY
+0023    D0E0           154        POP ACC
+0025    020000   F     155        JMP EXEC_MODE_LOOP
+                       156    
+                       157    DELAY:  
+0028    E509           158    MOV A , 9 
+002A    900000   F     159        MOV DPTR, #SPDS
+002D    93             160        MOVC A, @A+DPTR
+002E    F50F           161        MOV DELAY_TIME+3, A 
+                       162    DELAY_LOOP:  
+0030    120000   F     163        CALL DELAY_100
+0033    D50FFA         164        DJNZ DELAY_TIME+3, DELAY_LOOP
+0036    22             165        RET 
+                       166    
+                       167    DELAY_100:  
+0037    750E64         168        MOV DELAY_TIME+2, #064H
+                       169    DELAY_MS:  
+003A    750CF9         170        MOV DELAY_TIME, #0F9H
+003D    750DF8         171        MOV DELAY_TIME+1, #0F8H
+0040    D50CFD         172        DJNZ DELAY_TIME, $
+0043    D50DFD         173        DJNZ DELAY_TIME+1, $
+0046    D50EF1         174        DJNZ DELAY_TIME+2, DELAY_MS
+0049    22             175        RET 
+                       176    END
+MACRO ASSEMBLER MAIN                                        01/10/124 16:34:47 PAGE     2
 
 
 SYMBOL TABLE LISTING
@@ -161,51 +197,65 @@ SYMBOL TABLE LISTING
 
 N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
 
-SPD_EXIT . . . . .  C ADDR   0061H   R  SEG=INTERUPS            77 86 90# 
-MOD. . . . . . . .  N NUMB   0008h                              7# 30 47 50 59 67 
-                                                                113 
-DPL. . . . . . . .  D ADDR   0082H   A                          98 
-PREV_MODE. . . . .  C ADDR   0035H   R  SEG=INTERUPS            29 56# 
-EXEC_MODE_LOOP . .  C ADDR   0012H   R  SEG=MAIN                116# 122 
-P2 . . . . . . . .  D ADDR   00A0H   A                          32 42 117 
-PREV_MODE_RESET. .  C ADDR   0040H   R  SEG=INTERUPS            60 63# 
-PREV_SPD . . . . .  C ADDR   0056H   R  SEG=INTERUPS            39 81# 
-NEXT_MODE. . . . .  C ADDR   0026H   R  SEG=INTERUPS            28 45# 
-P3 . . . . . . . .  D ADDR   00B0H   A                          28 29 38 39 
-SP . . . . . . . .  D ADDR   0081H   A                          108 112 
-EXIT_INT . . . . .  C ADDR   0066H   R  SEG=INTERUPS            33 43 68 92 94# 
-SELECT_MODE. . . .  C ADDR   0000H   R  SEG=INTERUPS            16 25# 
-PREV_SPD_RESET . .  C ADDR   005FH   R  SEG=INTERUPS            84 87# 
-NEXT_MODE_RESET. .  C ADDR   0033H   R  SEG=INTERUPS            49 53# 
-NEXT_SPD . . . . .  C ADDR   0047H   R  SEG=INTERUPS            38 70# 
-MAIN . . . . . . .  C ADDR   0000H   R  SEG=MAIN                13 104# 106# 
-SELECT_SPD . . . .  C ADDR   0013H   R  SEG=INTERUPS            18 35# 
-NEXT_SPD_RESET . .  C ADDR   0054H   R  SEG=INTERUPS            74 78# 
-SPD. . . . . . . .  N NUMB   0009h                              8# 40 72 75 83 91 
-                                                                126 
-ACC. . . . . . . .  D ADDR   00E0H   A                          27 37 57 95 99 101 
-                                                                119 121 
-EXEC_MODE. . . . .  C ADDR   0009H   R  SEG=MAIN                97 109 111# 
-DELAY_MS . . . . .  C ADDR   002AH   R  SEG=MAIN                132# 137 
-IE . . . . . . . .  D ADDR   00A8H   A                          107 
-DELAY. . . . . . .  C ADDR   001FH   R  SEG=MAIN                120 125# 
-MODS . . . . . . .  C ADDR   0000H   R  SEG=LITTERALS           21# 114 
-LITTERALS. . . . .  C SEG    0020H      REL=UNIT                20# 
-SPDS . . . . . . .  C ADDR   0010H   R  SEG=LITTERALS           22# 127 
-INTERUPS . . . . .  C SEG    0076H      REL=UNIT                24# 
-PSW. . . . . . . .  D ADDR   00D0H   A                          26 36 96 
-DPH. . . . . . . .  D ADDR   0083H   A                          100 
-DELAY_TIME . . . .  D ADDR   000AH   A                          10# 129 131 133 134 
-                                                                135 136 137 138 141 
+SPD_EXIT . . . . .  C ADDR   007DH   R  SEG=INTERUPS            83 90 97 100 102# 
                                                                 
-MODE_EXIT. . . . .  C ADDR   0042H   R  SEG=INTERUPS            52 62 66# 
-DELAY_100. . . . .  C ADDR   0027H   R  SEG=MAIN                130# 138 
+MOD. . . . . . . .  N NUMB   0008h                              7# 30 51 54 64 73 
+                                                                139 146 
+DPL. . . . . . . .  D ADDR   0082H   A                          110 
+PREV_MODE. . . . .  C ADDR   003EH   R  SEG=INTERUPS            35 61# 
+P1 . . . . . . . .  D ADDR   0090H   A                          32 43 150 
+EXEC_MODE_LOOP . .  C ADDR   001BH   R  SEG=MAIN                149# 155 
+TIMER0_INT_H . . .  C ADDR   009FH   R  SEG=INTERUPS            121 123# 
+PREV_MODE_RESET. .  C ADDR   0049H   R  SEG=INTERUPS            65 68# 
+PREV_SPD . . . . .  C ADDR   006FH   R  SEG=INTERUPS            46 92# 
+NEXT_MODE. . . . .  C ADDR   002CH   R  SEG=INTERUPS            34 49# 
+P3 . . . . . . . .  D ADDR   00B0H   A                          34 35 45 46 85 130 
+                                                                
+SP . . . . . . . .  D ADDR   0081H   A                          141 145 
+EXIT_INT . . . . .  C ADDR   0082H   R  SEG=INTERUPS            36 47 74 104 106# 
+                                                                
+SELECT_MODE. . . .  C ADDR   0000H   R  SEG=INTERUPS            18 27# 
+PREV_SPD_RESET . .  C ADDR   0078H   R  SEG=INTERUPS            95 98# 
+NEXT_MODE_RESET. .  C ADDR   0039H   R  SEG=INTERUPS            53 57# 
+NEXT_SPD . . . . .  C ADDR   0053H   R  SEG=INTERUPS            45 76# 
+MAIN . . . . . . .  C ADDR   0000H   R  SEG=MAIN                15 134# 136# 
+SELECT_SPD . . . .  C ADDR   0016H   R  SEG=INTERUPS            20 38# 
+NEXT_SPD_RESET . .  C ADDR   0060H   R  SEG=INTERUPS            80 84# 
+SPD. . . . . . . .  N NUMB   0009h                              8# 41 78 81 94 103 
+                                                                140 158 
+ACC. . . . . . . .  D ADDR   00E0H   A                          29 40 62 107 111 
+                                                                113 152 154 
+DELAY_LOOP . . . .  C ADDR   0030H   R  SEG=MAIN                162# 164 
+EXEC_MODE. . . . .  C ADDR   0012H   R  SEG=MAIN                109 142 144# 
+TH0. . . . . . . .  D ADDR   008CH   A                          118 
+DELAY_MS . . . . .  C ADDR   003AH   R  SEG=MAIN                169# 174 
+IE . . . . . . . .  D ADDR   00A8H   A                          137 
+DELAY. . . . . . .  C ADDR   0028H   R  SEG=MAIN                153 157# 
+TL0. . . . . . . .  D ADDR   008AH   A                          117 
+MODS . . . . . . .  C ADDR   0000H   R  SEG=LITTERALS           23# 147 
+T0_0 . . . . . . .  N NUMB   000Ah                              9# 86 119 120 125 
+                                                                
+TIMER0_INT_EXIT. .  C ADDR   00A9H   R  SEG=INTERUPS            127 129# 
+T0_1 . . . . . . .  N NUMB   000Bh                              10# 87 124 126 
+LITTERALS. . . . .  C SEG    0020H      REL=UNIT                22# 
+TMOD . . . . . . .  D ADDR   0089H   A                          138 
+TR0. . . . . . . .  B ADDR   0088H.4 A                          88 131 
+SPDS . . . . . . .  C ADDR   0010H   R  SEG=LITTERALS           24# 159 
+INTERUPS . . . . .  C SEG    00AEH      REL=UNIT                26# 
+PSW. . . . . . . .  D ADDR   00D0H   A                          28 39 108 
+TIMER0_INT . . . .  C ADDR   0092H   R  SEG=INTERUPS            116# 
+DPH. . . . . . . .  D ADDR   0083H   A                          112 
+DELAY_TIME . . . .  D ADDR   000CH   A                          12# 161 164 168 170 
+                                                                171 172 173 174 198 
+                                                                
+MODE_EXIT. . . . .  C ADDR   004EH   R  SEG=INTERUPS            56 59 67 70 72# 
+DELAY_100. . . . .  C ADDR   0037H   R  SEG=MAIN                33 44 163 167# 
 LIGHTS . . . . . .  N NUMB   -----
 
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    220    ----
+   CODE SIZE        =    289    ----
    XDATA SIZE       =   ----    ----
    DATA SIZE        =      4    ----
    IDATA SIZE       =   ----    ----

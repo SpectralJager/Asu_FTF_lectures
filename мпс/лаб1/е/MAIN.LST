@@ -1,0 +1,313 @@
+MACRO ASSEMBLER MAIN                                        01/10/124 09:50:00 PAGE     1
+
+
+WIN32 MACRO ASSEMBLER A51 V6.03.08
+OBJECT MODULE PLACED IN Y:\лаб1\е\MAIN.OBJ
+ASSEMBLER INVOKED BY: A51.EXE Y:\лаб1\е\MAIN.ASM OJ(Y:\лаб1\е\MAIN.OBJ) PIN(C:\FSI\INC) EP LINES PR(Y:\лаб1\е\MAIN.LST) XR DB PW(80) RB(0) 
+
+LOC     OBJ           LINE    SOURCE
+                         1    DAT SEGMENT DATA
+------                   2    RSEG DAT
+  0050                   3    SPEED EQU 50H ;переменные
+  0051                   4    ZERO EQU 51H; несветящийся светодиод
+  0052                   5    RED EQU 52H ; светящийся светодиод
+  0053                   6    AUTOMODE EQU 53H ;переключение режима
+                         7    BITD SEGMENT BIT
+------                   8    RSEG BITD
+  0020                   9    DIRECTION EQU 20H
+  0022                  10    GREENSLEEP EQU 22H
+  0023                  11    BAUTOMODE EQU 23H
+  0024                  12    DOUBLESLEEP EQU 24H
+                        13     
+                        14    MAIN SEGMENT CODE
+------                  15    RSEG MAIN
+0000    0200E4          16    LJMP MAIN
+------                  17    CSEG AT 00BH
+000B    758C03          18    MOV TH0,#3
+000E    758A02          19    MOV TL0,#2
+0011    1D              20    DEC R5 ;декремент задержки от дребезга
+0012    30B709          21    JNB P3.7,SKIP0
+0015    30240C          22    JNB 36 , SKIP 
+0018    C2B7            23    CLR P3.7 ;вкл зеленого светодиода
+001A    7E0A            24    MOV R6,#10 ; 
+001C    C224            25    CLR 36 
+                        26     
+                        27    SKIP0:  
+001E    1E              28    DEC R6
+001F    BE0002          29    CJNE R6,#0,SKIP
+0022    D2B7            30    SETB P3.7
+                        31     
+                        32    SKIP:  
+0024    19              33    DEC R1
+0025    B90036          34    CJNE R1,#0,INTERRUPTEND
+0028    A950            35    MOV R1 , 80 
+002A    E590            36    MOV A,P1
+002C    202019          37    JB 32 , REVERSE 
+002F    23              38    RL A
+0030    F590            39    MOV P1,A
+0032    BB0007          40    CJNE R3,#0,ONE
+0035    BC000A          41    CJNE R4,#0,TWO
+0038    AB51            42    MOV R3 , 81 
+003A    AC52            43    MOV R4 , 82 
+                        44        
+                        45    ONE:  
+003C    1B              46    DEC R3
+003D    C290            47    CLR P1.0
+003F    02005E          48    JMP INTERRUPTEND
+                        49    TWO:  
+0042    1C              50    DEC R4
+0043    D290            51    SETB P1.0
+0045    02005E          52    JMP INTERRUPTEND
+                        53     
+                        54    REVERSE:   ;бег вправо
+0048    03              55    RR A
+0049    F590            56    MOV P1,A
+004B    BB0007          57    CJNE R3,#0,THREE
+004E    BC000A          58    CJNE R4,#0,FOUR
+0051    AB51            59    MOV R3 , 81 
+0053    AC52            60    MOV R4 , 82 
+                        61        
+                        62    THREE:  
+0055    1B              63    DEC R3
+0056    C297            64    CLR P1.7
+0058    02005E          65    JMP INTERRUPTEND
+                        66    FOUR:  
+005B    1C              67    DEC R4
+005C    D297            68    SETB P1.7
+                        69     
+                        70    INTERRUPTEND:  
+005E    302308          71    JNB 35 , RETURNE 
+0061    0F              72    INC R7
+0062    BFC804          73    CJNE R7,#200,RETURNE
+0065    7F00            74    MOV R7,#0
+0067    1553            75    DEC 83 
+                        76     
+                        77    RETURNE:  
+0069    32              78    RETI
+                        79    SPEEDCHANGEDOWN:   ;уменьшение скорости
+006A    0550            80    INC 80 
+006C    E550            81    MOV A , 80 
+006E    B41106          82    CJNE A,#17,SPEEDENDD
+0071    1550            83    DEC 80 
+                        84     
+                        85    SPEEDSLEEPD:  
+0073    7E14            86        MOV R6,#20
+0075    C2B7            87        CLR P3.7
+                        88        
+                        89    SPEEDENDD:  
+0077    755302          90    MOV 83 , # 2 
+007A    7F00            91        MOV R7,#0
+007C    D223            92    SETB 35 
+007E    22              93    RET
+                        94     
+                        95    SPEEDCHANGEUP:   ;увеличение скорости
+007F    1550            96    DEC 80 
+0081    E550            97    MOV A , 80 
+0083    B400F1          98        CJNE A,#0,SPEEDENDD
+0086    0550            99    INC 80 
+                       100        
+                       101    SPEEDSLEEPU:  
+0088    7E14           102        MOV R6,#20
+008A    C2B7           103        CLR P3.7
+                       104        
+                       105    SPEEDENDU:  
+008C    755302         106    MOV 83 , # 2 
+008F    7F00           107        MOV R7,#0   
+0091    D223           108    SETB 35 
+0093    22             109    RET
+                       110     
+                       111    MODECHANGE:   ;подпрограмма изменения режима 
+0094    E552           112    MOV A , 82 
+0096    B40808         113        CJNE A,#8,CHANGE
+0099    202017         114    JB 32 , MODEUP 
+009C    B220           115    CPL 32 
+009E    0200DC         116        JMP MODEEND
+                       117        
+                       118    CHANGE:  
+00A1    20200F         119    JB 32 , MODEUP 
+00A4    C3             120        CLR C
+00A5    9551           121    SUBB A , 81 
+00A7    7005           122        JNZ PLUSZERO
+00A9    0552           123    INC 82 
+00AB    0200DC         124        JMP MODEEND
+                       125        
+                       126    PLUSZERO:  
+00AE    0551           127    INC 81 
+00B0    0200DC         128        JMP MODEEND
+                       129        
+                       130    MODEUP:  
+00B3    E552           131    MOV A , 82 
+00B5    B40103         132        CJNE A,#1,SUBBING
+00B8    0200CC         133        JMP SLEEPMODE
+                       134        
+                       135    SUBBING:  
+00BB    C3             136        CLR C
+00BC    9551           137    SUBB A , 81 
+00BE    7005           138        JNZ MINUSZERO
+00C0    1551           139    DEC 81 
+00C2    0200DC         140        JMP MODEEND
+                       141        
+                       142    MINUSZERO:  
+00C5    1552           143    DEC 82 
+00C7    E552           144    MOV A , 82 
+00C9    B40110         145        CJNE A,#1,MODEEND
+                       146        
+                       147    SLEEPMODE:  
+                       148        ;задержка для свечения зеленого светодиода
+00CC    7E0A           149        MOV R6,#10;
+00CE    C2B7           150        CLR P3.7
+00D0    D224           151    SETB 36 
+                       152     
+00D2    C223           153    CLR 35 
+00D4    7D02           154        MOV R5,#2
+00D6    BD00FD         155        CJNE R5,#0,$
+00D9    120094         156        LCALL MODECHANGE ;изменение режима
+                       157     
+                       158    MODEEND:  
+00DC    755302         159    MOV 83 , # 2 
+00DF    7F00           160        MOV R7,#0
+00E1    D223           161    SETB 35 
+00E3    22             162        RET
+                       163     
+                       164    MAIN:   ;основная программа
+00E4    D2B7           165    SETB P3.7
+00E6    755006         166    MOV 80 , # 6 
+00E9    755101         167    MOV 81 , # 1 
+00EC    755201         168    MOV 82 , # 1 
+00EF    7B01           169    MOV R3,#1
+00F1    7C01           170    MOV R4,#1
+00F3    755302         171    MOV 83 , # 2 
+00F6    7F00           172    MOV R7,#0
+00F8    D223           173    SETB 35 
+00FA    7902           174    MOV R1,#2 ;задержка в 50мс перед тем как засветится
+00FC    758901         175    MOV TMOD,#00000001B ;настройка 0 таймера(16 бит)
+00FF    758C15         176    MOV TH0,#21 ; 61
+0102    758A1A         177    MOV TL0,#26  ;66
+0105    75A882         178    MOV IE,#10000010B ;разрешение прерываний для таймера 0
+0108    D28C           179    SETB TR0 ;запуск таймера
+                       180     
+                       181    BACKE:  
+010A    20B20D         182        JB P3.2,SD ;если нажата р3,2
+010D    C223           183    CLR 35 
+010F    7D02           184        MOV R5,#2
+0111    BD00FD         185        CJNE R5,#0,$
+0114    30B2FD         186        JNB P3.2,$
+0117    12006A         187        LCALL SPEEDCHANGEDOWN ;изменение скорости
+                       188     
+                       189    SD:  
+011A    20B30D         190        JB P3.3, SU ;если нажата р3,3
+011D    C223           191    CLR 35 
+011F    7D02           192        MOV R5,#2
+0121    BD00FD         193        CJNE R5,#0,$
+0124    30B3FD         194        JNB P3.3,$
+0127    12007F         195        LCALL SPEEDCHANGEUP ;изменение скорости
+                       196     
+                       197    SU:  
+012A    20B411         198        JB P3.4,MD ;если нажата р3,4
+012D    C223           199    CLR 35 
+012F    7D02           200        MOV R5,#2
+0131    BD00FD         201        CJNE R5,#0,$
+0134    30B4FD         202        JNB P3.4,$
+0137    B220           203    CPL 32 
+0139    120094         204        LCALL MODECHANGE ;изменение режима
+013C    B220           205    CPL 32 
+                       206    MD:  
+013E    20B50D         207        JB P3.5,MU ;если нажата р3,5
+0141    C223           208    CLR 35 
+0143    7D02           209        MOV R5,#2
+0145    BD00FD         210        CJNE R5,#0,$
+0148    30B5FD         211        JNB P3.5,$
+014B    120094         212        LCALL MODECHANGE ;изменение режима
+                       213     
+                       214    MU:  
+014E    E553           215    MOV A , 83 
+0150    70B8           216        JNZ BACKE
+0152    C223           217    CLR 35 
+0154    120094         218        LCALL MODECHANGE
+0157    0553           219    INC 83 
+0159    80AF           220    JMP BACKE
+                       221     
+                       222    END 
+MACRO ASSEMBLER MAIN                                        01/10/124 09:50:00 PAGE     2
+
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES             REFERENCES
+
+BAUTOMODE. . . . .  N NUMB   0023h                              11# 71 92 108 153 
+                                                                161 173 183 191 199 
+                                                                208 217 
+ZERO . . . . . . .  N NUMB   0051h                              4# 42 59 121 127 
+                                                                137 139 167 
+DIRECTION. . . . .  N NUMB   0020h                              9# 37 114 115 119 
+                                                                203 205 
+P1 . . . . . . . .  D ADDR   0090H   A                          36 39 47 51 56 64 
+                                                                68 
+MU . . . . . . . .  C ADDR   014EH   A                          207 214# 
+ONE. . . . . . . .  C ADDR   003CH   A                          40 45# 
+BITD . . . . . . .  B SEG    0000H      REL=UNIT                8# 
+P3 . . . . . . . .  D ADDR   00B0H   A                          21 23 30 87 103 150 
+                                                                165 182 186 190 194 
+                                                                198 202 207 211 223 
+                                                                
+PLUSZERO . . . . .  C ADDR   00AEH   A                          122 126# 
+INTERRUPTEND . . .  C ADDR   005EH   A                          34 48 52 65 70# 
+RETURNE. . . . . .  C ADDR   0069H   A                          71 73 77# 
+MAIN . . . . . . .  C ADDR   00E4H   A                          15# 16 164# 
+CHANGE . . . . . .  C ADDR   00A1H   A                          113 118# 
+SKIP0. . . . . . .  C ADDR   001EH   A                          21 27# 
+SU . . . . . . . .  C ADDR   012AH   A                          190 197# 
+SUBBING. . . . . .  C ADDR   00BBH   A                          132 135# 
+MODEUP . . . . . .  C ADDR   00B3H   A                          114 119 130# 
+GREENSLEEP . . . .  N NUMB   0022h                              10# 
+MODECHANGE . . . .  C ADDR   0094H   A                          111# 156 204 212 
+                                                                218 
+MINUSZERO. . . . .  C ADDR   00C5H   A                          138 142# 
+SPEEDENDD. . . . .  C ADDR   0077H   A                          82 89# 98 
+TH0. . . . . . . .  D ADDR   008CH   A                          18 176 
+SPEEDSLEEPD. . . .  C ADDR   0073H   A                          85# 
+IE . . . . . . . .  D ADDR   00A8H   A                          178 
+SPEEDCHANGEDOWN. .  C ADDR   006AH   A                          79# 187 
+TL0. . . . . . . .  D ADDR   008AH   A                          19 177 
+MD . . . . . . . .  C ADDR   013EH   A                          198 206# 
+SPEED. . . . . . .  N NUMB   0050h                              3# 35 80 81 83 96 
+                                                                97 99 166 
+DOUBLESLEEP. . . .  N NUMB   0024h                              12# 22 25 151 
+TMOD . . . . . . .  D ADDR   0089H   A                          175 
+BACKE. . . . . . .  C ADDR   010AH   A                          181# 216 220 
+TR0. . . . . . . .  B ADDR   0088H.4 A                          179 
+SD . . . . . . . .  C ADDR   011AH   A                          182 189# 
+SKIP . . . . . . .  C ADDR   0024H   A                          22 29 32# 
+THREE. . . . . . .  C ADDR   0055H   A                          57 62# 
+DAT. . . . . . . .  D SEG    0000H      REL=UNIT                2# 
+TWO. . . . . . . .  C ADDR   0042H   A                          41 49# 
+RED. . . . . . . .  N NUMB   0052h                              5# 43 60 112 123 
+                                                                131 143 144 168 
+MODEEND. . . . . .  C ADDR   00DCH   A                          116 124 128 140 145 
+                                                                158# 
+SPEEDCHANGEUP. . .  C ADDR   007FH   A                          95# 195 
+FOUR . . . . . . .  C ADDR   005BH   A                          58 66# 
+REVERSE. . . . . .  C ADDR   0048H   A                          37 54# 
+SPEEDENDU. . . . .  C ADDR   008CH   A                          105# 
+SLEEPMODE. . . . .  C ADDR   00CCH   A                          133 147# 
+AUTOMODE . . . . .  N NUMB   0053h                              6# 75 90 106 159 
+                                                                171 215 219 
+SPEEDSLEEPU. . . .  C ADDR   0088H   A                          101# 
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    339    ----
+   XDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+REGISTER BANK(S) USED : 0 
+
+ASSEMBLY COMPLETE.   0 WARNING(S)   0 ERROR(S)

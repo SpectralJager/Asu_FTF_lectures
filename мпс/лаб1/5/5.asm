@@ -11,10 +11,10 @@ rseg main
 using 0
 
 start:
-    setb ie.7
+    setb ie.7    
     setb ie.1
     mov r0, #0ah
-    mov r1, #047h
+    mov r1, #04ch
     call timer_delay
     jmp $
 
@@ -43,6 +43,11 @@ timer_int_exit:
     clr tr0
     reti
 end
+
+
+
+
+
 
 
 
