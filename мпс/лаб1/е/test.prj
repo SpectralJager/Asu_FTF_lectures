@@ -76,7 +76,7 @@ Begin Group Set
 Sets=
 End Group Set
 Begin Group Source
-Macro=0
+Macro=1
 Mod51=1
 End Group Source
 End Options A51
@@ -292,7 +292,7 @@ ResData=0
 Startaddr=8000
 Lockedmode=0
 Nb Obj=1
-y:\лаб1\6\main.OBJ
+y:\лаб1\е\main.OBJ
 Nb Flash=0
 End Group Flashing
 Begin Group Listing
@@ -317,7 +317,7 @@ Maxpage=32
 Genmacro=1
 Noplm=1
 Nb Modules=1
-LIGHTS Y:\лаб1\6\MAIN.OBJ 2147483647
+MAIN Y:\лаб1\е\MAIN.OBJ 2147483647
 End Group Bank switching
 Begin Group More
 More=
@@ -403,22 +403,22 @@ End Options OH51
 
 [Nodes]
 App Number=1
-Name=6.PRJ
+Name=TEST.PRJ
 Tool Ref=L51
-Info Code=285
+Info Code=7
 Info XData=0
-Info Data=160
+Info Data=64
 Use Local=0
 Nb Nodes=1
 Node Begin
 Relative Path=main.asm
 Tool Ref=A51
 Nb Dep=0
-Info Code=285
+Info Code=13
 Info Const=0
 Info XData=0
 Info PData=0
-Info Data=4
+Info Data=0
 Info IData=0
 Info Bit=0
 Use Local=0
@@ -428,23 +428,21 @@ Node End
 
 [Desktop Files]
 Nb Desktop Files=1
-y:\лаб1\6\main.asm (0,0-1280,491) 0
+y:\лаб1\е\main.asm (0,0-1280,245) 0
 
 
 [Closed Files]
-Nb Closed Files=1
-y:\лаб1\6\main.asm (0,0-0,0) 0
-
+Nb Closed Files=0
 
 [Dim Views]
 Nb Dim Views=13
 0 (0,0-0,0)
 1 (0,0-0,0)
-2 (2,643-1278,965)
+2 (4,646-1280,967)
 3 (0,0-0,0)
-4 (68,237-1660,891)
+4 (2,247-1282,493)
 5 (0,0-0,0)
-6 (1282,2-1702,493)
+6 (0,0-0,0)
 7 (0,0-0,0)
 8 (0,0-0,0)
 9 (0,0-0,0)

@@ -11,14 +11,13 @@ rseg main
             %set(cnt, %cnt + 1)
         )
         mov ar0, #%cnt
-        %if(%eqs(r0, 0) then (
+        %if(%eqs(ar0, 0) then (
             mov ar1, #01h
         ) else (
             mov ar2, #01h
         ) fi
     ret
 end
-
 
 
 

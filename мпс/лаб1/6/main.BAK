@@ -2,11 +2,12 @@ name lights
 
 main segment code
 litterals segment code
-interups segment code
+interupts segment code
 
-mod equ 08h
-spd equ 09h
-dseg at 0ah
+mod equ 035h
+spd equ 036h
+
+dseg at 030h
 delay_time: ds 4
 
 cseg at 0
@@ -21,28 +22,21 @@ rseg litterals
     mods: db 0feh, 0fch, 0f8h, 0f0h, 0e0h, 0c0h, 080h, 0fah, 0eah, 0aah, 0e4h, 0a4h, 099h, 011h, 0b3h, 0bdh
     spds: db 002h, 004h, 006h, 008h, 00ah, 00ch, 00eh, 010h, 012h, 014h, 016h, 018h, 01ah, 01ch, 01eh, 020h
 
-rseg interups
+rseg interupts
+using 1
 select_mode:
     push psw
     push acc
+    mov ar0, #010h
+    using 1
     mov a, mod
     xrl a, #0ffh
-    mov p1, a
+    mov p1, a                                                                                     2
     call delay_100
     jnb p3.4, next_mode
     jnb p3.5, prev_mode
     ljmp exit_int
 
-select_spd:
-    push psw
-    push acc
-    mov a, spd
-    xrl a, #0ffh
-    mov p1, a
-    call delay_100
-    jnb p3.4, next_spd
-    jnb p3.5, prev_spd
-    ljmp exit_int
 
 next_mode:
     clr c
@@ -69,6 +63,18 @@ prev_mode_reset:
 
 mode_exit:
     mov mod, a
+    ljmp exit_int
+
+select_spd:
+    push psw
+    push acc
+    using 1
+    mov a, spd
+    xrl a, #0ffh
+    mov p1, a
+    call delay_100
+    jnb p3.4, next_spd
+    jnb p3.5, prev_spd
     ljmp exit_int
 
 next_spd:
@@ -107,23 +113,6 @@ exit_int:
     push acc
     reti
 
-timer_int:
-    mov tl0, #0f6h
-    mov th0, #0d8h
-    dec r0
-    mov a, r0
-    jz timer_int_h
-    reti
-timer_int_h:
-    dec r1
-    mov r0, #0ah
-    mov a, r1
-    jz timer_int_exit
-    reti
-timer_int_exit:
-    clr tr0
-    reti
-
 rseg main
 using 0
 main:
@@ -131,11 +120,11 @@ main:
     mov tmod, #001h
     mov mod, #00h
     mov spd, #00h
-    mov sp, #020h
+    mov sp, #040h
     ljmp exec_mode
 
 exec_mode:
-    mov sp, #020h
+    mov sp, #040h
     mov a, mod
     mov dptr, #mods
     movc a, @a+dptr
@@ -143,7 +132,7 @@ exec_mode_loop:
     mov p1, a
     rl a
     push acc
-    call delay_100
+    call delay
     pop acc
     jmp exec_mode_loop
 
@@ -167,6 +156,18 @@ delay_ms:
     djnz delay_time+2, delay_ms
     ret 
 end
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
