@@ -4,11 +4,12 @@ main segment code
 litterals segment code
 interupts segment code
 
-mod equ 035h
-spd equ 036h
+mod equ 038h
+spd equ 039h
 
 dseg at 030h
 delay_time: ds 4
+sleep_time: ds 3
 
 cseg at 0
 ljmp main
@@ -29,6 +30,7 @@ rseg litterals
 rseg interupts
 using 1
 select_mode:
+    call slp20
     mov a, mod
     xrl a, #0ffh
     mov p1, a                                                                                     
@@ -74,6 +76,7 @@ blip_mod:
     ret
 
 select_spd:
+    call slp20
     mov a, spd
     xrl a, #0ffh
     mov p1, a
@@ -164,14 +167,39 @@ timer0_done:
     clr tr0
     reti
 
+timer1:
+    mov tl1, #0f6h
+    mov th1, #0d8h
+    dec sleep_time
+    mov a, sleep_time
+    jz timer1_1
+    reti
+timer1_1:
+    mov sleep_time, #0ah
+    dec sleep_time+1
+    mov a, sleep_time+1
+    jz timer1_2
+    reti
+timer1_2:
+    mov sleep_time+1, #01h
+    dec sleep_time+2
+    mov a, sleep_time+2
+    jz timer1_done
+    reti
+timer1_done:
+    lcall slp30
+    ljmp next_mode
+
 rseg main
 using 0
 main:
-    mov ie, #010001111
-    mov tmod, #001h
+    mov ie, #010001111b
+    mov ip, #0ah      
+    mov tmod, #011h
     mov mod, #00h
     mov spd, #00h
     mov sp, #040h
+    call slp20
     ljmp exec_mode
 
 exec_mode:
@@ -206,4 +234,28 @@ delay_ms:
     djnz delay_time+1, $
     djnz delay_time+2, delay_ms
     ret 
+
+slp20:
+    mov sleep_time, #0ah
+    mov sleep_time+1, #0c8h
+    mov sleep_time+2, #01h
+    setb tr1
+    ret
+
+slp30:
+    mov sleep_time, #0ah
+    mov sleep_time+1, #0ffh
+    mov sleep_time+2, #02dh
+    setb tr1
+    ret
 end
+
+
+
+
+
+
+
+
+
+
