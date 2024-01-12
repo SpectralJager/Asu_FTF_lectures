@@ -1,0 +1,26 @@
+Removed Pin From Net: NetName=NetC1_2 Pin=DD1-1
+Removed Pin From Net: NetName=NetDD1_2 Pin=DD1-2
+Removed Pin From Net: NetName=NetDD1_2 Pin=DD1-3
+Removed Pin From Net: NetName=NetDD1_4 Pin=DD1-4
+Removed Pin From Net: NetName=NetDD1_5 Pin=DD1-5
+Removed Pin From Net: NetName=NetDD1_6 Pin=DD1-6
+Removed Pin From Net: NetName=GND Pin=DD1-7
+Removed Pin From Net: NetName=+5 Pin=DD1-14
+Change Component Designator: OldDesignator=R3 NewDesignator=R4
+Change Component Designator: OldDesignator=R4 NewDesignator=R3
+Added Component: Designator=DD1(N014)
+Added Pin To Net: NetName=NetC1_2 Pin=DD1-1
+Added Pin To Net: NetName=NetDD1_2 Pin=DD1-2
+Added Pin To Net: NetName=NetDD1_2 Pin=DD1-3
+Added Pin To Net: NetName=NetDD1_4 Pin=DD1-4
+Added Pin To Net: NetName=NetDD1_5 Pin=DD1-5
+Added Pin To Net: NetName=NetDD1_6 Pin=DD1-6
+Added Pin To Net: NetName=GND Pin=DD1-7
+Added Pin To Net: NetName=+5 Pin=DD1-14
+Change Net Name : Old Net Name=NetDD3_1 New Net Name=NetDD3_15
+Change Net Name : Old Net Name=NetDD3_2 New Net Name=NetDD3_18
+Change Net Name : Old Net Name=NetDD3_3 New Net Name=NetDD4_3
+Change Net Name : Old Net Name=NetDD3_6 New Net Name=NetDD4_6
+Change Net Name : Old Net Name=NetDD3_8 New Net Name=NetDD4_8
+Change Net Name : Old Net Name=NetDD3_11 New Net Name=NetDD4_11
+Added Member To Class: ClassName=Z80PC Member=Component DD3 Z84C0008AEG
