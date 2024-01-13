@@ -1,4 +1,4 @@
-MACRO ASSEMBLER MAIN                                        01/11/124 00:44:17 PAGE     1
+MACRO ASSEMBLER MAIN                                        01/12/124 13:50:53 PAGE     1
 
 
 WIN32 MACRO ASSEMBLER A51 V6.03.08
@@ -263,7 +263,7 @@ LOC     OBJ           LINE    SOURCE
 0065    D28E           249        SETB TR1
 0067    22             250        RET
                        251    END
-MACRO ASSEMBLER MAIN                                        01/11/124 00:44:17 PAGE     2
+MACRO ASSEMBLER MAIN                                        01/12/124 13:50:53 PAGE     2
 
 
 SYMBOL TABLE LISTING
@@ -341,7 +341,7 @@ IP . . . . . . . .  D ADDR   00B8H   A                          197
 SPDS . . . . . . .  C ADDR   0010H   R  SEG=LITTERALS           28# 220 
 DPH. . . . . . . .  D ADDR   0083H   A                          127 
 DELAY_TIME . . . .  D ADDR   0030H   A                          11# 222 225 229 231 
-                                                                232 233 234 235 261 
+                                                                232 233 234 235 262 
                                                                 
 MODE_EXIT. . . . .  C ADDR   003BH   R  SEG=INTERUPTS           49 53 60 64 66# 
 DELAY_100. . . . .  C ADDR   003DH   R  SEG=MAIN                37 83 224 228# 

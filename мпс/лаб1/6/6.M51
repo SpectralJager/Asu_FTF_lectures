@@ -1,4 +1,4 @@
-L51 CODE BANKING LINKER/LOCATOR V4.08.06        01/11/124  00:44:17  PAGE  1
+L51 CODE BANKING LINKER/LOCATOR V4.08.06        01/12/124  13:50:53  PAGE  1
 WIN32 L51 CODE BANKING LINKER/LOCATOR V4.08.06,  INVOKED BY:
 L51.EXE y:\лаб1\6\main.OBJ  to  Y:\лаб1\6\6.ABS PR(Y:\лаб1\6\6.M51) PW(80) RS&
 (128) ix 
@@ -68,7 +68,7 @@ SYMBOL TABLE FOR Y:\лаб1\6\6.ABS(LIGHTS)
 	C:013FH            SYMBOL             EXIT_INT
 	C:00A6H            SYMBOL             SELECT_MODE
 	C:0127H            SYMBOL             PREV_SPD_RESET
-L51 CODE BANKING LINKER/LOCATOR V4.08.06          01/11/124  00:44:17  PAGE  2
+L51 CODE BANKING LINKER/LOCATOR V4.08.06          01/12/124  13:50:53  PAGE  2
 
 	C:0109H            SYMBOL             NEXT_SPD
 	C:00C8H            SYMBOL             NEXT_MODE_RESET
@@ -138,7 +138,7 @@ SYMBOL TABLE FOR Y:\лаб1\6\6.ABS(LIGHTS)
 	C:007AH            LINE#              246
 	C:007DH            LINE#              247
 	C:0080H            LINE#              248
-L51 CODE BANKING LINKER/LOCATOR V4.08.06          01/11/124  00:44:17  PAGE  3
+L51 CODE BANKING LINKER/LOCATOR V4.08.06          01/12/124  13:50:53  PAGE  3
 
 	C:0083H            LINE#              249
 	C:0085H            LINE#              250
@@ -208,7 +208,7 @@ SYMBOL TABLE FOR Y:\лаб1\6\6.ABS(LIGHTS)
 	C:0137H            LINE#              118
 	C:013AH            LINE#              119
 	C:013CH            LINE#              120
-L51 CODE BANKING LINKER/LOCATOR V4.08.06          01/11/124  00:44:17  PAGE  4
+L51 CODE BANKING LINKER/LOCATOR V4.08.06          01/12/124  13:50:53  PAGE  4
 
 	C:013EH            LINE#              121
 	C:013FH            LINE#              124

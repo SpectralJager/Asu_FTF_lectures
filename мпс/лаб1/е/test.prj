@@ -404,7 +404,7 @@ End Options OH51
 [Nodes]
 App Number=1
 Name=TEST.PRJ
-Tool Ref=L51
+Tool Ref=
 Info Code=7
 Info XData=0
 Info Data=64
@@ -428,7 +428,7 @@ Node End
 
 [Desktop Files]
 Nb Desktop Files=1
-y:\лаб1\е\main.asm (0,0-1280,245) 0
+y:\лаб1\е\main.asm (0,0-1371,601) 0
 
 
 [Closed Files]

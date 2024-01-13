@@ -187,6 +187,7 @@ timer1_2:
     jz timer1_done
     reti
 timer1_done:
+    clr tr1
     lcall slp30
     ljmp next_mode
 
@@ -249,6 +250,7 @@ slp30:
     setb tr1
     ret
 end
+
 
 
 
