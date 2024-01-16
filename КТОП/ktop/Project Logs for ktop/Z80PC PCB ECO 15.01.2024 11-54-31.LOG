@@ -1,0 +1,13 @@
+Added Component: Designator=X1(PLS-6)
+Add Pin To Net: Unknown Pin: Pin R1-0
+Add Pin To Net: Unknown Pin: Pin R2-0
+Add Pin To Net: Unknown Pin: Pin R3-0
+Add Pin To Net: Unknown Pin: Pin R4-0
+Added Pin To Net: NetName=NetDD2_2 Pin=X1-2
+Added Pin To Net: NetName=NetDD2_6 Pin=X1-3
+Added Pin To Net: NetName=+5 Pin=X1-4
+Added Pin To Net: NetName=NetDD2_5 Pin=X1-5
+Added Pin To Net: NetName=GND Pin=X1-6
+Added Member To Class: ClassName=Z80PC Member=Component DD1 74HCT04
+Added Member To Class: ClassName=Z80PC Member=Component R4 3.3K
+Added Member To Class: ClassName=Z80PC Member=Component X1 USB
