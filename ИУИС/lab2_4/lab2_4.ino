@@ -7,11 +7,11 @@ void loop() {
   if (Serial.available() > 0) {
     val = Serial.read();
     if (val=='H') {
-      digitalWrite(8,HIGH);
+      digitalWrite(10,HIGH);
       Serial.println("status: HIGH");
     }
     if (val=='L') {
-      digitalWrite(8,LOW);
+      digitalWrite(10,LOW);
       Serial.println("status: LOW");
     }
   }

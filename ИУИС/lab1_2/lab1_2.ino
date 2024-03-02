@@ -7,9 +7,9 @@ void setup() {
 }
 void task2() {
   if (digitalRead(btn) == HIGH) {
-  digitalWrite(led, HIGH);
+    digitalWrite(led, HIGH);
   } else {
-  digitalWrite(led, LOW);
+    digitalWrite(led, LOW);
   }
 }
 void loop() {
