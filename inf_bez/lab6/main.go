@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"crypto/md5"
 	"errors"
 	"fmt"
 	"image"
@@ -13,6 +14,7 @@ import (
 var message = "Прежде всего, повышение уровня гражданского сознания, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для системы массового участия. Для современного мира понимание сути ресурсосберегающих технологий позволяет оценить значение поэтапного и последовательного развития общества. В частности, социально-экономическое развитие однозначно определяет каждого участника как способного принимать собственные решения касаемо форм воздействия."
 
 func main() {
+	fmt.Printf("Origin message:  {%s}\n", message)
 	err := Encoder(message, "lab6.png", "out.png")
 	if err != nil {
 		panic(err)
@@ -26,9 +28,22 @@ func main() {
 	}
 
 	fmt.Printf("Decoded message: {%s}\n", msg)
-	// if message != msg {
-	// 	panic("origin <> decoded")
-	// }
+
+	fmt.Println()
+
+	fmt.Println("Hashes |>")
+	fmt.Printf("origin:  0x%x\nencoded: 0x%x\n", HashFile("lab6.png"), HashFile("out.png"))
+}
+
+func HashFile(filePath string) []byte {
+	data, err := os.ReadFile(filePath)
+	if err != nil {
+		return make([]byte, 0)
+	}
+
+	res := md5.Sum(data)
+
+	return res[:]
 }
 
 func Decode(inputPath string) (string, error) {
@@ -56,9 +71,9 @@ func Decode(inputPath string) (string, error) {
 		symb <<= 4
 		symb |= r & 0x000f
 
-		if symb != 0 {
-			fmt.Printf("decoded: %s == %04x  {%02x; %02x; %02x}\n", string(rune(symb)), symb, uint8(r), uint8(g), uint8(b))
-		}
+		// if symb != 0 {
+		// 	fmt.Printf("decoded: %s == %04x  {%02x; %02x; %02x}\n", string(rune(symb)), symb, uint8(r), uint8(g), uint8(b))
+		// }
 
 		strBuf.WriteRune(rune(symb))
 
@@ -103,7 +118,7 @@ func Encoder(msg, inputPath, outPath string) error {
 			newR |= uint8(rn & 0x000f)
 			newG |= uint8(rn & 0x00f0 >> 4)
 			newB |= uint8(rn & 0x0f00 >> 8)
-			fmt.Printf("encoded: %s == %04x  {%02x <> %02x; %02x <> %02x; %02x <> %02x}\n", string(rn), rn, uint8(r), newR, uint8(g), newG, uint8(b), newB)
+			// fmt.Printf("encoded: %s == %04x  {%02x <> %02x; %02x <> %02x; %02x <> %02x}\n", string(rn), rn, uint8(r), newR, uint8(g), newG, uint8(b), newB)
 		}
 
 		dstImg.SetNRGBA(x, y, color.NRGBA{
