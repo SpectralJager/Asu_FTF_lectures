@@ -1,89 +1,145 @@
 package main
 
 import (
-	"bufio"
 	"bytes"
+	"errors"
 	"fmt"
+	"image"
+	"image/color"
 	"image/png"
-	"io"
-	"log"
 	"os"
-
-	"github.com/auyer/steganography"
 )
 
+var message = "Прежде всего, повышение уровня гражданского сознания, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для системы массового участия. Для современного мира понимание сути ресурсосберегающих технологий позволяет оценить значение поэтапного и последовательного развития общества. В частности, социально-экономическое развитие однозначно определяет каждого участника как способного принимать собственные решения касаемо форм воздействия."
+
 func main() {
-	rd := MustReadFile()
-	if MustSelectMode() {
-		Decode(rd)
-	} else {
-		Encode(rd, MustReadMessage())
+	err := Encoder(message, "lab6.png", "out.png")
+	if err != nil {
+		panic(err)
 	}
-	fmt.Println("done")
+
+	fmt.Println()
+
+	msg, err := Decode("out.png")
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Printf("Decoded message: {%s}\n", msg)
+	// if message != msg {
+	// 	panic("origin <> decoded")
+	// }
 }
 
-func MustReadFile() io.Reader {
-	filepath := ""
-	fmt.Print("Enter input file path: ")
-	fmt.Scanf("%s", &filepath)
-	inFile, err := os.Open("lab6.png")
+func Decode(inputPath string) (string, error) {
+	inputFile, err := os.Open(inputPath)
 	if err != nil {
-		log.Fatal(err)
+		return "", err
 	}
-	return inFile
+	defer inputFile.Close()
+
+	img, err := png.Decode(inputFile)
+	if err != nil {
+		return "", err
+	}
+
+	strBuf := bytes.NewBufferString("")
+
+	err = WalkImage(img, func(x, y int) error {
+		var symb uint32
+
+		r, g, b, _ := img.At(x, y).RGBA()
+
+		symb |= b & 0x000f
+		symb <<= 4
+		symb |= g & 0x000f
+		symb <<= 4
+		symb |= r & 0x000f
+
+		if symb != 0 {
+			fmt.Printf("decoded: %s == %04x  {%02x; %02x; %02x}\n", string(rune(symb)), symb, uint8(r), uint8(g), uint8(b))
+		}
+
+		strBuf.WriteRune(rune(symb))
+
+		return nil
+	})
+
+	return strBuf.String(), err
 }
 
-func MustReadMessage() string {
-	msg := ""
-	fmt.Print("Enter message: ")
-	fmt.Scanf("%s", &msg)
-	if msg == "" {
-		return "hello, world"
-	}
-	return msg
-}
-
-func MustSelectMode() bool {
-	isDecode := ""
-	fmt.Print("Is decode [y|n]: ")
-	fmt.Scanf("%s", &isDecode)
-	return isDecode == "y"
-}
-
-func Decode(input io.Reader) {
-	reader := bufio.NewReader(input)
-	img, err := png.Decode(reader)
+func Encoder(msg, inputPath, outPath string) error {
+	inputFile, err := os.Open(inputPath)
 	if err != nil {
-		log.Fatal(err)
+		return err
 	}
-	sizeOfMessage := steganography.GetMessageSizeFromImage(img)
+	defer inputFile.Close()
 
-	msg := steganography.Decode(sizeOfMessage, img)
-	fmt.Println("Message: ", string(msg))
-}
-
-func Encode(input io.Reader, msg string) {
-	reader := bufio.NewReader(input)
-	img, err := png.Decode(reader)
+	srcImg, err := png.Decode(inputFile)
 	if err != nil {
-		log.Fatal(err)
+		return err
 	}
 
-	w := new(bytes.Buffer)
-	err = steganography.Encode(w, img, []byte(msg))
-	if err != nil {
-		log.Printf("Error Encoding file %v", err)
-		return
+	bounds := srcImg.Bounds()
+
+	dstImg := image.NewNRGBA(image.Rect(0, 0, bounds.Max.X, bounds.Max.Y))
+
+	if bounds.Max.X*bounds.Max.Y <= len(msg) {
+		return errors.New("message size >= image bounds")
 	}
 
-	outFile, err := os.Create("out_file.png")
+	strBuf := bytes.NewBufferString(msg)
+
+	err = WalkImage(srcImg, func(x, y int) error {
+		var newR, newG, newB uint8
+
+		r, g, b, a := srcImg.At(x, y).RGBA()
+
+		newR = uint8(r) & 0xf0
+		newG = uint8(g) & 0xf0
+		newB = uint8(b) & 0xf0
+
+		if rn, _, err := strBuf.ReadRune(); err == nil {
+			newR |= uint8(rn & 0x000f)
+			newG |= uint8(rn & 0x00f0 >> 4)
+			newB |= uint8(rn & 0x0f00 >> 8)
+			fmt.Printf("encoded: %s == %04x  {%02x <> %02x; %02x <> %02x; %02x <> %02x}\n", string(rn), rn, uint8(r), newR, uint8(g), newG, uint8(b), newB)
+		}
+
+		dstImg.SetNRGBA(x, y, color.NRGBA{
+			R: newR,
+			G: newG,
+			B: newB,
+			A: uint8(a),
+		})
+
+		return nil
+	})
 	if err != nil {
-		log.Fatal(err)
+		return err
+	}
+
+	outFile, err := os.Create(outPath)
+	if err != nil {
+		return err
 	}
 	defer outFile.Close()
 
-	_, err = w.WriteTo(outFile)
+	err = png.Encode(outFile, dstImg)
 	if err != nil {
-		log.Fatal(err)
+		return err
 	}
+	return nil
+}
+
+func WalkImage(img image.Image, mapper func(x, y int) error) error {
+	for y := img.Bounds().Min.Y; y < img.Bounds().Max.Y; y++ {
+		for x := img.Bounds().Min.X; x < img.Bounds().Max.X; x++ {
+			err := mapper(x, y)
+			if err != nil {
+				return err
+			}
+		}
+	}
+	return nil
 }
